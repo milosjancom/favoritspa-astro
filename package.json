@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:live": "SEO_MODE=live astro build",
+    "redirects": "python3 tools/redirects.py",
     "preview": "astro preview"
   },
   "keywords": [],

@@ -1,0 +1,154 @@
+/
+/sr/
+/en/
+/sr/djakuzi-spa-kade-i-cene/ (redirects on old site)
+/sr/djakuzi-spa-kade-i-cene/zen/
+/sr/djakuzi-spa-kade-i-cene/eden/
+/sr/djakuzi-spa-kade-i-cene/pearl/
+/sr/djakuzi-spa-kade-i-cene/garden/
+/sr/djakuzi-spa-kade-i-cene/fusion/
+/sr/djakuzi-spa-kade-i-cene/melody/
+/sr/djakuzi-spa-kade-i-cene/point/
+/sr/funkcije/
+/sr/galerija/
+/sr/recenzije/
+/sr/odrzavanje/
+/sr/pitanja-i-odgovori/
+/sr/kontakt/
+/hu/
+/de/
+/sl/
+/ba/
+/hr/
+/me/
+/al/
+/sr/o-nama/ (redirects on old site)
+/sr/opsti-uslovi-poslovanja/
+/en/jacuzzi-spa-tubs/ (redirects on old site)
+/en/jacuzzi-spa-tubs/zen/
+/en/jacuzzi-spa-tubs/eden/
+/en/jacuzzi-spa-tubs/pearl/
+/en/jacuzzi-spa-tubs/garden/
+/en/jacuzzi-spa-tubs/fusion/
+/en/jacuzzi-spa-tubs/melody/
+/en/jacuzzi-spa-tubs/point/
+/en/functions/
+/en/galerija/
+/en/recenzije/
+/en/maintenance/
+/en/faq/
+/en/contact/
+/en/about-us/ (redirects on old site)
+/en/general-terms-of-business/
+/hu/jacuzzi-spa-kadi/zen/
+/de/whirlpool-spa-badewannen/zen/
+/sl/jacuzzi-spa-kadi/zen/
+/ba/djakuzi-spa-kade-i-cene/zen/
+/hr/djakuzi-spa-kade-i-cene/zen/
+/me/djakuzi-spa-kade-i-cene/zen/
+/al/xhakuzi-vaska-spa-dhe-cmime/zen/
+/hu/jacuzzi-spa-kadi/eden/
+/de/whirlpool-spa-badewannen/eden/
+/sl/jacuzzi-spa-kadi/eden/
+/ba/djakuzi-spa-kade-i-cene/eden/
+/hr/djakuzi-spa-kade-i-cene/eden/
+/me/djakuzi-spa-kade-i-cene/eden/
+/al/xhakuzi-vaska-spa-dhe-cmime/eden/
+/hu/jacuzzi-spa-kadi/pearl/
+/de/whirlpool-spa-badewannen/pearl/
+/sl/jacuzzi-spa-kadi/pearl/
+/ba/djakuzi-spa-kade-i-cene/pearl/
+/hr/djakuzi-spa-kade-i-cene/pearl/
+/me/djakuzi-spa-kade-i-cene/pearl/
+/al/xhakuzi-vaska-spa-dhe-cmime/pearl/
+/hu/jacuzzi-spa-kadi/garden/
+/de/whirlpool-spa-badewannen/garden/
+/sl/jacuzzi-spa-kadi/garden/
+/ba/djakuzi-spa-kade-i-cene/garden/
+/hr/djakuzi-spa-kade-i-cene/garden/
+/me/djakuzi-spa-kade-i-cene/garden/
+/al/xhakuzi-vaska-spa-dhe-cmime/garden/
+/hu/jacuzzi-spa-kadi/fusion/
+/de/whirlpool-spa-badewannen/fusion/
+/sl/jacuzzi-spa-kadi/fusion/
+/ba/djakuzi-spa-kade-i-cene/fusion/
+/hr/djakuzi-spa-kade-i-cene/fusion/
+/me/djakuzi-spa-kade-i-cene/fusion/
+/al/xhakuzi-vaska-spa-dhe-cmime/fusion/
+/hu/jacuzzi-spa-kadi/melody/
+/de/whirlpool-spa-badewannen/melody/
+/sl/jacuzzi-spa-kadi/melody/
+/ba/djakuzi-spa-kade-i-cene/melody/
+/hr/djakuzi-spa-kade-i-cene/melody/
+/me/djakuzi-spa-kade-i-cene/melody/
+/al/xhakuzi-vaska-spa-dhe-cmime/melody/
+/hu/jacuzzi-spa-kadi/point/
+/de/whirlpool-spa-badewannen/point/
+/sl/jacuzzi-spa-kadi/point/
+/ba/djakuzi-spa-kade-i-cene/point/
+/hr/djakuzi-spa-kade-i-cene/point/
+/me/djakuzi-spa-kade-i-cene/point/
+/al/xhakuzi-vaska-spa-dhe-cmime/point/
+/hu/funksiok/
+/de/funktionen/
+/sl/funkcije/
+/ba/funkcije/
+/hr/funkcije/
+/me/funkcije/
+/al/funksionet/
+/hu/galerija/
+/de/galerija/
+/sl/galerija/
+/ba/galerija/
+/hr/galerija/
+/me/galerija/
+/al/galerija/
+/hu/recenzije/
+/de/recenzije/
+/sl/recenzije/
+/ba/recenzije/
+/hr/recenzije/
+/me/recenzije/
+/al/recenzije/
+/hu/karbantart%C3%A1s/
+/de/pflege/
+/sl/vzdrzevanje/
+/ba/odrzavanje/
+/hr/odrzavanje/
+/me/odrzavanje/
+/al/mirembajtja/
+/hu/kerdesek-es-valaszok/
+/de/fragen-und-antworten/
+/sl/vprasanja-in-odgovori/
+/ba/pitanja-i-odgovori/
+/hr/pitanja-i-odgovori/
+/me/pitanja-i-odgovori/
+/al/pyetjet-dhe-pergjigjet/
+/hu/kapcsolat/
+/de/kontakt/
+/sl/kontakt/
+/ba/kontakt/
+/hr/kontakt/
+/me/kontakt/
+/al/kontakti/
+/hu/jacuzzi-spa-kadi/ (redirects on old site)
+/hu/rolunk/ (redirects on old site)
+/hu/altalanos-szerzodesi-feltetelek/
+/de/whirlpool-spa-badewannen/ (redirects on old site)
+/de/uber-uns/ (redirects on old site)
+/de/allgemeine-geschaftsbedingungen/
+/sl/jacuzzi-spa-kadi/ (redirects on old site)
+/sl/o-nas/ (redirects on old site)
+/sl/splosni-pogoji-poslovanja/
+/ba/djakuzi-spa-kade-i-cene/ (redirects on old site)
+/ba/o-nama/ (redirects on old site)
+/ba/opci-uslovi-poslovanja/
+/hr/djakuzi-spa-kade-i-cene/ (redirects on old site)
+/hr/o-nama/ (redirects on old site)
+/hr/opci-uvjeti-poslovanja/
+/me/djakuzi-spa-kade-i-cene/ (redirects on old site)
+/me/o-nama/ (redirects on old site)
+/me/opsti-uslovi-poslovanja/
+/al/xhakuzi-vaska-spa-dhe-cmime/ (redirects on old site)
+/al/rreth-nesh/ (redirects on old site)
+/al/kushtet-e-pergjithshme-te-biznesit/

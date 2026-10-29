@@ -122,6 +122,7 @@ const orgLd = {
   openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] },
   knowsLanguage: available.map((l) => meta(l).htmlLang),
 };
+import { seoLive } from '../data/seo';
 ---
 <!doctype html>
 <html lang={meta(lang).htmlLang}>
@@ -133,6 +134,7 @@ const orgLd = {
     try { var d = document.documentElement, th = localStorage.getItem('theme'), tx = localStorage.getItem('text'); if (th && th !== 'light') d.dataset.theme = th; if (tx) d.dataset.text = tx; } catch (e) {}
   </script>
   <title>{title}</title>
+  {!seoLive && <meta name="robots" content="noindex, nofollow" />}
   {description && <meta name="description" content={description} />}
   <link rel="canonical" href={canonical} />
   {langList.map((l) => <link rel="alternate" hreflang={meta(l).hreflang} href={new URL(alt[l], Astro.site)} />)}

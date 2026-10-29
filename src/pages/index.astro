@@ -2,6 +2,7 @@
 // Root: send visitors to their language by browser settings. An explicit choice from the language menu (localStorage) wins.
 // Server-side IP detection can replace this later.
 import { available, langNames, meta } from '../i18n';
+import { seoLive } from '../data/seo';
 const codes = JSON.stringify(available);
 ---
 <!doctype html>
@@ -10,6 +11,7 @@ const codes = JSON.stringify(available);
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Favorit SPA</title>
+  {!seoLive && <meta name="robots" content="noindex, nofollow" />}
   <link rel="canonical" href="https://www.favoritspa.com/en/" />
   {available.map((l) => <link rel="alternate" hreflang={meta(l).hreflang} href={`https://www.favoritspa.com/${l}/`} />)}
   <script is:inline define:vars={{ codes }}>
