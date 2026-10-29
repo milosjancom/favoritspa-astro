@@ -1,0 +1,22 @@
+---
+import Site from '../../layouts/Site.astro';
+import { company } from '../../data/site';
+import { alts, fill, meta, persons as personsOf, route, t, type Lang, type RouteKey, url } from '../../i18n';
+interface Props { lang: Lang; key: RouteKey }
+const { lang, key } = Astro.props;
+const tr = t(lang);
+const title = tr(`nav.${key}` as any) as string;
+const alt = alts(key);
+const lg = meta(lang).legacy;
+const legacy = lg === 'sr' ? `${company.legacy}/sr/${route('sr', key)}/` : `${company.legacy}/${lg}/`;
+---
+<Site lang={lang} title={`${title} | Favorit SPA`} alt={alt}>
+  <section class="wrap ph">
+    <h1 class="h1">{title}</h1>
+    <p class="lede">{tr('info.soon')}</p>
+    <a class="btn" href={legacy}>{tr('info.current')}</a>
+  </section>
+</Site>
+<style>
+  .ph { padding-block: clamp(150px, 18vw, 220px) clamp(80px, 10vw, 140px); display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+</style>

@@ -1,0 +1,131 @@
+---
+// Catalogue: the PDF is sent by e-mail after the visitor leaves an address (lead capture), never linked directly.
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Site from '../../layouts/Site.astro';
+import Icon from '../Icon.astro';
+import { company } from '../../data/site';
+import { WP } from '../../data/img';
+import { alts, locale, t, url, type Lang, type RouteKey } from '../../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = t(lang);
+type B = { title: string; metaTitle: string; metaDesc: string; lead: string; points: string[]; formH: string; name: string; email: string; consent: string; privacy: string; submit: string; sending: string; doneH: string; doneP: string; error: string; invalid: string };
+const B = ((locale(lang) as any).brochure ?? (locale('en') as any).brochure) as B;
+const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order);
+const cover = products.find((p) => p.data.slug === 'zen')!.data;
+const inner = products.find((p) => p.data.slug === 'eden')!.data;
+const plans = products.slice(0, 4).map((p) => p.data.plan);
+const year = new Date().getFullYear();
+const text = JSON.stringify({ sending: B.sending, submit: B.submit, doneP: B.doneP, error: B.error, invalid: B.invalid });
+---
+<Site lang={lang} title={B.metaTitle} description={B.metaDesc} alt={alts('brochure' as RouteKey)}>
+  <section class="wrap bro">
+    <div class="b-copy">
+      <h1 class="h1 rv in">{B.title}</h1>
+      <p class="lede rv in" style="--rd:.1s">{B.lead}</p>
+      <ul class="pts">{B.points.map((p) => <li><Icon name="check" />{p}</li>)}</ul>
+
+      <form class="b-form" data-lead data-endpoint={company.leadEndpoint} data-lang={lang} data-text={text} novalidate>
+        <h2 class="label">{B.formH}</h2>
+        <div class="row2">
+          <div class="field"><label for="b-name">{B.name}</label><input id="b-name" name="name" autocomplete="name" /></div>
+          <div class="field"><label for="b-email">{B.email} *</label><input id="b-email" name="email" type="email" autocomplete="email" required /></div>
+        </div>
+        <label class="consent"><input type="checkbox" name="consent" required /><span>{B.consent}</span></label>
+        <p class="small muted"><a href={url(lang, 'privacy' as RouteKey)}>{B.privacy}</a></p>
+        <p class="err" data-err hidden></p>
+        <button class="btn btn-ink" type="submit" data-submit><Icon name="mail" /><span>{B.submit}</span></button>
+      </form>
+      <div class="done" data-done hidden>
+        <span class="d-ic"><Icon name="envelope-simple" /></span>
+        <h2 class="h2">{B.doneH}</h2>
+        <p class="lede" data-done-p></p>
+      </div>
+    </div>
+
+    <div class="b-visual" aria-hidden="true">
+      <div class="page p3"><div class="plans">{plans.map((p) => <Image src={p} alt="" width={240} format="webp" quality={80} />)}</div></div>
+      <div class="page p2"><Image src={inner.hero} alt="" {...WP([720])} format="webp" quality={74} /><span class="p2-cap">{inner.name}</span></div>
+      <div class="page p1">
+        <Image src={cover.hero} alt="" {...WP([900])} format="webp" quality={74} />
+        <div class="p1-shade"></div>
+        <div class="p1-copy"><span class="p1-logo">FAVORIT SPA</span><span class="p1-t">{B.title}</span><span class="p1-y">{year}</span></div>
+      </div>
+    </div>
+  </section>
+</Site>
+<script>
+  document.querySelectorAll<HTMLFormElement>('[data-lead]').forEach((form) => {
+    const T = JSON.parse(form.dataset.text || '{}');
+    const err = form.querySelector<HTMLElement>('[data-err]')!;
+    const btn = form.querySelector<HTMLButtonElement>('[data-submit]')!;
+    const done = form.parentElement!.querySelector<HTMLElement>('[data-done]')!;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const f = new FormData(form);
+      const email = String(f.get('email') || '').trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || !f.get('consent')) { err.textContent = T.invalid; err.hidden = false; return; }
+      err.hidden = true; btn.disabled = true; btn.querySelector('span')!.textContent = T.sending;
+      const payload = { email, name: String(f.get('name') || '').trim(), lang: form.dataset.lang, source: 'catalogue', consent: true, page: location.href };
+      try {
+        const ep = form.dataset.endpoint;
+        if (ep) {
+          const r = await fetch(ep, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+          if (!r.ok) throw new Error(String(r.status));
+        } else {
+          await new Promise((res) => setTimeout(res, 700)); // preview: no backend yet
+        }
+        form.hidden = true;
+        done.querySelector('[data-done-p]')!.textContent = T.doneP.replace('{email}', email);
+        done.hidden = false;
+      } catch {
+        err.textContent = T.error; err.hidden = false; btn.disabled = false; btn.querySelector('span')!.textContent = T.submit;
+      }
+    });
+  });
+</script>
+<style>
+  .bro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 100px); align-items: center; padding-block: clamp(140px, 16vw, 200px) clamp(80px, 10vw, 140px); }
+  .b-copy { display: flex; flex-direction: column; gap: 22px; }
+  .b-copy .lede { margin: 0; color: var(--ink); max-width: 32em; }
+  .pts { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .pts li { display: flex; gap: 12px; align-items: center; }
+  .pts :global(svg) { width: 18px; height: 18px; color: var(--accent); flex: none; }
+  .b-form { margin-top: 10px; padding: clamp(22px, 3vw, 34px); background: var(--stone); border-radius: 4px; display: flex; flex-direction: column; gap: 14px; }
+  .label { font: 400 0.85rem/1.3 var(--sans); color: var(--soft); margin: 0; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label { font-size: 0.85rem; }
+  input:not([type='checkbox']) { font: 300 1rem/1.4 var(--sans); color: var(--ink); padding: 12px 14px; border: 1px solid var(--field-line); border-radius: 2px; background: var(--field); width: 100%; }
+  input:focus { outline: 2px solid var(--ink); outline-offset: 0; }
+  .consent { display: flex; gap: 12px; align-items: flex-start; font-size: 0.9rem; line-height: 1.5; cursor: pointer; }
+  .consent input { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--accent); flex: none; }
+  .b-form .small { margin: 0; }
+  .b-form[hidden], .done[hidden] { display: none; }
+  .err { margin: 0; color: #b4483a; font-size: 0.9rem; }
+  .b-form .btn { align-self: flex-start; }
+  .done { padding: clamp(26px, 3vw, 40px); background: var(--stone); border-radius: 4px; display: flex; flex-direction: column; gap: 12px; }
+  .done .lede { margin: 0; color: var(--ink); }
+  .d-ic { display: inline-grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: color-mix(in srgb, var(--accent) 16%, transparent); }
+  .d-ic :global(svg) { width: 26px; height: 26px; color: var(--accent); }
+
+  .b-visual { position: relative; aspect-ratio: 1 / 1.05; perspective: 1600px; }
+  .page { position: absolute; width: 62%; aspect-ratio: 210 / 297; background: #fff; border-radius: 3px; overflow: hidden; box-shadow: 0 30px 60px rgb(0 0 0 / 0.22), 0 2px 6px rgb(0 0 0 / 0.08); transition: transform 0.8s cubic-bezier(.2,.7,.2,1); }
+  .page :global(img) { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .p1 { left: 8%; top: 6%; transform: rotate(-6deg); z-index: 3; }
+  .p2 { left: 26%; top: 3%; transform: rotate(3deg); z-index: 2; }
+  .p3 { left: 36%; top: 12%; transform: rotate(10deg); z-index: 1; padding: 10%; background: #f4efe7; }
+  .b-visual:hover .p1 { transform: rotate(-9deg) translate(-4%, -1%); }
+  .b-visual:hover .p3 { transform: rotate(13deg) translate(5%, 2%); }
+  .p1-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgb(0 0 0 / 0.45), transparent 40%, transparent 60%, rgb(0 0 0 / 0.45)); }
+  .p1-copy { position: absolute; inset: 7% 8%; display: flex; flex-direction: column; color: #fff; }
+  .p1-logo { font-size: clamp(0.8rem, 1.2vw, 1.05rem); letter-spacing: 0.22em; }
+  .p1-t { margin-top: auto; font-size: clamp(1.8rem, 3.2vw, 2.8rem); font-weight: 300; line-height: 1; }
+  .p1-y { font-size: 0.9rem; opacity: 0.85; margin-top: 6px; }
+  .p2-cap { position: absolute; left: 8%; bottom: 6%; color: #fff; font-size: 1.2rem; text-shadow: 0 1px 10px rgb(0 0 0 / 0.4); }
+  .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; height: 100%; align-content: center; }
+  .plans :global(img) { height: auto; object-fit: contain; }
+  @media (max-width: 860px) { .bro { grid-template-columns: 1fr; } .b-visual { order: -1; max-width: 460px; width: 100%; margin-inline: auto; } .row2 { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) { .page { transition: none; } }
+</style>

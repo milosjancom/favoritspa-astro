@@ -1,0 +1,938 @@
+{
+  "meta": {
+    "name": "Slovenščina",
+    "htmlLang": "sl",
+    "hreflang": "sl",
+    "locale": "sl-SI",
+    "legacy": "sl"
+  },
+  "persons": {
+    "one": "{n} oseba",
+    "two": "{n} osebi",
+    "few": "{n} osebe",
+    "other": "{n} oseb"
+  },
+  "values": {
+    "approx": "pribl.",
+    "hp": "KM",
+    "decimal": ",",
+    "upTo": "do"
+  },
+  "routes": {
+    "models": "masazni-bazeni",
+    "features": "lastnosti",
+    "maintenance": "vzdrzevanje",
+    "contact": "kontakt",
+    "quote": "povprasevanje",
+    "gallery": "galerija",
+    "reviews": "mnenja",
+    "faq": "pogosta-vprasanja",
+    "about": "o-nas",
+    "terms": "pogoji-poslovanja",
+    "support": "podpora",
+    "docs": "dokumentacija",
+    "why": "zakaj-favorit-spa",
+    "privacy": "politika-zasebnosti",
+    "control": "krmilni-sistem",
+    "brochure": "katalog"
+  },
+  "ui": {
+    "nav.models": "Masažni bazeni",
+    "nav.features": "Lastnosti",
+    "nav.maintenance": "Vzdrževanje",
+    "nav.contact": "Kontakt",
+    "nav.quote": "Pošljite povpraševanje",
+    "nav.gallery": "Galerija",
+    "nav.reviews": "Mnenja",
+    "nav.faq": "Pogosta vprašanja",
+    "nav.about": "O nas",
+    "nav.brochure": "Katalog",
+    "nav.control": "Krmilni sistem",
+    "nav.terms": "Pogoji poslovanja",
+    "nav.menu": "Meni",
+    "nav.lang": "Jezik",
+    "cta": "Pošljite povpraševanje",
+    "call": "Pokličite",
+    "from": "od",
+    "jets": "šob",
+    "view": "Ogled modela",
+    "skip": "Na vsebino",
+    "home.title": "Favorit SPA – masažni bazeni malega evropskega proizvajalca",
+    "home.desc": "Favorit SPA izdeluje masažne bazene: sedem modelov za 2 do 6 oseb, robotizirana proizvodnja in trideset let izkušenj.",
+    "home.intro": "Mali evropski proizvajalec masažnih bazenov. Robotizirana proizvodnja, skrb za vsako podrobnost in trideset let izkušenj.",
+    "home.models": "Modeli",
+    "lineup.h": "Vseh sedem modelov v enakem merilu",
+    "lineup.p": "Vsak bazen je prikazan od zgoraj v enakem merilu. Primerjajte jih, preden izmerite teraso.",
+    "offers.h": "Akcijske cene",
+    "offers.p": "Do razprodaje zalog, za paket opreme, naveden ob vsakem modelu.",
+    "offers.model": "Model",
+    "maker.h": "Mali evropski proizvajalec",
+    "maker.visit": "Razstavni salon in proizvodnja sta za obiskovalce odprta od ponedeljka do sobote.",
+    "maker.cta": "Dogovorite se za obisk",
+    "footer.tag": "Masažni bazeni. Mali evropski proizvajalec, trideset let izkušenj.",
+    "footer.note": "Slike so simbolične; oprema je odvisna od paketa.",
+    "footer.catalog": "Katalog (PDF)",
+    "models.title": "Masažni bazeni in cene",
+    "models.lead": "Sedem modelov v treh linijah. Vsak je na voljo v dveh ali treh paketih opreme, ki se razlikujejo po šobah, črpalkah in dodatkih.",
+    "models.packages": "Paketi",
+    "model.dims": "Mere",
+    "model.colors": "Barve akrila",
+    "model.cladding": "Obloga kadi",
+    "model.photo": "Fotografija",
+    "model.saleNote": "Akcijska cena do razprodaje zalog.",
+    "model.included": "Vključeno",
+    "model.inquire": "Pošljite povpraševanje za",
+    "model.yes": "vključeno",
+    "model.gallery": "Galerija",
+    "model.item": "Postavka",
+    "quote.title": "Pošljite povpraševanje",
+    "quote.lead": "Izberite model in paket, pustite svoje podatke in poslali vam bomo ponudbo. Še niste prepričani? Opišite prostor in pomagali vam bomo izbrati.",
+    "quote.steps": [
+      "Izberite model in paket",
+      "Pustite podatke in nekaj besed o prostoru",
+      "Odgovorimo vam s ponudbo"
+    ],
+    "quote.model": "Model",
+    "quote.email": "E-pošta",
+    "quote.contactAlt": "Bi raje govorili? Pokličite nas ali obiščite stran s kontakti.",
+    "contact.toQuote": "Za ponudbo za določen model pošljite povpraševanje.",
+    "contact.title": "Kontakt",
+    "contact.lead": "Pokličite nas, pišite nam ali obiščite razstavni salon in proizvodnjo, od ponedeljka do sobote.",
+    "contact.address": "Naslov",
+    "contact.msgPh": "Na primer, kje bo stal bazen in kdaj ga potrebujete",
+    "contact.sendNote": "Vaše povpraševanje se odpre kot e-sporočilo v vašem poštnem programu, naslovljeno na",
+    "info.soon": "Ta stran bo dodana v naslednji fazi nove spletne strani.",
+    "info.current": "Odprite trenutno različico",
+    "nav.support": "Center za podporo",
+    "nav.docs": "Dokumentacija",
+    "model.equipment": "Oprema in specifikacije",
+    "model.equipLead": "Vse, kar ima bazen, razvrščeno v skupine in primerjano po paketih.",
+    "model.groups": {
+      "specs": "Tehnični podatki",
+      "massage": "Masaža",
+      "water": "Čista voda",
+      "control": "Upravljanje in energija",
+      "light": "Svetloba, zvok in vonj",
+      "comfort": "Pokrivala, udobje in servis",
+      "build": "Ogrodje in izolacija",
+      "finish": "Zaključna obdelava"
+    },
+    "model.installs": "Pri naših strankah",
+    "model.installsLead": "Fotografije lastnikov, od jadranskih teras do gorskih koč.",
+    "model.tech": "Tehnologija v tem bazenu",
+    "model.techMore": "Vse lastnosti",
+    "reach.h": "Od Švedske do Grčije",
+    "reach.p": "Izdelane za oba konca Evrope. PU izolacija (30 mm za hladnejša območja) in termo pokrov po meri ohranjata toploto skozi švedsko zimo, ozon, UV-luč in krmiljenje Gecko pa ohranjajo vodo čisto skozi grško poletje. Obloga Sinter Wood prenese mraz, morski zrak in sonce, brez kakršnega koli vzdrževanja.",
+    "reach.stats": [
+      [
+        "30",
+        "let izdelovanja masažnih bazenov"
+      ],
+      [
+        "7",
+        "modelov za 2 do 6 oseb"
+      ],
+      [
+        "11",
+        "držav, kjer uživajo v naših bazenih"
+      ]
+    ],
+    "reach.countries": [
+      "Švedska",
+      "Nemčija",
+      "Avstrija",
+      "Madžarska",
+      "Slovenija",
+      "Hrvaška",
+      "Bosna in Hercegovina",
+      "Srbija",
+      "Črna gora",
+      "Albanija",
+      "Grčija"
+    ],
+    "footer.big": "Masažni bazeni, izdelani s skrbjo, za trenutke, ki si jih velja zapomniti.",
+    "footer.models": "Masažni bazeni",
+    "footer.visitNote": "Razstavni salon in proizvodnja, od ponedeljka do sobote",
+    "support.title": "Center za podporo",
+    "support.lead": "Ob vas smo tudi po dostavi. Vzdrževanje, garancija, pogoji za namestitev in servisne zahteve, vse na enem mestu.",
+    "support.cards": [
+      [
+        "wrench",
+        "Vzdrževanje",
+        "Voda, filtri in zimski način, korak za korakom.",
+        "maintenance"
+      ],
+      [
+        "question",
+        "Pogosta vprašanja",
+        "Najpogostejša vprašanja pred nakupom in po njem.",
+        "faq"
+      ],
+      [
+        "file-pdf",
+        "Dokumentacija",
+        "Tehnične risbe, katalog in podatki za namestitev.",
+        "docs"
+      ],
+      [
+        "headset",
+        "Servisna zahteva",
+        "Opišite težavo in hitro vam bomo odgovorili.",
+        "#servis"
+      ]
+    ],
+    "support.warranty": "Garancija",
+    "support.warrantyRows": [
+      [
+        "Zasebna uporaba",
+        "24 mesecev od dostave"
+      ],
+      [
+        "Poslovna uporaba (hoteli, wellness centri, oddaja)",
+        "12 mesecev od dostave"
+      ]
+    ],
+    "support.warrantyNote": "Garancija velja za vse vgrajene komponente. Servis in rezervni deli so na voljo tudi po izteku garancije. Filtri in sredstva za nego vode niso vključeni.",
+    "support.max": "Servis MAX 72h",
+    "support.maxP": "S servisnim paketom MAX pride naš serviser v 72 urah od vašega klica, po potrebi z rezervnimi deli.",
+    "support.prep": "Pred namestitvijo",
+    "support.prepList": [
+      "Ravna, nosilna betonska podlaga, približno 40 % večja od bazena, da je dostopen z vseh strani.",
+      "Napajalni kabel 3×2,5 mm² ali 5×2,5 mm², odvisno od modela, približno 4 m od mesta, kjer bo stal bazen.",
+      "Zaščitno stikalo na diferenčni tok (RCD) in varovalke po specifikaciji. Priključitev mora izvesti pooblaščeni električar.",
+      "Vodovodna napeljava ni potrebna: bazen napolnite z vrtno cevjo in ga izpraznite skozi vgrajeni ventil.",
+      "Filter zamenjajte vsaj enkrat na leto."
+    ],
+    "support.form": "Servisna zahteva",
+    "support.formLead": "Navedite model in opišite, kaj se dogaja. E-sporočilu, ki se odpre, lahko priložite fotografije.",
+    "support.year": "Leto nakupa",
+    "support.issuePh": "Na primer, sporočilo na zaslonu, od kdaj se pojavlja in kaj ste že poskusili",
+    "docs.title": "Dokumentacija",
+    "docs.lead": "Tehnične risbe, podatki za namestitev in katalog, na enem mestu.",
+    "docs.models": "Podatki za namestitev",
+    "docs.cols": [
+      "Model",
+      "Mere",
+      "Prostornina",
+      "Teža, prazen",
+      "Napajanje",
+      "Risba"
+    ],
+    "docs.general": "Splošni dokumenti",
+    "docs.pdf": "PDF",
+    "docs.weightNote": "Teža in napajanje sta odvisna od paketa; razpon sega od osnovnega do najvišjega paketa.",
+    "countries": {
+      "Serbia": "Srbija",
+      "Montenegro": "Črna gora",
+      "Bosnia": "Bosna in Hercegovina",
+      "Croatia": "Hrvaška"
+    },
+    "offers.pkg": "Paket",
+    "offers.was": "Redna cena",
+    "offers.now": "Akcijska cena",
+    "offers.save": "prihranek",
+    "model.persons": "Sedeži",
+    "model.jets": "Šobe",
+    "model.price": "Cena",
+    "model.packages": "Paketi opreme",
+    "model.choose": "Izberite paket",
+    "model.jetsLine": "vodnih in zračnih šob",
+    "model.notIncluded": "Ni vključeno",
+    "model.opt": "doplačilo",
+    "model.no": "ni na voljo",
+    "model.drawing": "Tehnična risba (PDF)",
+    "model.others": "Drugi modeli",
+    "quote.pkg": "Paket",
+    "quote.any": "Še ne vem",
+    "quote.you": "Vaši podatki",
+    "quote.place": "Kam bo postavljen bazen",
+    "quote.places": [
+      "Terasa",
+      "Vrt",
+      "Strešna terasa",
+      "Notranji prostor"
+    ],
+    "contact.phone": "Telefon",
+    "contact.email": "E-pošta",
+    "contact.map": "Odprite zemljevid",
+    "contact.name": "Ime in priimek",
+    "contact.tel": "Telefon",
+    "contact.city": "Kraj",
+    "contact.msg": "Sporočilo",
+    "contact.send": "Pošljite povpraševanje",
+    "footer.explore": "Raziščite",
+    "footer.help": "Pomoč",
+    "footer.visit": "Obiščite nas",
+    "support.issue": "Kaj se dogaja",
+    "lineup.topView": "pogled od zgoraj",
+    "gallery.photo": "fotografija",
+    "gallery.gallery": "galerija",
+    "gallery.close": "Zapri",
+    "gallery.prev": "Prejšnja",
+    "gallery.next": "Naslednja",
+    "contact.hours": "Razstavni salon in proizvodnja: od ponedeljka do sobote",
+    "country": "Srbija",
+    "model.metaDesc": "Masažni bazen {name} za {persons}, {dims}, do {jets} šob. Od {price}.",
+    "features.lead": "Kaj je v vsakem bazenu Favorit: preizkušene komponente, večinoma znamke Gecko, in podrobnosti, za katere poskrbimo sami.",
+    "features.count": "lastnosti",
+    "features.end": "Katere lastnosti prinaša posamezni paket, je navedeno na strani vsakega modela.",
+    "docs.generalList": [
+      "Katalog Favorit SPA",
+      "Pogoji poslovanja",
+      "Navodila za vzdrževanje",
+      "Pogoji za namestitev in garancija"
+    ],
+    "mail.quote": {
+      "subject": "Povpraševanje",
+      "labels": [
+        "Ime",
+        "E-pošta",
+        "Telefon",
+        "Kraj",
+        "Model",
+        "Paket",
+        "Lokacija"
+      ]
+    },
+    "mail.service": {
+      "subject": "Servisna zahteva",
+      "labels": [
+        "Ime",
+        "Telefon",
+        "Model",
+        "Leto nakupa",
+        "Kraj"
+      ]
+    },
+    "home.prev": "Prejšnji model",
+    "home.next": "Naslednji model",
+    "home.craftAlt": "Školjka modela Pearl, studijska fotografija",
+    "nav.closeShort": "Zapri",
+    "settings.title": "Prikaz",
+    "settings.theme": "Tema",
+    "settings.light": "Svetla",
+    "settings.dark": "Temna",
+    "settings.auto": "Samodejno",
+    "settings.text": "Velikost besedila",
+    "settings.smaller": "Običajno besedilo",
+    "settings.larger": "Večje besedilo",
+    "settings.largest": "Največje besedilo",
+    "nav.guide": "Navodila za uporabo",
+    "support.guideCard": "Korak za korakom, od polnjenja do zime, na enem mestu.",
+    "about.ctaQuote": "Pošljite povpraševanje",
+    "nav.why": "Zakaj Favorit SPA",
+    "nav.privacy": "Politika zasebnosti",
+    "nav.groupHelp": "Podpora",
+    "nav.groupStory": "Naša zgodba",
+    "nav.helpIntro": "Z vami smo tudi po dobavi: navodila, dokumentacija in servis na enem mestu.",
+    "nav.storyIntro": "Majhen evropski proizvajalec iz Šabca. Trideset let izdelujemo masažne bazene, na vaš klic pa odgovorijo isti ljudje, ki jih izdelujejo."
+  },
+  "products": {
+    "eden": {
+      "tagline": "navdih za šest",
+      "description": "Krog: zaporedje in neprekinjenost, kot življenje samo. Eden sprejme šest oseb v okroglo školjko, tako da so vsi obrnjeni drug k drugemu. Uživajte v njem brez konca, z najbližjimi.",
+      "claim": "Šest sedežev v krogu, iz oči v oči. Eden je narejen za družino, prijatelje in dolge pogovore pod zvezdami."
+    },
+    "fusion": {
+      "tagline": "vse, kar potrebujete, v ravnovesju",
+      "description": "Zlitje vsega, kar potrebujete: prostora, uporabnosti, lepote in ravno prave mere. Fusion je drugo ime za ravnovesje.",
+      "claim": "Dva ležalnika in dva sedeža v kompaktnem kvadratu. Vse, kar potrebujete, nič odvečnega."
+    },
+    "garden": {
+      "tagline": "wellness na prostem",
+      "description": "Garden vam omogoča, da se trenutku povsem prepustite. Čas se ustavi in postane kratek oddih daleč od mestnega hrupa, z wellnessom za šest.",
+      "claim": "Največji v ponudbi: šest sedežev, močne črpalke in masaža celega telesa. Garden spremeni dvorišče v zasebni wellness."
+    },
+    "melody": {
+      "tagline": "toliko v nečem, kar je videti majhno",
+      "description": "Toliko doživetij v nečem, kar je le na videz majhno. Nič tako kompaktnega ne ponuja toliko užitka. Prava Melody.",
+      "claim": "Za dva, za majhne terase in velike trenutke. Melody se prilega tja, kamor drugi bazeni ne."
+    },
+    "pearl": {
+      "tagline": "pogled proti istemu obzorju",
+      "description": "Bližina in intimnost, medtem ko oba gledata proti istemu obzorju. Bi lahko bilo lepše? Potrebujemo več?",
+      "claim": "Narejen za dva, s prostorom za gosta. Ležalnik, tiha masaža in isto obzorje."
+    },
+    "point": {
+      "tagline": "izhodišče",
+      "description": "Izhodišče za druženje. Hitro, preprosto in vaš prvi korak v svet wellnessa.",
+      "claim": "Najkrajša pot do lastnega wellnessa. Štirje sedeži, preprosto upravljanje in lahek prvi korak."
+    },
+    "zen": {
+      "tagline": "prostor za izbiro, prostor za želje",
+      "description": "Prostor za izbiro in prostor za želje. Potopite se, prisluhnite, kaj potrebujete, in prepustite vodi, da naredi ostalo. Menjajte sedeže, dokler ne najdete pravega. Bodite ZEN.",
+      "claim": "Pet sedežev, ležalnik in prostor, da vsak najde svoje mesto. Zen je bazen, v katerem se večeri kar sami podaljšajo."
+    }
+  },
+  "labels": {
+    "Aero mlaznice (komada)": "Zračne šobe (kos)",
+    "Aero mlaznice set": "Komplet zračnih šob",
+    "Aero pumpa": "Zračna črpalka",
+    "Antibakterijski filter": "Antibakterijski filter",
+    "Aromaterapija": "Aromaterapija",
+    "Blue energy block": "Blue energy block",
+    "Broj mesta": "Sedeži",
+    "Cirada": "Zaščitna ponjava",
+    "Cirkulaciona pumpa": "Obtočna črpalka",
+    "Dodatni grejač 3kW": "Dodatni grelnik 3 kW",
+    "Drenažni ventil": "Izpustni ventil",
+    "Elektronska kontrola": "Krmilni sistem",
+    "Fiberglas omotač": "Ojačitev s steklenimi vlakni",
+    "Grejač": "Grelnik",
+    "HDS okvir stiren visoke gustine": "Okvir HDS iz stirena visoke gostote",
+    "Hidro mlaznice (komada)": "Vodne šobe (kos)",
+    "Hidro mlaznice kombo (set)": "Kombinirane vodne šobe (komplet)",
+    "Hidro pumpa 2ks (komada)": "Vodna črpalka 2 KM (kos)",
+    "Hidro pumpa 3ks (komada)": "Vodna črpalka 3 KM (kos)",
+    "Hromoterapija": "Kromoterapija",
+    "Jastuk (set)": "Vzglavniki (komplet)",
+    "Kontrolni blok": "Krmilna enota",
+    "Led mini lampe": "LED mini lučke",
+    "Low water level": "Senzor nizkega nivoja vode",
+    "Magma mlaznice (4 komada)": "Šobe Magma (4 kos)",
+    "Materijal lica": "Material školjke",
+    "Metal konstrukcija": "Kovinsko ogrodje",
+    "Music system": "Glasbeni sistem",
+    "Ozonoterapija": "Ozonska obdelava",
+    "PEARL-WHITE finish": "Obdelava PEARL-WHITE",
+    "PURE-WHITE finish": "Obdelava PURE-WHITE",
+    "Pametno led svetlo": "Pametna LED luč",
+    "Parna membrana": "Parna zapora",
+    "Polar izolacija 10mm": "Izolacija Polar 10 mm",
+    "Polar izolacija 30mm": "Izolacija Polar 30 mm",
+    "Potrebna snaga": "Napajanje",
+    "SILVER-PLATINUM finish": "Obdelava SILVER-PLATINUM",
+    "SMF snažan metalni ram": "Močan kovinski okvir SMF",
+    "SPA kontola GECKO IN.K.1000": "Upravljanje GECKO in.k1000",
+    "Sedeća mesta / Ležeća mesta": "Sedeži / ležalniki",
+    "Servis 72h": "Servis 72h",
+    "Sigurnosno monofazno napajanje": "Varno enofazno napajanje",
+    "Smartphone platforma": "Platforma za pametni telefon",
+    "Stepenice": "Stopnice",
+    "Svetleće hidro mlaznice": "Osvetljene vodne šobe",
+    "Svetleće mini mlaznice": "Osvetljene mini šobe",
+    "Temperaturni opseg upotrebe": "Temperaturno območje uporabe",
+    "Termo pokrivač": "Termo pokrov",
+    "Termo ventilacija": "Termo prezračevanje",
+    "Termo-stone finish": "Obdelava Termo-stone",
+    "Težina": "Teža",
+    "Thermostron omotač": "Izolacija Thermostron",
+    "UV lampa": "UV svetilka",
+    "Visoko led svetlo": "Visoka LED luč",
+    "Zapremina": "Prostornina",
+    "Zvučni sistem": "Zvočni sistem",
+    "Čist hemijski sistem": "Sistem za nego vode in.clear"
+  },
+  "featureGroups": {
+    "control": "Upravljanje",
+    "massage": "Masaža",
+    "water": "Čista voda",
+    "warmth": "Toplota in energija",
+    "build": "Ogrodje in obloga",
+    "experience": "Doživetje",
+    "service": "Servis"
+  },
+  "features": {
+    "spa-control": {
+      "t": "Krmilni sistem",
+      "d": "Elektronika so možgani vsakega masažnega bazena. Uporabljamo komponente kanadskega proizvajalca Gecko: preproste za uporabo, zanesljive in dolgotrajne. Upravljalne plošče segajo od in.k200 do in.k1000, odvisno od paketa."
+    },
+    "online": {
+      "t": "Spletna platforma 24/7",
+      "d": "Upravljajte bazen, ko vas ni doma. Vklopite ga s telefonom, nastavite temperaturo, črpalke in luči, in voda bo pripravljena, ko prispete."
+    },
+    "hydro-pump": {
+      "t": "Vodna črpalka",
+      "d": "Če je elektronika možgani, so črpalke srce. 2 ali 3 KM, nizka poraba in tiho delovanje."
+    },
+    "aero-pump": {
+      "t": "Zračna črpalka",
+      "d": "Zmogljiva črpalka z vgrajenim grelnikom dovaja topel zrak v vse zračne šobe. Masaža je prijetnejša, voda pa se manj ohlaja. Tudi deluje tiho."
+    },
+    "jets": {
+      "t": "Vodne in zračne šobe",
+      "d": "Šobe in upravljalni elementi so tisto, česar se dejansko dotikate, zato morajo biti dobro izdelani in lepi. Uporabljamo Geckovo kombinirano serijo, narejeno za vse vremenske razmere. Z njimi črpalke pokažejo vso svojo moč, pri tem pa delujejo skoraj neslišno."
+    },
+    "circulation": {
+      "t": "Obtočna črpalka",
+      "d": "Deluje neprekinjeno in poganja vso vodo skozi filter in grelnik, zato je bazen vedno pripravljen za uporabo."
+    },
+    "inclear": {
+      "t": "Nega vode in.clear",
+      "d": "Geckov sistem in.clear sprošča brom v vodo in odstranjuje bakterije, alge in organske snovi, za prijetno, sproščujočo vodo vsakič."
+    },
+    "ozone": {
+      "t": "Ozonski generator",
+      "d": "Kisik iz zraka pretvarja v ozon, ki doseže vsak del sistema in ohranja vodo kristalno čisto."
+    },
+    "filter": {
+      "t": "Antibakterijski filter",
+      "d": "Filter z aktivnim ogljem in zelo drobnimi odprtinami zadrži listje, travo in drobne nečistoče, ki padejo v vodo."
+    },
+    "uv": {
+      "t": "UV svetilka",
+      "d": "UV svetloba odstrani širok nabor bakterij, ki bi se sicer lahko naselile v vodi."
+    },
+    "water": {
+      "t": "Kakovost vode",
+      "d": "Cleanwater Blue ohranja vodo bistro in kemijsko uravnoteženo, brez vonja po kemikalijah in nežno do kože."
+    },
+    "heater": {
+      "t": "Grelnik",
+      "d": "Grelnik moči 3 kW, vgrajen v krmilno enoto, nastavljiv v korakih po 0,5 °C."
+    },
+    "insulation": {
+      "t": "Izolacija",
+      "d": "10 mm PU izolacija s plastjo aluminijaste folije zadržuje toploto, varčuje z energijo in ščiti komponente. Za hladnejša podnebja je na voljo različica 30 mm."
+    },
+    "cover": {
+      "t": "Termo pokrov",
+      "d": "Izdelan po meri iz PU pene visoke gostote, s termo folijo in prevleko iz umetnega usnja, odporno proti vlagi in UV-žarkom. Robovi so rahlo nagnjeni, da voda odteka."
+    },
+    "tarp": {
+      "t": "Zaščitna ponjava",
+      "d": "Vodoodporna ponjava po meri, ki skupaj s termo pokrovom ščiti bazen čez zimo."
+    },
+    "frame": {
+      "t": "Ogrodje",
+      "d": "Togo ogrodje, ki se ne zvija niti pri premikanju bazena in ne prenaša zvoka črpalk in elektronike. Na voljo je tudi okvir HDS iz stirena visoke gostote."
+    },
+    "cladding": {
+      "t": "Obloga",
+      "d": "Obloga Sinter Wood je videti kot les, a ne potrebuje vzdrževanja: kljubuje vremenu in udarcem ter duši zvok. V izvedbah Grey Wood in Rose Wood."
+    },
+    "stairs": {
+      "t": "Stopnice",
+      "d": "Nedrseče stopnice za enostaven in varen vstop, v več barvah."
+    },
+    "led": {
+      "t": "Pametna LED luč",
+      "d": "Bogat spekter barv spremeni mehurčke v igro svetlobe. Različica High Light ima kromiran obroč."
+    },
+    "aroma": {
+      "t": "Aromaterapija",
+      "d": "Izberite najljubši vonj za globljo sprostitev: cedra, citrusi, evkaliptus, breskev in drugi."
+    },
+    "sound": {
+      "t": "Zvočni sistem",
+      "d": "Hitro povezovanje prek Bluetootha, dober zvok in preprosta uporaba."
+    },
+    "service": {
+      "t": "Servis MAX 72h",
+      "d": "Okvare se nikoli ne napovejo. S tem servisnim paketom pride naš serviser v 72 urah od vašega klica, po potrebi z rezervnimi deli."
+    }
+  },
+  "tech": {
+    "spa-control": "Upravljanje Gecko",
+    "online": "Upravljanje s pametnim telefonom",
+    "hydro-pump": "Vodne črpalke 2–3 KM",
+    "aero-pump": "Ogrevana zračna črpalka",
+    "ozone": "Ozonski generator",
+    "uv": "UV svetilka",
+    "inclear": "in.clear",
+    "filter": "Antibakterijski filter",
+    "insulation": "Toplotna izolacija",
+    "led": "Pametna LED luč",
+    "aroma": "Aromaterapija",
+    "sound": "Zvok Bluetooth",
+    "service": "Servis MAX 72h"
+  },
+  "about": {
+    "title": "O podjetju Favorit SPA",
+    "metaTitle": "O Favorit SPA – proizvajalec masažnih bazenov, Šabac, Srbija",
+    "metaDesc": "Favorit SPA, Šabac, Srbija: mali evropski proizvajalec masažnih bazenov. 30 let izkušenj, sedem modelov za 2 do 6 oseb, deli Gecko in rezervni deli na zalogi.",
+    "lead": "Mali evropski proizvajalec masažnih bazenov iz Šabca v Srbiji. Že trideset let svoje bazene sami načrtujemo, izdelujemo, prodajamo in servisiramo, od prve skice do zadnjega rezervnega dela.",
+    "facts": [
+      [
+        "30",
+        "let izkušenj"
+      ],
+      [
+        "7",
+        "modelov v treh linijah"
+      ],
+      [
+        "2–6",
+        "oseb v bazenu"
+      ],
+      [
+        "24",
+        "mesecev garancije"
+      ],
+      [
+        "11",
+        "držav z našimi bazeni"
+      ],
+      [
+        "1",
+        "naslov: proizvodnja in razstavni salon v Šabcu"
+      ]
+    ],
+    "sections": [
+      {
+        "h": "Kdo smo",
+        "p": [
+          "Smo Favorit, družina inženirjev, oblikovalca in mojstrov, ki že tri desetletja v Šabcu izdelujemo masažne bazene. Vse poteka pod isto streho: načrtovanje, proizvodnja, prodaja in servis.",
+          "Recite mu masažni bazen, spa, jacuzzi ali whirlpool. Za nas je vedno isto: bazen, ki je dobro izdelan, udoben za sedenje, prijeten na dotik in močan, ko se vklopijo šobe."
+        ]
+      },
+      {
+        "h": "Kako jih izdelujemo",
+        "p": [
+          "Robotizirani stroji oblikujejo in obdelajo akrilne školjke vsakič z enako natančnostjo. Naša ekipa nato vsak bazen ročno ojača, izolira, ožiči in sestavi ter ga do zadnje podrobnosti preveri, preden zapusti delavnico.",
+          "Namenoma ostajamo majhni. Tako poznamo vsak bazen, ki ga izdelamo, in podrobnost spremenimo že isti dan, ko se naučimo kaj novega."
+        ]
+      },
+      {
+        "h": "Komponente, ki jim zaupamo",
+        "p": [
+          "Krmilniki, črpalke in šobe prihajajo od najbolj cenjenih imen v panogi, med njimi Gecko iz Kanade in Waterway. Izbiramo dele, ki so preprosti za uporabo, tihi in trpežni, da bazen deluje sam, vi pa v njem le uživate."
+        ]
+      },
+      {
+        "h": "Po nakupu",
+        "p": [
+          "Vsak rezervni del, ki ga morda potrebujete, je že na naših policah. Naročite do poldneva na delovni dan in naslednji dan bo na vašem naslovu.",
+          "Naši inženirji odgovarjajo po telefonu in prek videoklica, zato je večina vprašanj rešena v nekaj minutah. Vaš Favorit SPA naj bo vedno pripravljen na naslednji večer."
+        ]
+      },
+      {
+        "h": "Nizki stroški uporabe",
+        "p": [
+          "Energijsko varčne črpalke (razred A+) in grelniki (razred C), dobra izolacija in pokrov po meri ohranjajo račune nizke. Energija in filtri v povprečju vseh naših modelov stanejo približno 20 EUR na mesec, kar je okvirno cena enega espressa na dan."
+        ]
+      },
+      {
+        "h": "Kje so naši bazeni",
+        "p": [
+          "Bazeni Favorit grejejo terase na jadranski obali, koče v gorskih smučarskih središčih in vrtove po vsej Evropi, od Švedske do Grčije. S pravim paketom delujejo vse leto, v poletni vročini in v snegu."
+        ]
+      }
+    ],
+    "visit": {
+      "h": "Obiščite tovarno",
+      "p": "Oglejte si bazene v živo, sedite vanje in se pogovorite z ljudmi, ki jih izdelujejo. Razstavni salon in proizvodnja v Šabcu sta odprta od ponedeljka do sobote.",
+      "cta": "Dogovorite se za obisk"
+    },
+    "faqTitle": "Kratki odgovori",
+    "faq": [
+      [
+        "Kje izdelujejo masažne bazene Favorit?",
+        "V lastni proizvodnji v Šabcu v Srbiji, kjer imamo tudi razstavni salon. Favorit DOO masažne bazene izdeluje že 30 let."
+      ],
+      [
+        "Koliko časa zdrži masažni bazen Favorit?",
+        "Ob rednem vzdrževanju od 15 do 20 let. Filter redno čistite, enkrat na leto ga zamenjajte, bazen pa pravilno pripravite, če pozimi ni v uporabi."
+      ],
+      [
+        "Ali za namestitev potrebujem vodovodno napeljavo?",
+        "Ne. Potrebujete ravno betonsko podlago in napajalni kabel. Bazen napolnite z vrtno cevjo in ga izpraznite skozi vgrajeni ventil."
+      ],
+      [
+        "Koliko stane uporaba?",
+        "V povprečju približno 20 EUR na mesec za energijo in filtre, odvisno od modela, paketa in pogostosti uporabe."
+      ],
+      [
+        "Kakšno garancijo dajete?",
+        "24 mesecev za zasebno in 12 mesecev za poslovno uporabo, za vse vgrajene komponente. Servis in rezervni deli so na voljo tudi po izteku garancije."
+      ]
+    ]
+  },
+  "maintenance": {
+    "title": "Vzdrževanje",
+    "metaDesc": "Kako ohraniti čisto vodo v masažnem bazenu Favorit SPA: preprosta tedenska in mesečna rutina ter sredstva za nego vode, ki jih priporočamo, z odmerki.",
+    "lead": "Za čisto vodo potrebujete le nekaj minut na teden. Večino dela opravijo generator ozona, obtočna črpalka in filter; vi vodo testirate, dodate sredstva in sperete filter. Spodaj sta rutina in sredstva, ki jih uporabljamo in prodajamo tudi sami.",
+    "scheduleH": "Rutina",
+    "schedule": [
+      [
+        "Vsakič",
+        "Pred vstopom se oprhajte. Ko izstopite, zaprite in pritrdite pokrov."
+      ],
+      [
+        "Vsak teden",
+        "Preverite pH (7,2–7,4) in raven dezinfekcijskega sredstva. Dodajte DEWAN-20 P in ALGI-CID. Filter sperite s cevjo."
+      ],
+      [
+        "Vsak mesec",
+        "Vodo šokirajte z ALGA-SOKK P. Filter čez noč namočite v DINAX FILTER FIZZY P. Če opazite peno ali mastne sledi, dodajte BIOPOOL G."
+      ],
+      [
+        "Ob menjavi vode",
+        "Vsakih nekaj tednov, odvisno od uporabe. Pred praznjenjem očistite cevi z DINASAN P. Pri polnjenju s trdo vodo ali vodo iz vodnjaka dodajte DINAX METAL MAGIC F."
+      ],
+      [
+        "Vsako leto",
+        "Vstavite nov filter, preverite pokrov in pripravite bazen na zimo ali pa ga z ustreznim paketom pustite v obratovanju."
+      ]
+    ],
+    "volumeNote": "Spodnji odmerki veljajo za kubični meter (m³) vode. Bazeni Favorit držijo približno od 0,4 do 2,3 m³; prostornina posameznega modela je navedena na strani Dokumentacija.",
+    "productsH": "Sredstva, ki jih priporočamo",
+    "productsLead": "Profesionalna sredstva za nego vode, preizkušena in certificirana. Pri nas jih dobite skupaj z bazenom ali ob naslednjem naročilu.",
+    "labels": {
+      "use": "Čemu služi",
+      "dose": "Kako ga uporabljati"
+    },
+    "products": [
+      {
+        "id": "alga-sokk-p",
+        "name": "ALGA-SOKK® P",
+        "kind": "Granule za šok dezinfekcijo",
+        "use": "Občasna šok obdelava: ob prvem polnjenju, enkrat mesečno in preden začnete uporabljati DEWAN-20 P. Odstrani biofilm iz cevi in šob.",
+        "dose": "2–3 žlice v poln bazen. Črpalke večkrat zaženite za več kot 10 minut. Pustite delovati vsaj 2 uri. Ko iz šob ne prihaja več biofilm, bazen izpraznite, sperite in ponovno napolnite."
+      },
+      {
+        "id": "dewan-20-p",
+        "name": "DEWAN®-20 P",
+        "kind": "Granule za dezinfekcijo brez klora",
+        "use": "Vsakodnevna dezinfekcija brez klora. Deluje 3 ure po odmerjanju in ohranja vodo čisto med šok obdelavami.",
+        "dose": "Vzdržujte 3–5 mg/l in to preverjajte s testnimi lističi DEWAN-20. Dodajte enkrat na teden, raztopljeno v vodi, skupaj z ALGI-CID. pH naj bo med 7,2 in 7,4."
+      },
+      {
+        "id": "algi-cid",
+        "name": "ALGI-CID",
+        "kind": "Tekoče sredstvo proti algam",
+        "use": "Preprečuje zelene in temne alge, motno vodo, neprijeten vonj in zamašene filtre. Deluje pri vsakem pH, je biorazgradljivo in se ne peni.",
+        "dose": "Prvi odmerek ob novem polnjenju, nato manjši tedenski odmerek skupaj z dezinfekcijskim sredstvom, kot je navedeno na etiketi."
+      },
+      {
+        "id": "dinax-minus-p",
+        "name": "DINAX® MINUS P",
+        "kind": "Granule za zniževanje pH",
+        "use": "Vrne pH na 7,2–7,4, kjer dezinfekcijska sredstva delujejo najbolje.",
+        "dose": "Približno 0,1 kg na m³ vode, raztopljeno. Pred dodajanjem večje količine ponovno preverite pH. Nosite rokavice in zaščitna očala."
+      },
+      {
+        "id": "biopool-g",
+        "name": "BIOPOOL G",
+        "kind": "Encimski gel",
+        "use": "Razgrajuje maščobe, sluz in biofilm, zmanjšuje peno in pomaga filtru. Ni strupen in je biorazgradljiv; polni učinek doseže v enem mesecu.",
+        "dose": "Ob prvi uporabi 20 ml na m³, nato 10 ml na m³ enkrat na teden, v predel s filtrom."
+      },
+      {
+        "id": "dinasan-p",
+        "name": "DINASAN P",
+        "kind": "Sredstvo za čiščenje in dezinfekcijo cevi",
+        "use": "Očisti in dezinficira cevi in šobe, do katerih ne sežete: biofilm, olja, milo in maščobe, ki povzročajo peno.",
+        "dose": "Pred praznjenjem: 250 g na m³ v predel s filtrom. Pustite krožiti 5 minut, ustavite, pustite 2 uri, ponovno zaženite kroženje, nato izpraznite in sperite."
+      },
+      {
+        "id": "dinax-metal-magic",
+        "name": "DINAX® METAL MAGIC F",
+        "kind": "Stabilizator vodnega kamna in kovin",
+        "use": "Preprečuje vodni kamen in rjave madeže zaradi železa, na primer če bazen polnite iz vodnjaka ali imate trdo vodo.",
+        "dose": "30–50 ml na m³ med polnjenjem; 50 ml na m³ pri trdoti pod 20 °GH. Ne predozirajte."
+      },
+      {
+        "id": "filter-fizzy",
+        "name": "DINAX® FILTER FIZZY P",
+        "kind": "Prašek za čiščenje filtrov",
+        "use": "Temeljito očisti papirnate filtre mineralnih oblog.",
+        "dose": "Eno vrečko A in eno B raztopite v 5–10 l vroče vode. Filter namočite za 1 uro, pri močni umazanosti do 24 ur. Sperite ga pokonci pod tekočo vodo in pustite, da se posuši."
+      }
+    ],
+    "safety": "Pred uporabo katerega koli kemičnega sredstva vedno preberite etiketo, sredstva hranite na suhem in hladnem ter jih nikoli ne mešajte med seboj. Hranite jih izven dosega otrok.",
+    "guideH": "Korak za korakom",
+    "guideP": "Polnjenje, prvi zagon, nega vode, filtri, praznjenje in priprava na zimo so podrobno opisani v navodilih za uporabo.",
+    "askH": "Niste prepričani, kaj potrebujete?",
+    "askP": "Pošljite nam fotografijo vode ali testnega lističa in povedali vam bomo, kaj dodati."
+  },
+  "reviews": {
+    "title": "Mnenja",
+    "metaDesc": "Kaj lastniki pravijo o masažnih bazenih in storitvah Favorit SPA: 4,7 od 5 na podlagi 70 Googlovih mnenj ter fotografije resničnih postavitev.",
+    "lead": "Kaj naši lastniki pravijo o bazenih, storitvah in obisku v Šabcu. Vaše mnenje nam veliko pomeni.",
+    "ratingOf": "od 5",
+    "ratingCount": "Googlova mnenja: {n}",
+    "seeAll": "Vsa mnenja na Googlu",
+    "write": "Napišite mnenje na Googlu",
+    "ownerH": "Imate Favorit SPA?",
+    "ownerP": "Delite svojo izkušnjo. Drugim pomaga pri izbiri.",
+    "note": "Mnenja so prikazana tako, kot so bila napisana na Googlu.",
+    "installsH": "Resnične postavitve",
+    "installsP": "Fotografije, ki so nam jih poslali lastniki, od jadranskih teras do gorskih koč."
+  },
+  "why": {
+    "title": "Zakaj Favorit SPA",
+    "metaTitle": "Zakaj Favorit SPA – masažni bazeni neposredno od proizvajalca iz Šabca, Srbija",
+    "metaDesc": "Deset razlogov, zakaj se ljudje od Švedske do Grčije odločijo za masažni bazen Favorit SPA: tovarniške cene, 30 let izkušenj, komponente Gecko, približno 20 EUR stroškov na mesec, rezervni deli naslednji dan.",
+    "lead": "Masažni bazen boste naslednjih dvajset let uporabljali skoraj vsak večer. To so razlogi, zakaj se ljudje od Švedske do Grčije odločijo za našega.",
+    "reasons": [
+      {
+        "icon": "wrench",
+        "h": "Neposredno od proizvajalca",
+        "p": "Brez uvoznika in brez posrednikov. Po tovarniški ceni kupite od ljudi, ki bazen načrtujejo in izdelajo, in tudi po nakupu se pogovarjate z istimi ljudmi."
+      },
+      {
+        "icon": "clock",
+        "h": "Trideset let izdelovanja",
+        "p": "Masažne bazene v Šabcu izdelujemo že tri desetletja. Vsak sedež, stopnico in naslonjalo za glavo je pred vami preizkusilo že na tisoče lastnikov."
+      },
+      {
+        "icon": "cpu",
+        "h": "Komponente, ki jim zaupamo",
+        "p": "Krmilniki Gecko iz Kanade, šobe in črpalke Waterway. Tihi, zanesljivi deli, ki jih pozna vsak serviser masažnih bazenov v Evropi."
+      },
+      {
+        "icon": "lightning",
+        "h": "Nizki stroški delovanja",
+        "p": "Črpalke razreda A+, popolna izolacija in pokrov po meri. Energija in filtri v povprečju stanejo približno 20 EUR na mesec."
+      },
+      {
+        "icon": "truck",
+        "h": "Rezervni deli naslednji dan",
+        "p": "Vse dele imamo na zalogi. Če naročite na delovni dan do poldneva, bo del naslednji dan na vašem naslovu."
+      },
+      {
+        "icon": "headset",
+        "h": "Pomoč prek videoklica",
+        "p": "Naši inženirji vidijo, kar vidite vi, in večino vprašanj rešijo v nekaj minutah, kjer koli stoji bazen."
+      },
+      {
+        "icon": "ruler",
+        "h": "Preprosta namestitev",
+        "p": "Brez vodovodnih priključkov. Potrebujete le ravno betonsko podlago, električni kabel in vrtno cev."
+      },
+      {
+        "icon": "snowflake",
+        "h": "Vse leto, v vsakem podnebju",
+        "p": "Od jadranskih poletij do snega v smučarskih središčih. S pravim paketom ostane voda topla v vsakem letnem času."
+      },
+      {
+        "icon": "shield-check",
+        "h": "24 mesecev garancije",
+        "p": "Garancija krije vse vgrajene komponente. Servis in rezervni deli ostanejo na voljo še dolgo po izteku garancije."
+      },
+      {
+        "icon": "sliders-horizontal",
+        "h": "Plačate le, kar uporabljate",
+        "p": "Vsak model je na voljo v do treh paketih opreme, zato izberete šobe, osvetlitev in udobje, ki jih želite, in nič več."
+      }
+    ],
+    "quote": "Namenoma ostajamo majhni. Tako poznamo vsak bazen, ki ga izdelamo.",
+    "quoteBy": "Ekipa Favorit, Šabac",
+    "ctaH": "Preden se odločite, se usedite vanj",
+    "ctaP": "Obiščite naš razstavni salon v Šabcu ali nam opišite svoj prostor in poslali vam bomo ponudbo."
+  },
+  "control": {
+    "title": "Krmilni sistem Gecko",
+    "metaTitle": "Krmilni sistem Gecko v masažnih bazenih Favorit SPA – upravljalne plošče, aplikacija in dodatki",
+    "metaDesc": "Vsak masažni bazen Favorit SPA deluje z elektroniko Gecko iz Kanade: upravljalne plošče in.k od in.k200 do zaslona na dotik in.k1000, aplikacija in.touch 2, nega vode in.clear in zvok in.stream.",
+    "lead": "Elektronika so možgani masažnega bazena. Naša prihaja od podjetja Gecko Alliance iz Kanade, enega najbolj razširjenih proizvajalcev krmilnih sistemov za masažne bazene na svetu: preprosta za uporabo, zanesljiva in s servisom povsod po Evropi.",
+    "madeBy": "Elektronika Gecko Alliance, Kanada",
+    "brainH": "En sistem, trije deli",
+    "brain": [
+      [
+        "Krmilna enota",
+        "Enota pod oblogo, ki upravlja grelnik, črpalke, luči in kroženje vode ter jih ščiti pred okvarami."
+      ],
+      [
+        "Upravljalna plošča",
+        "Plošča na robu bazena. Prikazuje temperaturo vode, z njo pa vklopite šobe, luči in programe."
+      ],
+      [
+        "Vaš telefon",
+        "Z dodatnim modulom in.touch 2 imate iste funkcije v aplikaciji na telefonu, kjer koli ste."
+      ]
+    ],
+    "keypadsH": "Upravljalne plošče",
+    "keypadsLead": "Upravljalna plošča je odvisna od modela in paketa opreme. Vse vzdržujejo temperaturo, samodejno izvajajo cikle filtriranja in pokažejo sporočilo, ko je treba kaj preveriti.",
+    "keypads": {
+      "in.k200": [
+        "Kompaktna",
+        "Štiri tipke in svetel LED-prikaz temperature. Vse, kar potrebuje manjši bazen, nič več."
+      ],
+      "in.k300": [
+        "Osnovna",
+        "Pregleden LCD-zaslon in neposredne tipke za črpalke, luč in temperaturo. Preprosta in robustna."
+      ],
+      "in.k500": [
+        "Barvna",
+        "Barvni zaslon z animiranimi ikonami, načini nege vode, urniki filtriranja, zaklepanjem plošče in opomniki za vzdrževanje. Deluje z in.touch 2, in.clear in in.stream."
+      ],
+      "in.k800": [
+        "Velika barvna",
+        "Večji barvni zaslon in deset tipk za bazene z več opreme: več črpalk, luči, zvok in nega vode na enem mestu."
+      ],
+      "in.k1000": [
+        "Zaslon na dotik",
+        "Barvni zaslon na dotik z diagonalo 4,3 palca, brez tipk. Meniji kot na telefonu in programska oprema, ki jo lahko posodobite kar s plošče."
+      ]
+    },
+    "used": "Vgrajena v",
+    "optional": "dodatno",
+    "appH": "Vaš bazen v žepu",
+    "appP": "Modul in.touch 2 poveže bazen z domačim internetom prek radijske povezave dolgega dosega, zato deluje tudi na koncu vrta. Aplikacija in.touch 2 za iOS in Android zmore vse kot upravljalna plošča, od koder koli.",
+    "app": [
+      "Temperatura vode in ogrevanje",
+      "Črpalke, luči in druga oprema",
+      "Način nege vode in cikli filtriranja",
+      "Obvestila, opomniki in sporočila o napakah"
+    ],
+    "appNote": "Na voljo kot dodatek Platforma za pametni telefon pri paketih Advance in Privilege.",
+    "modesH": "Načini nege vode",
+    "modesLead": "Izberite, kako naj bazen ogreva, za vse drugo poskrbi sam. Varčna nastavitev zniža temperaturo, ko bazena ne uporabljate.",
+    "modes": [
+      [
+        "Odsotnost",
+        "Vedno varčno, za čas potovanj."
+      ],
+      [
+        "Začetnik",
+        "Nikoli varčno, voda ima vedno vašo temperaturo."
+      ],
+      [
+        "Varčevanje z energijo",
+        "Varčno v urah največje porabe ob delavnikih, polno udobje ob koncih tedna."
+      ],
+      [
+        "Največje varčevanje",
+        "Varčno v urah največje porabe vsak dan."
+      ],
+      [
+        "Vikend",
+        "Varčno med tednom, pripravljen za vikend."
+      ]
+    ],
+    "extrasH": "Deluje z",
+    "extras": [
+      [
+        "in.clear",
+        "Samodejna nega vode, ki bromidno sol (BromiCharge) v vodi pretvarja v brom, zato ročno dodajate veliko manj kemikalij."
+      ],
+      [
+        "in.stream 2",
+        "Zvočni sistem Bluetooth, vgrajen v bazen: zvočniki v oblogi, glasba s telefona."
+      ],
+      [
+        "Pametna LED luč",
+        "Podvodna osvetlitev in osvetlitev roba v spreminjajočih se barvah, ki jo vklopite s plošče ali v aplikaciji."
+      ]
+    ],
+    "matrixH": "Katera plošča pripada kateremu bazenu",
+    "matrixLead": "Standardna upravljalna plošča po modelu in paketu. Zaslon na dotik in.k1000 je mogoče dodati paketu Privilege.",
+    "ctaH": "Vprašanja o elektroniki?",
+    "ctaP": "Naši inženirji poznajo vsako komponento Gecko, ki jo vgrajujemo, in vam pomagajo po telefonu ali v videoklicu."
+  },
+  "brochure": {
+    "title": "Katalog",
+    "metaTitle": "Katalog Favorit SPA – vsi modeli masažnih bazenov, paketi in cene",
+    "metaDesc": "Katalog Favorit SPA prejmete po e-pošti: vseh sedem modelov masažnih bazenov, paketi opreme, mere in tehnični podatki v enem PDF-ju.",
+    "lead": "Vseh sedem modelov, paketi opreme, mere in tehnični podatki v enem PDF-ju. Pustite svoj e-naslov in takoj vam bomo poslali povezavo za prenos.",
+    "points": [
+      "Sedem modelov za 2 do 6 oseb, v enakem merilu",
+      "Primerjava paketov Base, Advance in Privilege",
+      "Zahteve za postavitev in tehnični podatki"
+    ],
+    "formH": "Pošljite mi katalog",
+    "name": "Ime",
+    "email": "E-pošta",
+    "country": "Država",
+    "consent": "Strinjam se, da mi Favorit SPA pošlje katalog in občasne novice o modelih in ponudbah. Odjavim se lahko kadar koli.",
+    "privacy": "Vaš naslov uporabimo samo v ta namen, kot je opisano v politiki zasebnosti.",
+    "submit": "Pošljite povezavo",
+    "sending": "Pošiljamo …",
+    "doneH": "Preverite e-pošto",
+    "doneP": "Povezava za prenos je na poti na {email}. Če je v nekaj minutah ne vidite, poglejte v mapo z neželeno pošto.",
+    "error": "Nekaj je šlo narobe. Poskusite znova ali nam pišite na sales@favoritspa.com.",
+    "invalid": "Vnesite veljaven e-naslov in označite polje za soglasje."
+  }
+}

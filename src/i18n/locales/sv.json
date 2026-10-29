@@ -1,0 +1,936 @@
+{
+  "meta": {
+    "name": "Svenska",
+    "htmlLang": "sv",
+    "hreflang": "sv",
+    "locale": "sv-SE",
+    "legacy": "en"
+  },
+  "persons": {
+    "one": "{n} person",
+    "other": "{n} personer"
+  },
+  "values": {
+    "approx": "ca",
+    "hp": "hk",
+    "decimal": ",",
+    "upTo": "upp till"
+  },
+  "routes": {
+    "models": "spabad",
+    "features": "funktioner",
+    "maintenance": "skotsel",
+    "contact": "kontakt",
+    "quote": "offert",
+    "gallery": "galleri",
+    "reviews": "omdomen",
+    "faq": "vanliga-fragor",
+    "about": "om-oss",
+    "terms": "villkor",
+    "support": "support",
+    "docs": "dokumentation",
+    "why": "varfor-favorit-spa",
+    "privacy": "integritetspolicy",
+    "control": "styrsystem",
+    "brochure": "katalog"
+  },
+  "ui": {
+    "nav.models": "Spabad",
+    "nav.features": "Funktioner",
+    "nav.maintenance": "Skötsel",
+    "nav.contact": "Kontakt",
+    "nav.quote": "Begär offert",
+    "nav.gallery": "Galleri",
+    "nav.reviews": "Omdömen",
+    "nav.faq": "Vanliga frågor",
+    "nav.about": "Om oss",
+    "nav.brochure": "Katalog",
+    "nav.control": "Styrsystem",
+    "nav.terms": "Villkor",
+    "nav.menu": "Meny",
+    "nav.lang": "Språk",
+    "cta": "Begär offert",
+    "call": "Ring",
+    "from": "från",
+    "jets": "munstycken",
+    "view": "Se modellen",
+    "skip": "Hoppa till innehållet",
+    "home.title": "Favorit SPA – spabad från en liten europeisk tillverkare",
+    "home.desc": "Favorit SPA tillverkar spabad: sju modeller för 2 till 6 personer, robotiserad produktion och trettio års erfarenhet.",
+    "home.intro": "En liten europeisk tillverkare av spabad. Robotiserad produktion, omsorg om varje detalj och trettio års erfarenhet.",
+    "home.models": "Modeller",
+    "lineup.h": "Alla sju modeller, i skala",
+    "lineup.p": "Varje spabad visas ovanifrån i samma skala. Jämför dem innan du mäter upp terrassen.",
+    "offers.h": "Kampanjpriser",
+    "offers.p": "Så länge lagret räcker, för utrustningspaketet som anges vid varje modell.",
+    "offers.model": "Modell",
+    "maker.h": "En liten europeisk tillverkare",
+    "maker.visit": "Vår utställning och produktion är öppen för besök måndag till lördag.",
+    "maker.cta": "Boka ett besök",
+    "footer.tag": "Spabad. En liten europeisk tillverkare med trettio års erfarenhet.",
+    "footer.note": "Bilderna är illustrationer; utrustningen varierar mellan paketen.",
+    "footer.catalog": "Katalog (PDF)",
+    "models.title": "Spabad och priser",
+    "models.lead": "Sju modeller i tre serier. Varje modell finns i två eller tre utrustningspaket som skiljer sig i munstycken, pumpar och tillval.",
+    "models.packages": "Paket",
+    "model.dims": "Mått",
+    "model.colors": "Akrylfärger",
+    "model.cladding": "Panel",
+    "model.photo": "Foto",
+    "model.saleNote": "Kampanjpris så länge lagret räcker.",
+    "model.included": "Ingår",
+    "model.inquire": "Begär offert på",
+    "model.yes": "ingår",
+    "model.gallery": "Galleri",
+    "model.item": "Del",
+    "quote.title": "Begär offert",
+    "quote.lead": "Välj modell och paket, lämna dina uppgifter så skickar vi en offert. Inte säker än? Beskriv platsen så hjälper vi dig att välja.",
+    "quote.steps": [
+      "Välj modell och paket",
+      "Lämna dina uppgifter och några ord om platsen",
+      "Vi återkommer med en offert"
+    ],
+    "quote.model": "Modell",
+    "quote.email": "E-post",
+    "quote.contactAlt": "Vill du hellre prata? Ring oss eller se vår kontaktsida.",
+    "contact.toQuote": "Vill du ha en offert på en viss modell, skicka en offertförfrågan.",
+    "contact.title": "Kontakt",
+    "contact.lead": "Ring, skriv eller besök utställningen och produktionen, måndag till lördag.",
+    "contact.address": "Adress",
+    "contact.msgPh": "Till exempel var spabadet ska stå och när du behöver det",
+    "contact.sendNote": "Din förfrågan öppnas som ett mejl i din e-postapp, adresserat till",
+    "info.soon": "Den här sidan kommer i nästa version av den nya webbplatsen.",
+    "info.current": "Öppna den nuvarande versionen",
+    "nav.support": "Supportcenter",
+    "nav.docs": "Dokumentation",
+    "model.equipment": "Utrustning och specifikationer",
+    "model.equipLead": "Allt spabadet har, grupperat och jämfört per paket.",
+    "model.groups": {
+      "specs": "Tekniska data",
+      "massage": "Massage",
+      "water": "Rent vatten",
+      "control": "Styrning och energi",
+      "light": "Ljus, ljud och doft",
+      "comfort": "Lock, komfort och service",
+      "build": "Ram och isolering",
+      "finish": "Finish"
+    },
+    "model.installs": "Hemma hos våra kunder",
+    "model.installsLead": "Bilder från ägare, från terrasser vid Adriatiska havet till fjällstugor.",
+    "model.tech": "Teknik i det här spabadet",
+    "model.techMore": "Alla funktioner",
+    "reach.h": "Från Sverige till Grekland",
+    "reach.p": "Byggda för båda ändarna av Europa. PU-isolering (30 mm för kallare klimat) och ett måttanpassat termolock håller värmen genom en svensk vinter, medan ozon, UV-lampa och Gecko-styrning håller vattnet klart genom en grekisk sommar. Panelen i Sinter Wood tål frost, salt havsluft och sol, helt utan underhåll.",
+    "reach.stats": [
+      [
+        "30",
+        "år av spabadstillverkning"
+      ],
+      [
+        "7",
+        "modeller, för 2 till 6 personer"
+      ],
+      [
+        "11",
+        "länder där våra spabad används"
+      ]
+    ],
+    "reach.countries": [
+      "Sverige",
+      "Tyskland",
+      "Österrike",
+      "Ungern",
+      "Slovenien",
+      "Kroatien",
+      "Bosnien och Hercegovina",
+      "Serbien",
+      "Montenegro",
+      "Albanien",
+      "Grekland"
+    ],
+    "footer.big": "Spabad byggda med omsorg, för stunder att minnas.",
+    "footer.models": "Spabad",
+    "footer.visitNote": "Utställning och produktion, måndag till lördag",
+    "support.title": "Supportcenter",
+    "support.lead": "Vi finns kvar efter leveransen. Skötsel, garanti, installationskrav och serviceärenden, samlat på ett ställe.",
+    "support.cards": [
+      [
+        "wrench",
+        "Skötsel",
+        "Vatten, filter och vinterläge, steg för steg.",
+        "maintenance"
+      ],
+      [
+        "question",
+        "Vanliga frågor",
+        "De vanligaste frågorna före och efter köpet.",
+        "faq"
+      ],
+      [
+        "file-pdf",
+        "Dokumentation",
+        "Måttritningar, katalog och installationsdata.",
+        "docs"
+      ],
+      [
+        "headset",
+        "Serviceärende",
+        "Beskriv problemet så återkommer vi snabbt.",
+        "#servis"
+      ]
+    ],
+    "support.warranty": "Garanti",
+    "support.warrantyRows": [
+      [
+        "Privat användning",
+        "24 månader från leverans"
+      ],
+      [
+        "Kommersiell användning (hotell, spa, uthyrning)",
+        "12 månader från leverans"
+      ]
+    ],
+    "support.warrantyNote": "Garantin omfattar alla inbyggda komponenter. Service och reservdelar finns kvar även efter garantitiden. Filter och vattenvårdsprodukter omfattas inte.",
+    "support.max": "Service MAX 72h",
+    "support.maxP": "Med servicepaketet MAX kommer vår tekniker inom 72 timmar från ditt samtal, med reservdelar vid behov.",
+    "support.prep": "Före installationen",
+    "support.prepList": [
+      "En plan, bärande betongplatta cirka 40 % större än spabadet, så att det går att komma åt från alla sidor.",
+      "En strömkabel 3×2,5 mm² eller 5×2,5 mm², beroende på modell, cirka 4 m lång från platsen där spabadet står.",
+      "Jordfelsbrytare och säkringar enligt specifikationen. Anslutningen ska göras av behörig elektriker.",
+      "Inga rördragningar behövs: fyll spabadet med trädgårdsslang och töm det via den inbyggda ventilen.",
+      "Byt filtret minst en gång om året."
+    ],
+    "support.form": "Serviceärende",
+    "support.formLead": "Berätta vilken modell du har och vad som händer. Du kan bifoga bilder i mejlet som öppnas.",
+    "support.year": "Inköpsår",
+    "support.issuePh": "Till exempel meddelandet på displayen, sedan när, och vad du har provat",
+    "docs.title": "Dokumentation",
+    "docs.lead": "Måttritningar, installationsdata och katalog, samlat på ett ställe.",
+    "docs.models": "Installationsdata",
+    "docs.cols": [
+      "Modell",
+      "Mått",
+      "Volym",
+      "Vikt, tom",
+      "Elanslutning",
+      "Ritning"
+    ],
+    "docs.general": "Allmänna dokument",
+    "docs.pdf": "PDF",
+    "docs.weightNote": "Vikt och elanslutning beror på paketet; intervallet sträcker sig från bas- till topp-paketet.",
+    "countries": {
+      "Serbia": "Serbien",
+      "Montenegro": "Montenegro",
+      "Bosnia": "Bosnien och Hercegovina",
+      "Croatia": "Kroatien"
+    },
+    "offers.pkg": "Paket",
+    "offers.was": "Ordinarie pris",
+    "offers.now": "Kampanjpris",
+    "offers.save": "spara",
+    "model.persons": "Platser",
+    "model.jets": "Munstycken",
+    "model.price": "Pris",
+    "model.packages": "Utrustningspaket",
+    "model.choose": "Välj paket",
+    "model.jetsLine": "vatten- och luftmunstycken",
+    "model.notIncluded": "Ingår inte",
+    "model.opt": "tillval",
+    "model.no": "finns inte",
+    "model.drawing": "Måttritning (PDF)",
+    "model.others": "Andra modeller",
+    "quote.pkg": "Paket",
+    "quote.any": "Inte säker än",
+    "quote.you": "Dina uppgifter",
+    "quote.place": "Var spabadet ska stå",
+    "quote.places": [
+      "Terrass",
+      "Trädgård",
+      "Takterrass",
+      "Inomhus"
+    ],
+    "contact.phone": "Telefon",
+    "contact.email": "E-post",
+    "contact.map": "Öppna karta",
+    "contact.name": "Namn",
+    "contact.tel": "Telefon",
+    "contact.city": "Ort",
+    "contact.msg": "Meddelande",
+    "contact.send": "Skicka förfrågan",
+    "footer.explore": "Utforska",
+    "footer.help": "Hjälp",
+    "footer.visit": "Besök oss",
+    "support.issue": "Vad händer",
+    "lineup.topView": "vy ovanifrån",
+    "gallery.photo": "bild",
+    "gallery.gallery": "galleri",
+    "gallery.close": "Stäng",
+    "gallery.prev": "Föregående",
+    "gallery.next": "Nästa",
+    "contact.hours": "Utställning och produktion: måndag till lördag",
+    "country": "Serbien",
+    "model.metaDesc": "Spabadet {name} för {persons}, {dims}, upp till {jets} munstycken. Från {price}.",
+    "features.lead": "Det här finns i varje Favorit-spabad: beprövade komponenter, de flesta från Gecko, och detaljerna vi tar hand om själva.",
+    "features.count": "funktioner",
+    "features.end": "Vilka funktioner som ingår i vilket paket står på varje modellsida.",
+    "docs.generalList": [
+      "Favorit SPA katalog",
+      "Villkor",
+      "Skötselguide",
+      "Installationskrav och garanti"
+    ],
+    "mail.quote": {
+      "subject": "Offertförfrågan",
+      "labels": [
+        "Namn",
+        "E-post",
+        "Telefon",
+        "Ort",
+        "Modell",
+        "Paket",
+        "Placering"
+      ]
+    },
+    "mail.service": {
+      "subject": "Serviceärende",
+      "labels": [
+        "Namn",
+        "Telefon",
+        "Modell",
+        "Inköpsår",
+        "Ort"
+      ]
+    },
+    "home.prev": "Föregående modell",
+    "home.next": "Nästa modell",
+    "home.craftAlt": "Pearl-skal, studiofotografi",
+    "nav.closeShort": "Stäng",
+    "settings.title": "Visning",
+    "settings.theme": "Tema",
+    "settings.light": "Ljust",
+    "settings.dark": "Mörkt",
+    "settings.auto": "Auto",
+    "settings.text": "Textstorlek",
+    "settings.smaller": "Normal text",
+    "settings.larger": "Större text",
+    "settings.largest": "Största text",
+    "nav.guide": "Bruksanvisning",
+    "support.guideCard": "Steg för steg från påfyllning till vinterläge, samlat på ett ställe.",
+    "about.ctaQuote": "Begär offert",
+    "nav.why": "Varför Favorit SPA",
+    "nav.privacy": "Integritetspolicy",
+    "nav.groupHelp": "Support",
+    "nav.groupStory": "Om oss",
+    "nav.helpIntro": "Vi finns kvar efter leveransen: guider, dokument och service på ett ställe.",
+    "nav.storyIntro": "En liten europeisk tillverkare från Šabac i Serbien. I trettio år har vi byggt spabad, och i telefonen svarar samma människor som bygger dem."
+  },
+  "products": {
+    "eden": {
+      "tagline": "inspiration för sex",
+      "description": "En cirkel: följd och sammanhang, som livet självt. Eden har sex platser i ett runt skal, så att alla ser varandra. Njut hur länge du vill, med dem som står dig närmast.",
+      "claim": "Sex platser i en cirkel, ansikte mot ansikte. Eden är gjort för familj, vänner och långa samtal under stjärnorna."
+    },
+    "fusion": {
+      "tagline": "allt du behöver, i balans",
+      "description": "En förening av allt du behöver: utrymme, funktion, skönhet och lagom mycket. Fusion är ett annat ord för balans.",
+      "claim": "Två liggplatser och två sittplatser i en kompakt kvadrat. Allt du behöver, inget du inte behöver."
+    },
+    "garden": {
+      "tagline": "spabehandlingar under bar himmel",
+      "description": "Garden låter dig gå helt upp i stunden. Tiden stannar och blir en kort semester långt från stadens brus, med spabehandlingar för sex.",
+      "claim": "Den största i sortimentet: sex platser, kraftfulla pumpar och massage för hela kroppen. Garden gör trädgården till ett eget spa."
+    },
+    "melody": {
+      "tagline": "så mycket i något som ser litet ut",
+      "description": "Så mycket att uppleva i något som bara ser litet ut. Inget så kompakt ger lika mycket njutning. En riktig Melody.",
+      "claim": "För två, för små terrasser och stora stunder. Melody får plats där andra spabad inte gör det."
+    },
+    "pearl": {
+      "tagline": "mot samma horisont",
+      "description": "Närhet och intimitet, medan ni båda blickar mot samma horisont. Kan det bli bättre? Behöver vi mer?",
+      "claim": "Gjort för två, med plats för en gäst. En liggplats, en stillsam massage och samma horisont."
+    },
+    "point": {
+      "tagline": "startpunkten",
+      "description": "En startpunkt för att ses. Snabbt, enkelt och ditt första steg in i spavärlden.",
+      "claim": "Den kortaste vägen till ett eget spa. Fyra platser, enkelt att använda och ett lätt första steg."
+    },
+    "zen": {
+      "tagline": "plats att välja, plats att önska",
+      "description": "Plats att välja och plats att önska. Sjunk ner, lyssna efter vad du behöver och låt vattnet göra resten. Byt plats tills du hittar den perfekta. Var ZEN.",
+      "claim": "Fem platser, en liggplats och utrymme för alla att hitta sin plats. Zen är spabadet där kvällarna drar ut på tiden av sig själva."
+    }
+  },
+  "labels": {
+    "Aero mlaznice (komada)": "Luftmunstycken (st)",
+    "Aero mlaznice set": "Luftmunstycken, set",
+    "Aero pumpa": "Luftpump",
+    "Antibakterijski filter": "Antibakteriellt filter",
+    "Aromaterapija": "Aromaterapi",
+    "Blue energy block": "Blue energy block",
+    "Broj mesta": "Platser",
+    "Cirada": "Väderskydd",
+    "Cirkulaciona pumpa": "Cirkulationspump",
+    "Dodatni grejač 3kW": "Extra värmare 3 kW",
+    "Drenažni ventil": "Tömningsventil",
+    "Elektronska kontrola": "Styrsystem",
+    "Fiberglas omotač": "Glasfiberförstärkning",
+    "Grejač": "Värmare",
+    "HDS okvir stiren visoke gustine": "HDS-ram av högdensitetsstyren",
+    "Hidro mlaznice (komada)": "Vattenmunstycken (st)",
+    "Hidro mlaznice kombo (set)": "Kombimunstycken (set)",
+    "Hidro pumpa 2ks (komada)": "Vattenpump 2 hk (st)",
+    "Hidro pumpa 3ks (komada)": "Vattenpump 3 hk (st)",
+    "Hromoterapija": "Kromoterapi",
+    "Jastuk (set)": "Nackkuddar (set)",
+    "Kontrolni blok": "Styrenhet",
+    "Led mini lampe": "LED-minilampor",
+    "Low water level": "Givare för låg vattennivå",
+    "Magma mlaznice (4 komada)": "Magma-munstycken (4 st)",
+    "Materijal lica": "Skalmaterial",
+    "Metal konstrukcija": "Metallram",
+    "Music system": "Musiksystem",
+    "Ozonoterapija": "Ozonbehandling",
+    "PEARL-WHITE finish": "PEARL-WHITE finish",
+    "PURE-WHITE finish": "PURE-WHITE finish",
+    "Pametno led svetlo": "Smart LED-belysning",
+    "Parna membrana": "Ångspärr",
+    "Polar izolacija 10mm": "Polar-isolering 10 mm",
+    "Polar izolacija 30mm": "Polar-isolering 30 mm",
+    "Potrebna snaga": "Elanslutning",
+    "SILVER-PLATINUM finish": "SILVER-PLATINUM finish",
+    "SMF snažan metalni ram": "SMF kraftig metallram",
+    "SPA kontola GECKO IN.K.1000": "GECKO in.k1000 styrning",
+    "Sedeća mesta / Ležeća mesta": "Sittplatser / liggplatser",
+    "Servis 72h": "Service 72 h",
+    "Sigurnosno monofazno napajanje": "Säker enfasanslutning",
+    "Smartphone platforma": "Smartphone-plattform",
+    "Stepenice": "Trappsteg",
+    "Svetleće hidro mlaznice": "Belysta vattenmunstycken",
+    "Svetleće mini mlaznice": "Belysta minimunstycken",
+    "Temperaturni opseg upotrebe": "Temperaturintervall vid användning",
+    "Termo pokrivač": "Isolerande lock",
+    "Termo ventilacija": "Termoventilation",
+    "Termo-stone finish": "Termo-stone finish",
+    "Težina": "Vikt",
+    "Thermostron omotač": "Thermostron-isolering",
+    "UV lampa": "UV-lampa",
+    "Visoko led svetlo": "Hög LED-belysning",
+    "Zapremina": "Volym",
+    "Zvučni sistem": "Ljudsystem",
+    "Čist hemijski sistem": "in.clear vattenvårdssystem"
+  },
+  "featureGroups": {
+    "control": "Styrning",
+    "massage": "Massage",
+    "water": "Rent vatten",
+    "warmth": "Värme och energi",
+    "build": "Ram och beklädnad",
+    "experience": "Upplevelse",
+    "service": "Service"
+  },
+  "features": {
+    "spa-control": {
+      "t": "Styrsystem",
+      "d": "Elektroniken är hjärnan i varje spabad. Vi använder komponenter från kanadensiska Gecko: enkla att använda, pålitliga och hållbara. Kontrollpanelerna går från in.k200 till in.k1000, beroende på paket."
+    },
+    "online": {
+      "t": "Onlineplattform dygnet runt",
+      "d": "Styr spabadet när du är borta. Slå på det från mobilen, ställ in temperatur, pumpar och belysning, så är vattnet klart när du kommer."
+    },
+    "hydro-pump": {
+      "t": "Vattenpump",
+      "d": "Om elektroniken är hjärnan är pumparna hjärtat. 2 eller 3 hk, låg energiförbrukning och tyst gång."
+    },
+    "aero-pump": {
+      "t": "Luftpump",
+      "d": "En kraftfull pump med inbyggd värmare leder varm luft till varje luftmunstycke. Massagen känns skönare och vattnet svalnar mindre. Den går dessutom tyst."
+    },
+    "jets": {
+      "t": "Vatten- och luftmunstycken",
+      "d": "Munstycken och reglage är det du faktiskt rör vid, så de måste vara välgjorda och snygga. Vi använder Geckos kombiserie, byggd för alla väder. Med dem visar pumparna sin fulla kraft och går nästan ljudlöst."
+    },
+    "circulation": {
+      "t": "Cirkulationspump",
+      "d": "Går hela tiden och för allt vatten genom filter och värmare, så att spabadet alltid är klart att använda."
+    },
+    "inclear": {
+      "t": "in.clear vattenvård",
+      "d": "Geckos in.clear tillför brom till vattnet och tar bort bakterier, alger och organiskt material, för behagligt och avkopplande vatten varje gång."
+    },
+    "ozone": {
+      "t": "Ozongenerator",
+      "d": "Omvandlar syre från luften till ozon, som når alla delar av systemet och håller vattnet kristallklart."
+    },
+    "filter": {
+      "t": "Antibakteriellt filter",
+      "d": "Ett filter med aktivt kol och mycket fin perforering fångar löv, gräs och småskräp som hamnar i vattnet."
+    },
+    "uv": {
+      "t": "UV-lampa",
+      "d": "UV-ljus tar bort en lång rad bakterier som annars kunde etablera sig i vattnet."
+    },
+    "water": {
+      "t": "Vattenkvalitet",
+      "d": "Cleanwater Blue håller vattnet klart och kemiskt balanserat, utan kemikaliedoft och skonsamt mot huden."
+    },
+    "heater": {
+      "t": "Värmare",
+      "d": "En värmare på 3 kW inbyggd i styrenheten, inställbar i steg om 0,5 °C."
+    },
+    "insulation": {
+      "t": "Isolering",
+      "d": "10 mm PU-isolering med ett lager aluminiumfolie håller kvar värmen, sparar energi och skyddar komponenterna. För kallare klimat finns 30 mm som tillval."
+    },
+    "cover": {
+      "t": "Isolerande lock",
+      "d": "Måttanpassat av PU-skum med hög densitet, med termofilm och ett överdrag i konstläder som tål fukt och UV. Kanterna sluttar lätt så att vattnet rinner av."
+    },
+    "tarp": {
+      "t": "Väderskydd",
+      "d": "Ett vattentätt, måttanpassat skydd som tillsammans med det isolerande locket skyddar spabadet under vintern."
+    },
+    "frame": {
+      "t": "Ram",
+      "d": "En styv ram som inte vrider sig ens när spabadet flyttas, och som inte för vidare ljudet från pumpar och elektronik. En HDS-ram av högdensitetsstyren finns också."
+    },
+    "cladding": {
+      "t": "Beklädnad",
+      "d": "Beklädnaden i Sinter Wood ser ut som trä men kräver inget underhåll: den tål väder och stötar och dämpar ljud. Finns i Grey Wood och Rose Wood."
+    },
+    "stairs": {
+      "t": "Trappsteg",
+      "d": "Halkfria trappsteg för enkel och säker åtkomst, i flera färger."
+    },
+    "led": {
+      "t": "Smart LED-belysning",
+      "d": "Ett rikt färgspektrum gör bubblorna till ett ljusspel. Versionen High Light har en förkromad ring."
+    },
+    "aroma": {
+      "t": "Aromaterapi",
+      "d": "Välj en favoritdoft för djupare avkoppling: ceder, citrus, eukalyptus, persika med flera."
+    },
+    "sound": {
+      "t": "Ljudsystem",
+      "d": "Snabb Bluetooth-parkoppling, bra ljud och enkelt att använda."
+    },
+    "service": {
+      "t": "Service MAX 72h",
+      "d": "Fel kommer aldrig med förvarning. Med det här servicepaketet kommer vår tekniker inom 72 timmar från ditt samtal, med reservdelar vid behov."
+    }
+  },
+  "tech": {
+    "spa-control": "Gecko-styrning",
+    "online": "Styrning via mobilen",
+    "hydro-pump": "Vattenpumpar 2–3 hk",
+    "aero-pump": "Uppvärmd luftpump",
+    "ozone": "Ozongenerator",
+    "uv": "UV-lampa",
+    "inclear": "in.clear",
+    "filter": "Antibakteriellt filter",
+    "insulation": "Värmeisolering",
+    "led": "Smart LED-belysning",
+    "aroma": "Aromaterapi",
+    "sound": "Bluetooth-ljud",
+    "service": "Service MAX 72h"
+  },
+  "about": {
+    "title": "Om Favorit SPA",
+    "metaTitle": "Om Favorit SPA – spabadstillverkare från Šabac i Serbien",
+    "metaDesc": "Favorit SPA är en liten europeisk spabadstillverkare från Šabac i Serbien. 30 år, sju modeller för 2–6 personer, Gecko-komponenter och reservdelar i lager.",
+    "lead": "En liten europeisk spabadstillverkare från Šabac i Serbien. I trettio år har vi formgett, byggt, sålt och servat våra egna spabad, från första skissen till sista reservdelen.",
+    "facts": [
+      [
+        "30",
+        "års erfarenhet"
+      ],
+      [
+        "7",
+        "modeller i tre serier"
+      ],
+      [
+        "2–6",
+        "personer per spabad"
+      ],
+      [
+        "24",
+        "månaders garanti"
+      ],
+      [
+        "11",
+        "länder med våra spabad"
+      ],
+      [
+        "1",
+        "adress: produktion och utställning i Šabac"
+      ]
+    ],
+    "sections": [
+      {
+        "h": "Vilka vi är",
+        "p": [
+          "Vi är Favorit, en familj av ingenjörer, en formgivare och hantverkare som har tillverkat spabad i Šabac i tre decennier. Allt sker under samma tak: formgivning, produktion, försäljning och service.",
+          "Kalla det spabad, badtunna med massage, jacuzzi eller bubbelpool. För oss är det alltid samma sak: ett bad som är välbyggt, bekvämt att sitta i, behagligt att röra vid och kraftfullt när munstyckena sätter igång."
+        ]
+      },
+      {
+        "h": "Så tillverkar vi dem",
+        "p": [
+          "Robotiserade maskiner formar och bearbetar akrylskalen med samma precision varje gång. Sedan förstärker, isolerar, kopplar och monterar vårt team varje spabad för hand och kontrollerar det in i minsta detalj innan det lämnar verkstaden.",
+          "Vi är små med avsikt. Det gör att vi känner varje spabad vi bygger och kan ändra en detalj samma dag som vi lär oss något nytt."
+        ]
+      },
+      {
+        "h": "Komponenter vi litar på",
+        "p": [
+          "Styrsystem, pumpar och munstycken kommer från de mest respekterade namnen i spabranschen, bland dem Gecko från Kanada och Waterway. Vi väljer delar som är enkla att använda, tysta och byggda för att hålla, så att spabadet sköter sig självt och du bara behöver njuta."
+        ]
+      },
+      {
+        "h": "Efter köpet",
+        "p": [
+          "Varje reservdel du kan behöva finns redan på våra hyllor. Beställer du före klockan tolv en vardag är den hos dig nästa dag.",
+          "Våra ingenjörer svarar i telefon och via videosamtal, så de flesta frågor löses på några minuter. Ditt Favorit SPA ska alltid vara redo för nästa kväll."
+        ]
+      },
+      {
+        "h": "Låga driftskostnader",
+        "p": [
+          "Energieffektiva pumpar (klass A+) och värmare (klass C), bra isolering och ett tättslutande lock håller nere kostnaderna. I genomsnitt över vårt sortiment landar energi och filter på omkring 20 EUR i månaden, ungefär som en espresso om dagen."
+        ]
+      },
+      {
+        "h": "Här finns våra spabad",
+        "p": [
+          "Favorits spabad värmer terrasser längs Adriatiska kusten, stugor i skidorter och trädgårdar över hela Europa, från Sverige till Grekland. Med rätt paket går de året runt, i sommarhetta som i snö."
+        ]
+      }
+    ],
+    "visit": {
+      "h": "Besök fabriken",
+      "p": "Se spabaden på plats, prova att sitta i dem och prata med dem som tillverkar dem. Vår utställning och produktion i Šabac är öppen måndag till lördag.",
+      "cta": "Boka ett besök"
+    },
+    "faqTitle": "Snabba svar",
+    "faq": [
+      [
+        "Var tillverkas Favorits spabad?",
+        "I vår egen produktion i Šabac i Serbien, där vi också har en utställning. Favorit DOO har tillverkat spabad i 30 år."
+      ],
+      [
+        "Hur länge håller ett spabad från Favorit?",
+        "Med regelbunden skötsel 15 till 20 år. Rengör filtret regelbundet, byt det en gång om året och förbered spabadet ordentligt om det står oanvänt under vintern."
+      ],
+      [
+        "Behöver jag vatten och avlopp indraget för installationen?",
+        "Nej. Du behöver en plan betongplatta och en elkabel. Spabadet fylls med trädgårdsslang och töms via den inbyggda ventilen."
+      ],
+      [
+        "Vad kostar det att ha i drift?",
+        "I genomsnitt omkring 20 EUR i månaden för energi och filter, beroende på modell, paket och hur ofta du använder det."
+      ],
+      [
+        "Vilken garanti ger ni?",
+        "24 månader vid privat användning och 12 månader vid kommersiell användning, för alla inbyggda komponenter. Service och reservdelar finns kvar även efter att garantin har gått ut."
+      ]
+    ]
+  },
+  "maintenance": {
+    "title": "Skötsel",
+    "metaDesc": "Så håller du vattnet rent i ett spabad från Favorit SPA: en enkel rutin varje vecka och varje månad, och de vattenvårdsprodukter vi rekommenderar, med dosering.",
+    "lead": "Rent vatten tar några minuter i veckan. Ozongeneratorn, cirkulationspumpen och filtret gör det mesta av jobbet; du testar, fyller på och sköljer. Här är rutinen och produkterna vi själva använder och säljer.",
+    "scheduleH": "Rutinen",
+    "schedule": [
+      [
+        "Varje gång",
+        "Duscha innan du går i. Stäng och fäst locket när du går upp."
+      ],
+      [
+        "Varje vecka",
+        "Testa pH (7,2–7,4) och desinfektionsmedel. Tillsätt DEWAN-20 P och ALGI-CID. Spola av filtret med en slang."
+      ],
+      [
+        "Varje månad",
+        "Chockbehandla vattnet med ALGA-SOKK P. Blötlägg filtret över natten i DINAX FILTER FIZZY P. Tillsätt BIOPOOL G om du ser skum eller fettränder."
+      ],
+      [
+        "När du byter vatten",
+        "Med några veckors mellanrum, beroende på användning. Rengör rören med DINASAN P före tömning. Tillsätt DINAX METAL MAGIC F när du fyller med hårt vatten eller brunnsvatten."
+      ],
+      [
+        "Varje år",
+        "Sätt i ett nytt filter, kontrollera locket och förbered spabadet för vintern, eller låt det vara i drift med rätt paket."
+      ]
+    ],
+    "volumeNote": "Doserna nedan gäller per kubikmeter (m³) vatten. Favorits spabad rymmer mellan cirka 0,4 och 2,3 m³; volymen för varje modell finns på sidan Dokumentation.",
+    "productsH": "Produkter vi rekommenderar",
+    "productsLead": "Professionella vattenvårdsprodukter, testade och certifierade, som du kan köpa av oss tillsammans med spabadet eller med nästa beställning.",
+    "labels": {
+      "use": "Vad den gör",
+      "dose": "Så använder du den"
+    },
+    "products": [
+      {
+        "id": "alga-sokk-p",
+        "name": "ALGA-SOKK® P",
+        "kind": "Granulat för chockdesinficering",
+        "use": "Regelbunden chockbehandling: vid första påfyllningen, en gång i månaden och innan du börjar med DEWAN-20 P. Tar bort biofilm från rör och munstycken.",
+        "dose": "2–3 skopor i det fyllda spabadet. Kör pumparna i mer än 10 minuter, några gånger. Låt verka i minst 2 timmar. När munstyckena inte längre släpper ut biofilm tömmer du, sköljer och fyller på nytt."
+      },
+      {
+        "id": "dewan-20-p",
+        "name": "DEWAN®-20 P",
+        "kind": "Klorfritt desinfektionsgranulat",
+        "use": "Daglig desinficering utan klor. Verkar 3 timmar efter doseringen och håller vattnet rent mellan chockbehandlingarna.",
+        "dose": "Håll 3–5 mg/l, kontrollerat med DEWAN-20 testremsor. Tillsätt en gång i veckan, upplöst i vatten, tillsammans med ALGI-CID. Håll pH mellan 7,2 och 7,4."
+      },
+      {
+        "id": "algi-cid",
+        "name": "ALGI-CID",
+        "kind": "Algförebyggande medel, flytande",
+        "use": "Förhindrar gröna och mörka alger, grumligt vatten, dålig lukt och igensatta filter. Verkar vid alla pH-värden, är biologiskt nedbrytbart och skummar inte.",
+        "dose": "En första dos vid nyfyllt vatten, därefter en liten dos varje vecka tillsammans med desinfektionsmedlet, enligt etiketten."
+      },
+      {
+        "id": "dinax-minus-p",
+        "name": "DINAX® MINUS P",
+        "kind": "pH-sänkande granulat",
+        "use": "För tillbaka pH till 7,2–7,4, där desinfektionsmedlen verkar bäst.",
+        "dose": "Cirka 0,1 kg per m³ vatten, upplöst. Testa igen innan du tillsätter mer. Använd handskar och skyddsglasögon."
+      },
+      {
+        "id": "biopool-g",
+        "name": "BIOPOOL G",
+        "kind": "Enzymgel",
+        "use": "Bryter ner fett, slem och biofilm, minskar skum och avlastar filtret. Giftfri och biologiskt nedbrytbar; full effekt byggs upp under en månad.",
+        "dose": "Första gången 20 ml per m³, därefter 10 ml per m³ en gång i veckan, i filterutrymmet."
+      },
+      {
+        "id": "dinasan-p",
+        "name": "DINASAN P",
+        "kind": "Rörrengöring och desinfektionsmedel",
+        "use": "Rengör och desinficerar rör och munstycken du inte kommer åt: biofilm, oljor, tvål och fett som orsakar skum.",
+        "dose": "Före tömning: 250 g per m³ i filterutrymmet. Cirkulera i 5 minuter, stäng av, låt verka i 2 timmar, cirkulera igen, töm och skölj."
+      },
+      {
+        "id": "dinax-metal-magic",
+        "name": "DINAX® METAL MAGIC F",
+        "kind": "Stabilisator mot kalk och metaller",
+        "use": "Förhindrar kalkavlagringar och bruna fläckar från järn, till exempel när du fyller från en brunn eller har hårt vatten.",
+        "dose": "30–50 ml per m³ vid påfyllning; 50 ml per m³ vid hårdhet under 20 °GH. Överdosera inte."
+      },
+      {
+        "id": "filter-fizzy",
+        "name": "DINAX® FILTER FIZZY P",
+        "kind": "Rengöringspulver för filter",
+        "use": "Djuprengör pappersfilter från mineralavlagringar.",
+        "dose": "Lös upp en påse A och en påse B i 5–10 l varmt vatten. Blötlägg filtret i 1 timme, eller upp till 24 timmar om det är mycket smutsigt. Skölj stående under rinnande vatten och låt det torka."
+      }
+    ],
+    "safety": "Läs alltid etiketten innan du använder en kemikalie, förvara produkterna torrt och svalt och blanda dem aldrig med varandra. Förvara dem utom räckhåll för barn.",
+    "guideH": "Steg för steg",
+    "guideP": "Påfyllning, första start, vattenvård, filter, tömning och vinterförvaring beskrivs i detalj i bruksanvisningen.",
+    "askH": "Osäker på vad du behöver?",
+    "askP": "Skicka ett foto av vattnet eller testremsan så berättar vi vad du ska tillsätta."
+  },
+  "reviews": {
+    "title": "Omdömen",
+    "metaDesc": "Vad ägarna säger om spabaden och servicen från Favorit SPA: 4,7 av 5 från 70 omdömen på Google, plus bilder från riktiga installationer.",
+    "lead": "Vad våra ägare säger om spabaden, servicen och besöket i Šabac. Din åsikt är viktig för oss.",
+    "ratingOf": "av 5",
+    "ratingCount": "{n} omdömen på Google",
+    "seeAll": "Alla omdömen på Google",
+    "write": "Lämna ett omdöme på Google",
+    "ownerH": "Äger du ett Favorit SPA?",
+    "ownerP": "Dela din erfarenhet. Det hjälper andra att välja.",
+    "note": "Omdömena visas så som de skrivits på Google.",
+    "installsH": "Riktiga installationer",
+    "installsP": "Bilder som våra ägare skickat, från terrasser vid Adriatiska havet till fjällstugor."
+  },
+  "why": {
+    "title": "Varför Favorit SPA",
+    "metaTitle": "Varför Favorit SPA – spabad direkt från tillverkaren i Šabac, Serbien",
+    "metaDesc": "Tio skäl till att människor från Sverige till Grekland väljer ett spabad från Favorit SPA: fabrikspriser, 30 års erfarenhet, Gecko-komponenter, cirka 20 EUR i månaden i drift och reservdelar nästa dag.",
+    "lead": "Ett spabad använder du de flesta kvällar under de kommande tjugo åren. Här är skälen till att människor från Sverige till Grekland väljer vårt.",
+    "reasons": [
+      {
+        "icon": "wrench",
+        "h": "Direkt från tillverkaren",
+        "p": "Ingen importör och inga mellanhänder. Du köper av dem som formger och bygger spabadet, till fabrikspris, och pratar med samma personer efter köpet."
+      },
+      {
+        "icon": "clock",
+        "h": "Trettio år av tillverkning",
+        "p": "Vi har byggt spabad i Šabac i tre decennier. Varje säte, trappsteg och nackstöd har provats av tusentals ägare före dig."
+      },
+      {
+        "icon": "cpu",
+        "h": "Komponenter vi litar på",
+        "p": "Styrsystem från Gecko i Kanada, munstycken och pumpar från Waterway. Tysta, pålitliga delar som alla spatekniker i Europa känner till."
+      },
+      {
+        "icon": "lightning",
+        "h": "Låga driftskostnader",
+        "p": "Pumpar i energiklass A+, full isolering och ett tättslutande lock. El och filter kostar i genomsnitt cirka 20 EUR i månaden."
+      },
+      {
+        "icon": "truck",
+        "h": "Reservdelar nästa dag",
+        "p": "Alla delar finns på våra hyllor. Beställ före klockan tolv en vardag så är delen hos dig dagen efter."
+      },
+      {
+        "icon": "headset",
+        "h": "Hjälp via videosamtal",
+        "p": "Våra tekniker ser det du ser och löser de flesta frågor på några minuter, var spabadet än står."
+      },
+      {
+        "icon": "ruler",
+        "h": "Enkel installation",
+        "p": "Inga rörinstallationer. Det räcker med en plan betongplatta, en strömkabel och en trädgårdsslang."
+      },
+      {
+        "icon": "snowflake",
+        "h": "Året runt, i alla klimat",
+        "p": "Från somrar vid Adriatiska havet till snö i skidorter. Med rätt paket håller sig vattnet varmt oavsett årstid."
+      },
+      {
+        "icon": "shield-check",
+        "h": "24 månaders garanti",
+        "p": "Alla inbyggda komponenter omfattas. Service och reservdelar finns kvar långt efter att garantin har gått ut."
+      },
+      {
+        "icon": "sliders-horizontal",
+        "h": "Betala för det du använder",
+        "p": "Varje modell finns i upp till tre utrustningspaket, så du väljer de munstycken, den belysning och den komfort du vill ha och inget mer."
+      }
+    ],
+    "quote": "Vi är små med avsikt. Det gör att vi känner varje spabad vi bygger.",
+    "quoteBy": "Favorit-teamet, Šabac",
+    "ctaH": "Sätt dig i ett innan du bestämmer dig",
+    "ctaP": "Besök vår utställning i Šabac, eller berätta om din plats så skickar vi en offert."
+  },
+  "control": {
+    "title": "Styrsystem från Gecko",
+    "metaTitle": "Styrsystem från Gecko i spabad från Favorit SPA – kontrollpaneler, app och tillbehör",
+    "metaDesc": "Varje spabad från Favorit SPA drivs av elektronik från Gecko i Kanada: in.k-kontrollpaneler från in.k200 till pekskärmen in.k1000, appen in.touch 2, vattenvården in.clear och ljudsystemet in.stream.",
+    "lead": "Elektroniken är hjärnan i ett spabad. Vår kommer från Gecko Alliance i Kanada, en av världens mest använda tillverkare av styrsystem för spabad: enkel att använda, pålitlig och med service överallt i Europa.",
+    "madeBy": "Elektronik från Gecko Alliance, Kanada",
+    "brainH": "Ett system, tre delar",
+    "brain": [
+      [
+        "Styrenhet",
+        "Lådan bakom ytterpanelen som styr värmare, pumpar, belysning och cirkulation och skyddar dem mot fel."
+      ],
+      [
+        "Kontrollpanel",
+        "Panelen på kanten. Den visar vattentemperaturen och låter dig starta munstycken, belysning och program."
+      ],
+      [
+        "Din telefon",
+        "Med tillvalsmodulen in.touch 2 finns samma reglage i en app i telefonen, var du än är."
+      ]
+    ],
+    "keypadsH": "Kontrollpaneler",
+    "keypadsLead": "Vilken kontrollpanel du får beror på modell och utrustningspaket. Alla håller temperaturen, kör filtreringscyklerna automatiskt och visar ett meddelande om något behöver åtgärdas.",
+    "keypads": {
+      "in.k200": [
+        "Kompakt",
+        "Fyra knappar och en ljusstark LED-display för temperaturen. Allt som behövs för ett mindre spabad, inget mer."
+      ],
+      "in.k300": [
+        "Bas",
+        "En tydlig LCD-display och direktknappar för pumpar, belysning och temperatur. Enkel och robust."
+      ],
+      "in.k500": [
+        "Färgskärm",
+        "En färgskärm med animerade ikoner, lägen för vattenvård, filtreringsscheman, knapplås och påminnelser om underhåll. Fungerar med in.touch 2, in.clear och in.stream."
+      ],
+      "in.k800": [
+        "Stor färgskärm",
+        "En större färgskärm och tio knappar för spabad med mer utrustning: flera pumpar, belysning, ljud och vattenvård på ett ställe."
+      ],
+      "in.k1000": [
+        "Pekskärm",
+        "En 4,3-tums pekskärm i färg helt utan knappar. Menyer som i en telefon och programvara som kan uppdateras direkt från panelen."
+      ]
+    },
+    "used": "Finns i",
+    "optional": "tillval",
+    "appH": "Spabadet i fickan",
+    "appP": "Modulen in.touch 2 ansluter spabadet till hemmets internet via en radiolänk med lång räckvidd, så den fungerar även längst bort i trädgården. Appen in.touch 2 för iOS och Android gör samma sak som kontrollpanelen, var du än är.",
+    "app": [
+      "Vattentemperatur och uppvärmning",
+      "Pumpar, belysning och annan utrustning",
+      "Vattenvårdsläge och filtreringscykler",
+      "Aviseringar, påminnelser och felmeddelanden"
+    ],
+    "appNote": "Finns som tillvalet Smartphone-plattform i paketen Advance och Privilege.",
+    "modesH": "Lägen för vattenvård",
+    "modesLead": "Välj hur spabadet ska värma, så sköter det resten. Ekonomiläget sänker temperaturen när du inte använder badet.",
+    "modes": [
+      [
+        "Borta",
+        "Alltid ekonomi, för när du reser."
+      ],
+      [
+        "Nybörjare",
+        "Aldrig ekonomi, vattnet håller alltid din temperatur."
+      ],
+      [
+        "Energisparläge",
+        "Ekonomi under högbelastningstid på vardagar, full komfort på helgerna."
+      ],
+      [
+        "Superspar",
+        "Ekonomi under högbelastningstid varje dag."
+      ],
+      [
+        "Helg",
+        "Ekonomi på vardagar, redo till helgen."
+      ]
+    ],
+    "extrasH": "Fungerar med",
+    "extras": [
+      [
+        "in.clear",
+        "Automatisk vattenvård som omvandlar ett bromidsalt (BromiCharge) i vattnet till brom, så att du tillsätter betydligt mindre kemikalier för hand."
+      ],
+      [
+        "in.stream 2",
+        "Bluetooth-ljud inbyggt i spabadet: högtalare i ytterpanelen, musik från telefonen."
+      ],
+      [
+        "Smart LED-belysning",
+        "Undervattens- och kantbelysning i skiftande färger, styrd från kontrollpanelen eller appen."
+      ]
+    ],
+    "matrixH": "Vilken kontrollpanel som hör till vilket spabad",
+    "matrixLead": "Standardpanel per modell och paket. Pekskärmen in.k1000 kan läggas till i Privilege.",
+    "ctaH": "Frågor om elektroniken?",
+    "ctaP": "Våra ingenjörer känner varje Gecko-komponent vi monterar och hjälper till via telefon eller videosamtal."
+  },
+  "brochure": {
+    "title": "Katalog",
+    "metaTitle": "Favorit SPA katalog – alla spabadsmodeller, paket och priser",
+    "metaDesc": "Få Favorit SPA-katalogen via e-post: alla sju spabadsmodeller, utrustningspaket, mått och tekniska data i en PDF.",
+    "lead": "Alla sju modeller, utrustningspaketen, mått och tekniska data i en PDF. Lämna din e-postadress så skickar vi nedladdningslänken direkt.",
+    "points": [
+      "Sju modeller för 2 till 6 personer, i skala",
+      "Paketen Base, Advance och Privilege jämförda",
+      "Installationskrav och tekniska data"
+    ],
+    "formH": "Skicka katalogen till mig",
+    "name": "Namn",
+    "email": "E-post",
+    "country": "Land",
+    "consent": "Jag godkänner att Favorit SPA skickar katalogen till mig och då och då nyheter om modeller och erbjudanden. Jag kan avsluta prenumerationen när som helst.",
+    "privacy": "Vi använder din adress endast för detta, enligt vår integritetspolicy.",
+    "submit": "Skicka länken",
+    "sending": "Skickar…",
+    "doneH": "Titta i din inkorg",
+    "doneP": "Nedladdningslänken är på väg till {email}. Om den inte har kommit inom några minuter, titta i skräppostmappen.",
+    "error": "Något gick fel. Försök igen eller skriv till oss på sales@favoritspa.com.",
+    "invalid": "Ange en giltig e-postadress och kryssa i rutan för samtycke."
+  }
+}

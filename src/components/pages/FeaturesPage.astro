@@ -1,0 +1,96 @@
+---
+import { Image } from 'astro:assets';
+import Site from '../../layouts/Site.astro';
+import Icon from '../Icon.astro';
+import { featureGroups, featureText, groupName } from '../../data/features';
+import { alts, fill, persons as personsOf, t, type Lang, url } from '../../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = t(lang);
+const alt = alts('features');
+const lead = tr('features.lead');
+const count = featureGroups.reduce((n, g) => n + g.items.length, 0);
+---
+<Site lang={lang} title={`${tr('nav.features')} | Favorit SPA`} description={lead} alt={alt}>
+  <section class="wrap page-head">
+    <h1 class="h1">{tr('nav.features')}</h1>
+    <p class="lede">{lead}</p>
+  </section>
+
+  <div class="wrap layout">
+    <nav class="index" aria-label={tr('nav.features')}>
+      <ul>
+        {featureGroups.map((g) => <li><a href={`#${g.id}`}><span class="ix"><Icon name={g.icon} />{groupName(lang, g.id)}</span><span class="n">{g.items.length}</span></a></li>)}
+      </ul>
+      <p class="index-total">{count} {tr('features.count')}</p>
+    </nav>
+
+    <div class="groups">
+      {featureGroups.map((g) => (
+        <section class="group" id={g.id} aria-labelledby={`${g.id}-h`}>
+          <h2 id={`${g.id}-h`} class="h2"><span class="g-ic"><Icon name={g.icon} /></span>{groupName(lang, g.id)}</h2>
+          <div class="items">
+            {g.items.map((f) => (
+              <article class="item" id={f.id}>
+                <div class:list={['frame', { cover: f.cover }]}><Image src={f.img} alt="" width={560} format="webp" quality={78} /></div>
+                <div class="copy">
+                  <h3 class="h3"><span class="f-ic"><Icon name={f.icon} /></span>{featureText(lang, f.id).t}</h3>
+                  <p>{featureText(lang, f.id).d}</p>
+                  {(f.id === 'spa-control' || f.id === 'online') && <a class="link more" href={url(lang, 'control' as any)}>{tr('nav.control')}<Icon name="arrow-right" /></a>}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+      <div class="end">
+        <p class="lede">{tr('features.end')}</p>
+        <div class="end-ctas">
+          <a class="btn btn-ink" href={url(lang, 'models')}>{tr('nav.models')}</a>
+          <a class="btn" href={url(lang, 'quote')}>{tr('cta')}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Site>
+<style>
+  .more { display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; }
+  .more :global(svg) { width: 16px; height: 16px; }
+  .page-head { padding-block: clamp(140px, 16vw, 200px) clamp(40px, 6vw, 72px); display: flex; flex-direction: column; gap: 20px; }
+  .layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); padding-bottom: clamp(80px, 10vw, 140px); }
+  .index { position: sticky; top: 100px; align-self: start; }
+  .index ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .index a { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--line); font-weight: 400; }
+  .index a:hover { color: var(--soft); }
+  .ix { display: inline-flex; align-items: center; gap: 10px; }
+  .ix :global(svg) { width: 18px; height: 18px; color: var(--accent); }
+  .g-ic { display: inline-grid; place-items: center; width: 1.3em; height: 1.3em; margin-right: 0.35em; border-radius: 50%; background: var(--stone); vertical-align: -0.18em; }
+  .g-ic :global(svg) { width: 0.7em; height: 0.7em; color: var(--accent); }
+  .copy .h3 { display: flex; align-items: center; gap: 12px; }
+  .f-ic { display: inline-grid; place-items: center; width: 40px; height: 40px; flex: none; border-radius: 50%; border: 1px solid var(--chip-line); }
+  .f-ic :global(svg) { width: 21px; height: 21px; color: var(--accent); }
+  .index .n { color: var(--soft); font-weight: 300; font-variant-numeric: tabular-nums; }
+  .index-total { margin-top: 14px; font-size: 0.8rem; color: var(--soft); }
+  .groups { display: flex; flex-direction: column; gap: clamp(64px, 8vw, 112px); }
+  .group { scroll-margin-top: 100px; }
+  .group .h2 { padding-bottom: 18px; border-bottom: 1px solid var(--ink); margin-bottom: 8px; }
+  .items { display: flex; flex-direction: column; }
+  .item { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: clamp(20px, 4vw, 56px); padding: 28px 0; border-bottom: 1px solid var(--line); align-items: center; }
+  .frame { background: #fff; aspect-ratio: 4 / 3; display: grid; place-items: center; padding: 18px; }
+  .frame :global(img) { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+  .frame.cover { padding: 0; overflow: hidden; }
+  .frame.cover :global(img) { object-fit: cover; mix-blend-mode: normal; }
+  .copy .h3 { margin-bottom: 10px; }
+  .copy p { margin: 0; color: var(--soft); max-width: 36em; }
+  .end { display: flex; flex-direction: column; gap: 20px; }
+  .end .lede { margin: 0; }
+  .end-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    .index { position: static; }
+    .index ul { display: flex; flex-wrap: wrap; gap: 8px; border: 0; }
+    .index a { border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; gap: 10px; }
+    .index-total { display: none; }
+  }
+  @media (max-width: 640px) { .item { grid-template-columns: 1fr; } }
+</style>

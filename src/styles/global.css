@@ -1,0 +1,89 @@
+@import '@fontsource/jost/300.css';
+@import '@fontsource/jost/400.css';
+@import '@fontsource/jost/500.css';
+@import '@fontsource/didact-gothic/greek-400.css';
+
+/* Travertine palette: stone ground, warm charcoal text, sand details. */
+:root {
+  --paper: #eee8dd;   /* travertine, page ground */
+  --stone: #e2d8c8;   /* deeper stone, panels and footer */
+  --ink: #2e2a25;     /* warm charcoal, text */
+  --soft: #6b6255;    /* secondary text */
+  --line: #d3c8b6;    /* hairlines */
+  --sand: #b9a27f;    /* small accents */
+  --effect: #6dcff6;  /* model line markers, kept from the brand */
+  --midl: #82ca9c;
+  --entry: #fcbc86;
+  --gut: clamp(16px, 3vw, 40px);
+  --wrap: 1240px;
+  --sans: 'Jost', 'Didact Gothic', system-ui, sans-serif;
+  --accent: #8a6a3d;  /* bronze for icons and optional marks */
+  --card: #fff;       /* raised panels */
+  --field: #fff;      /* form fields */
+  --field-line: #b9ab95;
+  --chip-line: #c9bba4;
+  --faint: #b3a793;
+  --ink-2: #4a433b;   /* hover on dark buttons */
+  --fs: 1;            /* text size chosen in the menu */
+  color-scheme: light;
+}
+/* Dark: warm basalt instead of travertine. Light is the default; dark only when chosen, or with Auto and a dark system setting. */
+@media (prefers-color-scheme: dark) {
+  :root[data-theme='auto'] {
+    --paper: #1b1916; --stone: #25221e; --ink: #ece5d9; --soft: #a99e8e; --line: #3a352e; --sand: #b9a27f;
+    --accent: #cdaa76; --card: #2f2b26; --field: #23201c; --field-line: #4d463d; --chip-line: #4d463d; --faint: #6b6358; --ink-2: #d6cdbf;
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  --paper: #1b1916; --stone: #25221e; --ink: #ece5d9; --soft: #a99e8e; --line: #3a352e; --sand: #b9a27f;
+  --accent: #cdaa76; --card: #2f2b26; --field: #23201c; --field-line: #4d463d; --chip-line: #4d463d; --faint: #6b6358; --ink-2: #d6cdbf;
+  color-scheme: dark;
+}
+:root[data-text='l'] { --fs: 1.12; }
+:root[data-text='xl'] { --fs: 1.25; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; font-size: calc(clamp(17px, 0.3vw + 13.5px, 18.5px) * var(--fs)); }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.65 var(--sans); letter-spacing: 0.005em; -webkit-font-smoothing: antialiased; transition: background-color 0.4s, color 0.4s; }
+img, video { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+strong, b { font-weight: 500; }
+:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+
+h1, h2, h3 { font-weight: 300; line-height: 1.05; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+.h1 { font-size: clamp(2.6rem, 6.5vw, 5.6rem); }
+.h2 { font-size: clamp(1.9rem, 3.6vw, 3rem); }
+.h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); font-weight: 400; }
+.lede { font-size: clamp(1.12rem, 1.5vw, 1.3rem); line-height: 1.6; font-weight: 300; max-width: 38em; color: var(--soft); }
+.small { font-size: 0.88rem; }
+.muted { color: var(--soft); }
+p { margin: 0 0 1em; max-width: 42em; }
+
+.wrap { width: min(var(--wrap), 100% - 2 * var(--gut)); margin-inline: auto; }
+.section { padding-block: clamp(64px, 9vw, 128px); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6em; min-height: 46px; padding: 0.65em 1.4em; border: 1px solid currentColor; border-radius: 999px; font: 400 0.95rem/1 var(--sans); white-space: nowrap; cursor: pointer; background: transparent; color: inherit; transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+.btn-ink { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.btn-ink:hover { background: var(--ink-2); border-color: var(--ink-2); }
+.btn:not(.btn-ink):hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+.btn svg { width: 1.05em; height: 1.05em; }
+.link { border-bottom: 1px solid var(--line); padding-bottom: 1px; }
+.link:hover { border-color: currentColor; }
+
+.price-old { text-decoration: line-through; color: var(--soft); font-weight: 300; }
+.save { display: inline-block; background: var(--stone); color: var(--ink); font-weight: 500; font-size: 0.78rem; padding: 0.2em 0.7em; border-radius: 999px; }
+.line-dot { display: inline-block; width: 0.55em; height: 0.55em; border-radius: 50%; background: var(--c, var(--effect)); margin-right: 0.5em; vertical-align: 0.08em; }
+.line-effect { --c: var(--effect); } .line-midl { --c: var(--midl); } .line-entry { --c: var(--entry); }
+
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: 8px; top: -60px; background: var(--ink); color: var(--paper); padding: 8px 14px; z-index: 200; border-radius: 4px; }
+.skip:focus { top: 8px; }
+.ico { width: 1em; height: 1em; flex: none; }
+.item[id], .group[id] { scroll-margin-top: 110px; }
+
+/* Reveal on scroll: added by script, so content stays visible without JS. */
+.rv { opacity: 0; transform: translateY(22px); transition: opacity 0.9s ease, transform 1s cubic-bezier(.2,.7,.2,1); transition-delay: var(--rd, 0s); }
+.rv.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; } }

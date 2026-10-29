@@ -1,0 +1,542 @@
+{
+ "slug": "fusion",
+ "name": "Fusion",
+ "order": 4,
+ "line": "Midl line",
+ "tagline": "fuzija svega potrebnog, drugo ime za balans",
+ "fromPrice": 4280,
+ "description": "Fuzija svega potrebnog, drugo ime za balans. Prostranost, funkcionalnost, lepota i dovoljnost… Da, moje ime je FUSION svega pobrojanog.",
+ "dimensions": "1980 ✕ 1980 mm",
+ "persons": 4,
+ "jets": 28,
+ "hero": "../../assets/products/fusion/hero.jpg",
+ "colors": [
+  {
+   "name": "White Pearl",
+   "image": "../../assets/products/fusion/color-white-pearl.png",
+   "grey": "../../assets/products/fusion/color-white-pearl-grey.png"
+  },
+  {
+   "name": "Platinum Grey",
+   "image": "../../assets/products/fusion/color-platinum-grey.png",
+   "grey": "../../assets/products/fusion/color-platinum-grey-grey.png"
+  }
+ ],
+ "gallery": [
+  "../../assets/products/fusion/gallery-1.jpg",
+  "../../assets/products/fusion/gallery-2.jpg",
+  "../../assets/products/fusion/gallery-3.jpg",
+  "../../assets/products/fusion/gallery-4.jpg",
+  "../../assets/products/fusion/gallery-5.jpg",
+  "../../assets/products/fusion/gallery-6.jpg",
+  "../../assets/products/fusion/gallery-7.jpg",
+  "../../assets/products/fusion/gallery-8.jpg",
+  "../../assets/products/fusion/gallery-9.jpg",
+  "../../assets/products/fusion/gallery-10.jpg",
+  "../../assets/products/fusion/gallery-11.jpg",
+  "../../assets/products/fusion/gallery-12.jpg",
+  "../../assets/products/fusion/gallery-13.jpg",
+  "../../assets/products/fusion/gallery-14.jpg"
+ ],
+ "packages": [
+  {
+   "name": "Advance",
+   "price": 5950,
+   "oldPrice": 6750,
+   "jets": 28,
+   "image": "../../assets/products/fusion/pkg-advance.png",
+   "features": [
+    {
+     "name": "Touch control",
+     "on": true
+    },
+    {
+     "name": "Smart Eco",
+     "on": true
+    },
+    {
+     "name": "Silent Work",
+     "on": true
+    },
+    {
+     "name": "Ozone generator",
+     "on": true
+    },
+    {
+     "name": "Aromatherapy",
+     "on": true
+    },
+    {
+     "name": "Wips frame",
+     "on": true
+    },
+    {
+     "name": "Sound system",
+     "on": false
+    },
+    {
+     "name": "Smart system",
+     "on": false
+    },
+    {
+     "name": "Smart LED light",
+     "on": true
+    },
+    {
+     "name": "SPA heater",
+     "on": true
+    },
+    {
+     "name": "Hydro jets",
+     "on": true
+    },
+    {
+     "name": "Aero jets",
+     "on": true
+    },
+    {
+     "name": "Combo hydro jets",
+     "on": false
+    },
+    {
+     "name": "Thermo covers",
+     "on": false
+    },
+    {
+     "name": "SPA UV lamp",
+     "on": false
+    },
+    {
+     "name": "Circulation pump",
+     "on": true
+    },
+    {
+     "name": "Hydro pump",
+     "on": true
+    },
+    {
+     "name": "Aero pump",
+     "on": true
+    },
+    {
+     "name": "SPA water filter",
+     "on": true
+    },
+    {
+     "name": "Water quality",
+     "on": false
+    }
+   ]
+  },
+  {
+   "name": "Base",
+   "price": 4280,
+   "oldPrice": null,
+   "jets": 20,
+   "image": "../../assets/products/fusion/pkg-base.png",
+   "features": [
+    {
+     "name": "Touch control",
+     "on": true
+    },
+    {
+     "name": "Smart Eco",
+     "on": true
+    },
+    {
+     "name": "Silent Work",
+     "on": false
+    },
+    {
+     "name": "Ozone generator",
+     "on": true
+    },
+    {
+     "name": "Aromatherapy",
+     "on": false
+    },
+    {
+     "name": "Wips frame",
+     "on": true
+    },
+    {
+     "name": "Sound system",
+     "on": false
+    },
+    {
+     "name": "Smart system",
+     "on": false
+    },
+    {
+     "name": "Smart LED light",
+     "on": false
+    },
+    {
+     "name": "SPA heater",
+     "on": true
+    },
+    {
+     "name": "Hydro jets",
+     "on": true
+    },
+    {
+     "name": "Aero jets",
+     "on": false
+    },
+    {
+     "name": "Combo hydro jets",
+     "on": false
+    },
+    {
+     "name": "Thermo covers",
+     "on": false
+    },
+    {
+     "name": "SPA UV lamp",
+     "on": false
+    },
+    {
+     "name": "Circulation pump",
+     "on": true
+    },
+    {
+     "name": "Hydro pump",
+     "on": true
+    },
+    {
+     "name": "Aero pump",
+     "on": false
+    },
+    {
+     "name": "SPA water filter",
+     "on": true
+    },
+    {
+     "name": "Water quality",
+     "on": false
+    }
+   ]
+  }
+ ],
+ "standard": {
+  "columns": [
+   "Base",
+   "Advance"
+  ],
+  "rows": [
+   {
+    "label": "Broj mesta",
+    "values": [
+     "4",
+     "4"
+    ]
+   },
+   {
+    "label": "Potrebna snaga",
+    "values": [
+     "1 ✕ 16A 230V/50Hz",
+     "3 ✕ 16A 230V/400V/50Hz"
+    ]
+   },
+   {
+    "label": "Sedeća mesta / Ležeća mesta",
+    "values": [
+     "2/2",
+     "2/2"
+    ]
+   },
+   {
+    "label": "Zapremina",
+    "values": [
+     "795 l",
+     "795 l"
+    ]
+   },
+   {
+    "label": "Težina",
+    "values": [
+     "cca 225 kg",
+     "cca 280 kg"
+    ]
+   },
+   {
+    "label": "Materijal lica",
+    "values": [
+     "SPA Acryl 6mm",
+     "SPA Acryl 6mm"
+    ]
+   },
+   {
+    "label": "Fiberglas omotač",
+    "values": [
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "Thermostron omotač",
+    "values": [
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "Hidro pumpa 2ks (komada)",
+    "values": [
+     "1",
+     "no"
+    ]
+   },
+   {
+    "label": "Hidro pumpa 3ks (komada)",
+    "values": [
+     "no",
+     "1"
+    ]
+   },
+   {
+    "label": "Aero pumpa",
+    "values": [
+     "no",
+     "opt"
+    ]
+   },
+   {
+    "label": "Cirkulaciona pumpa",
+    "values": [
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "Elektronska kontrola",
+    "values": [
+     "GECKO in.k 300",
+     "GECKO in.k 500"
+    ]
+   },
+   {
+    "label": "Ozonoterapija",
+    "values": [
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "Antibakterijski filter",
+    "values": [
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "UV lampa",
+    "values": [
+     "no",
+     "no"
+    ]
+   },
+   {
+    "label": "Hidro mlaznice (komada)",
+    "values": [
+     "20",
+     "28"
+    ]
+   },
+   {
+    "label": "Temperaturni opseg upotrebe",
+    "values": [
+     "18°C - 35°C",
+     "-15°C - 40°C"
+    ]
+   },
+   {
+    "label": "Low water level",
+    "values": [
+     "no",
+     "opt"
+    ]
+   },
+   {
+    "label": "Blue energy block",
+    "values": [
+     "no",
+     "opt"
+    ]
+   },
+   {
+    "label": "Drenažni ventil",
+    "values": [
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "Termo pokrivač",
+    "values": [
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "Pametno led svetlo",
+    "values": [
+     "no",
+     "yes"
+    ]
+   },
+   {
+    "label": "Led mini lampe",
+    "values": [
+     "opt",
+     "yes"
+    ]
+   },
+   {
+    "label": "PURE-WHITE finish",
+    "values": [
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "SILVER-PLATINUM finish",
+    "values": [
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "PEARL-WHITE finish",
+    "values": [
+     "opt",
+     "opt"
+    ]
+   }
+  ]
+ },
+ "extras": {
+  "columns": [
+   "Base",
+   "Advance"
+  ],
+  "rows": [
+   {
+    "label": "Zvučni sistem",
+    "values": [
+     "no",
+     "opt"
+    ]
+   },
+   {
+    "label": "Polar izolacija 30mm",
+    "values": [
+     "no",
+     "opt"
+    ]
+   },
+   {
+    "label": "SMF snažan metalni ram",
+    "values": [
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "HDS okvir stiren visoke gustine",
+    "values": [
+     "no",
+     "opt"
+    ]
+   },
+   {
+    "label": "Čist hemijski sistem",
+    "values": [
+     "no",
+     "no"
+    ]
+   },
+   {
+    "label": "Aromaterapija",
+    "values": [
+     "opt",
+     "yes"
+    ]
+   },
+   {
+    "label": "Visoko led svetlo",
+    "values": [
+     "no",
+     "no"
+    ]
+   },
+   {
+    "label": "Stepenice",
+    "values": [
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "Termo ventilacija",
+    "values": [
+     "no",
+     "yes"
+    ]
+   },
+   {
+    "label": "Smartphone platforma",
+    "values": [
+     "no",
+     "opt"
+    ]
+   },
+   {
+    "label": "Cirada",
+    "values": [
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "Jastuk (set)",
+    "values": [
+     "opt",
+     "yes"
+    ]
+   },
+   {
+    "label": "Dodatni grejač 3kW",
+    "values": [
+     "no",
+     "no"
+    ]
+   },
+   {
+    "label": "Servis 72h",
+    "values": [
+     "opt",
+     "opt"
+    ]
+   }
+  ]
+ },
+ "drawing": "/download/fusion-tehnicki-crtez.pdf",
+ "seo": {
+  "title": "Fusion, Đakuzi kade - Favorit SPA - Đakuzi, Djakuzi, Jacuzzi, SPA masažne kade i bazeni",
+  "description": ""
+ },
+ "plan": "../../assets/products/fusion/plan-norm.png",
+ "dimsMm": [
+  1980,
+  1980
+ ],
+ "round": false,
+ "video": "/video/fusion.mp4",
+ "scenes": [
+  "../../assets/products/fusion/scene-1.jpg",
+  "../../assets/products/fusion/scene-2.jpg",
+  "../../assets/products/fusion/scene-3.jpg",
+  "../../assets/products/fusion/scene-4.jpg"
+ ]
+}

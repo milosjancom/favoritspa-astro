@@ -1,0 +1,67 @@
+---
+import { W, WP, LIGHT } from '../../data/img';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Site from '../../layouts/Site.astro';
+import Lineup from '../Lineup.astro';
+import ModelIcon from '../ModelIcon.astro';
+import { lines, euro } from '../../data/site';
+import { alts, fill, persons as personsOf, t, type Lang, url } from '../../i18n';
+import { claim } from '../../i18n/products';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = t(lang);
+const persons = personsOf(lang);
+const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order);
+const order = ['Base', 'Advance', 'Privilege'];
+const alt = alts('models');
+---
+<Site lang={lang} title={`${tr('models.title')} | Favorit SPA`} description={tr('models.lead')} alt={alt}>
+  <section class="wrap page-head">
+    <h1 class="h1">{tr('models.title')}</h1>
+    <p class="lede">{tr('models.lead')}</p>
+  </section>
+
+  <section class="wrap grid" aria-label={tr('home.models')}>
+    {products.map((p) => {
+      const pk = [...p.data.packages].sort((a, b) => order.indexOf(a.name) - order.indexOf(b.name));
+      return (
+        <a class="card" href={url(lang, 'models', p.data.slug)}>
+          <div class="card-img"><Image src={p.data.hero} alt={`${p.data.name} SPA`} {...WP([720, 1280])} sizes="(max-width: 760px) 100vw, 50vw" format="webp" quality={74} /></div>
+          <div class="card-top">
+            <h2 class="card-name"><span class="c-ic"><ModelIcon slug={p.data.slug} /></span>{p.data.name}</h2>
+            <span class={`card-line line-${lines[p.data.line].key}`}><span class="line-dot"></span>{p.data.line}</span>
+          </div>
+          <p class="card-tag">{claim(lang, p.data.slug)}</p>
+          <p class="card-facts">{persons(p.data.persons)}<span>{p.data.dimensions}</span><span>{p.data.jets} {tr('jets')}</span></p>
+          <dl class="card-pk">
+            {pk.map((k) => (
+              <div><dt>{k.name}</dt><dd>{k.oldPrice && <span class="price-old">{euro(k.oldPrice, lang)}</span>} {euro(k.price, lang)}</dd></div>
+            ))}
+          </dl>
+        </a>
+      );
+    })}
+  </section>
+
+  <Lineup products={products} lang={lang} />
+</Site>
+<style>
+  .page-head { padding-block: clamp(140px, 16vw, 200px) clamp(40px, 6vw, 72px); display: flex; flex-direction: column; gap: 20px; }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(48px, 6vw, 88px) clamp(24px, 4vw, 56px); padding-bottom: clamp(80px, 10vw, 140px); }
+  .card { display: flex; flex-direction: column; gap: 10px; }
+  .card-img { overflow: hidden; background: var(--stone); margin-bottom: 8px; }
+  .card-img img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; transition: transform 0.9s cubic-bezier(.2,.7,.2,1); }
+  .card:hover .card-img img { transform: scale(1.03); }
+  .card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+  .card-name { display: inline-flex; align-items: center; gap: 12px; font-size: clamp(1.6rem, 2.6vw, 2.2rem); font-weight: 300; }
+  .c-ic { display: inline-flex; font-size: 0.7em; }
+  .card-line { font-size: 0.8rem; color: var(--soft); white-space: nowrap; }
+  .card-tag { margin: 0; color: var(--ink); font-size: 1.05rem; line-height: 1.45; max-width: 34em; }
+  .card-facts { margin: 0; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 0.95rem; }
+  .card-pk { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 6px 0 0; padding-top: 12px; border-top: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+  .card-pk dt { font-size: 0.78rem; color: var(--soft); }
+  .card-pk dd { margin: 0; font-weight: 500; white-space: nowrap; }
+  .card-pk .price-old { font-size: 0.85rem; margin-right: 4px; }
+  @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+</style>

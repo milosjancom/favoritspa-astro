@@ -1,0 +1,443 @@
+---
+import { W, WP, LIGHT } from '../../data/img';
+import { Image, getImage } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import Site from '../../layouts/Site.astro';
+import Gallery from '../Gallery.astro';
+import ModelIcon from '../ModelIcon.astro';
+import Icon from '../Icon.astro';
+import { company, lines, euro } from '../../data/site';
+import { alts, fill, persons as personsOf, t, type Lang, url } from '../../i18n';
+import { label, value, tagline, description, claim, group, groupOrder, techMap, techName, upTo, pkgIcon } from '../../i18n/products';
+import { installsFor } from '../../data/installs';
+
+interface Props { lang: Lang; p: CollectionEntry<'products'>; prev: CollectionEntry<'products'>; next: CollectionEntry<'products'> }
+const { lang, p, prev, next } = Astro.props;
+const tr = t(lang);
+const persons = personsOf(lang);
+const d = p.data;
+const line = lines[d.line];
+const order = ['Base', 'Advance', 'Privilege'];
+const pkgs = [...d.packages].sort((a, b) => order.indexOf(a.name) - order.indexOf(b.name));
+const def = (pkgs.find((k) => k.oldPrice) ?? pkgs[pkgs.length - 1]).name;
+const id = (n: string) => `pk-${n.toLowerCase()}`;
+const mark: Record<string, { icon: string; label: string; cls: string }> = {
+  yes: { icon: 'check', label: tr('model.yes'), cls: 'm-yes' },
+  opt: { icon: 'plus', label: tr('model.opt'), cls: 'm-opt' },
+  no: { icon: 'minus', label: tr('model.no'), cls: 'm-no' },
+};
+// Standard and optional rows merged, then grouped by theme.
+const cols = d.standard.columns;
+const seen = new Set<string>();
+const rows = [...d.standard.rows, ...d.extras.rows].filter((r) => (seen.has(r.label) ? false : (seen.add(r.label), true)));
+const groupNames = tr('model.groups') as Record<string, string>;
+const groups = groupOrder.map((g) => ({ key: g, title: groupNames[g], rows: rows.filter((r) => group(r.label) === g) })).filter((g) => g.rows.length);
+const has = (l: string) => rows.some((r) => r.label === l && r.values.some((v) => v !== 'no'));
+const tech = techMap.filter((x) => x.labels.some(has));
+const ctrl = [...new Set(rows.find((r) => r.label === 'Elektronska kontrola')?.values ?? [])].map((v) => v.replace('GECKO ', '').replace(' ', ''));
+const installs = installsFor(d.slug, d.order);
+const ctrlRow = d.standard.rows.find((r) => r.label === 'Elektronska kontrola');
+const ctrlOf = (pk: string) => { const i = d.standard.columns.indexOf(pk); return i >= 0 && ctrlRow ? ctrlRow.values[i].replace(/GECKO\s*/i, '').replace(/\s+/g, '') : ''; };
+const tag = tagline(lang, d.slug, d.tagline);
+const og = await getImage(LIGHT ? { src: d.hero, width: 1920, format: 'webp', quality: 74 } : { src: d.hero, width: 1200, format: 'jpg' });
+const alt = alts('models', d.slug);
+const phone = company.phones[0];
+// Swatch tones for the acrylic shells and the Sinter Wood cabinet (same for every model).
+const tone: Record<string, string> = { 'White Pearl': '#f3f1ec', 'Platinum Grey': '#b7babd' };
+const woodImg = { rose: await getImage({ src: woodRose, width: 160, format: 'webp', quality: 80 }), grey: await getImage({ src: woodGrey, width: 160, format: 'webp', quality: 80 }) };
+const cladding = [{ name: 'Rose Wood', key: 'rose' as const }, { name: 'Grey Wood', key: 'grey' as const }];
+const canClad = d.colors.some((c) => c.grey);
+const desc = fill(tr('model.metaDesc'), { name: d.name, persons: persons(d.persons), dims: d.dimensions, jets: d.jets, price: euro(d.fromPrice, lang) });
+const site = Astro.site!.toString().replace(/\/$/, '');
+const productLd = {
+  '@context': 'https://schema.org', '@type': 'Product', name: `Favorit SPA ${d.name}`, sku: d.slug,
+  brand: { '@type': 'Brand', name: 'Favorit SPA' }, manufacturer: { '@id': `${site}/#org` },
+  description: `${claim(lang, d.slug)} ${description(lang, d.slug, d.description)}`.trim(),
+  image: og.src.startsWith('http') ? og.src : `${site}${og.src}`, url: new URL(url(lang, 'models', d.slug), Astro.site).toString(),
+  category: 'Hot tub', additionalProperty: [
+    { '@type': 'PropertyValue', name: 'Seats', value: d.persons },
+    { '@type': 'PropertyValue', name: 'Dimensions', value: d.dimensions },
+    { '@type': 'PropertyValue', name: 'Jets', value: d.jets },
+  ],
+  offers: pkgs.map((k) => ({ '@type': 'Offer', name: `${d.name} ${k.name}`, price: k.price, priceCurrency: 'EUR', availability: 'https://schema.org/InStock', seller: { '@id': `${site}/#org` } })),
+};
+import woodRose from '../../assets/cladding/rose.jpg';
+import woodGrey from '../../assets/cladding/grey.jpg';
+---
+<Site lang={lang} title={`${d.name} | Favorit SPA`} description={desc} alt={alt} overlay image={og.src}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(productLd)} />
+  <div class={`product line-${line.key}`}>
+    <section class="p-hero" data-hero>
+      <div class="hs-stack">
+        {d.video ? <video class="p-hero-img hs-slide is-on" src={d.video} poster={d.video.replace(/\.mp4$/, '.jpg')} autoplay muted loop playsinline aria-label={`${d.name}, video`}></video> : <Image class="p-hero-img hs-slide is-on" src={d.hero} alt={`${d.name} SPA`} {...WP([960, 1600, 1920])} sizes="100vw" format="webp" quality={74} loading="eager" fetchpriority="high" />}
+        {d.scenes.map((s, i) => <Image class="p-hero-img hs-slide" src={s} alt={`${d.name} SPA, ${tr('model.photo')} ${i + 2}`} {...WP([960, 1600, 1920])} sizes="100vw" format="webp" quality={74} loading="lazy" />)}
+      </div>
+      <div class="p-hero-shade"></div>
+      <div class="p-hero-copy">
+        <nav class="crumbs" aria-label={tr('nav.models')}><a href={url(lang, 'models')}>{tr('nav.models')}</a> / <span><span class="line-dot"></span>{line.label}</span></nav>
+        <h1 class="p-name"><span class="p-ic"><ModelIcon slug={d.slug} /></span>{d.name}</h1>
+        <p class="p-tag">{tag.charAt(0).toUpperCase() + tag.slice(1)}</p>
+        <p class="p-facts"><span>{persons(d.persons)}</span><span>{d.dimensions}</span><strong>{tr('from')} {euro(d.fromPrice, lang)}</strong></p>
+      </div>
+      {d.scenes.length > 0 && (
+        <div class="hs-nav">
+          <button type="button" class="hs-arrow" data-step="-1" aria-label={tr('gallery.prev')}><Icon name="arrow-left" /></button>
+          <div class="hs-dots">{[0, ...d.scenes.map((_, i) => i + 1)].map((i) => <button type="button" class:list={['hs-dot', { 'is-on': i === 0 }]} data-to={i} aria-label={`${tr('model.photo')} ${i + 1}`}></button>)}</div>
+          <button type="button" class="hs-arrow" data-step="1" aria-label={tr('gallery.next')}><Icon name="arrow-right" /></button>
+        </div>
+      )}
+    </section>
+
+    <section class="section intro">
+      <div class="wrap intro-grid">
+        <div>
+          <p class="claim">{claim(lang, d.slug)}</p>
+          <p class="lede intro-lede">{description(lang, d.slug, d.description)}</p>
+          <dl class="facts">
+            <div><dt>{tr('model.dims')}</dt><dd>{d.dimensions}</dd></div>
+            <div><dt>{tr('model.persons')}</dt><dd>{d.persons}</dd></div>
+            <div><dt>{tr('model.jets')}</dt><dd>{upTo(lang)} {d.jets}</dd></div>
+            <div><dt>{tr('model.price')}</dt><dd>{tr('from')} {euro(d.fromPrice, lang)}</dd></div>
+          </dl>
+        </div>
+        <div class="colors" data-colors>
+          <div class="c-photo">
+            {d.colors.flatMap((c, i) => [
+              <Image class:list={['c-img', { 'is-on': i === 0 }]} data-a={i} data-c="rose" src={c.image} alt={`${d.name}, ${c.name}`} {...WP([560, 1000])} sizes="(max-width: 860px) 90vw, 36vw" format="webp" quality={80} />,
+              c.grey && <Image class="c-img" data-a={i} data-c="grey" src={c.grey} alt={`${d.name}, ${c.name}, Grey Wood`} {...WP([560, 1000])} sizes="(max-width: 860px) 90vw, 36vw" format="webp" quality={80} loading="lazy" />,
+            ])}
+          </div>
+          <div class="c-pick">
+            <h2 class="label">{tr('model.colors')}</h2>
+            <ul class="sw-list">
+              {d.colors.map((c, i) => (
+                <li><button type="button" class:list={['sw', { 'is-on': i === 0 }]} data-a={i} aria-pressed={i === 0 ? 'true' : 'false'}><span class="dot" style={`--sw:${tone[c.name] ?? '#ddd'}`}></span><span>{c.name}</span></button></li>
+              ))}
+            </ul>
+            <h2 class="label">{tr('model.cladding')} <span class="muted">Sinter Wood</span></h2>
+            <ul class="sw-list">
+              {cladding.map((c, i) => <li>{canClad
+                ? <button type="button" class:list={['sw', { 'is-on': i === 0 }]} data-c={c.key} aria-pressed={i === 0 ? 'true' : 'false'}><span class={`dot wood wood-${c.key}`} style={`background-image:url(${woodImg[c.key].src})`}></span><span>{c.name}</span></button>
+                : <span class="sw sw-static"><span class={`dot wood wood-${c.key}`} style={`background-image:url(${woodImg[c.key].src})`}></span><span>{c.name}</span></span>}</li>)}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pk-section" aria-labelledby="pk-h">
+      <div class="wrap">
+        <h2 id="pk-h" class="h2">{tr('model.packages')}</h2>
+        <fieldset class="pk-switch">
+          <legend class="visually-hidden">{tr('model.choose')}</legend>
+          {pkgs.map((k) => (
+            <label>
+              <input type="radio" name="paket" id={id(k.name)} value={k.name} checked={k.name === def} />
+              <span class="pk-name">{k.name}</span>
+              <span class="pk-price">{euro(k.price, lang)}</span>
+            </label>
+          ))}
+        </fieldset>
+        <div class="pk-stack">
+        {pkgs.map((k) => {
+          const on = k.features.filter((f) => f.on);
+          const off = k.features.filter((f) => !f.on);
+          return (
+            <article class={`pk-panel panel-${k.name.toLowerCase()}`} aria-label={`${d.name} ${k.name}`}>
+              <div class="pk-visual"><Image class="pk-img" src={k.image} alt={`${d.name} ${k.name}`} {...WP([560, 1000])} sizes="(max-width: 860px) 90vw, 42vw" format="webp" quality={80} /></div>
+              <div class="pk-body">
+                <h3 class="pk-title">{d.name} <span>{k.name}</span></h3>
+                <div class="pk-price">
+                  <span class="now">{euro(k.price, lang)}</span>
+                  {k.oldPrice && <span class="was"><span class="price-old">{euro(k.oldPrice, lang)}</span><span class="save">{tr('offers.save')} {euro(k.oldPrice - k.price, lang)}</span></span>}
+                </div>
+                {k.oldPrice && <p class="sale-note">{tr('model.saleNote')}</p>}
+                <ul class="pk-stats">
+                  <li><Icon name="waves" /><span><strong>{k.jets}</strong>{tr('jets')}</span></li>
+                  <li><Icon name="users-three" /><span><strong>{d.persons}</strong>{persons(d.persons).replace(/^\d+\s*/, '')}</span></li>
+                  {ctrlOf(k.name) && <li><Icon name="cpu" /><span><strong>{ctrlOf(k.name)}</strong>Gecko</span></li>}
+                  <li><Icon name="ruler" /><span><strong>{d.dimensions.replace(/\s*mm$/, '')}</strong>mm</span></li>
+                </ul>
+                <h4 class="label">{tr('model.included')}</h4>
+                <ul class="feat feat-on">{on.map((f) => <li><span class="f-ic"><Icon name={pkgIcon(f.name)} /></span>{f.name}</li>)}</ul>
+                {off.length > 0 && (<><h4 class="label">{tr('model.notIncluded')}</h4><ul class="feat-off">{off.map((f) => <li><Icon name={pkgIcon(f.name)} />{f.name}</li>)}</ul></>)}
+                <div class="ctas">
+                  <a class="btn btn-ink" href={`${url(lang, 'quote')}?model=${encodeURIComponent(d.name)}&paket=${encodeURIComponent(k.name)}`}>{tr('model.inquire')} {k.name}</a>
+                  <a class="btn" href={`tel:${phone.tel}`}><Icon name="phone" />{phone.display}</a>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+        </div>
+      </div>
+    </section>
+
+    <section class="section equip" aria-labelledby="eq-h">
+      <div class="wrap equip-grid">
+        <div class="equip-head">
+          <h2 id="eq-h" class="h2">{tr('model.equipment')}</h2>
+          <p class="muted">{tr('model.equipLead')}</p>
+          <ul class="legend small">
+            <li><span class="mk m-yes"><Icon name="check" /></span>{tr('model.yes')}</li>
+            <li><span class="mk m-opt"><Icon name="plus" /></span>{tr('model.opt')}</li>
+            <li><span class="mk m-no"><Icon name="minus" /></span>{tr('model.no')}</li>
+          </ul>
+          <nav class="eq-index" aria-label={tr('model.equipment')}>{groups.map((g) => <a href={`#eq-${g.key}`}>{g.title}</a>)}</nav>
+        </div>
+        <div class="table-scroll" tabindex="0" role="region" aria-labelledby="eq-h">
+          <table style={cols.length > 2 ? 'min-width:560px' : 'min-width:0'}>
+            <thead><tr><th scope="col"><span class="visually-hidden">{tr('model.item')}</span></th>{cols.map((c) => <th scope="col" data-col={c.toLowerCase()}>{c}</th>)}</tr></thead>
+            {groups.map((g) => (
+              <tbody id={`eq-${g.key}`}>
+                <tr class="g-row"><th scope="rowgroup" colspan={cols.length + 1}>{g.title}</th></tr>
+                {g.rows.map((r) => (
+                  <tr>
+                    <th scope="row">{label(lang, r.label)}</th>
+                    {r.values.map((v, i) => {
+                      const m = mark[v];
+                      return <td data-col={cols[i]?.toLowerCase()} class={m?.cls}>{m ? <><span class="mk"><Icon name={m.icon} /></span><span class="visually-hidden">{m.label}</span></> : value(lang, v)}</td>;
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            ))}
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-sec" aria-labelledby="gal-h">
+      <div class="wrap">
+        <h2 id="gal-h" class="h2">{tr('model.gallery')}</h2>
+        <Gallery images={d.gallery} alt={d.name} lang={lang} />
+      </div>
+    </section>
+
+    <section class="section installs" aria-labelledby="in-h">
+      <div class="wrap">
+        <div class="in-head">
+          <h2 id="in-h" class="h2">{tr('model.installs')}</h2>
+          <p class="muted">{tr('model.installsLead')}</p>
+        </div>
+        <Gallery images={installs.map((x) => x.src)} badges={installs.map((x) => (x.own ? d.name : null))} alt={`Favorit SPA, ${tr('model.installs')}`} lang={lang} square />
+        <div class="tech">
+          <h3 class="label">{tr('model.tech')}</h3>
+          <ul>
+            {tech.map((x) => (
+              <li><a href={x.feature === 'spa-control' || x.feature === 'online' ? url(lang, 'control' as any) : `${url(lang, 'features')}#${x.feature}`}><Icon name={x.icon} /><span>{techName(lang, x.feature)}{x.feature === 'spa-control' && ctrl.length ? ` ${ctrl.join(' · ')}` : ''}</span></a></li>
+            ))}
+          </ul>
+          <a class="link" href={url(lang, 'features')}>{tr('model.techMore')}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-foot">
+      <div class="wrap p-foot-grid">
+        {d.drawing && <a class="btn" href={d.drawing} download><Icon name="download" />{tr('model.drawing')}</a>}
+        <nav class="pn" aria-label={tr('model.others')}>
+          <a href={url(lang, 'models', prev.data.slug)}><Icon name="arrow-left" /><span>{prev.data.name}</span></a>
+          <a href={url(lang, 'models', next.data.slug)}><span>{next.data.name}</span><Icon name="arrow-right" /></a>
+        </nav>
+      </div>
+    </section>
+  </div>
+</Site>
+
+<script>
+  // Hero slideshow: crossfade every 6 s until the visitor takes over.
+  const hero = document.querySelector<HTMLElement>('[data-hero]');
+  const slides = hero ? [...hero.querySelectorAll<HTMLElement>('.hs-slide')] : [];
+  const dots = hero ? [...hero.querySelectorAll<HTMLButtonElement>('.hs-dot')] : [];
+  if (slides.length > 1) {
+    let at = 0, timer = 0;
+    const show = (n: number) => {
+      at = (n + slides.length) % slides.length;
+      slides.forEach((el, i) => el.classList.toggle('is-on', i === at));
+      dots.forEach((el, i) => el.classList.toggle('is-on', i === at));
+    };
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce) timer = window.setInterval(() => show(at + 1), 6000);
+    const stop = () => window.clearInterval(timer);
+    dots.forEach((el) => el.addEventListener('click', () => { stop(); show(Number(el.dataset.to)); }));
+    hero!.querySelectorAll<HTMLButtonElement>('.hs-arrow').forEach((el) => el.addEventListener('click', () => { stop(); show(at + Number(el.dataset.step)); }));
+  }
+  // Acrylic and cabinet swatches pick the matching render.
+  document.querySelectorAll<HTMLElement>('[data-colors]').forEach((box) => {
+    const imgs = [...box.querySelectorAll<HTMLElement>('.c-img')];
+    const acr = [...box.querySelectorAll<HTMLButtonElement>('button[data-a]')];
+    const cab = [...box.querySelectorAll<HTMLButtonElement>('button[data-c]')];
+    let a = '0', c = 'rose';
+    const sync = () => {
+      const pick = imgs.find((el) => el.dataset.a === a && el.dataset.c === c) ?? imgs.find((el) => el.dataset.a === a);
+      imgs.forEach((el) => el.classList.toggle('is-on', el === pick));
+      acr.forEach((el) => { const on = el.dataset.a === a; el.classList.toggle('is-on', on); el.setAttribute('aria-pressed', String(on)); });
+      cab.forEach((el) => { const on = el.dataset.c === c; el.classList.toggle('is-on', on); el.setAttribute('aria-pressed', String(on)); });
+    };
+    acr.forEach((b) => b.addEventListener('click', () => { a = b.dataset.a!; sync(); }));
+    cab.forEach((b) => b.addEventListener('click', () => { c = b.dataset.c!; sync(); }));
+  });
+</script>
+<style>
+  .p-hero { position: relative; height: min(92svh, 860px); min-height: 520px; display: grid; align-items: end; overflow: hidden; background: var(--stone); }
+  .p-hero video.p-hero-img, .p-hero :global(.p-hero-img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hs-stack { position: absolute; inset: 0; }
+  .hs-stack > :global(.hs-slide) { opacity: 0; transition: opacity 1.2s ease; }
+  .hs-stack > :global(.hs-slide.is-on) { opacity: 1; }
+  .hs-nav { position: absolute; z-index: 2; right: var(--gut); bottom: clamp(32px, 5vw, 56px); display: flex; align-items: center; gap: 10px; color: #fff; }
+  .hs-arrow { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgb(255 255 255 / 0.55); background: rgb(0 0 0 / 0.12); color: inherit; cursor: pointer; backdrop-filter: blur(4px); transition: background-color 0.25s; }
+  .hs-arrow:hover { background: rgb(255 255 255 / 0.2); }
+  .hs-arrow :global(svg) { width: 18px; height: 18px; }
+  .hs-dots { display: flex; gap: 4px; }
+  .hs-dot { width: 22px; height: 22px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; place-items: center; }
+  .hs-dot::after { content: ''; width: 7px; height: 7px; border-radius: 50%; background: rgb(255 255 255 / 0.5); transition: background-color 0.25s, transform 0.25s; }
+  .hs-dot.is-on::after { background: #fff; transform: scale(1.3); }
+  @media (max-width: 700px) { .hs-arrow { display: none; } .hs-nav { bottom: auto; top: 96px; } }
+  .p-hero-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgb(0 0 0 / 0.35) 0, transparent 22%, transparent 50%, rgb(0 0 0 / 0.5) 100%); }
+  .p-hero-copy { position: relative; color: #fff; padding: 0 var(--gut) clamp(32px, 5vw, 56px); display: flex; flex-direction: column; gap: 10px; }
+  .crumbs { font-size: 0.85rem; opacity: 0.9; }
+  .crumbs a { border-bottom: 1px solid rgb(255 255 255 / 0.5); }
+  .p-name { display: inline-flex; align-items: center; gap: 0.25em; font-size: clamp(3.5rem, 11vw, 9rem); font-weight: 300; line-height: 0.95; }
+  .p-ic { display: inline-flex; font-size: 0.32em; color: var(--c); }
+  .p-tag { margin: 0; font-size: clamp(1.05rem, 1.6vw, 1.3rem); }
+  .p-facts { margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 6px 26px; font-size: 1rem; font-weight: 400; }
+  .p-facts strong { font-size: 1.15rem; }
+
+  .intro-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(32px, 6vw, 96px); }
+  .intro-lede { color: var(--ink); }
+  .facts { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; gap: 12px 40px; margin: 32px 0 0; }
+  .facts div { border-top: 1px solid var(--ink); padding-top: 10px; }
+  .facts dt { font-size: 0.8rem; color: var(--soft); }
+  .facts dd { margin: 2px 0 0; font-weight: 400; white-space: nowrap; }
+  .label { font: 400 0.85rem/1.3 var(--sans); color: var(--soft); margin: 0 0 12px; }
+  .colors { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 36px); align-items: center; }
+  .c-photo { display: grid; place-items: center; padding: clamp(12px, 2vw, 28px); border-radius: 4px; background: radial-gradient(ellipse 70% 60% at 50% 55%, var(--card), var(--stone)); }
+  .c-photo :global(.c-img) { grid-area: 1 / 1; width: 100%; height: auto; opacity: 0; transition: opacity 0.6s ease; filter: drop-shadow(0 18px 22px rgb(46 42 37 / 0.2)); }
+  .c-photo :global(.c-img.is-on) { opacity: 1; }
+  .c-pick .label + .sw-list { margin-bottom: 26px; }
+  .sw-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .sw { display: inline-flex; align-items: center; gap: 12px; padding: 4px 0; font: inherit; font-size: 0.95rem; color: var(--soft); background: none; border: 0; cursor: pointer; text-align: left; transition: color 0.25s; }
+  .sw-static { cursor: default; color: var(--ink); }
+  .sw.is-on, .sw:hover { color: var(--ink); }
+  .dot { width: 34px; height: 34px; flex: none; border-radius: 50%; background: var(--sw); box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12), 0 0 0 3px var(--paper), 0 0 0 4px transparent; transition: box-shadow 0.25s; }
+  button.sw.is-on .dot { box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12), 0 0 0 3px var(--paper), 0 0 0 4px var(--accent); }
+  button.sw:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+  .wood { background-color: var(--w1); background-size: 84px auto; background-position: center; }
+  .wood-grey { --w1: #8b8781; }
+  .wood-rose { --w1: #7c5241; }
+  .label .muted { font-weight: 300; }
+
+  .pk-section { background: var(--stone); }
+  .pk-switch { border: 0; padding: 4px; margin: 28px 0 36px; display: inline-flex; gap: 4px; background: var(--paper); border-radius: 999px; max-width: 100%; }
+  .pk-switch label { position: relative; display: flex; flex-direction: column; align-items: center; padding: 10px 28px; border-radius: 999px; cursor: pointer; line-height: 1.25; }
+  .pk-switch input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+  .pk-name { font-weight: 400; }
+  .pk-price { font-size: 0.8rem; color: var(--soft); }
+  .pk-switch label:has(input:checked) { background: var(--ink); color: var(--paper); }
+  .pk-switch label:has(input:checked) .pk-price { color: var(--line); }
+  .pk-switch label:has(input:focus-visible) { outline: 2px solid var(--ink); outline-offset: 2px; }
+  /* Panels share one grid cell and cross-fade; the cut-out tub settles in with a slight turn. */
+  .pk-stack { display: grid; }
+  .pk-panel { grid-area: 1 / 1; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: start; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0s 0.3s; }
+  .product:has(#pk-base:checked) .panel-base,
+  .product:has(#pk-advance:checked) .panel-advance,
+  .product:has(#pk-privilege:checked) .panel-privilege { opacity: 1; visibility: visible; transition: opacity 0.6s ease 0.28s, visibility 0s 0.28s; }
+  .pk-visual { display: grid; place-items: center; padding: clamp(8px, 2vw, 32px); }
+  .pk-section :global(.pk-img) { width: 100%; max-width: 520px; filter: drop-shadow(0 22px 30px rgb(46 42 37 / 0.22)); transform: scale(0.94) rotate(-4deg); transition: transform 1s cubic-bezier(.2,.7,.2,1) 0.2s; }
+  .product:has(#pk-base:checked) .panel-base :global(.pk-img),
+  .product:has(#pk-advance:checked) .panel-advance :global(.pk-img),
+  .product:has(#pk-privilege:checked) .panel-privilege :global(.pk-img) { transform: none; }
+  .pk-title { font-size: clamp(1.6rem, 2.6vw, 2.2rem); font-weight: 300; }
+  .pk-title span { color: var(--accent); }
+  .pk-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 16px; margin: 12px 0 2px; }
+  .pk-price .now { font-size: clamp(2.4rem, 4.2vw, 3.2rem); font-weight: 300; line-height: 1; letter-spacing: -0.01em; }
+  .was { display: inline-flex; align-items: center; gap: 10px; }
+  .sale-note { margin: 4px 0 0; font-size: 0.82rem; color: var(--soft); }
+  .pk-stats { list-style: none; margin: 22px 0 26px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .pk-stats li { display: flex; align-items: center; gap: 10px; padding: 14px 10px 14px 0; }
+  .pk-stats li + li { padding-left: 12px; border-left: 1px solid var(--line); }
+  .pk-stats :global(svg) { width: 24px; height: 24px; flex: none; color: var(--accent); }
+  .pk-stats span { display: flex; flex-direction: column; line-height: 1.2; font-size: 0.78rem; color: var(--soft); min-width: 0; }
+  .pk-stats strong { font-size: 1.05rem; font-weight: 500; color: var(--ink); white-space: nowrap; }
+  .label { margin-top: 4px; }
+  .feat { list-style: none; margin: 0 0 22px; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 18px; font-size: 0.95rem; }
+  .feat li { display: flex; align-items: center; gap: 10px; min-height: 34px; }
+  .f-ic { display: inline-grid; place-items: center; width: 32px; height: 32px; flex: none; border-radius: 50%; background: var(--paper); }
+  .f-ic :global(svg) { width: 17px; height: 17px; color: var(--accent); }
+  .feat-off { list-style: none; margin: 0 0 24px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+  .feat-off li { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px 5px 9px; border: 1px dashed var(--chip-line); border-radius: 999px; font-size: 0.82rem; color: var(--soft); }
+  .feat-off :global(svg) { width: 14px; height: 14px; opacity: 0.6; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+
+  .equip-grid { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.6fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+  .equip-head { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 14px; }
+  .equip-head p { margin: 0; }
+  .legend { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; color: var(--soft); }
+  .legend li { display: flex; align-items: center; gap: 10px; }
+  .eq-index { display: flex; flex-direction: column; border-top: 1px solid var(--line); margin-top: 10px; }
+  .eq-index a { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+  .eq-index a:hover { color: var(--soft); }
+  .table-scroll { position: relative; overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+  th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+  thead th { font-weight: 500; font-size: 0.9rem; border-bottom: 1px solid var(--ink); padding-top: 0; }
+  tbody th { font-weight: 300; }
+  tbody { scroll-margin-top: 100px; }
+  .g-row th { padding: 34px 0 10px; font-size: 1.25rem; font-weight: 400; border-bottom: 1px solid var(--ink); }
+  tbody:first-of-type .g-row th { padding-top: 22px; }
+  td { text-align: center; width: 17%; }
+  thead th[data-col] { text-align: center; }
+  .mk { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; }
+  .mk :global(svg) { width: 14px; height: 14px; }
+  .m-yes .mk, .legend .m-yes { border: 1.5px solid var(--accent); color: var(--accent); }
+  .m-yes .mk :global(svg), .legend .m-yes :global(svg) { stroke: currentColor; stroke-width: 10; }
+  .m-opt .mk, .legend .m-opt { border: 1px solid var(--accent); color: var(--accent); }
+  .m-no .mk, .legend .m-no { color: var(--faint); }
+  .product:has(#pk-base:checked) [data-col='base'],
+  .product:has(#pk-advance:checked) [data-col='advance'],
+  .product:has(#pk-privilege:checked) [data-col='privilege'] { background: var(--stone); }
+
+  .claim { margin: 0 0 22px; font-size: clamp(1.6rem, 2.6vw, 2.3rem); font-weight: 300; line-height: 1.22; letter-spacing: -0.01em; max-width: 22em; }
+  .installs { background: var(--stone); }
+  .in-head { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 12px 32px; margin-bottom: 28px; }
+  .in-head p { margin: 0; max-width: 30em; }
+  .tech { margin-top: clamp(32px, 4vw, 48px); display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+  .tech .label { margin: 0; }
+  .tech ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .tech li a { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px 8px 12px; border: 1px solid var(--chip-line); border-radius: 999px; font-size: 0.92rem; background: var(--paper); transition: border-color 0.25s; }
+  .tech li a:hover { border-color: var(--ink); }
+  .tech :global(svg) { width: 18px; height: 18px; color: var(--accent); }
+  .gallery-sec .h2 { margin-bottom: 28px; }
+  .p-foot { padding-block: 0 clamp(56px, 8vw, 96px); }
+  .p-foot-grid { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 28px; }
+  .pn { display: flex; gap: 8px; }
+  .pn a { display: inline-flex; align-items: center; gap: 10px; padding: 10px 14px; font-size: 1.35rem; font-weight: 300; }
+  .pn a:hover { color: var(--soft); }
+  .pn :global(svg) { width: 22px; height: 22px; }
+
+  @media (max-width: 860px) {
+    .intro-grid, .pk-panel, .equip-grid { grid-template-columns: 1fr; }
+    .equip-head { position: static; }
+    .eq-index { display: none; }
+    .facts { grid-template-columns: 1fr 1fr; }
+    .pk-switch { display: flex; }
+    .pk-switch label { flex: 1; padding: 10px 8px; }
+  }
+  @media (max-width: 600px) {
+    /* One package column at a time on phones: the one picked in the package switch above. */
+    th[data-col], td[data-col] { display: none; }
+    table { min-width: 0 !important; }
+    tbody th { width: 62%; }
+    .product:has(#pk-base:checked) [data-col='base'],
+    .product:has(#pk-advance:checked) [data-col='advance'],
+    .product:has(#pk-privilege:checked) [data-col='privilege'] { display: table-cell; background: transparent; width: 38%; }
+    .colors { grid-template-columns: 1fr; gap: 18px; }
+    .c-pick { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+    .c-pick .label { grid-row: 1; margin-bottom: 8px; }
+    .c-pick .sw-list { grid-row: 2; margin-bottom: 0 !important; }
+    .sw { font-size: 0.9rem; gap: 10px; }
+    .dot { width: 30px; height: 30px; }
+  }
+  @media (max-width: 560px) { .feat { grid-template-columns: 1fr; } .pk-stats { grid-template-columns: 1fr 1fr; } .pk-stats li:nth-child(3) { padding-left: 0; border-left: 0; } .pk-stats li:nth-child(n+3) { border-top: 1px solid var(--line); } }
+</style>

@@ -1,0 +1,521 @@
+{
+ "slug": "melody",
+ "name": "Melody",
+ "order": 5,
+ "line": "Midl line",
+ "tagline": "tako mnogo doživljaja u samo naizgled malome",
+ "fromPrice": 5000,
+ "description": "Tako mnogo doživljaja u samo naizgled malome. Zaista ništa ne može, u tako malome, ponuditi tako mnogo uživanja. Pravi MELODY.",
+ "dimensions": "1600 ✕ 1500 mm",
+ "persons": 2,
+ "jets": 26,
+ "hero": "../../assets/products/melody/hero.jpg",
+ "colors": [
+  {
+   "name": "White Pearl",
+   "image": "../../assets/products/melody/color-white-pearl.png",
+   "grey": "../../assets/products/melody/color-white-pearl-grey.png"
+  },
+  {
+   "name": "Platinum Grey",
+   "image": "../../assets/products/melody/color-platinum-grey.png",
+   "grey": "../../assets/products/melody/color-platinum-grey-grey.png"
+  }
+ ],
+ "gallery": [
+  "../../assets/products/melody/gallery-render.jpg",
+  "../../assets/products/melody/gallery-1.jpg",
+  "../../assets/products/melody/gallery-2.jpg",
+  "../../assets/products/melody/gallery-3.jpg",
+  "../../assets/products/melody/gallery-4.jpg",
+  "../../assets/products/melody/gallery-5.jpg",
+  "../../assets/products/melody/gallery-6.jpg",
+  "../../assets/products/melody/gallery-7.jpg",
+  "../../assets/products/melody/gallery-8.jpg"
+ ],
+ "packages": [
+  {
+   "name": "Advance",
+   "price": 5600,
+   "oldPrice": 6200,
+   "jets": 26,
+   "image": "../../assets/products/melody/pkg-advance.png",
+   "features": [
+    {
+     "name": "Touch control",
+     "on": true
+    },
+    {
+     "name": "Smart Eco",
+     "on": true
+    },
+    {
+     "name": "Silent Work",
+     "on": true
+    },
+    {
+     "name": "Ozone generator",
+     "on": true
+    },
+    {
+     "name": "Aromatherapy",
+     "on": true
+    },
+    {
+     "name": "Wips frame",
+     "on": true
+    },
+    {
+     "name": "Sound system",
+     "on": false
+    },
+    {
+     "name": "Smart system",
+     "on": false
+    },
+    {
+     "name": "Smart LED light",
+     "on": true
+    },
+    {
+     "name": "SPA heater",
+     "on": true
+    },
+    {
+     "name": "Hydro jets",
+     "on": true
+    },
+    {
+     "name": "Aero jets",
+     "on": true
+    },
+    {
+     "name": "Combo hydro jets",
+     "on": false
+    },
+    {
+     "name": "Thermo covers",
+     "on": false
+    },
+    {
+     "name": "SPA UV lamp",
+     "on": false
+    },
+    {
+     "name": "Circulation pump",
+     "on": true
+    },
+    {
+     "name": "Hydro pump",
+     "on": true
+    },
+    {
+     "name": "Aero pump",
+     "on": true
+    },
+    {
+     "name": "SPA water filter",
+     "on": true
+    },
+    {
+     "name": "Water quality",
+     "on": true
+    }
+   ]
+  },
+  {
+   "name": "Base",
+   "price": 5000,
+   "oldPrice": null,
+   "jets": 8,
+   "image": "../../assets/products/melody/pkg-base.png",
+   "features": [
+    {
+     "name": "Touch control",
+     "on": true
+    },
+    {
+     "name": "Smart Eco",
+     "on": false
+    },
+    {
+     "name": "Silent Work",
+     "on": false
+    },
+    {
+     "name": "Ozone generator",
+     "on": false
+    },
+    {
+     "name": "Aromatherapy",
+     "on": false
+    },
+    {
+     "name": "Wips frame",
+     "on": true
+    },
+    {
+     "name": "Sound system",
+     "on": false
+    },
+    {
+     "name": "Smart system",
+     "on": false
+    },
+    {
+     "name": "Smart LED light",
+     "on": false
+    },
+    {
+     "name": "SPA heater",
+     "on": true
+    },
+    {
+     "name": "Hydro jets",
+     "on": true
+    },
+    {
+     "name": "Aero jets",
+     "on": false
+    },
+    {
+     "name": "Combo hydro jets",
+     "on": false
+    },
+    {
+     "name": "Thermo covers",
+     "on": false
+    },
+    {
+     "name": "SPA UV lamp",
+     "on": false
+    },
+    {
+     "name": "Circulation pump",
+     "on": true
+    },
+    {
+     "name": "Hydro pump",
+     "on": true
+    },
+    {
+     "name": "Aero pump",
+     "on": false
+    },
+    {
+     "name": "SPA water filter",
+     "on": true
+    },
+    {
+     "name": "Water quality",
+     "on": false
+    }
+   ]
+  }
+ ],
+ "standard": {
+  "columns": [
+   "Base",
+   "Advance"
+  ],
+  "rows": [
+   {
+    "label": "Broj mesta",
+    "values": [
+     "2",
+     "2"
+    ]
+   },
+   {
+    "label": "Potrebna snaga",
+    "values": [
+     "1 ✕ 16A 230V/50Hz",
+     "3 ✕ 16A 230V/400V/50Hz"
+    ]
+   },
+   {
+    "label": "Zapremina",
+    "values": [
+     "690 l",
+     "690 l"
+    ]
+   },
+   {
+    "label": "Težina",
+    "values": [
+     "cca 120 kg",
+     "cca 180 kg"
+    ]
+   },
+   {
+    "label": "Materijal lica",
+    "values": [
+     "SPA Acryl 6mm",
+     "SPA Acryl 6mm"
+    ]
+   },
+   {
+    "label": "Fiberglas omotač",
+    "values": [
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "Thermostron omotač",
+    "values": [
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "Hidro pumpa 2ks (komada)",
+    "values": [
+     "1",
+     "no"
+    ]
+   },
+   {
+    "label": "Hidro pumpa 3ks (komada)",
+    "values": [
+     "no",
+     "1"
+    ]
+   },
+   {
+    "label": "Aero pumpa",
+    "values": [
+     "no",
+     "yes"
+    ]
+   },
+   {
+    "label": "Cirkulaciona pumpa",
+    "values": [
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "Grejač",
+    "values": [
+     "2KW",
+     "3KW"
+    ]
+   },
+   {
+    "label": "Elektronska kontrola",
+    "values": [
+     "GECKO in.k 200",
+     "GECKO in.k 500"
+    ]
+   },
+   {
+    "label": "Ozonoterapija",
+    "values": [
+     "no",
+     "yes"
+    ]
+   },
+   {
+    "label": "Antibakterijski filter",
+    "values": [
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "UV lampa",
+    "values": [
+     "opt",
+     "no"
+    ]
+   },
+   {
+    "label": "Aromaterapija",
+    "values": [
+     "no",
+     "yes"
+    ]
+   },
+   {
+    "label": "Low water level",
+    "values": [
+     "no",
+     "opt"
+    ]
+   },
+   {
+    "label": "Blue energy block",
+    "values": [
+     "no",
+     "opt"
+    ]
+   },
+   {
+    "label": "Hidro mlaznice (komada)",
+    "values": [
+     "8",
+     "16"
+    ]
+   },
+   {
+    "label": "Aero mlaznice (komada)",
+    "values": [
+     "no",
+     "10"
+    ]
+   },
+   {
+    "label": "Drenažni ventil",
+    "values": [
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "Led mini lampe",
+    "values": [
+     "no",
+     "yes"
+    ]
+   },
+   {
+    "label": "Visoko led svetlo",
+    "values": [
+     "no",
+     "no"
+    ]
+   },
+   {
+    "label": "PURE-WHITE finish",
+    "values": [
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "SILVER-PLATINUM finish",
+    "values": [
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "PEARL-WHITE finish",
+    "values": [
+     "opt",
+     "opt"
+    ]
+   }
+  ]
+ },
+ "extras": {
+  "columns": [
+   "Base",
+   "Advance"
+  ],
+  "rows": [
+   {
+    "label": "Zvučni sistem",
+    "values": [
+     "no",
+     "opt"
+    ]
+   },
+   {
+    "label": "Polar izolacija 30mm",
+    "values": [
+     "no",
+     "opt"
+    ]
+   },
+   {
+    "label": "Metal konstrukcija",
+    "values": [
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "HDS okvir stiren visoke gustine",
+    "values": [
+     "no",
+     "opt"
+    ]
+   },
+   {
+    "label": "Čist hemijski sistem",
+    "values": [
+     "no",
+     "no"
+    ]
+   },
+   {
+    "label": "Termo pokrivač",
+    "values": [
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "Aromaterapija",
+    "values": [
+     "no",
+     "yes"
+    ]
+   },
+   {
+    "label": "Visoko led svetlo",
+    "values": [
+     "no",
+     "no"
+    ]
+   },
+   {
+    "label": "Stepenice",
+    "values": [
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "Termo ventilacija",
+    "values": [
+     "no",
+     "yes"
+    ]
+   },
+   {
+    "label": "Smartphone platforma",
+    "values": [
+     "no",
+     "opt"
+    ]
+   },
+   {
+    "label": "Cirada",
+    "values": [
+     "opt",
+     "opt"
+    ]
+   }
+  ]
+ },
+ "drawing": "/download/melody-tehnicki-crtez.pdf",
+ "seo": {
+  "title": "Melody, Đakuzi kade - Favorit SPA - Đakuzi, Djakuzi, Jacuzzi, SPA masažne kade i bazeni",
+  "description": ""
+ },
+ "plan": "../../assets/products/melody/plan-norm.png",
+ "dimsMm": [
+  1600,
+  1500
+ ],
+ "round": false,
+ "scenes": [
+  "../../assets/products/melody/scene-1.jpg",
+  "../../assets/products/melody/scene-2.jpg",
+  "../../assets/products/melody/scene-3.jpg"
+ ]
+}

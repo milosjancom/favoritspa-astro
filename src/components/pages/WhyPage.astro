@@ -1,0 +1,146 @@
+---
+import { Image } from 'astro:assets';
+import Site from '../../layouts/Site.astro';
+import Icon from '../Icon.astro';
+import Marquee from '../Marquee.astro';
+import Motion from '../Motion.astro';
+import { W, WP } from '../../data/img';
+import { alts, locale, t, url, type Lang, type RouteKey } from '../../i18n';
+import hero from '../../assets/products/zen/scene-3.jpg';
+import band from '../../assets/products/melody/scene-1.jpg';
+import detail from '../../assets/home/fspa-ilu-28.jpg';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = t(lang);
+type Why = { title: string; metaTitle: string; metaDesc: string; lead: string; reasons: { icon: string; h: string; p: string }[]; quote: string; quoteBy: string; ctaH: string; ctaP: string };
+const Y = ((locale(lang) as any).why ?? (locale('en') as any).why) as Why;
+const about = ((locale(lang) as any).about ?? (locale('en') as any).about) as { facts: [string, string][] };
+const alt = alts('why' as RouteKey);
+const pageUrl = new URL(url(lang, 'why' as RouteKey), Astro.site).toString();
+const site = Astro.site!.toString().replace(/\/$/, '');
+const ld = {
+  '@context': 'https://schema.org', '@type': 'WebPage', name: Y.title, url: pageUrl, inLanguage: lang, description: Y.metaDesc, about: { '@id': `${site}/#org` },
+  mainEntity: { '@type': 'ItemList', itemListElement: Y.reasons.map((r, i) => ({ '@type': 'ListItem', position: i + 1, name: r.h, description: r.p })) },
+};
+const first = Y.reasons.slice(0, 5);
+const rest = Y.reasons.slice(5);
+const num = (v: string) => (/^\d+$/.test(v) ? Number(v) : 0);
+---
+<Site lang={lang} title={Y.metaTitle} description={Y.metaDesc} alt={alt} overlay>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(ld)} />
+  <section class="w-hero">
+    <div class="bg kb" data-par="0.25"><Image src={hero} alt="" {...WP([1280, 1920])} sizes="100vw" format="webp" quality={74} loading="eager" fetchpriority="high" /></div>
+    <div class="shade"></div>
+    <div class="wrap w-hero-copy">
+      <h1 class="w-title rv in">{Y.title}</h1>
+      <p class="w-lead rv in" style="--rd:.15s">{Y.lead}</p>
+    </div>
+  </section>
+
+  <section class="wrap reasons">
+    <figure class="r-pic rv"><div data-par="0.08"><Image src={detail} alt="" {...WP([500, 900])} sizes="(max-width: 860px) 90vw, 32vw" format="webp" quality={76} /></div></figure>
+    <ol class="r-list">
+      {first.map((r, i) => (
+        <li class="rv" style={`--rd:${(i % 2) * 0.1}s`}>
+          <span class="r-no">{String(i + 1).padStart(2, '0')}</span>
+          <span class="r-ic"><Icon name={r.icon} /></span>
+          <h2 class="r-h">{r.h}</h2>
+          <p>{r.p}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="band">
+    <div class="bg" data-par="0.2"><Image src={band} alt="" {...WP([1280, 1920])} sizes="100vw" format="webp" quality={74} /></div>
+    <div class="shade"></div>
+    <div class="wrap"><blockquote class="rv"><p>{Y.quote}</p><cite>{Y.quoteBy}</cite></blockquote></div>
+  </section>
+
+  <section class="wrap reasons reasons-2">
+    <ol class="r-list r-wide" start="6">
+      {rest.map((r, i) => (
+        <li class="rv" style={`--rd:${(i % 3) * 0.1}s`}>
+          <span class="r-no">{String(i + 6).padStart(2, '0')}</span>
+          <span class="r-ic"><Icon name={r.icon} /></span>
+          <h2 class="r-h">{r.h}</h2>
+          <p>{r.p}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="wrap facts">
+    <dl>{about.facts.map(([n, l], i) => <div class="rv" style={`--rd:${i * 0.08}s`}><dt><span data-count={num(n) || undefined}>{n}</span></dt><dd>{l}</dd></div>)}</dl>
+  </section>
+
+  <section class="customers">
+    <div class="wrap cust-head rv">
+      <h2 class="h2">{tr('model.installs')}</h2>
+      <p class="muted">{tr('model.installsLead')}</p>
+    </div>
+    <Marquee alt={`Favorit SPA, ${tr('model.installs')}`} />
+  </section>
+
+  <section class="wrap cta rv">
+    <div>
+      <h2 class="h2">{Y.ctaH}</h2>
+      <p class="lede">{Y.ctaP}</p>
+    </div>
+    <div class="ctas">
+      <a class="btn btn-ink" href={url(lang, 'quote')}>{tr('nav.quote')}<Icon name="arrow-right" /></a>
+      <a class="btn" href={url(lang, 'models')}>{tr('nav.models')}</a>
+      <a class="btn" href={url(lang, 'about')}>{tr('nav.about')}</a>
+    </div>
+  </section>
+  <Motion />
+</Site>
+<style>
+  .bg { position: absolute; inset: -14% 0; will-change: transform; }
+  .bg :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .shade { position: absolute; inset: 0; }
+  .w-hero { position: relative; height: 100svh; min-height: 600px; overflow: hidden; display: grid; align-items: end; color: #fff; background: #222; }
+  .w-hero .shade { background: linear-gradient(180deg, rgb(0 0 0 / 0.4) 0, transparent 30%, transparent 45%, rgb(0 0 0 / 0.55) 100%); }
+  .kb :global(img) { animation: kb 18s ease-out both; }
+  @keyframes kb { from { transform: scale(1.12); } to { transform: scale(1); } }
+  .w-hero-copy { position: relative; padding-bottom: clamp(56px, 9vh, 110px); display: flex; flex-direction: column; gap: 22px; }
+  .w-title { margin: 0; font-size: clamp(3rem, 8.5vw, 8rem); font-weight: 300; line-height: 0.95; letter-spacing: -0.02em; }
+  .w-lead { margin: 0; max-width: 32em; font-size: clamp(1.15rem, 1.8vw, 1.5rem); line-height: 1.45; }
+
+  .reasons { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.5fr); gap: clamp(32px, 6vw, 100px); padding-block: clamp(96px, 12vw, 170px); align-items: start; }
+  .r-pic { margin: 0; position: sticky; top: 120px; overflow: hidden; aspect-ratio: 4 / 5; }
+  .r-pic > div { height: 116%; margin-top: -8%; }
+  .r-pic :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .r-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(40px, 5vw, 72px) clamp(28px, 4vw, 56px); }
+  .r-wide { grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .reasons-2 { padding-top: clamp(80px, 10vw, 140px); }
+  .r-list li { position: relative; border-top: 1px solid var(--ink); padding-top: 22px; }
+  .r-no { position: absolute; top: 20px; right: 0; font-size: 0.85rem; letter-spacing: 0.14em; color: var(--soft); }
+  .r-ic { display: inline-grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: color-mix(in srgb, var(--accent) 14%, transparent); margin-bottom: 20px; }
+  .r-ic :global(svg) { width: 24px; height: 24px; color: var(--accent); }
+  .r-h { margin: 0 0 10px; font-size: clamp(1.35rem, 2vw, 1.75rem); font-weight: 400; line-height: 1.2; }
+  .r-list p { margin: 0; color: var(--soft); font-size: 1.02rem; line-height: 1.65; }
+
+  .band { position: relative; overflow: hidden; color: #fff; min-height: 90vh; display: grid; align-items: center; }
+  .band .shade { background: rgb(0 0 0 / 0.38); }
+  blockquote { position: relative; margin: 0; }
+  blockquote p { margin: 0; max-width: 18em; font-size: clamp(2rem, 4.6vw, 4.2rem); font-weight: 300; line-height: 1.12; letter-spacing: -0.01em; }
+  cite { display: block; margin-top: 24px; font-style: normal; font-size: 0.95rem; opacity: 0.85; }
+
+  .facts dl { margin: 0 0 clamp(80px, 10vw, 140px); display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+  .facts div { padding: 18px 16px 0 0; }
+  .facts dt { font-size: clamp(2.4rem, 4.4vw, 3.8rem); font-weight: 300; line-height: 1; }
+  .facts dd { margin: 10px 0 0; color: var(--soft); font-size: 0.92rem; line-height: 1.35; }
+
+  .customers { background: var(--stone); padding-block: clamp(80px, 10vw, 140px); display: flex; flex-direction: column; gap: clamp(28px, 4vw, 48px); }
+  .cust-head { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 12px 32px; }
+  .cust-head p { margin: 0; max-width: 30em; }
+
+  .cta { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 28px; padding-block: clamp(80px, 10vw, 140px); }
+  .cta .lede { margin: 16px 0 0; max-width: 30em; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+  @media (max-width: 1000px) { .r-wide { grid-template-columns: repeat(2, minmax(0, 1fr)); } .facts dl { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 28px; } }
+  @media (max-width: 860px) { .reasons { grid-template-columns: 1fr; } .r-pic { position: relative; top: 0; aspect-ratio: 4 / 3; } }
+  @media (max-width: 600px) { .r-list, .r-wide { grid-template-columns: 1fr; } .facts dl { grid-template-columns: 1fr 1fr; } }
+  @media (prefers-reduced-motion: reduce) { .kb :global(img) { animation: none; } }
+</style>

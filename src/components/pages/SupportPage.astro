@@ -1,0 +1,154 @@
+---
+import { getCollection } from 'astro:content';
+import Site from '../../layouts/Site.astro';
+import Icon from '../Icon.astro';
+import { company } from '../../data/site';
+import { guideUrl, locale, alts, fill, persons as personsOf, t, type Lang, type RouteKey, url } from '../../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = t(lang);
+const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order);
+const cards = tr('support.cards') as unknown as [string, string, string, string][];
+const warranty = tr('support.warrantyRows') as unknown as [string, string][];
+const prep = tr('support.prepList') as unknown as string[];
+const alt = alts('support');
+const G = ((locale(lang) as any).guide ?? (locale('en') as any).guide) as { chapters: { id: string; icon: string; h: string }[] };
+const gu = guideUrl(lang);
+const href = (to: string) => (to.startsWith('#') ? to : url(lang, to as RouteKey));
+---
+<Site lang={lang} title={`${tr('support.title')} | Favorit SPA`} description={tr('support.lead')} alt={alt}>
+  <section class="wrap page-head">
+    <h1 class="h1">{tr('support.title')}</h1>
+    <p class="lede">{tr('support.lead')}</p>
+  </section>
+
+  <section class="wrap guide" aria-labelledby="g-h">
+    <a class="guide-main" href={gu}>
+      <Icon name="book-open-text" class="gm-ic" />
+      <span class="gm-t" id="g-h">{tr('nav.guide')}</span>
+      <span class="gm-p">{tr('support.guideCard')}</span>
+      <span class="gm-go"><Icon name="arrow-right" /></span>
+    </a>
+    <ol class="guide-ch">
+      {G.chapters.map((c) => <li><a href={`${gu}#${c.id}`}><Icon name={c.icon} /><span>{c.h.replace(/^\d+\.\s*/, '')}</span></a></li>)}
+    </ol>
+  </section>
+
+  <section class="wrap cards" aria-label={tr('support.title')}>
+    {cards.map(([icon, title, text, to]) => (
+      <a class="card" href={href(to)}>
+        <Icon name={icon} class="c-ic" />
+        <span class="c-t">{title}</span>
+        <span class="c-p">{text}</span>
+        <Icon name="arrow-right" class="c-go" />
+      </a>
+    ))}
+  </section>
+
+  <section class="wrap duo">
+    <div class="block">
+      <h2 class="h3">{tr('support.warranty')}</h2>
+      <dl class="rows">{warranty.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
+      <p class="muted">{tr('support.warrantyNote')}</p>
+      <div class="max">
+        <Icon name="clock" />
+        <div><h3>{tr('support.max')}</h3><p>{tr('support.maxP')}</p></div>
+      </div>
+    </div>
+    <div class="block">
+      <h2 class="h3">{tr('support.prep')}</h2>
+      <ol class="prep">{prep.map((x) => <li><Icon name="check" /><span>{x}</span></li>)}</ol>
+      <a class="link" href={url(lang, 'docs')}>{tr('nav.docs')}</a>
+    </div>
+  </section>
+
+  <section class="service" id="servis" aria-labelledby="sv-h">
+    <div class="wrap service-grid">
+      <div>
+        <h2 id="sv-h" class="h2">{tr('support.form')}</h2>
+        <p class="lede">{tr('support.formLead')}</p>
+        <p class="direct"><a class="link" href={`tel:${company.phones[0].tel}`}>{company.phones[0].display}</a><br /><a class="link" href={`mailto:${company.email}`}>{company.email}</a></p>
+      </div>
+      <form class="form" data-service data-mail={company.email} data-text={JSON.stringify(tr('mail.service'))}>
+        <div class="two">
+          <div class="field"><label for="s-name">{tr('contact.name')}</label><input id="s-name" name="name" autocomplete="name" required /></div>
+          <div class="field"><label for="s-phone">{tr('contact.tel')}</label><input id="s-phone" name="phone" type="tel" autocomplete="tel" required /></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="s-model">{tr('quote.model')}</label>
+            <select id="s-model" name="model" required>
+              <option value="">–</option>
+              {products.map((p) => <option>{p.data.name}</option>)}
+            </select>
+          </div>
+          <div class="field"><label for="s-year">{tr('support.year')}</label><input id="s-year" name="year" inputmode="numeric" maxlength="4" /></div>
+        </div>
+        <div class="field"><label for="s-city">{tr('contact.city')}</label><input id="s-city" name="city" autocomplete="address-level2" /></div>
+        <div class="field"><label for="s-issue">{tr('support.issue')}</label><textarea id="s-issue" name="issue" rows="5" required placeholder={tr('support.issuePh')}></textarea></div>
+        <button class="btn btn-ink" type="submit"><Icon name="envelope-simple" />{tr('contact.send')}</button>
+      </form>
+    </div>
+  </section>
+</Site>
+<script>
+  const f = document.querySelector<HTMLFormElement>('[data-service]');
+  f?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const M = JSON.parse(f.dataset.text || '{}');
+    const d = new FormData(f);
+    const g = (k: string) => String(d.get(k) ?? '').trim();
+    const L: string[] = M.labels;
+    const body = [`${L[0]}: ${g('name')}`, `${L[1]}: ${g('phone')}`, `${L[2]}: ${g('model')}`, `${L[3]}: ${g('year') || '-'}`, `${L[4]}: ${g('city') || '-'}`, '', g('issue')].join('\n');
+    location.href = `mailto:${f.dataset.mail}?subject=${encodeURIComponent(`${M.subject}: ${g('model')}`)}&body=${encodeURIComponent(body)}`;
+  });
+</script>
+<style>
+  .page-head { padding-block: clamp(140px, 16vw, 200px) clamp(40px, 6vw, 64px); display: flex; flex-direction: column; gap: 20px; }
+  .guide { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 12px; margin-bottom: 12px; }
+  .guide-main { position: relative; display: flex; flex-direction: column; gap: 10px; padding: clamp(26px, 3vw, 40px); background: var(--ink); color: var(--paper); border-radius: 14px; min-height: 260px; transition: transform 0.4s cubic-bezier(.2,.7,.2,1); }
+  .guide-main:hover { transform: translateY(-3px); }
+  .guide-main :global(.gm-ic) { width: 40px; height: 40px; color: var(--sand); margin-bottom: auto; }
+  .gm-t { font-size: clamp(1.6rem, 2.6vw, 2.3rem); font-weight: 300; line-height: 1.1; }
+  .gm-p { opacity: 0.75; max-width: 26em; }
+  .gm-go { position: absolute; right: 26px; top: 26px; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; border: 1px solid color-mix(in srgb, var(--paper) 40%, transparent); }
+  .gm-go :global(svg) { width: 20px; height: 20px; }
+  .guide-ch { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; align-content: start; border-top: 1px solid var(--ink); }
+  .guide-ch a { display: flex; align-items: center; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--line); }
+  .guide-ch a:hover { color: var(--soft); }
+  .guide-ch :global(svg) { width: 20px; height: 20px; color: var(--accent); flex: none; }
+  .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .card { position: relative; display: flex; flex-direction: column; gap: 10px; padding: 28px 24px 56px; background: var(--stone); min-height: 220px; transition: background-color 0.3s; }
+  .card:hover { background: var(--card); }
+  .card :global(.c-ic) { width: 34px; height: 34px; color: var(--accent); margin-bottom: 10px; }
+  .c-t { font-size: 1.3rem; font-weight: 400; }
+  .c-p { color: var(--soft); font-size: 0.95rem; line-height: 1.45; }
+  .card :global(.c-go) { position: absolute; left: 24px; bottom: 22px; width: 22px; height: 22px; transition: translate 0.3s; }
+  .card:hover :global(.c-go) { translate: 6px 0; }
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); padding-block: clamp(72px, 10vw, 128px); }
+  .block { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+  .block .h3 { margin: 0; }
+  .block > p { margin: 0; }
+  .rows { margin: 0; width: 100%; border-top: 1px solid var(--ink); }
+  .rows div { display: flex; justify-content: space-between; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .rows dd { margin: 0; font-weight: 400; text-align: right; }
+  .max { display: flex; gap: 16px; padding: 22px; background: var(--stone); width: 100%; }
+  .max > :global(svg) { width: 30px; height: 30px; color: var(--accent); }
+  .max h3 { margin: 0 0 4px; font-size: 1.1rem; font-weight: 400; }
+  .max p { margin: 0; color: var(--soft); }
+  .prep { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); width: 100%; }
+  .prep li { display: flex; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--line); line-height: 1.5; }
+  .prep :global(svg) { width: 18px; height: 18px; margin-top: 3px; color: var(--accent); }
+  .service { background: var(--stone); padding-block: clamp(72px, 10vw, 128px); scroll-margin-top: 60px; }
+  .service-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 96px); }
+  .service .lede { margin: 18px 0; }
+  .direct { line-height: 2; margin: 0; }
+  .form { display: flex; flex-direction: column; gap: 4px; align-items: stretch; }
+  .form .btn { align-self: flex-start; margin-top: 8px; }
+  .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field label { font-size: 0.85rem; font-weight: 400; }
+  input, textarea, select { font: 300 1rem/1.4 var(--sans); color: var(--ink); padding: 12px 14px; border: 1px solid var(--field-line); border-radius: 2px; background: var(--field); width: 100%; }
+  input:focus, textarea:focus, select:focus { outline: 2px solid var(--ink); outline-offset: 0; }
+  @media (max-width: 960px) { .guide { grid-template-columns: 1fr; } .cards { grid-template-columns: 1fr 1fr; } .duo, .service-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .guide-ch { grid-template-columns: 1fr; } .cards, .two { grid-template-columns: 1fr; } .card { min-height: 0; } }
+</style>

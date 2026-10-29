@@ -1,0 +1,226 @@
+---
+import { Image } from 'astro:assets';
+import Site from '../../layouts/Site.astro';
+import Icon from '../Icon.astro';
+import { company } from '../../data/site';
+import { W, WP } from '../../data/img';
+import { alts, locale, t, url, type Lang } from '../../i18n';
+import Marquee from '../Marquee.astro';
+import Motion from '../Motion.astro';
+import hero from '../../assets/products/eden/hero.jpg';
+import forest from '../../assets/products/melody/scene-2.jpg';
+import dusk from '../../assets/products/zen/scene-4.jpg';
+import coast from '../../assets/products/fusion/scene-1.jpg';
+import d1 from '../../assets/home/fspa-ilu-26.jpg';
+import d2 from '../../assets/home/fspa-ilu-24.jpg';
+import d3 from '../../assets/home/fspa-ilu-36.jpg';
+import d4 from '../../assets/home/fspa-ilu-30.jpg';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = t(lang);
+const A = ((locale(lang) as any).about ?? (locale('en') as any).about) as {
+  title: string; metaTitle: string; metaDesc: string; lead: string; facts: [string, string][];
+  sections: { h: string; p: string[] }[]; visit: { h: string; p: string; cta: string }; faqTitle: string; faq: [string, string][];
+};
+const alt = alts('about');
+const site = Astro.site!.toString().replace(/\/$/, '');
+const pageUrl = new URL(url(lang, 'about'), Astro.site).toString();
+const ld = [
+  { '@context': 'https://schema.org', '@type': 'AboutPage', name: A.title, url: pageUrl, inLanguage: lang, description: A.metaDesc, about: { '@id': `${site}/#org` } },
+  { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: lang, mainEntity: A.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+];
+const S = A.sections;
+const num = (v: string) => (/^\d+$/.test(v) ? Number(v) : 0);
+// Full-bleed scene with a slow parallax image and a text card on top.
+const bleed = { 0: forest, 3: dusk } as Record<number, ImageMetadata>;
+const pairs = { 1: [d1, d2], 2: [d3, d4] } as Record<number, ImageMetadata[]>;
+---
+<Site lang={lang} title={A.metaTitle} description={A.metaDesc} alt={alt} overlay image={undefined}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(ld)} />
+  <section class="a-hero">
+    <div class="bg kb" data-par="0.25"><Image src={hero} alt="" {...WP([1280, 1920])} sizes="100vw" format="webp" quality={74} loading="eager" fetchpriority="high" /></div>
+    <div class="shade"></div>
+    <div class="wrap a-hero-copy">
+      <h1 class="a-title rv in">{A.title}</h1>
+      <p class="a-lead rv in" style="--rd:.15s">{A.lead}</p>
+    </div>
+    <span class="scroll-cue" aria-hidden="true"></span>
+  </section>
+
+  <section class="wrap facts" aria-label={A.title}>
+    <dl>{A.facts.map(([n, l], i) => <div class="rv" style={`--rd:${i * 0.08}s`}><dt><span data-count={num(n) || undefined}>{n}</span></dt><dd>{l}</dd></div>)}</dl>
+  </section>
+
+  {S.map((s, i) => bleed[i] ? (
+    <section class="scene">
+      <div class="bg" data-par="0.18"><Image src={bleed[i]} alt="" {...WP([1280, 1920])} sizes="100vw" format="webp" quality={74} /></div>
+      <div class="wrap scene-in">
+        <div class="card rv">
+          <span class="no">{String(i + 1).padStart(2, '0')}</span>
+          <h2 class="h2">{s.h}</h2>
+          {s.p.map((p) => <p>{p}</p>)}
+        </div>
+      </div>
+    </section>
+  ) : pairs[i] ? (
+    <section class:list={['wrap', 'duo', { flip: i % 2 === 0 }]}>
+      <div class="duo-text rv">
+        <span class="no">{String(i + 1).padStart(2, '0')}</span>
+        <h2 class="h2">{s.h}</h2>
+        {s.p.map((p) => <p>{p}</p>)}
+      </div>
+      <div class="duo-pics">
+        <figure class="p1 rv"><div data-par="0.06"><Image src={pairs[i][0]} alt="" {...WP([520, 900])} sizes="(max-width: 860px) 70vw, 30vw" format="webp" quality={76} /></div></figure>
+        <figure class="p2 rv" style="--rd:.15s"><div data-par="-0.08"><Image src={pairs[i][1]} alt="" {...WP([400, 700])} sizes="(max-width: 860px) 50vw, 20vw" format="webp" quality={76} /></div></figure>
+      </div>
+    </section>
+  ) : i === S.length - 1 ? (
+    <section class="customers">
+      <div class="wrap cust-head rv">
+        <span class="no">{String(i + 1).padStart(2, '0')}</span>
+        <h2 class="h2">{s.h}</h2>
+        {s.p.map((p) => <p class="lede">{p}</p>)}
+      </div>
+      <Marquee alt={`Favorit SPA, ${tr('model.installs')}`} />
+      <div class="wrap cust-foot"><a class="link" href={url(lang, 'reviews')}>{tr('nav.reviews')}</a><a class="link" href={url(lang, 'gallery')}>{tr('nav.gallery')}</a></div>
+    </section>
+  ) : i === 4 ? (
+    <section class="water">
+      <video class="water-v" src="/video/underwater.mp4" poster="/video/underwater.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+      <div class="water-shade"></div>
+      <div class="wrap"><div class="water-in rv">
+        <span class="no">{String(i + 1).padStart(2, '0')}</span>
+        <h2 class="h2">{s.h}</h2>
+        {s.p.map((p) => <p>{p}</p>)}
+      </div></div>
+    </section>
+  ) : (
+    <section class="wrap solo rv">
+      <span class="no">{String(i + 1).padStart(2, '0')}</span>
+      <h2 class="h2">{s.h}</h2>
+      <div>{s.p.map((p) => <p>{p}</p>)}</div>
+    </section>
+  ))}
+
+  <section class="wrap why-link rv">
+    <a href={url(lang, 'why' as any)}><span>{tr('nav.why')}</span><Icon name="arrow-right" /></a>
+  </section>
+
+  <section class="visit">
+    <div class="bg" data-par="0.18"><Image src={coast} alt="" {...WP([1280, 1920])} sizes="100vw" format="webp" quality={74} /></div>
+    <div class="shade"></div>
+    <div class="wrap visit-grid">
+      <div class="rv">
+        <h2 class="h2">{A.visit.h}</h2>
+        <p class="lede">{A.visit.p}</p>
+      </div>
+      <div class="visit-side rv" style="--rd:.15s">
+        <address>{company.name}<br />{company.street}<br />{company.city}, {tr('country')}</address>
+        <div class="ctas">
+          <a class="btn btn-light" href={url(lang, 'contact')}>{A.visit.cta}<Icon name="arrow-right" /></a>
+          <a class="btn btn-ghost" href={url(lang, 'quote')}>{tr('about.ctaQuote')}</a>
+          <a class="btn btn-ghost" href={company.mapUrl} rel="noopener"><Icon name="map-pin" />{tr('contact.map')}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap faq" aria-labelledby="faq-h">
+    <h2 id="faq-h" class="h2">{A.faqTitle}</h2>
+    <div class="qa">
+      {A.faq.map(([q, a], i) => (
+        <details open={i === 0}>
+          <summary><span>{q}</span><Icon name="plus" class="qa-ic" /></summary>
+          <p>{a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+  <Motion />
+</Site>
+<style>
+  .bg { position: absolute; inset: -14% 0; will-change: transform; }
+  .bg :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .shade { position: absolute; inset: 0; }
+  .a-hero { position: relative; height: 100svh; min-height: 600px; overflow: hidden; display: grid; align-items: end; color: #fff; background: #222; }
+  .a-hero .shade { background: linear-gradient(180deg, rgb(0 0 0 / 0.4) 0, transparent 30%, transparent 45%, rgb(0 0 0 / 0.55) 100%); }
+  .kb :global(img) { animation: kb 18s ease-out both; }
+  @keyframes kb { from { transform: scale(1.12); } to { transform: scale(1); } }
+  .a-hero-copy { position: relative; padding-bottom: clamp(56px, 9vh, 110px); display: flex; flex-direction: column; gap: 22px; }
+  .a-title { margin: 0; font-size: clamp(3rem, 8.5vw, 8rem); font-weight: 300; line-height: 0.95; letter-spacing: -0.02em; }
+  .a-lead { margin: 0; max-width: 32em; font-size: clamp(1.15rem, 1.8vw, 1.5rem); line-height: 1.45; }
+  .scroll-cue { position: absolute; left: 50%; bottom: 22px; width: 1px; height: 44px; background: rgb(255 255 255 / 0.35); overflow: hidden; }
+  .scroll-cue::after { content: ''; position: absolute; left: 0; top: -44px; width: 1px; height: 44px; background: #fff; animation: cue 2.2s ease-in-out infinite; }
+  @keyframes cue { to { top: 44px; } }
+
+  .facts dl { margin: clamp(56px, 8vw, 104px) 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+  .facts div { padding: 18px 16px 0 0; }
+  .facts dt { font-size: clamp(2.4rem, 4.4vw, 3.8rem); font-weight: 300; line-height: 1; }
+  .facts dd { margin: 10px 0 0; color: var(--soft); font-size: 0.92rem; line-height: 1.35; }
+
+  .no { display: block; font-size: 0.85rem; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 14px; }
+  .scene { position: relative; min-height: 112vh; overflow: hidden; display: grid; align-items: center; }
+  .scene-in { position: relative; display: flex; }
+  .card { max-width: 520px; background: color-mix(in srgb, var(--paper) 78%, transparent); -webkit-backdrop-filter: blur(18px) saturate(1.2); backdrop-filter: blur(18px) saturate(1.2); border: 1px solid rgb(255 255 255 / 0.35); border-radius: 6px; padding: clamp(28px, 4vw, 52px); box-shadow: 0 30px 60px rgb(0 0 0 / 0.16); }
+  @supports not (backdrop-filter: blur(1px)) { .card { background: var(--paper); } }
+  .card p, .duo-text p, .solo p { font-size: clamp(1.02rem, 1.3vw, 1.15rem); line-height: 1.7; }
+  .card p:last-child, .duo-text p:last-child { margin-bottom: 0; }
+
+  .duo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(32px, 7vw, 120px); align-items: center; padding-block: clamp(96px, 13vw, 180px); }
+  .duo.flip .duo-text { order: 2; }
+  .duo-pics { position: relative; min-height: clamp(380px, 44vw, 600px); }
+  .duo-pics figure { margin: 0; position: absolute; overflow: hidden; }
+  .duo-pics :global(img) { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .p1 { width: 68%; aspect-ratio: 4 / 5; top: 0; left: 0; }
+  .p2 { width: 46%; aspect-ratio: 1; right: 0; bottom: 0; box-shadow: 0 24px 48px rgb(0 0 0 / 0.16); }
+  .p1 > div, .p2 > div { height: 100%; }
+
+  .solo { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(24px, 5vw, 80px); padding-block: clamp(80px, 10vw, 140px); border-top: 1px solid var(--line); }
+  .solo .no { grid-column: 1 / -1; margin: 0; }
+
+  .water { position: relative; overflow: hidden; color: #fff; min-height: 80vh; display: grid; align-items: center; background: #0b2a3d; }
+  .water-v { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .water > .wrap { position: relative; }
+  .water-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(4 20 32 / 0.65), rgb(4 20 32 / 0.15)); }
+  .water-in { position: relative; max-width: 760px; padding-block: clamp(80px, 10vw, 140px); }
+  .water-in .no { color: #9fd3ea; }
+  .water-in p { font-size: clamp(1.1rem, 1.6vw, 1.35rem); line-height: 1.6; margin: 18px 0 0; }
+  .customers { background: var(--stone); padding-block: clamp(80px, 10vw, 140px); display: flex; flex-direction: column; gap: clamp(32px, 4vw, 52px); }
+  .cust-head { max-width: 900px; }
+  .cust-head .lede { color: var(--ink); margin: 16px 0 0; }
+  .cust-foot { display: flex; gap: 28px; }
+
+  .why-link { padding-block: clamp(64px, 8vw, 110px); }
+  .why-link a { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 28px; border-block: 1px solid var(--ink); font-size: clamp(2rem, 5vw, 4.4rem); font-weight: 300; letter-spacing: -0.01em; }
+  .why-link :global(svg) { width: 0.7em; height: 0.7em; color: var(--accent); transition: transform 0.4s; }
+  .why-link a:hover :global(svg) { transform: translateX(10px); }
+
+  .visit { position: relative; overflow: hidden; color: #fff; padding-block: clamp(140px, 18vw, 240px) clamp(64px, 8vw, 110px); }
+  .visit .shade { background: linear-gradient(180deg, rgb(0 0 0 / 0.05), rgb(0 0 0 / 0.6)); }
+  .visit-grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: end; }
+  .visit .lede { margin: 18px 0 0; color: #fff; }
+  .visit-side { padding: clamp(22px, 2.6vw, 34px); border-radius: 14px; background: rgb(24 20 16 / 0.28); -webkit-backdrop-filter: blur(16px) saturate(1.2); backdrop-filter: blur(16px) saturate(1.2); border: 1px solid rgb(255 255 255 / 0.18); }
+  address { font-style: normal; font-size: 1.15rem; line-height: 1.6; margin-bottom: 22px; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn-light { background: #fff; color: #2e2a25; border-color: #fff; }
+  .btn-ghost { color: #fff; border-color: rgb(255 255 255 / 0.6); }
+  .btn-ghost:hover { border-color: #fff; }
+
+  .faq { padding-block: clamp(72px, 10vw, 128px); display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(24px, 5vw, 80px); }
+  .qa { border-top: 1px solid var(--ink); }
+  details { border-bottom: 1px solid var(--line); }
+  summary { list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px 0; cursor: pointer; font-size: 1.15rem; }
+  summary::-webkit-details-marker { display: none; }
+  summary :global(.qa-ic) { width: 20px; height: 20px; flex: none; color: var(--accent); transition: transform 0.35s; }
+  details[open] summary :global(.qa-ic) { transform: rotate(45deg); }
+  details p { margin: 0 0 22px; color: var(--soft); font-size: 1.05rem; line-height: 1.65; }
+  @media (max-width: 1000px) { .facts dl { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 28px; } }
+  @media (max-width: 860px) {
+    .duo, .solo, .visit-grid, .faq { grid-template-columns: 1fr; }
+    .duo.flip .duo-text { order: 0; }
+    .scene { min-height: 0; padding-block: 46vh 48px; }
+    .card { max-width: none; }
+  }
+  @media (max-width: 560px) { .facts dl { grid-template-columns: 1fr 1fr; } }
+  @media (prefers-reduced-motion: reduce) { .kb :global(img) { animation: none; } .scroll-cue { display: none; } }
+</style>

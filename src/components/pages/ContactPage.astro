@@ -1,0 +1,55 @@
+---
+import Site from '../../layouts/Site.astro';
+import Icon from '../Icon.astro';
+import { company } from '../../data/site';
+import { alts, fill, persons as personsOf, t, type Lang, url } from '../../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = t(lang);
+const countries = tr('countries') as Record<string, string>;
+const alt = alts('contact');
+const hours = tr('contact.hours');
+---
+<Site lang={lang} title={`${tr('contact.title')} | Favorit SPA`} description={tr('contact.lead')} alt={alt}>
+  <section class="wrap page-head">
+    <h1 class="h1">{tr('contact.title')}</h1>
+    <p class="lede">{tr('contact.lead')}</p>
+  </section>
+
+  <section class="wrap cols">
+    <div class="col">
+      <h2 class="label">{tr('contact.address')}</h2>
+      <p class="big">{company.name}<br />{company.street}<br />{company.city}, {tr('country')}</p>
+      <p class="muted">{hours}</p>
+      <a class="btn" href={company.mapUrl} rel="noopener"><Icon name="pin" />{tr('contact.map')}</a>
+    </div>
+    <div class="col">
+      <h2 class="label">{tr('contact.phone')}</h2>
+      <ul class="phones">{company.phones.map((p) => <li><a href={`tel:${p.tel}`}>{p.display}</a><span>{countries[p.key]}</span></li>)}</ul>
+    </div>
+    <div class="col">
+      <h2 class="label">{tr('contact.email')}</h2>
+      <p class="big"><a class="link" href={`mailto:${company.email}`}>{company.email}</a></p>
+    </div>
+  </section>
+
+  <section class="wrap to-quote">
+    <p class="lede">{tr('contact.toQuote')}</p>
+    <a class="btn btn-ink" href={url(lang, 'quote')}>{tr('nav.quote')}</a>
+  </section>
+</Site>
+<style>
+  .page-head { padding-block: clamp(140px, 16vw, 200px) clamp(40px, 6vw, 64px); display: flex; flex-direction: column; gap: 20px; }
+  .cols { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: clamp(28px, 5vw, 72px); border-top: 1px solid var(--ink); padding-top: 28px; }
+  .col { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+  .label { font: 400 0.85rem/1.3 var(--sans); color: var(--soft); margin: 0; }
+  .big { margin: 0; font-size: clamp(1.15rem, 1.6vw, 1.4rem); line-height: 1.5; }
+  .col p { margin: 0; }
+  .phones { list-style: none; margin: 0; padding: 0; width: 100%; }
+  .phones li { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .phones a { font-size: 1.1rem; font-weight: 400; }
+  .phones span { color: var(--soft); font-size: 0.85rem; }
+  .to-quote { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; margin-block: clamp(64px, 9vw, 120px); padding: clamp(28px, 4vw, 48px); background: var(--stone); }
+  .to-quote .lede { margin: 0; color: var(--ink); }
+  @media (max-width: 860px) { .cols { grid-template-columns: 1fr; } }
+</style>

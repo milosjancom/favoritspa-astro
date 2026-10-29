@@ -1,0 +1,67 @@
+---
+import { W, LIGHT } from '../data/img';
+import { Image, getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import Icon from './Icon.astro';
+import { t, type Lang } from '../i18n';
+interface Props { images: ImageMetadata[]; alt: string; lang?: Lang; badges?: (string | null)[]; square?: boolean }
+const { images, alt, lang = 'sr', badges = [], square = false } = Astro.props;
+const tr = t(lang);
+const L = { photo: tr('gallery.photo'), gallery: tr('gallery.gallery'), close: tr('gallery.close'), prev: tr('gallery.prev'), next: tr('gallery.next') };
+const full = await Promise.all(images.map((src) => getImage({ src, width: 1600, format: 'webp', quality: 76 })));
+---
+<ul class:list={['gallery', { square }]} data-gallery>
+  {images.map((src, i) => (
+    <li>
+      <a href={full[i].src} data-index={i}>
+        <Image src={src} alt={`${alt}, ${L.photo} ${i + 1}`} width={LIGHT ? 1600 : 720} format="webp" quality={LIGHT ? 76 : 72} />
+        {badges[i] && <span class="badge">{badges[i]}</span>}
+      </a>
+    </li>
+  ))}
+</ul>
+<dialog class="lightbox" aria-label={`${alt}, ${L.gallery}`}>
+  <img alt="" />
+  <button class="lb-btn lb-close" type="button" aria-label={L.close}><Icon name="x" /></button>
+  <button class="lb-btn lb-prev" type="button" aria-label={L.prev}><Icon name="arrow-left" /></button>
+  <button class="lb-btn lb-next" type="button" aria-label={L.next}><Icon name="arrow-right" /></button>
+</dialog>
+<script>
+  for (const g of document.querySelectorAll<HTMLElement>('[data-gallery]')) {
+    const dlg = g.nextElementSibling as HTMLDialogElement;
+    const img = dlg.querySelector('img')!;
+    const links = [...g.querySelectorAll<HTMLAnchorElement>('a')];
+    let i = 0;
+    const show = (n: number) => {
+      i = (n + links.length) % links.length;
+      img.src = links[i].href;
+      img.alt = links[i].querySelector('img')?.alt ?? '';
+    };
+    links.forEach((a, n) => a.addEventListener('click', (e) => { e.preventDefault(); show(n); dlg.showModal(); }));
+    dlg.querySelector('.lb-close')!.addEventListener('click', () => dlg.close());
+    dlg.querySelector('.lb-prev')!.addEventListener('click', () => show(i - 1));
+    dlg.querySelector('.lb-next')!.addEventListener('click', () => show(i + 1));
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
+  }
+</script>
+<style>
+  .gallery { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .gallery li:first-child { grid-column: span 2; grid-row: span 2; }
+  .gallery a { position: relative; display: block; height: 100%; overflow: hidden; }
+  .square img { aspect-ratio: 1; }
+  .badge { position: absolute; left: 10px; bottom: 10px; padding: 4px 10px; border-radius: 999px; background: rgb(238 232 221 / 0.92); color: var(--ink); font-size: 0.78rem; font-weight: 400; }
+  .gallery img { width: 100%; height: 100%; aspect-ratio: 16 / 10; object-fit: cover; transition: transform 0.4s ease; }
+  .gallery a:hover img { transform: scale(1.03); }
+  .lightbox { border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh; }
+  .lightbox::backdrop { background: rgb(30 27 23 / 0.94); }
+  .lightbox img { width: 100%; height: 100%; object-fit: contain; padding: 56px 64px; }
+  .lb-btn { position: absolute; width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgb(255 255 255 / 0.5); background: rgb(46 42 37 / 0.6); color: #fff; display: grid; place-items: center; cursor: pointer; transition: background-color 0.3s; }
+  .lb-btn:hover { background: rgb(255 255 255 / 0.16); }
+  .lb-btn :global(svg) { width: 20px; height: 20px; }
+  .lb-close { top: 12px; right: 12px; }
+  .lb-prev { left: 12px; top: 50%; translate: 0 -50%; }
+  .lb-next { right: 12px; top: 50%; translate: 0 -50%; }
+  @media (max-width: 960px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 560px) { .gallery { grid-template-columns: 1fr 1fr; } .lightbox img { padding: 64px 8px; } }
+</style>

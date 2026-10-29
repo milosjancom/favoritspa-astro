@@ -1,0 +1,114 @@
+---
+import { Image } from 'astro:assets';
+import Site from '../../layouts/Site.astro';
+import Icon from '../Icon.astro';
+import { alts, guideUrl, locale, t, url, type Lang } from '../../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = t(lang);
+const M = ((locale(lang) as any).maintenance ?? (locale('en') as any).maintenance) as {
+  title: string; metaDesc: string; lead: string; scheduleH: string; schedule: [string, string][]; volumeNote: string;
+  productsH: string; productsLead: string; labels: { use: string; dose: string };
+  products: { id: string; name: string; kind: string; use: string; dose: string }[];
+  safety: string; guideH: string; guideP: string; askH: string; askP: string;
+};
+const imgs = import.meta.glob<{ default: ImageMetadata }>('../../assets/care/*.jpg', { eager: true });
+const img = (id: string) => imgs[`../../assets/care/${id}.jpg`]?.default;
+const icons = ['drop', 'clock', 'arrows-clockwise', 'flask', 'snowflake'];
+const alt = alts('maintenance');
+---
+<Site lang={lang} title={`${M.title} | Favorit SPA`} description={M.metaDesc} alt={alt}>
+  <section class="wrap head">
+    <h1 class="h1">{M.title}</h1>
+    <p class="lede">{M.lead}</p>
+  </section>
+
+  <section class="wrap routine" aria-labelledby="r-h">
+    <h2 id="r-h" class="h2">{M.scheduleH}</h2>
+    <ol class="steps">
+      {M.schedule.map(([when, what], i) => (
+        <li><span class="s-ic"><Icon name={icons[i] ?? 'drop'} /></span><span class="s-when">{when}</span><span class="s-what">{what}</span></li>
+      ))}
+    </ol>
+    <p class="small muted note">{M.volumeNote} <a class="link" href={url(lang, 'docs')}>{tr('nav.docs')}</a></p>
+  </section>
+
+  <section class="products" aria-labelledby="p-h">
+    <div class="wrap">
+      <div class="p-head">
+        <h2 id="p-h" class="h2">{M.productsH}</h2>
+        <p class="muted">{M.productsLead}</p>
+      </div>
+      <div class="grid">
+        {M.products.map((p) => (
+          <article class="prod" id={p.id}>
+            <div class="p-img">{img(p.id) && <Image src={img(p.id)!} alt={p.name} width={480} format="webp" quality={78} />}</div>
+            <div class="p-body">
+              <p class="kind">{p.kind}</p>
+              <h3 class="h3">{p.name}</h3>
+              <dl>
+                <div><dt>{M.labels.use}</dt><dd>{p.use}</dd></div>
+                <div><dt>{M.labels.dose}</dt><dd>{p.dose}</dd></div>
+              </dl>
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="safety"><Icon name="shield-check" /><span>{M.safety}</span></p>
+    </div>
+  </section>
+
+  <section class="wrap duo">
+    <a class="box box-ink" href={guideUrl(lang)}>
+      <Icon name="book-open-text" class="b-ic" />
+      <span class="b-h">{M.guideH}</span>
+      <span class="b-p">{M.guideP}</span>
+      <span class="b-go">{tr('nav.guide')} <Icon name="arrow-right" /></span>
+    </a>
+    <a class="box" href={`${url(lang, 'support')}#servis`}>
+      <Icon name="chat-circle-text" class="b-ic" />
+      <span class="b-h">{M.askH}</span>
+      <span class="b-p">{M.askP}</span>
+      <span class="b-go">{tr('nav.support')} <Icon name="arrow-right" /></span>
+    </a>
+  </section>
+</Site>
+<style>
+  .head { padding-block: clamp(140px, 16vw, 200px) clamp(40px, 6vw, 64px); display: flex; flex-direction: column; gap: 20px; }
+  .head .lede { color: var(--ink); max-width: 36em; }
+  .routine { padding-bottom: clamp(64px, 9vw, 120px); }
+  .routine .h2 { margin-bottom: 20px; }
+  .steps { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+  .steps li { display: grid; grid-template-columns: 48px minmax(0, 0.7fr) minmax(0, 1.6fr); gap: 16px; align-items: start; padding: 20px 0; border-bottom: 1px solid var(--line); }
+  .s-ic { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--chip-line); }
+  .s-ic :global(svg) { width: 20px; height: 20px; color: var(--accent); }
+  .s-when { font-size: 1.2rem; font-weight: 400; padding-top: 6px; }
+  .s-what { line-height: 1.6; padding-top: 6px; }
+  .note { margin-top: 16px; }
+  .products { background: var(--stone); padding-block: clamp(64px, 9vw, 120px); }
+  .p-head { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 12px 40px; margin-bottom: 32px; }
+  .p-head p { margin: 0; max-width: 30em; }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .prod { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 22px; padding: 22px; background: var(--paper); border-radius: 14px; scroll-margin-top: 100px; }
+  .p-img { background: #fff; border-radius: 10px; overflow: hidden; align-self: start; }
+  .p-img :global(img) { width: 100%; height: auto; display: block; }
+  .kind { margin: 0 0 4px; font-size: 0.85rem; color: var(--accent); }
+  .prod .h3 { margin-bottom: 12px; }
+  .prod dl { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .prod dt { font-size: 0.8rem; color: var(--soft); }
+  .prod dd { margin: 2px 0 0; font-size: 0.95rem; line-height: 1.55; }
+  .safety { display: flex; gap: 12px; margin: 24px 0 0; color: var(--soft); max-width: none; }
+  .safety :global(svg) { width: 22px; height: 22px; flex: none; color: var(--accent); }
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding-block: clamp(64px, 9vw, 120px); }
+  .box { display: flex; flex-direction: column; gap: 10px; padding: clamp(24px, 3vw, 38px); border-radius: 14px; background: var(--stone); min-height: 240px; transition: transform 0.4s cubic-bezier(.2,.7,.2,1); }
+  .box:hover { transform: translateY(-3px); }
+  .box-ink { background: var(--ink); color: var(--paper); }
+  .box :global(.b-ic) { width: 36px; height: 36px; color: var(--accent); margin-bottom: auto; }
+  .box-ink :global(.b-ic) { color: var(--sand); }
+  .b-h { font-size: clamp(1.4rem, 2.2vw, 1.9rem); font-weight: 300; }
+  .b-p { opacity: 0.8; max-width: 30em; }
+  .b-go { display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; font-weight: 400; }
+  .b-go :global(svg) { width: 18px; height: 18px; }
+  @media (max-width: 900px) { .grid, .duo { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) { .steps li { grid-template-columns: 44px 1fr; } .s-what { grid-column: 2; padding-top: 0; } .prod { grid-template-columns: 96px 1fr; gap: 14px; padding: 16px; } }
+</style>

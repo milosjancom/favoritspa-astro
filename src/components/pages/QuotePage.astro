@@ -1,0 +1,147 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Site from '../../layouts/Site.astro';
+import Icon from '../Icon.astro';
+import { company, euro } from '../../data/site';
+import { alts, fill, persons as personsOf, t, type Lang, url } from '../../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = t(lang);
+const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order);
+const steps = tr('quote.steps') as unknown as string[];
+const places = tr('quote.places') as unknown as string[];
+const alt = alts('quote');
+const phone = company.phones[0];
+---
+<Site lang={lang} title={`${tr('quote.title')} | Favorit SPA`} description={tr('quote.lead')} alt={alt}>
+  <div class="wrap quote">
+    <aside class="side">
+      <h1 class="h1">{tr('quote.title')}</h1>
+      <p class="lede">{tr('quote.lead')}</p>
+      <ol class="steps">{steps.map((s) => <li>{s}</li>)}</ol>
+      <div class="alt">
+        <p class="small muted">{tr('quote.contactAlt')}</p>
+        <p><a class="link" href={`tel:${phone.tel}`}>{phone.display}</a><br /><a class="link" href={url(lang, 'contact')}>{tr('nav.contact')}</a></p>
+      </div>
+    </aside>
+
+    <form class="form" id="upit" data-mail={company.email} data-text={JSON.stringify(tr('mail.quote'))}>
+      <fieldset class="block">
+        <legend class="label">{tr('quote.model')}</legend>
+        <div class="models">
+          {products.map((p) => (
+            <label class="model">
+              <input type="radio" name="model" value={p.data.name} data-pkgs={p.data.packages.map((k) => k.name).join(',')} />
+              <span class="m-img"><Image src={p.data.plan} alt="" width={240} format="webp" quality={80} /></span>
+              <span class="m-name">{p.data.name}</span>
+              <span class="m-price">{tr('from')} {euro(p.data.fromPrice, lang)}</span>
+            </label>
+          ))}
+          <label class="model model-any">
+            <input type="radio" name="model" value="" checked />
+            <span class="m-img m-any" aria-hidden="true">?</span>
+            <span class="m-name">{tr('quote.any')}</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="block">
+        <legend class="label">{tr('quote.pkg')}</legend>
+        <div class="chips">
+          {['Base', 'Advance', 'Privilege'].map((k) => <label class="chip"><input type="radio" name="pkg" value={k} data-pkg={k} /><span>{k}</span></label>)}
+          <label class="chip"><input type="radio" name="pkg" value="" checked /><span>{tr('quote.any')}</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="block">
+        <legend class="label">{tr('quote.place')}</legend>
+        <div class="chips">
+          {places.map((pl) => <label class="chip"><input type="radio" name="place" value={pl} /><span>{pl}</span></label>)}
+        </div>
+      </fieldset>
+
+      <fieldset class="block">
+        <legend class="label">{tr('quote.you')}</legend>
+        <div class="field"><label for="q-name">{tr('contact.name')}</label><input id="q-name" name="name" autocomplete="name" required /></div>
+        <div class="two">
+          <div class="field"><label for="q-email">{tr('quote.email')}</label><input id="q-email" name="email" type="email" autocomplete="email" required /></div>
+          <div class="field"><label for="q-phone">{tr('contact.tel')}</label><input id="q-phone" name="phone" type="tel" autocomplete="tel" /></div>
+        </div>
+        <div class="field"><label for="q-city">{tr('contact.city')}</label><input id="q-city" name="city" autocomplete="address-level2" /></div>
+        <div class="field"><label for="q-msg">{tr('contact.msg')}</label><textarea id="q-msg" name="msg" rows="4" placeholder={tr('contact.msgPh')}></textarea></div>
+      </fieldset>
+
+      <div class="send">
+        <button class="btn btn-ink" type="submit"><Icon name="mail" />{tr('contact.send')}</button>
+        <p class="small muted">{tr('contact.sendNote')} {company.email}.</p>
+      </div>
+    </form>
+  </div>
+</Site>
+<script>
+  const form = document.querySelector<HTMLFormElement>('#upit')!;
+  const q = new URLSearchParams(location.search);
+  const pick = (name: string, v: string | null) => { if (!v) return; const el = form.querySelector<HTMLInputElement>(`input[name="${name}"][value="${CSS.escape(v)}"]`); if (el) el.checked = true; };
+  // Packages a model does not offer are disabled (Fusion, Melody and Point have no Privilege).
+  const sync = () => {
+    const m = form.querySelector<HTMLInputElement>('input[name="model"]:checked');
+    const avail = m?.dataset.pkgs?.split(',');
+    form.querySelectorAll<HTMLInputElement>('input[data-pkg]').forEach((el) => {
+      el.disabled = !!avail && !avail.includes(el.value);
+      if (el.disabled && el.checked) (form.querySelector('input[name="pkg"][value=""]') as HTMLInputElement).checked = true;
+    });
+  };
+  pick('model', q.get('model'));
+  pick('pkg', q.get('paket'));
+  sync();
+  form.addEventListener('change', (e) => { if ((e.target as HTMLInputElement).name === 'model') sync(); });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const M = JSON.parse(form.dataset.text || '{}');
+    const f = new FormData(form);
+    const g = (k: string) => String(f.get(k) ?? '').trim();
+    const subject = `${M.subject}: ${g('model') || 'SPA'}${g('pkg') ? ' ' + g('pkg') : ''}`;
+    const L: string[] = M.labels;
+    const body = [`${L[0]}: ${g('name')}`, `${L[1]}: ${g('email')}`, `${L[2]}: ${g('phone')}`, `${L[3]}: ${g('city')}`, `${L[4]}: ${g('model') || '-'}`, `${L[5]}: ${g('pkg') || '-'}`, `${L[6]}: ${g('place') || '-'}`, '', g('msg')].join('\n');
+    location.href = `mailto:${form.dataset.mail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>
+<style>
+  .quote { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 96px); padding-block: clamp(140px, 16vw, 200px) clamp(80px, 10vw, 140px); }
+  .side { position: sticky; top: 110px; align-self: start; display: flex; flex-direction: column; gap: 22px; }
+  .side .lede { margin: 0; }
+  .steps { margin: 0; padding: 0; list-style: none; counter-reset: s; border-top: 1px solid var(--line); }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 34px 1fr; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .steps li::before { content: counter(s); color: var(--soft); }
+  .alt p { margin: 0 0 6px; }
+  .form { display: flex; flex-direction: column; gap: 28px; }
+  .block { border: 0; margin: 0; padding: 0; }
+  .label { font-size: 0.85rem; color: var(--soft); margin-bottom: 12px; padding: 0; }
+  .models { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+  .model { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 14px 10px 12px; background: var(--stone); border: 1px solid transparent; cursor: pointer; text-align: center; transition: border-color 0.25s, background-color 0.25s; }
+  .model:hover { border-color: var(--line); }
+  .model input, .chip input { position: absolute; opacity: 0; inset: 0; cursor: pointer; margin: 0; }
+  .model:has(input:checked) { background: var(--card); border-color: var(--ink); }
+  .model:has(input:focus-visible), .chip:has(input:focus-visible) { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .m-img { height: 84px; display: grid; place-items: center; }
+  .m-img :global(img) { max-height: 84px; width: auto; filter: drop-shadow(0 6px 10px rgb(46 42 37 / 0.15)); }
+  .m-any { font-size: 2rem; font-weight: 300; color: var(--soft); }
+  .m-name { font-weight: 400; font-size: 1.05rem; }
+  .m-price { font-size: 0.78rem; color: var(--soft); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { position: relative; }
+  .chip span { display: inline-block; padding: 9px 18px; border: 1px solid var(--line); border-radius: 999px; font-size: 0.95rem; transition: background-color 0.25s, color 0.25s, border-color 0.25s; }
+  .chip:hover span { border-color: var(--ink); }
+  .chip:has(input:checked) span { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .chip:has(input:disabled) { opacity: 0.35; pointer-events: none; }
+  .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field label { font-size: 0.85rem; font-weight: 400; }
+  input:not([type='radio']), textarea { font: 300 1rem/1.4 var(--sans); color: var(--ink); padding: 12px 14px; border: 1px solid var(--field-line); border-radius: 2px; background: var(--field); width: 100%; }
+  input:focus, textarea:focus { outline: 2px solid var(--ink); outline-offset: 0; }
+  .send { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+  .send p { margin: 0; }
+  @media (max-width: 960px) { .quote { grid-template-columns: 1fr; } .side { position: static; } }
+  @media (max-width: 560px) { .models { grid-template-columns: repeat(2, minmax(0, 1fr)); } .two { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,937 @@
+{
+  "meta": {
+    "name": "Crnogorski",
+    "htmlLang": "sr-Latn-ME",
+    "hreflang": "sr-ME",
+    "locale": "sr-Latn-ME",
+    "legacy": "me"
+  },
+  "persons": {
+    "one": "{n} osoba",
+    "few": "{n} osobe",
+    "other": "{n} osoba"
+  },
+  "values": {
+    "approx": "cca",
+    "hp": "KS",
+    "decimal": ",",
+    "upTo": "do"
+  },
+  "routes": {
+    "models": "djakuzi-spa-kade-i-cijene",
+    "features": "funkcije",
+    "maintenance": "odrzavanje",
+    "contact": "kontakt",
+    "quote": "upit",
+    "gallery": "galerija",
+    "reviews": "recenzije",
+    "faq": "pitanja-i-odgovori",
+    "about": "o-nama",
+    "terms": "opsti-uslovi-poslovanja",
+    "support": "podrska",
+    "docs": "dokumentacija",
+    "why": "zasto-favorit-spa",
+    "privacy": "politika-privatnosti",
+    "control": "upravljacki-sistem",
+    "brochure": "katalog"
+  },
+  "ui": {
+    "nav.models": "SPA kade",
+    "nav.features": "Funkcije",
+    "nav.maintenance": "Održavanje",
+    "nav.contact": "Kontakt",
+    "nav.quote": "Upit za ponudu",
+    "nav.gallery": "Galerija",
+    "nav.reviews": "Recenzije",
+    "nav.faq": "Pitanja i odgovori",
+    "nav.about": "O nama",
+    "nav.brochure": "Katalog",
+    "nav.control": "Upravljački sistem",
+    "nav.terms": "Opšti uslovi poslovanja",
+    "nav.menu": "Meni",
+    "nav.lang": "Jezik",
+    "cta": "Zatražite ponudu",
+    "call": "Pozovite",
+    "from": "od",
+    "jets": "mlaznica",
+    "view": "Pogledajte model",
+    "skip": "Preskoči na sadržaj",
+    "home.title": "Favorit SPA – SPA kade, mali evropski proizvođač",
+    "home.desc": "Favorit SPA proizvodi SPA masažne kade: sedam modela za 2 do 6 osoba, robotizovana proizvodnja i trideset godina iskustva.",
+    "home.intro": "Mali evropski proizvođač SPA kada. Robotizovana proizvodnja, pažnja do posljednjeg detalja i trideset godina iskustva.",
+    "home.models": "Modeli",
+    "lineup.h": "Svih sedam modela, u pravoj razmjeri",
+    "lineup.p": "Kade su prikazane odozgo, u istoj razmjeri. Uporedite ih prije nego što izmjerite terasu.",
+    "offers.h": "Akcijske cijene",
+    "offers.p": "Važe do isteka zaliha, za paket opreme naveden pored modela.",
+    "offers.model": "Model",
+    "maker.h": "Mali evropski proizvođač",
+    "maker.visit": "Salon i proizvodnja otvoreni su za posjete od ponedjeljka do subote.",
+    "maker.cta": "Zakažite posjetu",
+    "footer.tag": "SPA kade. Mali evropski proizvođač, trideset godina iskustva.",
+    "footer.note": "Slike su informativnog karaktera; oprema se razlikuje po paketima.",
+    "footer.catalog": "Katalog (PDF)",
+    "models.title": "SPA kade i cijene",
+    "models.lead": "Sedam modela u tri linije. Svaki dolazi u dva ili tri paketa opreme, koji se razlikuju po broju mlaznica, pumpama i dodacima.",
+    "models.packages": "Paketi",
+    "model.dims": "Dimenzije",
+    "model.colors": "Boje akrila",
+    "model.cladding": "Obloga kade",
+    "model.photo": "Fotografija",
+    "model.saleNote": "Akcijska cijena važi do isteka zaliha.",
+    "model.included": "U paketu",
+    "model.inquire": "Pošaljite upit za",
+    "model.yes": "uključeno",
+    "model.gallery": "Galerija",
+    "model.item": "Stavka",
+    "quote.title": "Upit za ponudu",
+    "quote.lead": "Izaberite model i paket, ostavite kontakt i poslaćemo vam ponudu. Ako još niste sigurni, samo opišite prostor, pomoći ćemo vam da izaberete.",
+    "quote.steps": [
+      "Izaberite model i paket",
+      "Ostavite kontakt i nekoliko riječi o prostoru",
+      "Javljamo vam se s ponudom"
+    ],
+    "quote.model": "Model",
+    "quote.email": "E-pošta",
+    "quote.contactAlt": "Radije biste razgovarali? Pozovite nas ili pogledajte kontakt.",
+    "contact.toQuote": "Za ponudu za konkretan model pošaljite upit.",
+    "contact.title": "Kontakt",
+    "contact.lead": "Pozovite nas, pišite nam ili dođite u salon i proizvodnju, od ponedjeljka do subote.",
+    "contact.address": "Adresa",
+    "contact.msgPh": "Npr. gdje će kada stajati i kada vam treba",
+    "contact.sendNote": "Upit se otvara kao e-poruka u vašem programu za poštu, upućena na",
+    "info.soon": "Ova stranica dolazi u sljedećoj fazi nove verzije sajta.",
+    "info.current": "Otvorite trenutnu verziju",
+    "nav.support": "Centar za podršku",
+    "nav.docs": "Dokumentacija",
+    "model.equipment": "Oprema i specifikacija",
+    "model.equipLead": "Sve što kada ima, po grupama i po paketima.",
+    "model.groups": {
+      "specs": "Tehnički podaci",
+      "massage": "Masaža",
+      "water": "Čista voda",
+      "control": "Upravljanje i energija",
+      "light": "Svjetlo, zvuk i miris",
+      "comfort": "Pokrivači, udobnost i servis",
+      "build": "Konstrukcija i izolacija",
+      "finish": "Završna obrada"
+    },
+    "model.installs": "Kod naših kupaca",
+    "model.installsLead": "Fotografije vlasnika, od jadranskih terasa do planinskih kuća.",
+    "model.tech": "Tehnologija u ovoj kadi",
+    "model.techMore": "Sve funkcije",
+    "reach.h": "Od Švedske do Grčke",
+    "reach.p": "Napravljene za oba kraja Evrope. PU izolacija (30 mm za hladnije krajeve) i termo pokrivač po mjeri čuvaju toplotu tokom švedske zime, a ozon, UV lampa i Gecko upravljanje drže vodu čistom kroz grčko ljeto. Sinter Wood obloga podnosi mraz, morski vazduh i sunce, bez ikakvog održavanja.",
+    "reach.stats": [
+      [
+        "30",
+        "godina proizvodnje"
+      ],
+      [
+        "7",
+        "modela, za 2 do 6 osoba"
+      ],
+      [
+        "11",
+        "zemalja u kojima uživaju u našim kadama"
+      ]
+    ],
+    "reach.countries": [
+      "Švedska",
+      "Njemačka",
+      "Austrija",
+      "Mađarska",
+      "Slovenija",
+      "Hrvatska",
+      "Bosna i Hercegovina",
+      "Srbija",
+      "Crna Gora",
+      "Albanija",
+      "Grčka"
+    ],
+    "footer.big": "Kade koje se prave s pažnjom, za trenutke koji se pamte.",
+    "footer.models": "SPA kade",
+    "footer.visitNote": "Salon i proizvodnja, od ponedjeljka do subote",
+    "support.title": "Centar za podršku",
+    "support.lead": "Uz kadu ostajemo i poslije isporuke. Ovdje su održavanje, garancija, uslovi za postavljanje i prijava servisa.",
+    "support.cards": [
+      [
+        "wrench",
+        "Održavanje",
+        "Voda, filteri i zimski režim, korak po korak.",
+        "maintenance"
+      ],
+      [
+        "question",
+        "Pitanja i odgovori",
+        "Najčešća pitanja prije i poslije kupovine.",
+        "faq"
+      ],
+      [
+        "file-pdf",
+        "Dokumentacija",
+        "Tehnički crteži, katalog i podaci za postavljanje.",
+        "docs"
+      ],
+      [
+        "headset",
+        "Prijava servisa",
+        "Opišite problem, javljamo se brzo.",
+        "#servis"
+      ]
+    ],
+    "support.warranty": "Garancija",
+    "support.warrantyRows": [
+      [
+        "Privatna upotreba",
+        "24 mjeseca od isporuke"
+      ],
+      [
+        "Javna upotreba (hoteli, SPA centri, iznajmljivanje)",
+        "12 mjeseci od isporuke"
+      ]
+    ],
+    "support.warrantyNote": "Garancija obuhvata sve ugrađene komponente. Servis i rezervne dijelove obezbjeđujemo i poslije isteka garantnog roka. Filteri i sredstva za održavanje vode nijesu dio garancije.",
+    "support.max": "Servis MAX 72h",
+    "support.maxP": "Uz servisni paket MAX naš serviser dolazi u roku od 72 sata od prijave, po potrebi s rezervnim dijelovima.",
+    "support.prep": "Prije postavljanja",
+    "support.prepList": [
+      "Ravna, nosiva betonska podloga, oko 40% veća od kade, kako bi joj se pristupilo sa svih strana.",
+      "Električni kabl 3×2,5 mm² ili 5×2,5 mm², zavisno od modela, dužine oko 4 m od mjesta postavljanja.",
+      "Zaštitna strujna sklopka (FID) i osigurači prema uputstvu. Priključak izvodi ovlašćeni električar.",
+      "Vodovod i kanalizacija nijesu potrebni: kada se puni baštenskim crijevom i prazni preko ugrađenog ventila.",
+      "Filter se mijenja najmanje jednom godišnje."
+    ],
+    "support.form": "Prijava servisa",
+    "support.formLead": "Navedite model i opišite šta se dešava. Fotografije možete priložiti u e-poruci koja se otvori.",
+    "support.year": "Godina kupovine",
+    "support.issuePh": "Npr. poruka na displeju, od kada se javlja, šta ste već probali",
+    "docs.title": "Dokumentacija",
+    "docs.lead": "Tehnički crteži, podaci za postavljanje i katalog, na jednom mjestu.",
+    "docs.models": "Podaci za postavljanje",
+    "docs.cols": [
+      "Model",
+      "Dimenzije",
+      "Zapremina",
+      "Težina, prazna",
+      "Napajanje",
+      "Crtež"
+    ],
+    "docs.general": "Opšti dokumenti",
+    "docs.pdf": "PDF",
+    "docs.weightNote": "Težina i napajanje zavise od paketa; prikazan je raspon od osnovnog do najjačeg.",
+    "countries": {
+      "Serbia": "Srbija",
+      "Montenegro": "Crna Gora",
+      "Bosnia": "Bosna i Hercegovina",
+      "Croatia": "Hrvatska"
+    },
+    "offers.pkg": "Paket",
+    "offers.was": "Redovna cijena",
+    "offers.now": "Akcijska cijena",
+    "offers.save": "ušteda",
+    "model.persons": "Broj osoba",
+    "model.jets": "Mlaznica",
+    "model.price": "Cijena",
+    "model.packages": "Paketi opreme",
+    "model.choose": "Izaberite paket",
+    "model.jetsLine": "hidro i aero mlaznica",
+    "model.notIncluded": "Nije u paketu",
+    "model.opt": "uz doplatu",
+    "model.no": "nije dostupno",
+    "model.drawing": "Tehnički crtež (PDF)",
+    "model.others": "Ostali modeli",
+    "quote.pkg": "Paket",
+    "quote.any": "Još ne znam",
+    "quote.you": "Vaši podaci",
+    "quote.place": "Gdje će kada stajati",
+    "quote.places": [
+      "Terasa",
+      "Dvorište",
+      "Krov",
+      "Unutra"
+    ],
+    "contact.phone": "Telefon",
+    "contact.email": "E-pošta",
+    "contact.map": "Otvorite mapu",
+    "contact.name": "Ime i prezime",
+    "contact.tel": "Telefon",
+    "contact.city": "Mjesto",
+    "contact.msg": "Poruka",
+    "contact.send": "Pošaljite upit",
+    "footer.explore": "Istražite",
+    "footer.help": "Pomoć",
+    "footer.visit": "Posjetite nas",
+    "support.issue": "Opis problema",
+    "lineup.topView": "pogled odozgo",
+    "gallery.photo": "fotografija",
+    "gallery.gallery": "galerija",
+    "gallery.close": "Zatvori",
+    "gallery.prev": "Prethodna",
+    "gallery.next": "Sljedeća",
+    "contact.hours": "Salon i proizvodnja: od ponedjeljka do subote",
+    "country": "Srbija",
+    "model.metaDesc": "{name}, SPA kada za {persons}, {dims}, do {jets} mlaznica. Cijena od {price}.",
+    "features.lead": "Šta ulazi u svaku Favorit kadu: provjerene komponente, većinom proizvođača Gecko, i detalji o kojima brinemo sami.",
+    "features.count": "funkcija",
+    "features.end": "Koje funkcije dolaze u kom paketu, piše na stranici svakog modela.",
+    "docs.generalList": [
+      "Favorit SPA katalog",
+      "Opšti uslovi poslovanja",
+      "Uputstvo za održavanje",
+      "Uslovi za postavljanje i garancija"
+    ],
+    "mail.quote": {
+      "subject": "Upit za ponudu",
+      "labels": [
+        "Ime",
+        "E-pošta",
+        "Telefon",
+        "Mjesto",
+        "Model",
+        "Paket",
+        "Lokacija"
+      ]
+    },
+    "mail.service": {
+      "subject": "Prijava servisa",
+      "labels": [
+        "Ime",
+        "Telefon",
+        "Model",
+        "Godina kupovine",
+        "Mjesto"
+      ]
+    },
+    "home.prev": "Prethodni model",
+    "home.next": "Sljedeći model",
+    "home.craftAlt": "Pearl, studijska fotografija",
+    "nav.closeShort": "Zatvori",
+    "settings.title": "Prikaz",
+    "settings.theme": "Tema",
+    "settings.light": "Svijetla",
+    "settings.dark": "Tamna",
+    "settings.auto": "Automatski",
+    "settings.text": "Veličina teksta",
+    "settings.smaller": "Običan tekst",
+    "settings.larger": "Veći tekst",
+    "settings.largest": "Najveći tekst",
+    "nav.guide": "Uputstvo za upotrebu",
+    "support.guideCard": "Korak po korak, od punjenja do zime, na jednom mjestu.",
+    "about.ctaQuote": "Zatražite ponudu",
+    "nav.why": "Zašto Favorit SPA",
+    "nav.privacy": "Politika privatnosti",
+    "nav.groupHelp": "Podrška",
+    "nav.groupStory": "Naša priča",
+    "nav.helpIntro": "Uz vas smo i nakon isporuke: uputstva, dokumentacija i servis na jednom mjestu.",
+    "nav.storyIntro": "Mali evropski proizvođač iz Šapca. Trideset godina pravimo kade, a na vaš poziv odgovaraju isti ljudi koji ih prave."
+  },
+  "products": {
+    "eden": {
+      "tagline": "inspiracija za šestoro",
+      "description": "Inspiracija za ovakav model dolazi sama i svuda je oko nas. Krug, slijed i trajanje, baš kao i sam život. Uživajmo bez kraja, u krugu nama dragih.",
+      "claim": "Šest mjesta u krugu, licem u lice. Eden je napravljen za porodicu, prijatelje i duge razgovore pod zvijezdama."
+    },
+    "fusion": {
+      "tagline": "fuzija svega potrebnog, drugo ime za balans",
+      "description": "Fuzija svega potrebnog, drugo ime za balans. Prostranost, funkcionalnost, ljepota i dovoljnost… Da, moje ime je FUSION svega nabrojanog.",
+      "claim": "Dvije ležaljke i dva sjedišta u kompaktnom kvadratu. Sve što vam treba, ništa suvišno."
+    },
+    "garden": {
+      "tagline": "uživajte u opuštajućim SPA tretmanima na otvorenom",
+      "description": "SPA Garden vam pomaže da se potpuno prepustite uživanju. Vrijeme staje i pretvara se u mali odmor daleko od gradske buke. Ovdje se vaše želje ispunjavaju kroz SPA tretmane.",
+      "claim": "Najveća u ponudi: šest mjesta, snažne pumpe i masaža za cijelo tijelo. Garden pretvara dvorište u privatni spa."
+    },
+    "melody": {
+      "tagline": "toliko doživljaja u samo naizgled malome",
+      "description": "Toliko doživljaja u samo naizgled malome. Zaista ništa tako malo ne može pružiti toliko uživanja. Pravi MELODY.",
+      "claim": "Za dvoje, za male terase i velika uživanja. Melody staje tamo gdje druge kade ne mogu."
+    },
+    "pearl": {
+      "tagline": "zagledani zajedno u isti horizont",
+      "description": "Intimnost i prisnost, dok pogledima stremimo istom horizontu. Može li bolje, treba li nam više?",
+      "claim": "Napravljena za dvoje, s mjestom za gosta. Ležaljka, tiha masaža i isti horizont."
+    },
+    "point": {
+      "tagline": "početna tačka okupljanja",
+      "description": "Početna tačka okupljanja. Brzina, jednostavnost i prvi korak u svijet SPA uživanja.",
+      "claim": "Najkraći put do sopstvenog spa. Četiri mjesta, jednostavno rukovanje i lak prvi korak."
+    },
+    "zen": {
+      "tagline": "mogućnost da biramo, mogućnost da želimo",
+      "description": "Mogućnost da biramo, mogućnost da želimo, mogućnost da ostvarimo svoje želje i snove. Uronimo u sebe, osluškujmo svoje želje i ispunjavajmo ih. Mijenjamo se, mijenjajući mjesta u potrazi za savršenim. Budimo ZEN.",
+      "claim": "Pet mjesta, ležaljka i dovoljno prostora da svako nađe svoje. Zen je kada u kojoj se veče samo od sebe produži."
+    }
+  },
+  "labels": {
+    "Aero mlaznice (komada)": "Aero mlaznice (komada)",
+    "Aero mlaznice set": "Set aero mlaznica",
+    "Aero pumpa": "Aero pumpa",
+    "Antibakterijski filter": "Antibakterijski filter",
+    "Aromaterapija": "Aromaterapija",
+    "Blue energy block": "Blue energy block",
+    "Broj mesta": "Broj mjesta",
+    "Cirada": "Cirada",
+    "Cirkulaciona pumpa": "Cirkulaciona pumpa",
+    "Dodatni grejač 3kW": "Dodatni grijač 3 kW",
+    "Drenažni ventil": "Drenažni ventil",
+    "Elektronska kontrola": "Elektronska kontrola",
+    "Fiberglas omotač": "Fiberglas omotač",
+    "Grejač": "Grijač",
+    "HDS okvir stiren visoke gustine": "HDS okvir od stirena visoke gustine",
+    "Hidro mlaznice (komada)": "Hidro mlaznice (komada)",
+    "Hidro mlaznice kombo (set)": "Hidro mlaznice kombo (set)",
+    "Hidro pumpa 2ks (komada)": "Hidro pumpa 2 KS (komada)",
+    "Hidro pumpa 3ks (komada)": "Hidro pumpa 3 KS (komada)",
+    "Hromoterapija": "Hromoterapija",
+    "Jastuk (set)": "Jastuci (set)",
+    "Kontrolni blok": "Kontrolni blok",
+    "Led mini lampe": "LED mini lampe",
+    "Low water level": "Zaštita od niskog nivoa vode",
+    "Magma mlaznice (4 komada)": "Magma mlaznice (4 komada)",
+    "Materijal lica": "Materijal lica",
+    "Metal konstrukcija": "Metalna konstrukcija",
+    "Music system": "Music system",
+    "Ozonoterapija": "Ozonoterapija",
+    "PEARL-WHITE finish": "PEARL-WHITE finish",
+    "PURE-WHITE finish": "PURE-WHITE finish",
+    "Pametno led svetlo": "Pametno LED svjetlo",
+    "Parna membrana": "Parna membrana",
+    "Polar izolacija 10mm": "Polar izolacija 10 mm",
+    "Polar izolacija 30mm": "Polar izolacija 30 mm",
+    "Potrebna snaga": "Potrebna snaga",
+    "SILVER-PLATINUM finish": "SILVER-PLATINUM finish",
+    "SMF snažan metalni ram": "SMF snažan metalni ram",
+    "SPA kontola GECKO IN.K.1000": "SPA kontrola Gecko in.k1000",
+    "Sedeća mesta / Ležeća mesta": "Sjedeća mjesta / Ležeća mjesta",
+    "Servis 72h": "Servis 72h",
+    "Sigurnosno monofazno napajanje": "Sigurnosno monofazno napajanje",
+    "Smartphone platforma": "Smartphone platforma",
+    "Stepenice": "Stepenice",
+    "Svetleće hidro mlaznice": "Svijetleće hidro mlaznice",
+    "Svetleće mini mlaznice": "Svijetleće mini mlaznice",
+    "Temperaturni opseg upotrebe": "Temperaturni opseg upotrebe",
+    "Termo pokrivač": "Termo pokrivač",
+    "Termo ventilacija": "Termo ventilacija",
+    "Termo-stone finish": "Termo-stone finish",
+    "Težina": "Težina",
+    "Thermostron omotač": "Thermostron omotač",
+    "UV lampa": "UV lampa",
+    "Visoko led svetlo": "Visoko LED svjetlo",
+    "Zapremina": "Zapremina",
+    "Zvučni sistem": "Zvučni sistem",
+    "Čist hemijski sistem": "Čist hemijski sistem"
+  },
+  "featureGroups": {
+    "control": "Upravljanje",
+    "massage": "Masaža",
+    "water": "Čista voda",
+    "warmth": "Toplota i energija",
+    "build": "Konstrukcija i obloga",
+    "experience": "Doživljaj",
+    "service": "Servis"
+  },
+  "features": {
+    "spa-control": {
+      "t": "SPA kontrola",
+      "d": "Elektronika je mozak svake SPA kade. Koristimo komponente kanadskog proizvođača Gecko: jednostavne za upotrebu, pouzdane i dugotrajne. Kontrolni paneli su od in.k200 do in.k1000, zavisno od paketa."
+    },
+    "online": {
+      "t": "Online platforma 24/7",
+      "d": "Upravljajte kadom i kada niste kod kuće. Uključite je s telefona, podesite temperaturu, rad pumpi i svjetlo, a kad stignete, voda je spremna."
+    },
+    "hydro-pump": {
+      "t": "Hidro pumpa",
+      "d": "Ako je elektronika mozak, pumpe su srce kade. Snaga od 2 ili 3 KS, mala potrošnja struje i tih rad."
+    },
+    "aero-pump": {
+      "t": "Aero pumpa",
+      "d": "Snažna pumpa s ugrađenim grijanjem šalje topao vazduh u svaku aero mlaznicu. Masaža je prijatnija, a voda se manje hladi. I ona radi tiho."
+    },
+    "jets": {
+      "t": "Hidro i aero mlaznice",
+      "d": "Mlaznice i komande su ono što direktno dodirujete, pa moraju biti i kvalitetne i lijepe. Koristimo Gecko combo seriju, otpornu na sve vremenske uslove. S njima pumpe pokazuju punu snagu, uz gotovo nečujan rad."
+    },
+    "circulation": {
+      "t": "Cirkulaciona pumpa",
+      "d": "Radi neprekidno i stalno vodi svu vodu kroz filter i grijač, pa je kada uvijek spremna za kupanje."
+    },
+    "inclear": {
+      "t": "in.clear sistem",
+      "d": "Gecko in.clear oslobađa brom u vodu i uklanja bakterije, alge i organske nečistoće, za prijatno i opuštajuće kupanje svaki put."
+    },
+    "ozone": {
+      "t": "Ozon generator",
+      "d": "Pretvara kiseonik iz vazduha u ozon, koji dopire do cijele instalacije i drži vodu kristalno čistom."
+    },
+    "filter": {
+      "t": "Antibakterijski filter",
+      "d": "Filter s aktivnim ugljem i vrlo sitnim perforacijama zadržava lišće, travu i sitne nečistoće s površine vode."
+    },
+    "uv": {
+      "t": "UV lampa",
+      "d": "UV zraci uklanjaju širok spektar bakterija koje bi se inače mogle zadržati u vodi."
+    },
+    "water": {
+      "t": "Kvalitet vode",
+      "d": "Cleanwater Blue održava vodu bistrom i hemijski ispravnom, bez hemijskog mirisa i prijatnom za kožu."
+    },
+    "heater": {
+      "t": "Grijač",
+      "d": "Grijač od 3 kW ugrađen je u kontrolnu jedinicu i podešava se u koracima od 0,5 °C."
+    },
+    "insulation": {
+      "t": "Izolacija",
+      "d": "PU izolacija od 10 mm sa slojem aluminijumske folije čuva toplotu, štedi struju i štiti komponente. Za hladnije krajeve postoji i izolacija od 30 mm."
+    },
+    "cover": {
+      "t": "Termo pokrivač",
+      "d": "Izrađen po mjeri od PU pjene visoke gustine, s termo folijom i navlakom od sintetičke kože otporne na vlagu i UV zračenje. Ivice su blago zakošene da bi voda lakše oticala."
+    },
+    "tarp": {
+      "t": "Cirada",
+      "d": "Vodootporna zaštita po mjeri koja, uz termo pokrivač, čuva kadu tokom zime."
+    },
+    "frame": {
+      "t": "Noseća konstrukcija",
+      "d": "Krut ram koji se ne izvija ni kada se kada premješta i ne prenosi zvuk pumpi i elektronike. Dostupan je i HDS okvir od stirena visoke gustine."
+    },
+    "cladding": {
+      "t": "Obloga",
+      "d": "Obloga Sinter Wood izgleda kao drvo, ali ne traži održavanje: otporna je na vremenske uslove i udarce i prigušuje zvuk. Boje Grey Wood i Rose Wood."
+    },
+    "stairs": {
+      "t": "Stepenice",
+      "d": "Stepenice protiv klizanja za lak i bezbjedan ulaz, u nekoliko boja."
+    },
+    "led": {
+      "t": "Pametno LED svjetlo",
+      "d": "Bogat spektar boja pretvara mjehuriće u igru svjetla. Varijanta High Light ima hromirani prsten."
+    },
+    "aroma": {
+      "t": "Aromaterapija",
+      "d": "Izaberite omiljeni miris za dublje opuštanje: kedar, citrusi, eukaliptus, breskva i drugi."
+    },
+    "sound": {
+      "t": "Zvučni sistem",
+      "d": "Brzo povezivanje preko Bluetooth-a, kvalitetan zvuk i jednostavna upotreba."
+    },
+    "service": {
+      "t": "Servis MAX 72h",
+      "d": "Kvar uvijek dođe nenajavljeno. Uz ovaj servisni paket naš serviser dolazi u roku od 72 sata od prijave, po potrebi s rezervnim dijelovima."
+    }
+  },
+  "tech": {
+    "spa-control": "Gecko upravljanje",
+    "online": "Upravljanje telefonom",
+    "hydro-pump": "Hidro pumpe 2–3 KS",
+    "aero-pump": "Aero pumpa s grijanjem",
+    "ozone": "Ozon generator",
+    "uv": "UV lampa",
+    "inclear": "in.clear",
+    "filter": "Antibakterijski filter",
+    "insulation": "Termo izolacija",
+    "led": "Pametno LED svjetlo",
+    "aroma": "Aromaterapija",
+    "sound": "Bluetooth zvuk",
+    "service": "Servis MAX 72h"
+  },
+  "about": {
+    "title": "O nama",
+    "metaTitle": "O nama – Favorit SPA, proizvođač SPA kada iz Šapca",
+    "metaDesc": "Favorit SPA, mali evropski proizvođač SPA kada iz Šapca: 30 godina iskustva, sedam modela za 2 do 6 osoba, Gecko komponente i rezervni dijelovi na stanju.",
+    "lead": "Mali evropski proizvođač SPA kada iz Šapca u Srbiji. Već trideset godina sami projektujemo, pravimo, prodajemo i servisiramo svoje kade, od prve skice do posljednjeg rezervnog dijela.",
+    "facts": [
+      [
+        "30",
+        "godina iskustva"
+      ],
+      [
+        "7",
+        "modela u tri linije"
+      ],
+      [
+        "2–6",
+        "osoba po kadi"
+      ],
+      [
+        "24",
+        "mjeseca garancije"
+      ],
+      [
+        "11",
+        "država s našim kadama"
+      ],
+      [
+        "1",
+        "adresa: proizvodnja i salon u Šapcu"
+      ]
+    ],
+    "sections": [
+      {
+        "h": "Ko smo mi",
+        "p": [
+          "Mi smo Favorit, tim inženjera, dizajnera i majstora koji već tri decenije pravi SPA kade u Šapcu. Sve je pod jednim krovom: razvoj, proizvodnja, prodaja i servis.",
+          "Zovite je SPA kada, đakuzi, jacuzzi ili masažni bazen. Za nas je to uvijek isto: kada koja je dobro napravljena, udobna za sjedenje, prijatna na dodir i snažna kad se uključe mlaznice."
+        ]
+      },
+      {
+        "h": "Kako ih pravimo",
+        "p": [
+          "Robotizovane mašine oblikuju i obrađuju akrilne školjke svaki put jednako precizno. Naš tim zatim svaku kadu ručno ojačava, izoluje, povezuje i sklapa, i provjerava je do posljednjeg detalja prije nego što napusti radionicu.",
+          "Namjerno smo ostali mali. Zato poznajemo svaku kadu koju napravimo i možemo da promijenimo detalj istog dana kad naučimo nešto novo."
+        ]
+      },
+      {
+        "h": "Komponente kojima vjerujemo",
+        "p": [
+          "Elektronika, pumpe i mlaznice dolaze od najpriznatijih proizvođača u SPA industriji, među kojima su kanadski Gecko i Waterway. Biramo dijelove koji su jednostavni za upotrebu, tihi i dugotrajni, da kada radi sama, a vi samo uživate."
+        ]
+      },
+      {
+        "h": "Poslije kupovine",
+        "p": [
+          "Svaki rezervni dio koji vam može zatrebati već je na našim policama. Naručite radnim danom do 12 časova i sjutradan je na vašoj adresi.",
+          "Naši inženjeri odgovaraju telefonom i video pozivom, pa se većina pitanja riješi za nekoliko minuta. Vaša Favorit SPA kada treba uvijek da bude spremna za sljedeće veče."
+        ]
+      },
+      {
+        "h": "Mali troškovi održavanja",
+        "p": [
+          "Energetski efikasne pumpe (klasa A+) i grijači (klasa C), dobra izolacija i termo pokrivač drže račune niskim. U prosjeku za sve naše modele struja i filteri koštaju oko 20 EUR mjesečno, otprilike kao jedan espreso dnevno."
+        ]
+      },
+      {
+        "h": "Gdje su naše kade",
+        "p": [
+          "Favorit kade griju terase na jadranskoj obali, kuće u planinskim ski centrima i dvorišta širom Evrope, od Švedske do Grčke. Uz odgovarajući paket rade tokom cijele godine, i na ljetnjoj vrućini i na snijegu."
+        ]
+      }
+    ],
+    "visit": {
+      "h": "Posjetite fabriku",
+      "p": "Pogledajte kade uživo, sjedite u njih i porazgovarajte s ljudima koji ih prave. Salon i proizvodnja u Šapcu otvoreni su od ponedjeljka do subote.",
+      "cta": "Zakažite posjetu"
+    },
+    "faqTitle": "Kratki odgovori",
+    "faq": [
+      [
+        "Gdje se proizvode Favorit SPA kade?",
+        "U našoj proizvodnji u Šapcu u Srbiji, gdje je i salon. Favorit DOO proizvodi SPA kade već 30 godina."
+      ],
+      [
+        "Koliko traje Favorit SPA kada?",
+        "Uz redovno održavanje 15 do 20 godina. Redovno čistite filter, mijenjajte ga jednom godišnje i pravilno pripremite kadu ako tokom zime ne radi."
+      ],
+      [
+        "Da li su za ugradnju potrebni vodovod i kanalizacija?",
+        "Nijesu. Potrebni su ravna betonska podloga i strujni kabl. Kada se puni baštenskim crijevom i prazni preko ugrađenog ventila."
+      ],
+      [
+        "Koliko košta korišćenje?",
+        "U prosjeku oko 20 EUR mjesečno za struju i filtere, zavisno od modela, paketa opreme i učestalosti korišćenja."
+      ],
+      [
+        "Kolika je garancija?",
+        "24 mjeseca za privatnu i 12 mjeseci za komercijalnu upotrebu, za sve ugrađene komponente. Servis i rezervni dijelovi dostupni su i poslije isteka garancije."
+      ]
+    ]
+  },
+  "maintenance": {
+    "title": "Održavanje",
+    "metaDesc": "Kako da voda u Favorit SPA kadi uvijek bude čista: jednostavna sedmična i mjesečna rutina i sredstva za održavanje vode koja preporučujemo, sa doziranjem.",
+    "lead": "Za čistu vodu dovoljno je nekoliko minuta sedmično. Ozon generator, cirkulaciona pumpa i filter rade najveći dio posla; vi samo provjerite, dopunite i isperete. Evo rutine i sredstava koja i sami koristimo i prodajemo.",
+    "scheduleH": "Rutina",
+    "schedule": [
+      [
+        "Pri svakom kupanju",
+        "Istuširajte se prije ulaska. Poslije kupanja zatvorite i pričvrstite pokrivač."
+      ],
+      [
+        "Svake sedmice",
+        "Provjerite pH (7,2–7,4) i dezinfekciono sredstvo. Dodajte DEWAN-20 P i ALGI-CID. Isperite filter crijevom."
+      ],
+      [
+        "Jednom mjesečno",
+        "Uradite šok dezinfekciju sredstvom ALGA-SOKK P. Potopite filter preko noći u DINAX FILTER FIZZY P. Dodajte BIOPOOL G ako primijetite pjenu ili masne tragove."
+      ],
+      [
+        "Pri zamjeni vode",
+        "Na svakih nekoliko sedmica, zavisno od korišćenja. Prije pražnjenja očistite instalaciju sredstvom DINASAN P. Ako punite tvrdom ili bunarskom vodom, dodajte DINAX METAL MAGIC F."
+      ],
+      [
+        "Jednom godišnje",
+        "Zamijenite filter, provjerite pokrivač i pripremite kadu za zimu ili je ostavite da radi uz odgovarajući paket."
+      ]
+    ],
+    "volumeNote": "Doze su date po kubnom metru (m³) vode. Favorit kade primaju od oko 0,4 do 2,3 m³; zapremina svakog modela je na stranici Dokumentacija.",
+    "productsH": "Sredstva koja preporučujemo",
+    "productsLead": "Profesionalna sredstva za održavanje vode, testirana i sertifikovana, koja možete dobiti od nas uz kadu ili uz sljedeću porudžbinu.",
+    "labels": {
+      "use": "Čemu služi",
+      "dose": "Kako se koristi"
+    },
+    "products": [
+      {
+        "id": "alga-sokk-p",
+        "name": "ALGA-SOKK® P",
+        "kind": "Granule za šok dezinfekciju",
+        "use": "Povremena šok dezinfekcija: pri prvom punjenju, jednom mjesečno i prije početka korišćenja DEWAN-20 P. Uklanja biofilm iz cijevi i mlaznica.",
+        "dose": "2–3 kašike u punu kadu. Pustite pumpe da rade duže od 10 minuta, nekoliko puta. Ostavite najmanje 2 sata. Kada iz mlaznica više ne izlazi biofilm, ispraznite, isperite i ponovo napunite."
+      },
+      {
+        "id": "dewan-20-p",
+        "name": "DEWAN®-20 P",
+        "kind": "Dezinfekcione granule bez hlora",
+        "use": "Svakodnevna dezinfekcija bez hlora. Djeluje 3 sata poslije doziranja i održava vodu čistom između šok tretmana.",
+        "dose": "Održavajte 3–5 mg/l i mjerite DEWAN-20 test trakama. Dodajte jednom sedmično, rastvoreno u vodi, zajedno sa ALGI-CID. pH držite između 7,2 i 7,4."
+      },
+      {
+        "id": "algi-cid",
+        "name": "ALGI-CID",
+        "kind": "Sredstvo protiv algi, tečno",
+        "use": "Sprječava zelene i tamne alge, mutnu vodu, neprijatan miris i zapušene filtere. Djeluje pri svakoj pH vrijednosti, biorazgradivo je i ne pjeni se.",
+        "dose": "Početna doza pri novom punjenju, zatim mala sedmična doza zajedno sa dezinfekcionim sredstvom, prema uputstvu na etiketi."
+      },
+      {
+        "id": "dinax-minus-p",
+        "name": "DINAX® MINUS P",
+        "kind": "Granule za snižavanje pH",
+        "use": "Vraća pH na 7,2–7,4, gdje dezinfekciona sredstva najbolje djeluju.",
+        "dose": "Oko 0,1 kg na m³ vode, rastvoreno. Ponovo izmjerite prije nego što dodate još. Nosite rukavice i zaštitne naočare."
+      },
+      {
+        "id": "biopool-g",
+        "name": "BIOPOOL G",
+        "kind": "Enzimski gel",
+        "use": "Razlaže masnoće, sluz i biofilm, smanjuje pjenu i pomaže filteru. Netoksičan je i biorazgradiv; pun efekat postiže za mjesec dana.",
+        "dose": "Prvi put 20 ml na m³, zatim 10 ml na m³ jednom sedmično, u prostor za filter."
+      },
+      {
+        "id": "dinasan-p",
+        "name": "DINASAN P",
+        "kind": "Sredstvo za čišćenje i dezinfekciju instalacije",
+        "use": "Čisti i dezinfikuje cijevi i mlaznice do kojih ne možete da dođete: biofilm, ulja, sapun i masnoće koje izazivaju pjenu.",
+        "dose": "Prije pražnjenja: 250 g na m³ u prostor za filter. Neka voda kruži 5 minuta, zaustavite, ostavite 2 sata, ponovo pustite kruženje, pa ispraznite i isperite."
+      },
+      {
+        "id": "dinax-metal-magic",
+        "name": "DINAX® METAL MAGIC F",
+        "kind": "Stabilizator kamenca i metala",
+        "use": "Sprječava kamenac i braon mrlje od gvožđa, na primjer kada punite iz bunara ili imate tvrdu vodu.",
+        "dose": "30–50 ml na m³ tokom punjenja; 50 ml na m³ za tvrdoću ispod 20 °GH. Ne prekoračujte dozu."
+      },
+      {
+        "id": "filter-fizzy",
+        "name": "DINAX® FILTER FIZZY P",
+        "kind": "Prašak za čišćenje filtera",
+        "use": "Dubinski čisti papirne filtere od mineralnih naslaga.",
+        "dose": "Rastvorite po jednu kesicu A i B u 5–10 l vruće vode. Potopite filter na 1 sat, a ako je jako prljav, do 24 sata. Isperite ga uspravno pod mlazom vode i ostavite da se osuši."
+      }
+    ],
+    "safety": "Prije upotrebe svakog hemijskog sredstva pročitajte etiketu, čuvajte sredstva na suvom i hladnom mjestu i nikada ih ne miješajte međusobno. Držite ih van domašaja djece.",
+    "guideH": "Korak po korak",
+    "guideP": "Punjenje, prvo pokretanje, održavanje vode, filteri, pražnjenje i priprema za zimu detaljno su opisani u uputstvu za upotrebu.",
+    "askH": "Niste sigurni šta vam treba?",
+    "askP": "Pošaljite nam fotografiju vode ili test trake i reći ćemo vam šta da dodate."
+  },
+  "reviews": {
+    "title": "Recenzije",
+    "metaDesc": "Šta vlasnici kažu o Favorit SPA kadama i servisu: ocjena 4,7 od 5 iz 70 Google recenzija, i fotografije stvarnih ugradnji.",
+    "lead": "Šta naši vlasnici kažu o kadama, servisu i posjeti Šapcu. Vaše mišljenje nam je važno.",
+    "ratingOf": "od 5",
+    "ratingCount": "{n} Google recenzija",
+    "seeAll": "Sve recenzije na Google-u",
+    "write": "Ostavite recenziju na Google-u",
+    "ownerH": "Imate Favorit SPA kadu?",
+    "ownerP": "Podijelite svoje iskustvo. Pomažete drugima da lakše izaberu.",
+    "note": "Recenzije su prikazane onako kako su napisane na Google-u.",
+    "installsH": "Stvarne ugradnje",
+    "installsP": "Fotografije koje su nam poslali vlasnici, od jadranskih terasa do planinskih kuća."
+  },
+  "why": {
+    "title": "Zašto Favorit SPA",
+    "metaTitle": "Zašto Favorit SPA – SPA kade direktno od proizvođača iz Šapca",
+    "metaDesc": "Deset razloga zbog kojih ljudi od Švedske do Grčke biraju Favorit SPA kadu: fabričke cijene, 30 godina iskustva, Gecko komponente, oko 20 EUR mjesečno za rad, rezervni dijelovi već sjutradan.",
+    "lead": "Kadu ćete koristiti gotovo svako veče narednih dvadeset godina. Ovo su razlozi zbog kojih ljudi od Švedske do Grčke biraju našu.",
+    "reasons": [
+      {
+        "icon": "wrench",
+        "h": "Direktno od proizvođača",
+        "p": "Bez uvoznika i posrednika. Kupujete od ljudi koji kadu projektuju i prave, po fabričkoj cijeni, i poslije kupovine razgovarate sa istim ljudima."
+      },
+      {
+        "icon": "clock",
+        "h": "Trideset godina iskustva",
+        "p": "SPA kade u Šapcu pravimo već tri decenije. Svako sjedište, stepenik i naslon za glavu prije vas su isprobale hiljade vlasnika."
+      },
+      {
+        "icon": "cpu",
+        "h": "Komponente kojima vjerujemo",
+        "p": "Gecko upravljanje iz Kanade, Waterway mlaznice i pumpe. Tihi, pouzdani dijelovi koje poznaje svaki serviser SPA kada u Evropi."
+      },
+      {
+        "icon": "lightning",
+        "h": "Mali troškovi rada",
+        "p": "Pumpe klase A+, potpuna izolacija i poklopac po mjeri. Struja i filteri u prosjeku koštaju oko 20 EUR mjesečno."
+      },
+      {
+        "icon": "truck",
+        "h": "Rezervni dijelovi sjutradan",
+        "p": "Svi dijelovi su na našim policama. Naručite do podneva radnim danom i sjutra su na vašoj adresi."
+      },
+      {
+        "icon": "headset",
+        "h": "Pomoć putem video poziva",
+        "p": "Naši inženjeri vide ono što i vi i većinu pitanja riješe za nekoliko minuta, gdje god da kada stoji."
+      },
+      {
+        "icon": "ruler",
+        "h": "Jednostavna ugradnja",
+        "p": "Bez vodoinstalaterskih radova. Dovoljni su ravna betonska podloga, kabl za struju i baštensko crijevo."
+      },
+      {
+        "icon": "snowflake",
+        "h": "Cijele godine, u svakoj klimi",
+        "p": "Od jadranskih ljeta do snijega na skijalištima. Uz odgovarajući paket voda ostaje topla u svako doba godine."
+      },
+      {
+        "icon": "shield-check",
+        "h": "Garancija 24 mjeseca",
+        "p": "Garancija pokriva sve ugrađene komponente. Servis i rezervni dijelovi dostupni su i dugo poslije isteka garancije."
+      },
+      {
+        "icon": "sliders-horizontal",
+        "h": "Plaćate ono što koristite",
+        "p": "Svaki model dolazi u do tri paketa opreme, pa birate mlaznice, svjetlo i udobnost koje želite, i ništa više."
+      }
+    ],
+    "quote": "Namjerno ostajemo mali. Tako poznajemo svaku kadu koju napravimo.",
+    "quoteBy": "Favorit tim, Šabac",
+    "ctaH": "Sjednite u nju prije nego što odlučite",
+    "ctaP": "Posjetite naš izložbeni salon u Šapcu ili nam opišite svoj prostor i poslaćemo vam ponudu."
+  },
+  "control": {
+    "title": "Gecko upravljački sistem",
+    "metaTitle": "Gecko upravljački sistem u Favorit SPA kadama – kontrolni paneli, aplikacija i dodaci",
+    "metaDesc": "Svaka Favorit SPA kada radi na Gecko elektronici iz Kanade: kontrolni paneli in.k od in.k200 do in.k1000 sa ekranom na dodir, aplikacija in.touch 2, njega vode in.clear i zvuk in.stream.",
+    "lead": "Elektronika je mozak svake kade. Naša dolazi od kanadskog proizvođača Gecko Alliance, jednog od najzastupljenijih u svijetu: jednostavna za upotrebu, pouzdana i sa servisom svuda u Evropi.",
+    "madeBy": "Elektronika Gecko Alliance, Kanada",
+    "brainH": "Jedan sistem, tri dijela",
+    "brain": [
+      [
+        "Kontrolna jedinica",
+        "Kutija ispod obloge koja upravlja grijačem, pumpama, svjetlima i cirkulacijom i štiti ih od kvarova."
+      ],
+      [
+        "Kontrolni panel",
+        "Panel na ivici kade. Pokazuje temperaturu vode i pokreće mlaznice, svjetla i programe."
+      ],
+      [
+        "Vaš telefon",
+        "Uz dodatni modul in.touch 2 iste komande imate u aplikaciji na telefonu, gdje god da ste."
+      ]
+    ],
+    "keypadsH": "Kontrolni paneli",
+    "keypadsLead": "Kontrolni panel zavisi od modela i paketa opreme. Svi održavaju temperaturu, sami pokreću cikluse filtracije i javljaju poruku kada nešto treba provjeriti.",
+    "keypads": {
+      "in.k200": [
+        "Kompaktni",
+        "Četiri tastera i jasan LED prikaz temperature. Sve što manjoj kadi treba, ništa više."
+      ],
+      "in.k300": [
+        "Osnovni",
+        "Pregledan LCD ekran i direktni tasteri za pumpe, svjetlo i temperaturu. Jednostavan i izdržljiv."
+      ],
+      "in.k500": [
+        "U boji",
+        "Ekran u boji sa animiranim ikonama, režimima njege vode, rasporedom filtracije, zaključavanjem i podsjetnicima za održavanje. Radi sa in.touch 2, in.clear i in.stream."
+      ],
+      "in.k800": [
+        "Veliki ekran u boji",
+        "Veći ekran u boji i deset tastera za kade sa više opreme: više pumpi, svjetla, zvuk i njega vode na jednom mjestu."
+      ],
+      "in.k1000": [
+        "Ekran na dodir",
+        "Ekran na dodir u boji od 4,3 inča, bez ijednog tastera. Meniji kao na telefonu i softver koji se ažurira direktno sa panela."
+      ]
+    },
+    "used": "Ugrađuje se u",
+    "optional": "opciono",
+    "appH": "Kada u vašem džepu",
+    "appP": "Modul in.touch 2 povezuje kadu sa kućnim internetom preko radio veze velikog dometa, pa radi i na kraju dvorišta. Aplikacija in.touch 2 za iOS i Android radi sve što i kontrolni panel, sa bilo kojeg mjesta.",
+    "app": [
+      "Temperatura vode i grijanje",
+      "Pumpe, svjetla i ostala oprema",
+      "Režim njege vode i ciklusi filtracije",
+      "Obavještenja, podsjetnici i poruke o greškama"
+    ],
+    "appNote": "Dostupno kao opcija Smartphone platforma uz pakete Advance i Privilege.",
+    "modesH": "Režimi njege vode",
+    "modesLead": "Izaberite kako kada grije, a ona radi ostalo. Ekonomični režim spušta temperaturu kada kadu ne koristite.",
+    "modes": [
+      [
+        "Odsutan",
+        "Uvijek ekonomično, kada putujete."
+      ],
+      [
+        "Početnik",
+        "Nikad ekonomično, voda je uvijek na vašoj temperaturi."
+      ],
+      [
+        "Ušteda energije",
+        "Ekonomično u vršnim satima radnim danima, pun komfor vikendom."
+      ],
+      [
+        "Super ušteda",
+        "Ekonomično u vršnim satima svakog dana."
+      ],
+      [
+        "Vikend",
+        "Ekonomično radnim danima, spremna za vikend."
+      ]
+    ],
+    "extrasH": "Radi zajedno sa",
+    "extras": [
+      [
+        "in.clear",
+        "Automatska njega vode koja bromidnu so (BromiCharge) u vodi pretvara u brom, pa ručno dodajete mnogo manje hemikalija."
+      ],
+      [
+        "in.stream 2",
+        "Bluetooth zvuk ugrađen u kadu: zvučnici u oblozi, muzika sa vašeg telefona."
+      ],
+      [
+        "Pametno LED svjetlo",
+        "Podvodno i ivično osvjetljenje u bojama koje se mijenjaju, sa kontrolnog panela ili iz aplikacije."
+      ]
+    ],
+    "matrixH": "Koji kontrolni panel ide uz koju kadu",
+    "matrixLead": "Standardni kontrolni panel po modelu i paketu. Uz Privilege se može dodati ekran na dodir in.k1000.",
+    "ctaH": "Pitanja o elektronici?",
+    "ctaP": "Naši inženjeri poznaju svaku Gecko komponentu koju ugrađujemo i pomažu telefonom ili video pozivom."
+  },
+  "brochure": {
+    "title": "Katalog",
+    "metaTitle": "Favorit SPA katalog – svi modeli kada, paketi i cijene",
+    "metaDesc": "Preuzmite Favorit SPA katalog putem e-pošte: svih sedam modela kada, paketi opreme, dimenzije i tehnički podaci u jednom PDF-u.",
+    "lead": "Svih sedam modela, paketi opreme, dimenzije i tehnički podaci u jednom PDF-u. Ostavite adresu e-pošte i odmah ćemo vam poslati link za preuzimanje.",
+    "points": [
+      "Sedam modela za 2 do 6 osoba, u istoj razmjeri",
+      "Uporedni prikaz paketa Base, Advance i Privilege",
+      "Uslovi za postavljanje i tehnički podaci"
+    ],
+    "formH": "Pošaljite mi katalog",
+    "name": "Ime",
+    "email": "E-pošta",
+    "country": "Država",
+    "consent": "Slažem se da mi Favorit SPA pošalje katalog i povremeno novosti o modelima i ponudama. Mogu se odjaviti u svakom trenutku.",
+    "privacy": "Vašu adresu koristimo samo u ovu svrhu, kako je opisano u politici privatnosti.",
+    "submit": "Pošaljite link",
+    "sending": "Šaljemo…",
+    "doneH": "Provjerite e-poštu",
+    "doneP": "Link za preuzimanje stiže na {email}. Ako ga ne vidite za nekoliko minuta, pogledajte folder za neželjenu poštu.",
+    "error": "Nešto nije u redu. Pokušajte ponovo ili nam pišite na sales@favoritspa.com.",
+    "invalid": "Unesite ispravnu adresu e-pošte i označite saglasnost."
+  }
+}

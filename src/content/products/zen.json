@@ -1,0 +1,701 @@
+{
+ "slug": "zen",
+ "name": "Zen",
+ "order": 0,
+ "line": "Effect line",
+ "tagline": "mogućnosti da biramo, mogućnosti da želimo",
+ "fromPrice": 6500,
+ "description": "Mogućnosti da biramo, mogućnosti da želimo, mogućnosti da ostvarimo svoje želje i svoje snove. Uronimo u sebe, osluškujmo svoje želje, ispunjavajmo ih. Menjamo se, menjajući mesta u potrazi za savršenim. Budimo ZEN.",
+ "dimensions": "2180 ✕ 2180 mm",
+ "persons": 5,
+ "jets": 55,
+ "hero": "../../assets/products/zen/hero.jpg",
+ "colors": [
+  {
+   "name": "White Pearl",
+   "image": "../../assets/products/zen/color-white-pearl.png",
+   "grey": "../../assets/products/zen/color-white-pearl-grey.png"
+  },
+  {
+   "name": "Platinum Grey",
+   "image": "../../assets/products/zen/color-platinum-grey.png",
+   "grey": "../../assets/products/zen/color-platinum-grey-grey.png"
+  }
+ ],
+ "gallery": [
+  "../../assets/products/zen/gallery-1.jpg",
+  "../../assets/products/zen/gallery-2.jpg",
+  "../../assets/products/zen/gallery-3.jpg",
+  "../../assets/products/zen/gallery-4.jpg",
+  "../../assets/products/zen/gallery-5.jpg",
+  "../../assets/products/zen/gallery-6.jpg",
+  "../../assets/products/zen/gallery-7.jpg",
+  "../../assets/products/zen/gallery-8.jpg",
+  "../../assets/products/zen/gallery-9.jpg"
+ ],
+ "packages": [
+  {
+   "name": "Privilege",
+   "price": 8900,
+   "oldPrice": null,
+   "jets": 55,
+   "image": "../../assets/products/zen/pkg-privilege.png",
+   "features": [
+    {
+     "name": "Touch control",
+     "on": true
+    },
+    {
+     "name": "Smart Eco",
+     "on": true
+    },
+    {
+     "name": "Silent Work",
+     "on": true
+    },
+    {
+     "name": "Ozone generator",
+     "on": true
+    },
+    {
+     "name": "Aromatherapy",
+     "on": true
+    },
+    {
+     "name": "Wips frame",
+     "on": true
+    },
+    {
+     "name": "Sound system",
+     "on": true
+    },
+    {
+     "name": "Smart system",
+     "on": false
+    },
+    {
+     "name": "Smart LED light",
+     "on": true
+    },
+    {
+     "name": "SPA heater",
+     "on": true
+    },
+    {
+     "name": "Hydro jets",
+     "on": true
+    },
+    {
+     "name": "Aero jets",
+     "on": true
+    },
+    {
+     "name": "Combo hydro jets",
+     "on": true
+    },
+    {
+     "name": "Thermo covers",
+     "on": true
+    },
+    {
+     "name": "SPA UV lamp",
+     "on": false
+    },
+    {
+     "name": "Circulation pump",
+     "on": true
+    },
+    {
+     "name": "Hydro pump",
+     "on": true
+    },
+    {
+     "name": "Aero pump",
+     "on": true
+    },
+    {
+     "name": "SPA water filter",
+     "on": true
+    },
+    {
+     "name": "Water quality",
+     "on": true
+    }
+   ]
+  },
+  {
+   "name": "Advance",
+   "price": 6980,
+   "oldPrice": 7995,
+   "jets": 38,
+   "image": "../../assets/products/zen/pkg-advance.png",
+   "features": [
+    {
+     "name": "Touch control",
+     "on": true
+    },
+    {
+     "name": "Smart Eco",
+     "on": false
+    },
+    {
+     "name": "Silent Work",
+     "on": true
+    },
+    {
+     "name": "Ozone generator",
+     "on": true
+    },
+    {
+     "name": "Aromatherapy",
+     "on": true
+    },
+    {
+     "name": "Wips frame",
+     "on": true
+    },
+    {
+     "name": "Sound system",
+     "on": false
+    },
+    {
+     "name": "Smart system",
+     "on": false
+    },
+    {
+     "name": "Smart LED light",
+     "on": true
+    },
+    {
+     "name": "SPA heater",
+     "on": true
+    },
+    {
+     "name": "Hydro jets",
+     "on": true
+    },
+    {
+     "name": "Aero jets",
+     "on": true
+    },
+    {
+     "name": "Combo hydro jets",
+     "on": false
+    },
+    {
+     "name": "Thermo covers",
+     "on": false
+    },
+    {
+     "name": "SPA UV lamp",
+     "on": false
+    },
+    {
+     "name": "Circulation pump",
+     "on": true
+    },
+    {
+     "name": "Hydro pump",
+     "on": true
+    },
+    {
+     "name": "Aero pump",
+     "on": true
+    },
+    {
+     "name": "SPA water filter",
+     "on": true
+    },
+    {
+     "name": "Water quality",
+     "on": false
+    }
+   ]
+  },
+  {
+   "name": "Base",
+   "price": 6500,
+   "oldPrice": null,
+   "jets": 29,
+   "image": "../../assets/products/zen/pkg-base.png",
+   "features": [
+    {
+     "name": "Touch control",
+     "on": true
+    },
+    {
+     "name": "Smart Eco",
+     "on": false
+    },
+    {
+     "name": "Silent Work",
+     "on": false
+    },
+    {
+     "name": "Ozone generator",
+     "on": true
+    },
+    {
+     "name": "Aromatherapy",
+     "on": false
+    },
+    {
+     "name": "Wips frame",
+     "on": true
+    },
+    {
+     "name": "Sound system",
+     "on": false
+    },
+    {
+     "name": "Smart system",
+     "on": false
+    },
+    {
+     "name": "Smart LED light",
+     "on": false
+    },
+    {
+     "name": "SPA heater",
+     "on": true
+    },
+    {
+     "name": "Hydro jets",
+     "on": true
+    },
+    {
+     "name": "Aero jets",
+     "on": false
+    },
+    {
+     "name": "Combo hydro jets",
+     "on": false
+    },
+    {
+     "name": "Thermo covers",
+     "on": false
+    },
+    {
+     "name": "SPA UV lamp",
+     "on": false
+    },
+    {
+     "name": "Circulation pump",
+     "on": true
+    },
+    {
+     "name": "Hydro pump",
+     "on": true
+    },
+    {
+     "name": "Aero pump",
+     "on": false
+    },
+    {
+     "name": "SPA water filter",
+     "on": true
+    },
+    {
+     "name": "Water quality",
+     "on": false
+    }
+   ]
+  }
+ ],
+ "standard": {
+  "columns": [
+   "Base",
+   "Advance",
+   "Privilege"
+  ],
+  "rows": [
+   {
+    "label": "Broj mesta",
+    "values": [
+     "5",
+     "5",
+     "5"
+    ]
+   },
+   {
+    "label": "Potrebna snaga",
+    "values": [
+     "1 ✕ 25A 230V/50Hz",
+     "3 ✕ 16A 230V/400V/50Hz",
+     "3 ✕ 16A 230V/400V/50Hz"
+    ]
+   },
+   {
+    "label": "Sedeća mesta / Ležeća mesta",
+    "values": [
+     "2/3",
+     "2/3",
+     "2/3"
+    ]
+   },
+   {
+    "label": "Zapremina",
+    "values": [
+     "1860 l",
+     "1860 l",
+     "1860 l"
+    ]
+   },
+   {
+    "label": "Težina",
+    "values": [
+     "cca 330 kg",
+     "cca 350 kg",
+     "cca 380 kg"
+    ]
+   },
+   {
+    "label": "Materijal lica",
+    "values": [
+     "SPA Acryl 8mm",
+     "SPA Acryl 8mm",
+     "SPA Acryl 8mm"
+    ]
+   },
+   {
+    "label": "Fiberglas omotač",
+    "values": [
+     "yes",
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "Thermostron omotač",
+    "values": [
+     "opt",
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "Hidro pumpa 3ks (komada)",
+    "values": [
+     "1",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "label": "Aero pumpa",
+    "values": [
+     "opt",
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "Cirkulaciona pumpa",
+    "values": [
+     "yes",
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "Grejač",
+    "values": [
+     "2 kW",
+     "3 kW",
+     "3 kW"
+    ]
+   },
+   {
+    "label": "Elektronska kontrola",
+    "values": [
+     "GECKO in.k 300",
+     "GECKO in.k 500",
+     "GECKO in.k 800"
+    ]
+   },
+   {
+    "label": "Ozonoterapija",
+    "values": [
+     "yes",
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "Antibakterijski filter",
+    "values": [
+     "yes",
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "UV lampa",
+    "values": [
+     "no",
+     "no",
+     "no"
+    ]
+   },
+   {
+    "label": "Aromaterapija",
+    "values": [
+     "opt",
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "Hidro mlaznice (komada)",
+    "values": [
+     "29",
+     "24",
+     "45"
+    ]
+   },
+   {
+    "label": "Temperaturni opseg upotrebe",
+    "values": [
+     "15°C - 35°C",
+     "15°C - 35°C",
+     "-5°C - 50°C"
+    ]
+   },
+   {
+    "label": "Low water level",
+    "values": [
+     "no",
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "Blue energy block",
+    "values": [
+     "no",
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "Aero mlaznice (komada)",
+    "values": [
+     "opt",
+     "14",
+     "10"
+    ]
+   },
+   {
+    "label": "Drenažni ventil",
+    "values": [
+     "yes",
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "Termo pokrivač",
+    "values": [
+     "opt",
+     "opt",
+     "yes"
+    ]
+   },
+   {
+    "label": "Pametno led svetlo",
+    "values": [
+     "opt",
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "Led mini lampe",
+    "values": [
+     "opt",
+     "opt",
+     "yes"
+    ]
+   },
+   {
+    "label": "PURE-WHITE finish",
+    "values": [
+     "yes",
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "SILVER-PLATINUM finish",
+    "values": [
+     "opt",
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "PEARL-WHITE finish",
+    "values": [
+     "opt",
+     "opt",
+     "opt"
+    ]
+   }
+  ]
+ },
+ "extras": {
+  "columns": [
+   "Base",
+   "Advance",
+   "Privilege"
+  ],
+  "rows": [
+   {
+    "label": "SPA kontola GECKO IN.K.1000",
+    "values": [
+     "no",
+     "no",
+     "opt"
+    ]
+   },
+   {
+    "label": "Zvučni sistem",
+    "values": [
+     "opt",
+     "opt",
+     "yes"
+    ]
+   },
+   {
+    "label": "Polar izolacija 30mm",
+    "values": [
+     "opt",
+     "opt",
+     "yes"
+    ]
+   },
+   {
+    "label": "SMF snažan metalni ram",
+    "values": [
+     "yes",
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "HDS okvir stiren visoke gustine",
+    "values": [
+     "no",
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "Hidro mlaznice kombo (set)",
+    "values": [
+     "opt",
+     "opt",
+     "yes"
+    ]
+   },
+   {
+    "label": "Aero mlaznice set",
+    "values": [
+     "opt",
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "Magma mlaznice (4 komada)",
+    "values": [
+     "no",
+     "no",
+     "yes"
+    ]
+   },
+   {
+    "label": "Čist hemijski sistem",
+    "values": [
+     "opt",
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "Stepenice",
+    "values": [
+     "opt",
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "Termo ventilacija",
+    "values": [
+     "opt",
+     "opt",
+     "yes"
+    ]
+   },
+   {
+    "label": "Smartphone platforma",
+    "values": [
+     "no",
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "Cirada",
+    "values": [
+     "opt",
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "Jastuk (set)",
+    "values": [
+     "yes",
+     "yes",
+     "yes"
+    ]
+   },
+   {
+    "label": "Dodatni grejač 3kW",
+    "values": [
+     "opt",
+     "opt",
+     "opt"
+    ]
+   },
+   {
+    "label": "Servis 72h",
+    "values": [
+     "opt",
+     "opt",
+     "opt"
+    ]
+   }
+  ]
+ },
+ "drawing": "/download/zen-tehnicki-crtez.pdf",
+ "seo": {
+  "title": "Zen, Đakuzi kade - Favorit SPA - Đakuzi, Djakuzi, Jacuzzi, SPA masažne kade i bazeni",
+  "description": ""
+ },
+ "plan": "../../assets/products/zen/plan-norm.png",
+ "dimsMm": [
+  2180,
+  2180
+ ],
+ "round": false,
+ "scenes": [
+  "../../assets/products/zen/scene-1.jpg",
+  "../../assets/products/zen/scene-2.jpg",
+  "../../assets/products/zen/scene-3.jpg",
+  "../../assets/products/zen/scene-4.jpg"
+ ],
+ "home": "../../assets/products/zen/home.jpg"
+}

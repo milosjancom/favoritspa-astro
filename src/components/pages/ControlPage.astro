@@ -1,0 +1,229 @@
+---
+// Gecko control system: keypads, app, water care modes and which keypad each model gets (read from the product data).
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Site from '../../layouts/Site.astro';
+import Icon from '../Icon.astro';
+import ModelIcon from '../ModelIcon.astro';
+import Motion from '../Motion.astro';
+import { W } from '../../data/img';
+import { alts, locale, t, url, type Lang, type RouteKey } from '../../i18n';
+import logo from '../../assets/control/logo.png';
+import k200 from '../../assets/control/k200.jpg';
+import k300 from '../../assets/control/k300.jpg';
+import k500 from '../../assets/control/k500.jpg';
+import k800 from '../../assets/control/k800.jpg';
+import k1000 from '../../assets/control/k1000.jpg';
+import app from '../../assets/control/phone.png';
+import inclear from '../../assets/features/clear-chemical.jpg';
+import stream from '../../assets/features/sound-system.jpg';
+import led from '../../assets/features/smart-led-light.jpg';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = t(lang);
+type C = {
+  title: string; metaTitle: string; metaDesc: string; lead: string; madeBy: string; brainH: string; brain: [string, string][];
+  keypadsH: string; keypadsLead: string; keypads: Record<string, [string, string]>; used: string; optional: string;
+  appH: string; appP: string; app: string[]; appNote: string; modesH: string; modesLead: string; modes: [string, string][];
+  extrasH: string; extras: [string, string][]; matrixH: string; matrixLead: string; ctaH: string; ctaP: string;
+};
+const C = ((locale(lang) as any).control ?? (locale('en') as any).control) as C;
+const img: Record<string, ImageMetadata> = { 'in.k200': k200, 'in.k300': k300, 'in.k500': k500, 'in.k800': k800, 'in.k1000': k1000 };
+const order = ['Base', 'Advance', 'Privilege'];
+const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order);
+const norm = (v: string) => v.replace(/gecko\s*/i, '').replace(/\s+/g, '').replace(/^IN\.K\.?/i, 'in.k').toLowerCase().replace('in.k', 'in.k');
+// model -> package -> keypad, plus the optional in.k1000 upgrade.
+const matrix = products.map((p) => {
+  const row = p.data.standard.rows.find((r) => r.label === 'Elektronska kontrola');
+  const opt = [...p.data.extras.rows, ...p.data.standard.rows].find((r) => /in\.?k\.?1000/i.test(r.label));
+  const cols = p.data.standard.columns;
+  const cells = order.map((pk) => {
+    const i = cols.indexOf(pk);
+    if (i < 0) return null;
+    return { std: row ? norm(row.values[i]) : '', up: opt && opt.values[i] && opt.values[i] !== 'no' ? 'in.k1000' : '' };
+  });
+  return { p, cells };
+});
+const usage: Record<string, { name: string; slug: string; pk: string; opt?: boolean }[]> = {};
+for (const m of matrix) m.cells.forEach((c, i) => {
+  if (!c) return;
+  (usage[c.std] ??= []).push({ name: m.p.data.name, slug: m.p.data.slug, pk: order[i] });
+  if (c.up) (usage[c.up] ??= []).push({ name: m.p.data.name, slug: m.p.data.slug, pk: order[i], opt: true });
+});
+const keypadIds = Object.keys(C.keypads);
+const extrasImg = [inclear, stream, led];
+const brainIcon = ['cpu', 'sliders-horizontal', 'device-mobile'];
+const alt = alts('control' as RouteKey);
+---
+<Site lang={lang} title={C.metaTitle} description={C.metaDesc} alt={alt}>
+  <section class="c-hero">
+    <div class="wrap c-hero-grid">
+      <div class="c-hero-copy">
+        <p class="made"><span class="logo-tile"><Image src={logo} alt="Gecko" width={360} format="webp" quality={90} /></span><span>{C.madeBy}</span></p>
+        <h1 class="h1 rv in">{C.title}</h1>
+        <p class="lede rv in" style="--rd:.12s">{C.lead}</p>
+      </div>
+      <figure class="c-hero-pic"><div class="hp-k" data-par="-0.04"><Image src={k1000} alt="Gecko in.k1000" width={600} format="webp" quality={90} loading="eager" /></div><div class="hp-phone" data-par="0.06"><Image src={app} alt="in.touch 2" width={600} format="webp" quality={88} loading="eager" /></div></figure>
+    </div>
+  </section>
+
+  <section class="wrap brain">
+    <h2 class="h2">{C.brainH}</h2>
+    <ol class="brain-list">{C.brain.map(([h, p], i) => <li class="rv" style={`--rd:${i * 0.1}s`}><span class="b-ic"><Icon name={brainIcon[i]} /></span><span class="b-no">{String(i + 1).padStart(2, '0')}</span><h3>{h}</h3><p>{p}</p></li>)}</ol>
+  </section>
+
+  <section class="keypads">
+    <div class="wrap">
+      <div class="k-head"><h2 class="h2">{C.keypadsH}</h2><p class="muted">{C.keypadsLead}</p></div>
+      <ul class="k-list">
+        {keypadIds.map((id, i) => (
+          <li class="k-card rv" id={id.replace('.', '-')} style={`--rd:${(i % 3) * 0.08}s`}>
+            <div class="k-img"><Image src={img[id]} alt={`Gecko ${id}`} width={480} format="webp" quality={90} /></div>
+            <p class="k-tag">{C.keypads[id][0]}</p>
+            <h3 class="k-name">{id}</h3>
+            <p class="k-p">{C.keypads[id][1]}</p>
+            {usage[id] && (
+              <div class="k-used">
+                <span class="k-used-l">{C.used}</span>
+                <ul>{usage[id].map((u) => <li><a href={url(lang, 'models', u.slug)}><ModelIcon slug={u.slug} />{u.name} <span>{u.pk}{u.opt ? `, ${C.optional}` : ''}</span></a></li>)}</ul>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap app">
+    <div class="app-copy rv">
+      <p class="k-tag">in.touch 2</p>
+      <h2 class="h2">{C.appH}</h2>
+      <p class="lede">{C.appP}</p>
+      <ul class="app-list">{C.app.map((a) => <li><Icon name="check" />{a}</li>)}</ul>
+      <p class="small muted">{C.appNote}</p>
+    </div>
+    <figure class="app-pic rv" style="--rd:.12s"><div data-par="0.06"><Image src={app} alt="in.touch 2 app" width={600} format="webp" quality={88} /></div></figure>
+  </section>
+
+  <section class="modes">
+    <div class="wrap">
+      <div class="k-head"><h2 class="h2">{C.modesH}</h2><p class="muted">{C.modesLead}</p></div>
+      <ol class="mode-list">{C.modes.map(([h, p], i) => <li class="rv" style={`--rd:${i * 0.06}s`}><span class="m-bar" style={`--e:${[1, 0, 0.45, 0.7, 0.6][i]}`}></span><h3>{h}</h3><p>{p}</p></li>)}</ol>
+    </div>
+  </section>
+
+  <section class="wrap extras">
+    <h2 class="h2">{C.extrasH}</h2>
+    <ul class="x-list">{C.extras.map(([h, p], i) => <li class="rv" style={`--rd:${i * 0.1}s`}><div class="x-img"><Image src={extrasImg[i]} alt={h} width={560} format="webp" quality={78} /></div><h3>{h}</h3><p>{p}</p></li>)}</ul>
+  </section>
+
+  <section class="wrap matrix">
+    <div class="k-head"><h2 class="h2">{C.matrixH}</h2><p class="muted">{C.matrixLead}</p></div>
+    <div class="m-scroll">
+      <table>
+        <thead><tr><th scope="col"></th>{order.map((o) => <th scope="col">{o}</th>)}</tr></thead>
+        <tbody>
+          {matrix.map((m) => (
+            <tr>
+              <th scope="row"><a href={url(lang, 'models', m.p.data.slug)}><ModelIcon slug={m.p.data.slug} />{m.p.data.name}</a></th>
+              {m.cells.map((c) => <td>{c ? <><a href={`#${c.std.replace('.', '-')}`}>{c.std}</a>{c.up && <span class="up">+ {c.up} <em>{C.optional}</em></span>}</> : <span class="na">–</span>}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="wrap cta rv">
+    <div><h2 class="h2">{C.ctaH}</h2><p class="lede">{C.ctaP}</p></div>
+    <div class="ctas">
+      <a class="btn btn-ink" href={url(lang, 'support')}>{tr('nav.support')}<Icon name="arrow-right" /></a>
+      <a class="btn" href={url(lang, 'features')}>{tr('nav.features')}</a>
+      <a class="btn" href={url(lang, 'quote')}>{tr('nav.quote')}</a>
+    </div>
+  </section>
+  <Motion />
+</Site>
+<style>
+  .c-hero { background: var(--stone); padding-block: clamp(130px, 15vw, 190px) clamp(56px, 7vw, 96px); overflow: hidden; }
+  .c-hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+  .c-hero-copy { display: flex; flex-direction: column; gap: 22px; }
+  .c-hero-copy .lede { margin: 0; color: var(--ink); max-width: 34em; }
+  .made { display: flex; align-items: center; gap: 14px; margin: 0; font-size: 0.85rem; color: var(--soft); }
+  .logo-tile { display: inline-grid; place-items: center; width: 92px; height: 62px; padding: 6px 10px; border-radius: 6px; background: #fff; box-shadow: 0 1px 0 var(--line); }
+  .logo-tile :global(img) { width: 100%; height: auto; }
+  .c-hero-pic { margin: 0; position: relative; min-height: clamp(320px, 34vw, 480px); }
+  .hp-k { position: absolute; left: 0; top: 18%; width: 64%; background: #fff; border-radius: 10px; padding: 18px; box-shadow: 0 30px 50px rgb(0 0 0 / 0.16); }
+  .hp-k :global(img) { width: 100%; height: auto; display: block; }
+  .hp-phone { position: absolute; right: 4%; top: 0; width: 38%; }
+  .hp-phone :global(img) { width: 100%; height: auto; display: block; filter: drop-shadow(0 30px 40px rgb(0 0 0 / 0.25)); }
+
+  .brain { padding-block: clamp(80px, 10vw, 140px); }
+  .brain-list { list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 3vw, 48px); }
+  .brain-list li { position: relative; border-top: 1px solid var(--ink); padding-top: 22px; }
+  .b-ic { display: inline-grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: color-mix(in srgb, var(--accent) 14%, transparent); margin-bottom: 18px; }
+  .b-ic :global(svg) { width: 24px; height: 24px; color: var(--accent); }
+  .b-no { position: absolute; top: 20px; right: 0; font-size: 0.85rem; letter-spacing: 0.14em; color: var(--soft); }
+  .brain h3, .modes h3, .extras h3 { margin: 0 0 8px; font-size: clamp(1.25rem, 1.8vw, 1.55rem); font-weight: 400; }
+  .brain p, .modes p, .extras p { margin: 0; color: var(--soft); line-height: 1.65; }
+
+  .keypads { background: var(--stone); padding-block: clamp(80px, 10vw, 140px); }
+  .k-head { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 12px 40px; margin-bottom: clamp(28px, 4vw, 48px); }
+  .k-head p { margin: 0; max-width: 34em; }
+  .k-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 1.6vw, 22px); }
+  .k-card { background: var(--paper); border-radius: 4px; padding: clamp(20px, 2.4vw, 32px); display: flex; flex-direction: column; gap: 8px; scroll-margin-top: 110px; }
+  .k-img { height: clamp(150px, 14vw, 200px); display: grid; place-items: center; margin-bottom: 14px; background: #fff; border-radius: 4px; padding: 16px; }
+  .k-img :global(img) { max-height: 100%; width: auto; max-width: 86%; mix-blend-mode: multiply; transition: transform 0.6s cubic-bezier(.2,.7,.2,1); }
+  .k-card:hover .k-img :global(img) { transform: translateY(-4px) scale(1.03); }
+  .k-tag { margin: 0; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+  .k-name { margin: 0; font-size: clamp(1.6rem, 2.4vw, 2.1rem); font-weight: 300; }
+  .k-p { margin: 0; color: var(--soft); line-height: 1.6; }
+  .k-used { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; }
+  .k-used-l { font-size: 0.8rem; color: var(--soft); }
+  .k-used ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+  .k-used a { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px 5px 9px; border: 1px solid var(--chip-line); border-radius: 999px; font-size: 0.85rem; transition: border-color 0.2s; }
+  .k-used a:hover { border-color: var(--ink); }
+  .k-used a span { color: var(--soft); }
+  .k-used :global(svg) { width: 14px; height: 14px; }
+
+  .app { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 100px); align-items: center; padding-block: clamp(80px, 10vw, 140px); }
+  .app-copy { display: flex; flex-direction: column; gap: 16px; }
+  .app-copy .lede { margin: 0; color: var(--ink); }
+  .app-list { list-style: none; margin: 6px 0; padding: 0; display: grid; gap: 10px; }
+  .app-list li { display: flex; gap: 12px; align-items: center; }
+  .app-list :global(svg) { width: 18px; height: 18px; color: var(--accent); flex: none; }
+  .app-pic { margin: 0; display: grid; place-items: center; }
+  .app-pic > div { width: min(340px, 70%); }
+  .app-pic :global(img) { width: 100%; height: auto; display: block; filter: drop-shadow(0 30px 40px rgb(0 0 0 / 0.22)); }
+
+  .modes { background: var(--stone); padding-block: clamp(80px, 10vw, 140px); }
+  .mode-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(14px, 2vw, 28px); }
+  .mode-list li { display: flex; flex-direction: column; gap: 6px; }
+  .m-bar { display: block; height: 4px; border-radius: 2px; background: var(--line); position: relative; overflow: hidden; margin-bottom: 14px; }
+  .m-bar::after { content: ''; position: absolute; inset: 0 auto 0 0; width: calc(var(--e) * 100%); background: var(--accent); border-radius: 2px; }
+
+  .extras { padding-block: clamp(80px, 10vw, 140px); }
+  .x-list { list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); }
+  .x-img { aspect-ratio: 4 / 3; background: #fff; border-radius: 4px; overflow: hidden; display: grid; place-items: center; margin-bottom: 18px; }
+  .x-img :global(img) { width: 100%; height: 100%; object-fit: contain; }
+
+  .matrix { padding-bottom: clamp(80px, 10vw, 140px); }
+  .m-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; min-width: 560px; }
+  th, td { text-align: left; padding: 14px 12px 14px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th { font-weight: 500; border-bottom-color: var(--ink); }
+  tbody th { font-weight: 400; }
+  tbody th a { display: inline-flex; align-items: center; gap: 8px; }
+  tbody th :global(svg) { width: 16px; height: 16px; }
+  td a { border-bottom: 1px solid var(--line); }
+  td a:hover { border-color: var(--ink); }
+  .up { display: block; margin-top: 4px; font-size: 0.85rem; color: var(--accent); }
+  .up em { font-style: normal; color: var(--soft); }
+  .na { color: var(--faint); }
+
+  .cta { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 28px; padding-block: 0 clamp(80px, 10vw, 140px); }
+  .cta .lede { margin: 14px 0 0; max-width: 30em; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+  @media (max-width: 1000px) { .k-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } .mode-list { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; } }
+  @media (max-width: 760px) { .c-hero-grid, .app, .brain-list, .x-list { grid-template-columns: 1fr; } .k-list { grid-template-columns: 1fr; } .c-hero-pic { max-width: 420px; } }
+</style>

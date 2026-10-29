@@ -1,0 +1,366 @@
+---
+import { W, WP, LIGHT } from '../../data/img';
+import { Image, getImage } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Site from '../../layouts/Site.astro';
+import ModelIcon from '../../components/ModelIcon.astro';
+import Lineup from '../../components/Lineup.astro';
+import Icon from '../../components/Icon.astro';
+import { company, euro } from '../../data/site';
+import { alts, available, fill, langs, persons as personsOf, t, type Lang, url } from '../../i18n';
+import craft from '../../assets/products/pearl/gallery-1.jpg';
+import reachBg from '../../assets/products/zen/scene-4.jpg';
+import Motion from '../../components/Motion.astro';
+import { tagline } from '../../i18n/products';
+
+export const getStaticPaths = () => available.map((lang) => ({ params: { lang } }));
+const lang = Astro.params.lang as Lang;
+const tr = t(lang);
+const persons = personsOf(lang);
+const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order);
+const bySlug = Object.fromEntries(products.map((p) => [p.data.slug, p]));
+// Hero order: Fusion first, then the rest of the range.
+const slides = [bySlug.fusion, ...products.filter((p) => p.data.slug !== 'fusion')];
+const posters = await Promise.all(slides.map((p) => getImage({ src: p.data.home ?? p.data.hero, width: 1920, format: 'webp', quality: 74 })));
+const lineColor: Record<string, string> = { 'Effect line': 'var(--effect)', 'Midl line': 'var(--midl)', 'Entry line': 'var(--entry)' };
+const first = slides[0].data;
+const tag = (p: (typeof slides)[number]) => { const x = tagline(lang, p.data.slug, p.data.tagline); return x.charAt(0).toUpperCase() + x.slice(1); };
+const price = (n: number) => `${tr('from')} ${euro(n, lang)}`;
+const offers = products
+  .map((p) => ({ p, k: p.data.packages.find((k) => k.oldPrice) }))
+  .filter((o) => o.k)
+  .sort((a, b) => b.k!.oldPrice! - b.k!.price - (a.k!.oldPrice! - a.k!.price));
+const alt = alts();
+const og = await getImage(LIGHT ? { src: first.hero, width: 1920, format: 'webp', quality: 74 } : { src: first.hero, width: 1200, format: 'jpg' });
+---
+<Site lang={lang} title={tr('home.title')} description={tr('home.desc')} alt={alt} overlay image={og.src}>
+  <section class="stage" aria-label={tr('home.models')} data-stage data-hero>
+    <div class="pin">
+      <div class="frame">
+        {slides.map((p, i) => (
+          <figure class:list={['slide', { on: i === 0 }]} data-title={p.data.name} data-url={url(lang, 'models', p.data.slug)} data-persons={persons(p.data.persons)} data-price={price(p.data.fromPrice)} data-dims={p.data.dimensions} data-tag={tag(p)}>
+            {false && p.data.video
+              ? <video src={p.data.video} poster={p.data.video.replace(/\.mp4$/, '.jpg')} muted playsinline loop preload={i === 0 ? 'auto' : 'none'} aria-label={`${p.data.name}, video`}></video>
+              : <Image src={p.data.home ?? p.data.hero} alt={`${p.data.name} SPA`} {...WP([960, 1600, 1920])} sizes="100vw" format="webp" quality={74} loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : 'auto'} />}
+          </figure>
+        ))}
+        <button class="arrow arrow-prev" type="button" data-prev aria-label={tr('home.prev')}><Icon name="arrow-left" /></button>
+        <button class="arrow arrow-next" type="button" data-next aria-label={tr('home.next')}><Icon name="arrow-right" /></button>
+        <div class="hud">
+          <span class="count"><span data-count>1</span> / {slides.length}</span>
+          <a class="center" data-link href={url(lang, 'models', first.slug)}>
+            <span class="title">{slides.map((p, i) => <span class="ic" data-i={i} hidden={i !== 0} style={`color:${lineColor[p.data.line]}`}><ModelIcon slug={p.data.slug} /></span>)}<span class="js-name">{first.name}</span></span>
+            <span class="tag" data-tag>{tag(slides[0])}</span>
+            <span class="loader" aria-hidden="true"><span data-bar></span></span>
+            <span class="facts"><span data-persons>{persons(first.persons)}</span><span data-price>{price(first.fromPrice)}</span></span>
+          </a>
+          <a class="more" data-link href={url(lang, 'models', first.slug)}>{tr('view')}</a>
+        </div>
+      </div>
+      <div class="cap">
+        <a class="cap-name" data-link href={url(lang, 'models', first.slug)}>{slides.map((p, i) => <span class="ic" data-i={i} hidden={i !== 0}><ModelIcon slug={p.data.slug} /></span>)}<span class="js-name">{first.name}</span></a>
+        <span class="cap-facts"><span data-persons>{persons(first.persons)}</span><span data-dims>{first.dimensions}</span></span>
+        <span class="cap-buy"><strong data-price>{price(first.fromPrice)}</strong><a class="link" data-link href={url(lang, 'models', first.slug)}>{tr('view')}</a></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro"><p>{tr('home.intro')}</p></section>
+
+  <section class="hs" aria-label={tr('home.models')} data-hs>
+    <div class="hs-pin">
+      <div class="hs-head"><span>{tr('home.models')}</span><span><span data-hs-i>1</span> / {products.length}</span></div>
+      <div class="hs-track" data-track>
+        {products.map((p) => (
+          <a class="hs-card" href={url(lang, 'models', p.data.slug)}>
+            <div class="hs-img"><Image src={p.data.hero} alt={`${p.data.name} SPA`} {...WP([640, 1040])} sizes="(max-width: 760px) 78vw, 30vw" format="webp" quality={74} /></div>
+            <div class="hs-cap">
+              <span class="hs-name"><span class="hs-ic"><ModelIcon slug={p.data.slug} /></span>{p.data.name}</span>
+              <span class="hs-price">{price(p.data.fromPrice)}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div class="hs-progress" aria-hidden="true"><span data-hs-bar></span></div>
+    </div>
+  </section>
+
+  <Lineup products={products} lang={lang} />
+
+  <section class="section offers" aria-labelledby="offers-h">
+    <div class="wrap">
+      <div class="offers-head">
+        <h2 id="offers-h" class="h2">{tr('offers.h')}</h2>
+        <p class="muted">{tr('offers.p')}</p>
+      </div>
+      <table class="offer-table">
+        <thead><tr><th scope="col">{tr('offers.model')}</th><th scope="col">{tr('offers.pkg')}</th><th scope="col">{tr('offers.was')}</th><th scope="col">{tr('offers.now')}</th><th scope="col"><span class="visually-hidden">{tr('offers.save')}</span></th></tr></thead>
+        <tbody>
+          {offers.map(({ p, k }) => (
+            <tr>
+              <th scope="row"><a href={url(lang, 'models', p.data.slug)}><span class="o-ic"><ModelIcon slug={p.data.slug} /></span>{p.data.name}</a></th>
+              <td>{k!.name}</td>
+              <td class="price-old">{euro(k!.oldPrice!, lang)}</td>
+              <td class="now">{euro(k!.price, lang)}</td>
+              <td><span class="save">{tr('offers.save')} {euro(k!.oldPrice! - k!.price, lang)}</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="reach" aria-labelledby="reach-h">
+    <div class="reach-bg" data-par="0.18"><Image src={reachBg} alt="" {...WP([1280, 1920])} sizes="100vw" format="webp" quality={74} loading="lazy" /></div>
+    <div class="reach-shade"></div>
+    <div class="wrap reach-in">
+      <h2 id="reach-h" class="reach-h">{tr('reach.h')}</h2>
+      <div class="reach-grid">
+        <p class="lede">{tr('reach.p')}</p>
+        <dl class="stats">{(tr('reach.stats') as unknown as string[][]).map(([n, l]) => <div><dt>{n}</dt><dd>{l}</dd></div>)}</dl>
+      </div>
+      <ul class="countries" aria-label={tr('reach.h')}>{(tr('reach.countries') as unknown as string[]).map((c) => <li>{c}</li>)}</ul>
+    </div>
+  </section>
+
+  <section class="maker" aria-labelledby="maker-h">
+    <div class="wrap maker-grid">
+      <figure>{bySlug.fusion.data.video
+        ? <video src={bySlug.fusion.data.video} poster={bySlug.fusion.data.video.replace(/\.mp4$/, '.jpg')} autoplay muted loop playsinline aria-label="Fusion, video"></video>
+        : <Image src={craft} alt={tr('home.craftAlt')} {...WP([600, 1000])} sizes="(max-width: 900px) 100vw, 46vw" format="webp" quality={78} />}</figure>
+      <div class="maker-copy">
+        <h2 id="maker-h" class="h2">{tr('maker.h')}</h2>
+        <p class="lede">{tr('maker.p1')}</p>
+        <p class="visit">{tr('maker.visit')}<br /><span class="muted">{company.street}, {company.city}</span></p>
+        <div class="maker-ctas">
+          <a class="btn btn-ink" href={url(lang, 'contact')}>{tr('maker.cta')}</a>
+          <a class="btn" href={`tel:${company.phones[0].tel}`}>{company.phones[0].display}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <Motion />
+</Site>
+
+<script>
+  const stage = document.querySelector<HTMLElement>('[data-stage]');
+  if (stage) {
+    // Scroll: the full-bleed hero shrinks into a framed photo with a caption (--p goes 0 to 1).
+    let ticking = false;
+    const update = () => {
+      const r = stage.getBoundingClientRect();
+      stage.style.setProperty('--p', Math.min(1, Math.max(0, -r.top / (r.height - innerHeight))).toFixed(4));
+      ticking = false;
+    };
+    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    addEventListener('resize', update);
+    update();
+
+    // Slider: 6 s per photo; a video slide runs for the length of its clip. The loader shows progress.
+    const slides = [...stage.querySelectorAll<HTMLElement>('.slide')];
+    const names = stage.querySelectorAll('.js-name');
+    const fields = (['persons', 'price', 'dims', 'tag'] as const).map((k) => [k, stage.querySelectorAll(`.hud [data-${k}], .cap [data-${k}]`)] as const);
+    const icons = stage.querySelectorAll<HTMLElement>('[data-i]');
+    const links = stage.querySelectorAll<HTMLAnchorElement>('.hud [data-link], .cap [data-link]');
+    const count = stage.querySelector('[data-count]')!;
+    const bar = stage.querySelector<HTMLElement>('[data-bar]')!;
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let i = 0;
+    let timer = 0;
+    const show = (n: number) => {
+      slides[i].classList.remove('on');
+      slides[i].querySelector('video')?.pause();
+      i = (n + slides.length) % slides.length;
+      const s = slides[i];
+      s.classList.add('on');
+      count.textContent = String(i + 1);
+      names.forEach((el) => (el.textContent = s.dataset.title ?? ''));
+      fields.forEach(([k, els]) => els.forEach((el) => (el.textContent = s.dataset[k] ?? '')));
+      icons.forEach((el) => (el.hidden = el.dataset.i !== String(i)));
+      links.forEach((el) => (el.href = s.dataset.url ?? el.href));
+      if (still) return;
+      const video = s.querySelector('video');
+      const run = (ms: number) => {
+        bar.style.transition = 'none';
+        bar.style.width = '0%';
+        void bar.offsetWidth;
+        bar.style.transition = `width ${ms}ms linear`;
+        bar.style.width = '100%';
+        clearTimeout(timer);
+        timer = window.setTimeout(() => show(i + 1), ms);
+      };
+      if (video) {
+        video.preload = 'auto';
+        video.currentTime = 0;
+        const go = () => { video.play().catch(() => {}); run(Math.max(9000, (video.duration || 6) * 1000)); };
+        video.readyState >= 1 ? go() : video.addEventListener('loadedmetadata', go, { once: true });
+      } else run(6000);
+    };
+    show(0);
+    stage.querySelector('[data-prev]')!.addEventListener('click', () => show(i - 1));
+    stage.querySelector('[data-next]')!.addEventListener('click', () => show(i + 1));
+  }
+
+  // Horizontal pass through the models: vertical scroll moves the track right to left (desktop).
+  const hs = document.querySelector<HTMLElement>('[data-hs]');
+  const track = hs?.querySelector<HTMLElement>('[data-track]');
+  if (hs && track) {
+    const bar = hs.querySelector<HTMLElement>('[data-hs-bar]')!;
+    const idx = hs.querySelector('[data-hs-i]')!;
+    const cards = track.children.length;
+    const wide = matchMedia('(min-width: 761px)');
+    let dist = 0;
+    const move = () => {
+      if (!wide.matches) return;
+      const r = hs.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, -r.top / Math.max(1, r.height - innerHeight)));
+      track.style.transform = `translate3d(${-p * dist}px, 0, 0)`;
+      bar.style.width = `${p * 100}%`;
+      idx.textContent = String(Math.min(cards, Math.round(p * (cards - 1)) + 1));
+    };
+    const size = () => {
+      if (!wide.matches) { hs.style.height = ''; track.style.transform = ''; return; }
+      dist = Math.max(0, track.scrollWidth - innerWidth);
+      hs.style.height = `${dist + innerHeight}px`;
+      move();
+    };
+    let t = false;
+    addEventListener('scroll', () => { if (!t) { t = true; requestAnimationFrame(() => { move(); t = false; }); } }, { passive: true });
+    addEventListener('resize', size);
+    wide.addEventListener('change', size);
+    addEventListener('load', size);
+    size();
+    track.addEventListener('scroll', () => {
+      if (wide.matches) return;
+      const p = track.scrollLeft / Math.max(1, track.scrollWidth - track.clientWidth);
+      bar.style.width = `${p * 100}%`;
+      idx.textContent = String(Math.min(cards, Math.round(p * (cards - 1)) + 1));
+    }, { passive: true });
+  }
+</script>
+
+<style>
+  .stage { --p: 0; --side: max(16px, calc((100vw - 1200px) / 2)); position: relative; height: 230vh; }
+  .pin { position: sticky; top: 0; height: 100svh; min-height: 520px; overflow: hidden; }
+  .frame { position: absolute; inset: 0; background: var(--stone); --side-now: calc(var(--p) * var(--side)); clip-path: inset(calc(var(--p) * 13svh) var(--side-now) calc(var(--p) * 24svh) var(--side-now)); }
+  .frame::after { content: ''; position: absolute; inset: 0 0 auto; height: 150px; background: linear-gradient(180deg, rgb(0 0 0 / 0.38), transparent); opacity: calc(1 - var(--p) * 3); pointer-events: none; z-index: 1; }
+  .slide { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity 1.4s ease; }
+  .slide.on { opacity: 1; }
+  .slide img, .slide video { width: 100%; height: 100%; object-fit: cover; transform: scale(calc(1.06 - var(--p) * 0.06)); }
+  .hud { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; column-gap: clamp(16px, 3vw, 48px); padding: 120px var(--gut) clamp(30px, 5vh, 52px); color: #fff; font-size: 1rem; font-weight: 400; background: linear-gradient(0deg, rgb(0 0 0 / 0.5), rgb(0 0 0 / 0.18) 55%, transparent); text-shadow: 0 1px 18px rgb(0 0 0 / 0.25); opacity: calc(1 - var(--p) * 3); }
+  .center { color: inherit; text-decoration: none; cursor: pointer; transition: opacity 0.3s; }
+  .center:hover .js-name { opacity: 0.85; }
+  .center:hover .tag { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  .center { display: flex; flex-direction: column; align-items: center; gap: 14px; min-width: min(380px, 60vw); }
+  .title { display: inline-flex; align-items: center; gap: 0.3em; font-size: clamp(3rem, 6.2vw, 6.2rem); font-weight: 300; letter-spacing: -0.01em; line-height: 0.95; }
+  .tag { font-size: clamp(1.05rem, 1.5vw, 1.4rem); font-weight: 300; opacity: 0.92; margin-top: -4px; text-align: center; }
+  .ic { display: inline-flex; font-size: 0.62em; }
+  .arrow { position: absolute; top: 50%; z-index: 3; translate: 0 -50%; opacity: calc(1 - var(--p) * 3); width: 56px; height: 56px; border-radius: 50%; border: 1px solid rgb(255 255 255 / 0.55); background: rgb(0 0 0 / 0.12); color: #fff; display: grid; place-items: center; cursor: pointer; transition: background-color 0.3s, border-color 0.3s; }
+  .arrow-prev { left: var(--gut); }
+  .arrow-next { right: var(--gut); }
+  .arrow:hover { background: rgb(255 255 255 / 0.16); border-color: #fff; }
+  .arrow :global(svg) { width: 22px; height: 22px; }
+  .count { align-self: end; }
+  .more { align-self: end; }
+  .ic[hidden] { display: none; }
+  .facts { display: flex; align-items: baseline; gap: 32px; font-size: clamp(1.1rem, 1.6vw, 1.45rem); }
+  .facts [data-price] { font-weight: 500; font-size: 1.15em; }
+  .loader { display: block; width: min(420px, 60vw); height: 1px; background: rgb(255 255 255 / 0.35); }
+  .loader span { display: block; width: 0; height: 100%; background: #fff; }
+  .more { justify-self: end; border-bottom: 1px solid rgb(255 255 255 / 0.6); }
+  .cap { position: absolute; left: var(--side); right: var(--side); top: calc(100svh - 24svh + 16px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: baseline; opacity: calc((var(--p) - 0.7) * 3.4); }
+  .cap-name { color: inherit; }
+  .cap-name { display: inline-flex; align-items: center; gap: 12px; font-size: clamp(1.6rem, 2.4vw, 2.2rem); font-weight: 300; }
+  .cap .ic { font-size: 18px; }
+  .cap-facts { display: flex; gap: 20px; font-size: 0.95rem; color: var(--soft); }
+  .cap-buy { display: flex; justify-content: flex-end; align-items: baseline; gap: 20px; font-size: 0.95rem; }
+  .cap-buy strong { font-weight: 500; font-size: clamp(1.25rem, 1.8vw, 1.6rem); }
+
+  .intro { padding: clamp(40px, 5vw, 72px) var(--gut) clamp(8px, 1.5vw, 20px); display: flex; justify-content: center; }
+  .intro p { margin: 0; max-width: 36em; text-align: center; font-size: clamp(1rem, 1.5vw, 1.15rem); line-height: 1.55; color: var(--soft); }
+
+  .hs { position: relative; }
+  .hs-pin { position: sticky; top: 0; height: 100svh; overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: 28px; padding-top: 40px; }
+  .hs-head { display: flex; justify-content: space-between; padding: 0 var(--gut); font-size: 0.85rem; color: var(--soft); }
+  .hs-track { display: flex; gap: 2vw; padding: 0 var(--gut); will-change: transform; }
+  .hs-card { flex: 0 0 min(30vw, 480px); display: block; }
+  .hs-img { overflow: hidden; background: var(--stone); }
+  .hs-img img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: transform 0.9s cubic-bezier(.2,.7,.2,1); }
+  .hs-card:hover .hs-img img { transform: scale(1.03); }
+  .hs-cap { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; padding-top: 14px; }
+  .hs-name { display: inline-flex; align-items: center; gap: 10px; font-size: 1.25rem; font-weight: 400; }
+  .hs-ic { display: inline-flex; font-size: 18px; }
+  .hs-price { font-size: 0.95rem; color: var(--soft); }
+  .hs-progress { margin: 0 var(--gut); height: 1px; background: var(--line); }
+  .hs-progress span { display: block; height: 100%; width: 0; background: var(--ink); }
+
+  .offers-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
+  .offers-head p { margin: 0; max-width: 26em; }
+  .offer-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  .offer-table th, .offer-table td { text-align: left; padding: 18px 12px 18px 0; border-bottom: 1px solid var(--line); }
+  .offer-table thead th { font-weight: 400; font-size: 0.8rem; color: var(--soft); padding-block: 8px; }
+  .offer-table tbody th { font-weight: 400; font-size: 1.35rem; }
+  .offer-table tbody th a { display: inline-flex; align-items: center; gap: 10px; }
+  .offer-table tbody th a:hover { color: var(--soft); }
+  .o-ic { display: inline-flex; font-size: 16px; }
+  .offer-table .now { font-weight: 500; font-size: 1.1rem; }
+
+  .reach { position: relative; overflow: hidden; padding-block: clamp(110px, 14vw, 200px); color: #fff; background: #2b2824; }
+  .reach-bg { position: absolute; inset: -14% 0; will-change: transform; }
+  .reach-bg :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .reach-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(20 18 15 / 0.72) 0%, rgb(20 18 15 / 0.45) 55%, rgb(20 18 15 / 0.25) 100%); }
+  .reach-in { position: relative; }
+  .reach .reach-grid .lede { color: #fff; }
+  .reach .stats { border-top: 0; padding: 6px 26px; border-radius: 14px; background: rgb(24 20 16 / 0.26); -webkit-backdrop-filter: blur(16px) saturate(1.2); backdrop-filter: blur(16px) saturate(1.2); border: 1px solid rgb(255 255 255 / 0.18); }
+  .reach .stats div:last-child { border-bottom: 0; }
+  .reach .stats div { border-bottom-color: rgb(255 255 255 / 0.25); }
+  .reach .stats dd { color: rgb(255 255 255 / 0.78); }
+  .reach .countries li:not(:last-child)::after { color: rgb(255 255 255 / 0.5); }
+  .reach-h { font-size: clamp(3rem, 8.5vw, 8rem); font-weight: 300; line-height: 0.95; letter-spacing: -0.025em; margin: 0 0 clamp(28px, 4vw, 48px); }
+  .reach-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(28px, 6vw, 96px); align-items: start; }
+  .reach-grid .lede { margin: 0; color: var(--ink); }
+  .stats { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--ink); }
+  .stats div { display: grid; grid-template-columns: 4.2rem 1fr; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .stats dt { font-size: 2.2rem; font-weight: 300; line-height: 1; }
+  .stats dd { margin: 0; color: var(--soft); }
+  .countries { list-style: none; margin: clamp(36px, 5vw, 56px) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 0; font-size: clamp(0.74rem, 0.98vw, 0.9rem); letter-spacing: 0.01em; }
+  .countries li { white-space: nowrap; }
+  .countries li:not(:last-child)::after { content: '·'; margin: 0 0.7em; color: var(--sand); }
+  @media (min-width: 1000px) { .countries { flex-wrap: nowrap; } }
+  .maker { background: var(--stone); padding-block: clamp(72px, 10vw, 140px); }
+  .maker-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
+  .maker figure { margin: 0; }
+  .maker img, .maker video { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  .maker video { aspect-ratio: 1 / 1; }
+  .maker-copy { display: flex; flex-direction: column; gap: 18px; }
+  .maker-copy .lede { margin: 0; color: var(--ink); }
+  .visit { margin: 8px 0 0; font-size: 0.95rem; }
+  .maker-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  @media (max-width: 900px) { .maker-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 760px) {
+    .stage { height: 190vh; }
+    .loader { width: 120px; }
+    .cap { grid-template-columns: 1fr; gap: 6px; }
+    .cap-buy { justify-content: flex-start; }
+    .facts { gap: 18px; font-size: 1.05rem; }
+    .title { font-size: 2.9rem; }
+    .tag { font-size: 1rem; }
+    .count, .more { display: none; }
+    .hud { grid-template-columns: 1fr; justify-items: center; }
+    .center { min-width: 0; }
+    .arrow { width: 42px; height: 42px; }
+    .hs-pin { position: static; height: auto; padding: 72px 0 56px; }
+    .hs-track { overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gut); scrollbar-width: none; gap: 16px; }
+    .hs-track::-webkit-scrollbar { display: none; }
+    .hs-card { flex-basis: 70vw; scroll-snap-align: start; }
+    .reach-grid { grid-template-columns: 1fr; }
+    .offer-table thead { display: none; }
+    .offer-table tr { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .offer-table th, .offer-table td { border: 0; padding: 0; }
+    .offer-table td:nth-child(2) { grid-column: 1; color: var(--soft); font-size: 0.85rem; }
+    .offer-table .price-old { grid-column: 2; grid-row: 1; text-align: right; align-self: end; font-size: 0.85rem; }
+    .offer-table .now { grid-column: 2; grid-row: 2; text-align: right; }
+    .offer-table td:last-child { grid-column: 1 / -1; }
+  }
+</style>

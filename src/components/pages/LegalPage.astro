@@ -1,0 +1,57 @@
+---
+// Terms and conditions / privacy policy. Serbian text is binding; Serbo-Croatian locales read it as is,
+// everyone else gets the English translation.
+import Site from '../../layouts/Site.astro';
+import Icon from '../Icon.astro';
+import { alts, t, url, type Lang, type RouteKey } from '../../i18n';
+interface Props { lang: Lang; doc: 'terms' | 'privacy' }
+const { lang, doc } = Astro.props;
+const tr = t(lang);
+const files = import.meta.glob<any>('../../content/legal/*.md', { eager: true });
+const code = ['sr', 'hr', 'ba', 'me'].includes(lang) ? 'sr' : 'en';
+const md = files[`../../content/legal/${doc}.${code}.md`] ?? files[`../../content/legal/${doc}.sr.md`];
+const Content = md.Content;
+const heads = (md.getHeadings() as { depth: number; slug: string; text: string }[]).filter((h) => h.depth === 2);
+const key = doc as RouteKey;
+const title = tr(`nav.${doc}` as any) as string;
+const other: RouteKey = (doc === 'terms' ? 'privacy' : 'terms') as RouteKey;
+---
+<Site lang={lang} title={`${title} | Favorit SPA`} description={`${title}, Favorit DOO, Šabac`} alt={alts(key)}>
+  <section class="wrap head">
+    <h1 class="h1">{title}</h1>
+    <p class="muted">Favorit DOO · Borivoja Jevtića bb, 15000 Šabac</p>
+  </section>
+  <div class="wrap legal">
+    <nav class="toc" aria-label={title}>
+      <ol>{heads.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+      <a class="link other" href={url(lang, other)}>{tr(`nav.${other}` as any)}<Icon name="arrow-right" /></a>
+    </nav>
+    <article class="doc"><Content /></article>
+  </div>
+</Site>
+<style>
+  .head { padding-block: clamp(140px, 16vw, 200px) clamp(32px, 4vw, 48px); display: flex; flex-direction: column; gap: 14px; }
+  .head p { margin: 0; }
+  .legal { display: grid; grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.45fr); gap: clamp(28px, 5vw, 80px); padding-bottom: clamp(80px, 10vw, 140px); border-top: 1px solid var(--ink); padding-top: 28px; }
+  .toc { position: sticky; top: 100px; align-self: start; display: flex; flex-direction: column; gap: 20px; }
+  .toc ol { list-style: none; margin: 0; padding: 0; }
+  .toc li a { display: block; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 0.92rem; color: var(--soft); transition: color 0.2s; }
+  .toc li a:hover { color: var(--ink); }
+  .other { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; }
+  .other :global(svg) { width: 16px; height: 16px; }
+  .doc { max-width: 46em; font-size: 1.02rem; line-height: 1.7; }
+  .doc :global(h2) { font-size: clamp(1.4rem, 2.2vw, 1.8rem); font-weight: 400; margin: 2.4em 0 0.8em; scroll-margin-top: 100px; }
+  .doc :global(h2:first-of-type) { margin-top: 0.4em; }
+  .doc :global(p) { margin: 0 0 1em; }
+  .doc :global(p > strong:first-child) { color: var(--accent); font-weight: 500; margin-right: 0.2em; }
+  .doc :global(ul) { margin: -0.3em 0 1.2em; padding-left: 1.2em; }
+  .doc :global(li) { margin: 0.3em 0; }
+  .doc :global(li::marker) { color: var(--accent); }
+  .doc :global(table) { width: 100%; border-collapse: collapse; margin: 0.6em 0 1.6em; font-size: 0.92rem; display: block; overflow-x: auto; }
+  .doc :global(th), .doc :global(td) { text-align: left; vertical-align: top; padding: 9px 12px 9px 0; border-bottom: 1px solid var(--line); }
+  .doc :global(th) { font-weight: 500; border-bottom-color: var(--ink); }
+  .doc :global(th strong) { font-weight: 500; }
+  .doc :global(mark) { background: color-mix(in srgb, #d9534f 18%, transparent); color: inherit; padding: 0 3px; border-radius: 2px; }
+  .doc :global(em) { color: var(--soft); }
+  @media (max-width: 860px) { .legal { grid-template-columns: 1fr; } .toc { position: static; } }
+</style>

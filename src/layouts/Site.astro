@@ -1,0 +1,611 @@
+---
+import '../styles/global.css';
+import { getCollection } from 'astro:content';
+import Logo from '../components/Logo.astro';
+import ModelIcon from '../components/ModelIcon.astro';
+import Icon from '../components/Icon.astro';
+import { Image } from 'astro:assets';
+import storyImg from '../assets/products/pearl/gallery-1.jpg';
+import { lines } from '../data/site';
+import { company, euro } from '../data/site';
+import { t, url, available, langNames, meta, persons, guideUrl, type Lang, type RouteKey } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description?: string;
+  alt: Record<Lang, string>; // the same page in each language
+  overlay?: boolean;         // header sits over a full-bleed hero
+  image?: string;
+}
+const { lang, title, description, alt, overlay = false, image } = Astro.props;
+const tr = t(lang);
+const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order);
+const phone = company.phones[0];
+const main = [
+  { href: url(lang, 'models'), label: tr('nav.models') },
+  { href: url(lang, 'features'), label: tr('nav.features') },
+  { href: url(lang, 'maintenance'), label: tr('nav.maintenance') },
+  { href: url(lang, 'contact'), label: tr('nav.contact') },
+];
+const more = [
+  { href: url(lang, 'gallery'), label: tr('nav.gallery') },
+  { href: url(lang, 'reviews'), label: tr('nav.reviews') },
+  { href: url(lang, 'about'), label: tr('nav.about') },
+  { href: url(lang, 'why' as RouteKey), label: tr('nav.why') },
+  { href: url(lang, 'control' as RouteKey), label: tr('nav.control') },
+  { href: url(lang, 'brochure' as RouteKey), label: tr('nav.brochure') },
+  { href: url(lang, 'support'), label: tr('nav.support') },
+];
+const help = [
+  { href: url(lang, 'support'), label: tr('nav.support') },
+  { href: guideUrl(lang), label: tr('nav.guide') },
+  { href: url(lang, 'docs'), label: tr('nav.docs') },
+  { href: url(lang, 'faq'), label: tr('nav.faq') },
+  { href: url(lang, 'maintenance'), label: tr('nav.maintenance') },
+  { href: url(lang, 'contact'), label: tr('nav.contact') },
+  { href: url(lang, 'terms'), label: tr('nav.terms') },
+  { href: url(lang, 'privacy' as RouteKey), label: tr('nav.privacy') },
+];
+const explore = [
+  { href: url(lang, 'models'), label: tr('nav.models') },
+  { href: url(lang, 'features'), label: tr('nav.features') },
+  { href: url(lang, 'control' as RouteKey), label: tr('nav.control') },
+  { href: url(lang, 'gallery'), label: tr('nav.gallery') },
+  { href: url(lang, 'reviews'), label: tr('nav.reviews') },
+  { href: url(lang, 'about'), label: tr('nav.about') },
+  { href: url(lang, 'why' as RouteKey), label: tr('nav.why') },
+];
+const menuGroups = [
+  { h: tr('footer.explore'), links: [
+    { href: url(lang, 'models'), label: tr('nav.models') },
+    { href: url(lang, 'features'), label: tr('nav.features') },
+    { href: url(lang, 'control' as RouteKey), label: tr('nav.control') },
+    { href: url(lang, 'why' as RouteKey), label: tr('nav.why') },
+    { href: url(lang, 'brochure' as RouteKey), label: tr('nav.brochure') },
+  ] },
+  { h: tr('nav.groupStory'), links: [
+    { href: url(lang, 'about'), label: tr('nav.about') },
+    { href: url(lang, 'gallery'), label: tr('nav.gallery') },
+    { href: url(lang, 'reviews'), label: tr('nav.reviews') },
+    { href: url(lang, 'contact'), label: tr('nav.contact') },
+  ] },
+  { h: tr('nav.groupHelp'), links: [
+    { href: url(lang, 'support'), label: tr('nav.support') },
+    { href: guideUrl(lang), label: tr('nav.guide') },
+    { href: url(lang, 'docs'), label: tr('nav.docs') },
+    { href: url(lang, 'faq'), label: tr('nav.faq') },
+    { href: url(lang, 'maintenance'), label: tr('nav.maintenance') },
+  ] },
+];
+const megaTubs = [
+  { href: url(lang, 'models'), label: tr('nav.models'), icon: 'circles-three' },
+  { href: url(lang, 'features'), label: tr('nav.features'), icon: 'sparkle' },
+  { href: url(lang, 'control' as RouteKey), label: tr('nav.control'), icon: 'sliders-horizontal' },
+  { href: url(lang, 'brochure' as RouteKey), label: tr('nav.brochure'), icon: 'book-open-text' },
+];
+const megaHelp = [
+  { href: url(lang, 'support'), label: tr('nav.support'), icon: 'lifebuoy' },
+  { href: guideUrl(lang), label: tr('nav.guide'), icon: 'book-open-text' },
+  { href: url(lang, 'docs'), label: tr('nav.docs'), icon: 'file-pdf' },
+  { href: url(lang, 'faq'), label: tr('nav.faq'), icon: 'question' },
+  { href: url(lang, 'maintenance'), label: tr('nav.maintenance'), icon: 'drop-half' },
+];
+const megaStory = [
+  { href: url(lang, 'about'), label: tr('nav.about'), icon: 'flower-lotus' },
+  { href: url(lang, 'why' as RouteKey), label: tr('nav.why'), icon: 'shield-check' },
+  { href: url(lang, 'gallery'), label: tr('nav.gallery'), icon: 'sun-horizon' },
+  { href: url(lang, 'reviews'), label: tr('nav.reviews'), icon: 'chat-circle-text' },
+  { href: url(lang, 'contact'), label: tr('nav.contact'), icon: 'map-pin' },
+];
+const path = Astro.url.pathname;
+const cta = url(lang, 'quote');
+const canonical = new URL(path, Astro.site);
+const langList = available.filter((l) => alt[l]);
+// Structured data for search engines and AI assistants: who we are, where, how to reach us.
+const site = Astro.site!.toString().replace(/\/$/, '');
+const orgLd = {
+  '@context': 'https://schema.org',
+  '@type': ['Organization', 'LocalBusiness'],
+  '@id': `${site}/#org`,
+  name: 'Favorit SPA',
+  legalName: company.name,
+  url: `${site}/`,
+  logo: `${site}/favicon-192.png`,
+  image: `${site}/favicon-192.png`,
+  description: 'Favorit SPA is a small European manufacturer of hot tubs (spa, jacuzzi) from Šabac, Serbia, making seven models for 2 to 6 people for 30 years.',
+  email: company.email,
+  telephone: company.phones[0].display,
+  address: { '@type': 'PostalAddress', streetAddress: company.street, addressLocality: company.city, postalCode: '15000', addressCountry: 'RS' },
+  areaServed: ['RS', 'ME', 'BA', 'HR', 'SI', 'HU', 'DE', 'AT', 'AL', 'SE', 'GR'],
+  contactPoint: company.phones.map((p) => ({ '@type': 'ContactPoint', telephone: p.display, contactType: 'sales', areaServed: { Serbia: 'RS', Montenegro: 'ME', Bosnia: 'BA', Croatia: 'HR' }[p.key] })),
+  openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] },
+  knowsLanguage: available.map((l) => meta(l).htmlLang),
+};
+---
+<!doctype html>
+<html lang={meta(lang).htmlLang}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script is:inline>
+    // Apply saved display settings before first paint.
+    try { var d = document.documentElement, th = localStorage.getItem('theme'), tx = localStorage.getItem('text'); if (th && th !== 'light') d.dataset.theme = th; if (tx) d.dataset.text = tx; } catch (e) {}
+  </script>
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  <link rel="canonical" href={canonical} />
+  {langList.map((l) => <link rel="alternate" hreflang={meta(l).hreflang} href={new URL(alt[l], Astro.site)} />)}
+  <link rel="alternate" hreflang="x-default" href={new URL(alt.en, Astro.site)} />
+  <meta name="theme-color" content="#eee8dd" />
+  <meta property="og:title" content={title} />
+  {description && <meta property="og:description" content={description} />}
+  {image && <meta property="og:image" content={new URL(image, Astro.site)} />}
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/favicon-192.png" />
+  <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
+  <slot name="head" />
+</head>
+<body class:list={{ 'has-overlay': overlay }}>
+  <a class="skip" href="#main">{tr('skip')}</a>
+
+  <header class:list={['top', { 'is-solid': !overlay }]} data-top>
+    <a href={url(lang)} class="brand" aria-label="Favorit SPA"><Logo /></a>
+    <nav class="nav" aria-label={tr('nav.menu')} data-mega>
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false" aria-controls="nd-tubs">{tr('nav.models')}<Icon name="caret-down" class="nd-caret" /></button>
+        <div class="nd-panel nd-wide" id="nd-tubs">
+          <div class="nd-in">
+            <ul class="nd-tubs">
+              {products.map((p, i) => (
+                <li class={`line-${lines[p.data.line].key}`} style={`--i:${i}`}><a href={url(lang, 'models', p.data.slug)} aria-current={path.startsWith(url(lang, 'models', p.data.slug)) ? 'page' : undefined}>
+                  <span class="nt-img"><Image src={p.data.plan} alt="" width={240} format="webp" quality={80} loading="lazy" /></span>
+                  <span class="nt-name"><span class="nt-ic"><ModelIcon slug={p.data.slug} /></span>{p.data.name}</span>
+                  <span class="nt-meta">{persons(lang)(p.data.persons)}</span>
+                  <span class="nt-price">{tr('from')} {euro(p.data.fromPrice, lang)}</span>
+                </a></li>
+              ))}
+            </ul>
+            <ul class="nd-links">
+              {megaTubs.map((n, i) => <li style={`--i:${i + 3}`}><a href={n.href}><span class="nd-ic"><Icon name={n.icon} /></span>{n.label}</a></li>)}
+              <li style="--i:7"><a class="btn btn-ink nd-cta" href={cta}>{tr('cta')}<Icon name="arrow-right" /></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false" aria-controls="nd-help">{tr('nav.groupHelp')}<Icon name="caret-down" class="nd-caret" /></button>
+        <div class="nd-panel" id="nd-help">
+          <div class="nd-in nd-focus">
+            <div class="nd-intro" style="--i:0">
+              <p class="nd-eyebrow">{tr('nav.groupHelp')}</p>
+              <p class="nd-lead">{tr('nav.helpIntro')}</p>
+              <a class="nd-more" href={url(lang, 'support')}>{tr('nav.support')}<Icon name="arrow-right" /></a>
+            </div>
+            <ul class="nd-links">{megaHelp.map((n, i) => <li style={`--i:${i + 1}`}><a href={n.href}><span class="nd-ic"><Icon name={n.icon} /></span><span class="nd-t">{n.label}</span></a></li>)}</ul>
+            <div class="nd-card nd-aside" style="--i:6">
+              <p class="nd-eyebrow">{tr('nav.contact')}</p>
+              <a class="nd-big" href={`tel:${phone.tel}`}><Icon name="phone" />{phone.display}</a>
+              <a href={`mailto:${company.email}`}><Icon name="envelope-simple" />{company.email}</a>
+              <span class="nd-note"><Icon name="clock" />{tr('footer.visitNote')}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nd">
+        <button type="button" class="nd-btn" aria-expanded="false" aria-controls="nd-story">{tr('nav.groupStory')}<Icon name="caret-down" class="nd-caret" /></button>
+        <div class="nd-panel" id="nd-story">
+          <div class="nd-in nd-focus">
+            <div class="nd-intro" style="--i:0">
+              <p class="nd-eyebrow">{tr('nav.groupStory')}</p>
+              <p class="nd-lead">{tr('nav.storyIntro')}</p>
+              <a class="nd-more" href={url(lang, 'about')}>{tr('nav.about')}<Icon name="arrow-right" /></a>
+            </div>
+            <ul class="nd-links">{megaStory.map((n, i) => <li style={`--i:${i + 1}`}><a href={n.href}><span class="nd-ic"><Icon name={n.icon} /></span><span class="nd-t">{n.label}</span></a></li>)}</ul>
+            <a class="nd-photo nd-aside" style="--i:6" href={url(lang, 'about')}>
+              <Image src={storyImg} alt="" width={640} format="webp" quality={76} loading="lazy" />
+              <span class="nd-photo-cap"><span>{company.street}, {company.city}</span><span class="nd-map"><Icon name="map-pin" />{tr('contact.map')}</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="tools">
+      <details class="lang-dd" data-dd>
+        <summary aria-label={tr('nav.lang')}><Icon name="globe-simple" /><span>{lang.toUpperCase()}</span><Icon name="caret-down" class="dd-caret" /></summary>
+        <ul class="dd-list">
+          {langList.map((l) => <li><a href={alt[l]} hreflang={meta(l).hreflang} lang={meta(l).htmlLang} aria-current={l === lang ? 'true' : undefined} data-lang={l}><span>{langNames[l]}</span><span class="dd-code">{l.toUpperCase()}</span></a></li>)}
+        </ul>
+      </details>
+      <a class="btn cta" href={cta}>{tr('cta')}</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" data-burger data-close={tr('nav.closeShort')}>
+        <span class="burger-lines" aria-hidden="true"><span></span><span></span></span>
+        <span class="burger-label">{tr('nav.menu')}</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mega-veil" aria-hidden="true"></div>
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label={tr('nav.menu')} hidden data-menu>
+    <div class="menu-inner">
+      <div class="menu-left">
+        <nav class="menu-cols" aria-label={tr('nav.menu')}>
+          {menuGroups.map((g, gi) => (
+            <div class="menu-col">
+              <p class="menu-label">{g.h}</p>
+              <ul>{g.links.map((n, i) => <li><a href={n.href} style={`--i:${gi * 2 + i}`} aria-current={path === n.href ? 'page' : undefined}>{n.label}</a></li>)}</ul>
+            </div>
+          ))}
+        </nav>
+        <div class="menu-bottom">
+          <div class="menu-contact">
+            <a href={`tel:${phone.tel}`}>{phone.display}</a>
+            <a href={`mailto:${company.email}`}>{company.email}</a>
+            <span>{company.street}, {company.city}</span>
+            <a class="btn btn-ink menu-cta" href={cta}>{tr('cta')}</a>
+          </div>
+          <div class="settings">
+            <p class="menu-label">{tr('settings.title')}</p>
+            <div class="set-row" role="group" aria-label={tr('settings.theme')}>
+              <span class="set-name">{tr('settings.theme')}</span>
+              <div class="seg">
+                <button type="button" data-theme-set="" aria-pressed="false"><Icon name="sun" /><span>{tr('settings.light')}</span></button>
+                <button type="button" data-theme-set="dark" aria-pressed="false"><Icon name="moon" /><span>{tr('settings.dark')}</span></button>
+                <button type="button" data-theme-set="auto" aria-pressed="false"><span>{tr('settings.auto')}</span></button>
+              </div>
+            </div>
+            <div class="set-row" role="group" aria-label={tr('settings.text')}>
+              <span class="set-name">{tr('settings.text')}</span>
+              <div class="seg seg-text">
+                <button type="button" data-text-set="" aria-pressed="false" aria-label={tr('settings.smaller')}><span style="font-size:0.9em">A</span></button>
+                <button type="button" data-text-set="l" aria-pressed="false" aria-label={tr('settings.larger')}><span style="font-size:1.1em">A</span></button>
+                <button type="button" data-text-set="xl" aria-pressed="false" aria-label={tr('settings.largest')}><span style="font-size:1.32em">A</span></button>
+              </div>
+            </div>
+            <div class="set-row">
+              <span class="set-name">{tr('nav.lang')}</span>
+              <details class="lang-dd lang-dd-menu" data-dd>
+                <summary><Icon name="globe-simple" /><span>{langNames[lang]}</span><Icon name="caret-down" class="dd-caret" /></summary>
+                <ul class="dd-list">
+                  {langList.map((l) => <li><a href={alt[l]} hreflang={meta(l).hreflang} lang={meta(l).htmlLang} aria-current={l === lang ? 'true' : undefined} data-lang={l}><span>{langNames[l]}</span><span class="dd-code">{l.toUpperCase()}</span></a></li>)}
+                </ul>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main"><slot /></main>
+
+  <footer class="foot">
+    <div class="foot-top">
+      <p class="foot-big">{tr('footer.big')}</p>
+      <div class="foot-ctas">
+        <a class="btn btn-ink" href={cta}>{tr('cta')}<Icon name="arrow-right" /></a>
+        <a class="btn" href={url(lang, 'contact')}>{tr('maker.cta')}</a>
+      </div>
+    </div>
+    <div class="foot-cols">
+      <nav aria-labelledby="f-models">
+        <h2 id="f-models" class="f-h">{tr('footer.models')}</h2>
+        <ul>{products.map((p) => <li><a href={url(lang, 'models', p.data.slug)}><span class="f-ic"><ModelIcon slug={p.data.slug} /></span>{p.data.name}</a></li>)}</ul>
+      </nav>
+      <nav aria-labelledby="f-explore">
+        <h2 id="f-explore" class="f-h">{tr('footer.explore')}</h2>
+        <ul>{explore.map((n) => <li><a href={n.href}>{n.label}</a></li>)}</ul>
+      </nav>
+      <nav aria-labelledby="f-help">
+        <h2 id="f-help" class="f-h">{tr('footer.help')}</h2>
+        <ul>{help.map((n) => <li><a href={n.href}>{n.label}</a></li>)}</ul>
+      </nav>
+      <div>
+        <h2 class="f-h">{tr('footer.visit')}</h2>
+        <p>{company.name}<br />{company.street}<br />{company.city}, {tr('country')}</p>
+        <p class="muted">{tr('footer.visitNote')}</p>
+        <ul class="f-links">
+          <li><a href={company.mapUrl} rel="noopener"><Icon name="map-pin" />{tr('contact.map')}</a></li>
+          <li><a href={`mailto:${company.email}`}><Icon name="envelope-simple" />{company.email}</a></li>
+          <li><a href={url(lang, 'brochure' as RouteKey)}><Icon name="file-pdf" />{tr('footer.catalog')}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-mark"><Logo /></div>
+    <div class="foot-legal">
+      <span>© {new Date().getFullYear()} Favorit SPA · {tr('footer.note')}</span>
+      <span class="f-legal-links">
+        <a href={url(lang, 'terms')}>{tr('nav.terms')}</a>
+        <a href={url(lang, 'privacy' as RouteKey)}>{tr('nav.privacy')}</a>
+        <a href={url(lang, 'support')}>{tr('nav.support')}</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    // Header: transparent over a hero, solid once the page scrolls.
+    // Over a hero: transparent at the very top, hidden while the hero scrolls, solid once past it.
+    const top = document.querySelector<HTMLElement>('[data-top]')!;
+    const overlay = document.body.classList.contains('has-overlay');
+    const hero = document.querySelector<HTMLElement>('[data-hero]');
+    const solid = () => {
+      const open = document.body.classList.contains('menu-open');
+      const end = hero ? hero.offsetTop + hero.offsetHeight - 120 : 0;
+      const y = scrollY;
+      const mode = open || !overlay ? 'solid' : y < 60 ? 'clear' : y < end ? 'hidden' : 'solid';
+      top.classList.toggle('is-solid', mode === 'solid');
+      top.classList.toggle('is-hidden', mode === 'hidden');
+    };
+    // Hide the inline nav when the words don't fit between logo and tools (long languages); the menu still has everything.
+    const nav = top.querySelector<HTMLElement>('.nav')!;
+    const brand = top.querySelector<HTMLElement>('.brand')!;
+    const tools = top.querySelector<HTMLElement>('.tools')!;
+    const fit = () => {
+      top.classList.remove('nav-tight');
+      if (getComputedStyle(nav).display === 'none') return;
+      const n = nav.getBoundingClientRect();
+      if (n.left < brand.getBoundingClientRect().right + 24 || n.right > tools.getBoundingClientRect().left - 24) top.classList.add('nav-tight');
+    };
+    fit(); addEventListener('resize', fit); document.fonts?.ready.then(fit);
+    addEventListener('scroll', solid, { passive: true });
+    addEventListener('resize', solid);
+    solid();
+
+    // Desktop mega menu: hover (fine pointers) or click to open, one panel at a time.
+    const nds = [...top.querySelectorAll<HTMLElement>('.nd')];
+    let ndTimer = 0;
+    const ndSet = (target: HTMLElement | null) => {
+      clearTimeout(ndTimer);
+      nds.forEach((d) => { const on = d === target; d.classList.toggle('is-open', on); d.querySelector('.nd-btn')!.setAttribute('aria-expanded', String(on)); });
+      top.classList.toggle('mega-open', !!target);
+      document.body.classList.toggle('mega-on', !!target);
+    };
+    const hover = matchMedia('(hover: hover) and (pointer: fine)');
+    nds.forEach((d) => {
+      const b = d.querySelector<HTMLButtonElement>('.nd-btn')!;
+      b.addEventListener('click', () => ndSet(d.classList.contains('is-open') ? null : d));
+      d.addEventListener('pointerenter', () => { if (!hover.matches) return; clearTimeout(ndTimer); ndTimer = window.setTimeout(() => ndSet(d), top.classList.contains('mega-open') ? 0 : 120); });
+      d.addEventListener('pointerleave', () => { if (!hover.matches) return; clearTimeout(ndTimer); ndTimer = window.setTimeout(() => ndSet(null), 220); });
+      d.addEventListener('keydown', (e) => { if (e.key === 'Escape' && d.classList.contains('is-open')) { ndSet(null); b.focus(); } });
+      d.addEventListener('focusout', (e) => { if (!d.contains(e.relatedTarget as Node)) { if (d.classList.contains('is-open') && !(e.relatedTarget as HTMLElement)?.closest?.('.nd')) ndSet(null); } });
+    });
+    document.addEventListener('click', (e) => { if (!(e.target as HTMLElement).closest('.nd')) ndSet(null); });
+    addEventListener('resize', () => ndSet(null));
+
+    // Remember an explicit language choice for the root redirect.
+    document.querySelectorAll<HTMLAnchorElement>('[data-lang]').forEach((a) =>
+      a.addEventListener('click', () => { try { localStorage.setItem('lang', a.dataset.lang!); } catch {} }));
+
+    // Fullscreen menu.
+    const btn = document.querySelector<HTMLButtonElement>('[data-burger]')!;
+    const menu = document.querySelector<HTMLElement>('[data-menu]')!;
+    const label = btn.querySelector('.burger-label')!;
+    const openText = label.textContent;
+    const setOpen = (open: boolean) => {
+      btn.setAttribute('aria-expanded', String(open));
+      document.body.classList.toggle('menu-open', open);
+      label.textContent = open ? btn.dataset.close ?? '' : openText;
+      if (open) {
+        menu.hidden = false;
+        requestAnimationFrame(() => menu.classList.add('is-open'));
+        menu.querySelector<HTMLAnchorElement>('a')?.focus({ preventScroll: true });
+      } else {
+        menu.classList.remove('is-open');
+        setTimeout(() => { if (!menu.classList.contains('is-open')) menu.hidden = true; }, 500);
+        btn.focus({ preventScroll: true });
+      }
+      solid();
+    };
+    btn.addEventListener('click', () => setOpen(btn.getAttribute('aria-expanded') !== 'true'));
+    menu.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+    menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+
+    // Language dropdowns: close on outside click or Escape.
+    const dds = [...document.querySelectorAll<HTMLDetailsElement>('[data-dd]')];
+    document.addEventListener('click', (e) => dds.forEach((d) => { if (d.open && !d.contains(e.target as Node)) d.open = false; }));
+    dds.forEach((d) => d.addEventListener('keydown', (e) => { if (e.key === 'Escape') { d.open = false; d.querySelector('summary')?.focus(); e.stopPropagation(); } }));
+
+    // Display settings: theme (light, dark, follow system) and text size, remembered per browser.
+    const root = document.documentElement;
+    const store = (k: string, v: string) => { try { v ? localStorage.setItem(k, v) : localStorage.removeItem(k); } catch {} };
+    const mark = () => {
+      document.querySelectorAll<HTMLButtonElement>('[data-theme-set]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.themeSet === (root.dataset.theme ?? ''))));
+      document.querySelectorAll<HTMLButtonElement>('[data-text-set]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.textSet === (root.dataset.text ?? ''))));
+    };
+    document.querySelectorAll<HTMLButtonElement>('[data-theme-set]').forEach((b) => b.addEventListener('click', () => {
+      const v = b.dataset.themeSet!; if (v) root.dataset.theme = v; else delete root.dataset.theme; store('theme', v); mark();
+    }));
+    document.querySelectorAll<HTMLButtonElement>('[data-text-set]').forEach((b) => b.addEventListener('click', () => {
+      const v = b.dataset.textSet!; if (v) root.dataset.text = v; else delete root.dataset.text; store('text', v); mark(); solid(); fit();
+    }));
+    mark();
+
+    // Gentle reveal of content blocks as they scroll into view.
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+      const sel = 'main .h1, main .h2, main .lede, main .claim, main .card, main .item, main .hs-card, main .stats > div, main .countries, main .gallery li, main .tech li, main .facts > div, main .rows, main .prep li, main .gen li, main .offer-table tbody tr, main .maker figure, main .reach-h, main .rv, .foot-top, .foot-cols > *';
+      const els = [...document.querySelectorAll<HTMLElement>(sel)].filter((el) => !el.closest('[data-hero], .menu'));
+      const io = new IntersectionObserver((entries) => entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      els.forEach((el) => {
+        const sibs = el.parentElement ? [...el.parentElement.children].filter((c) => c.matches(sel)) : [];
+        el.style.setProperty('--rd', `${Math.min(sibs.indexOf(el), 6) * 70}ms`);
+        el.classList.add('rv');
+        io.observe(el);
+      });
+    }
+  </script>
+</body>
+</html>
+
+<style>
+  .top { position: fixed; inset: 0 0 auto; z-index: 60; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; padding: 16px var(--gut); color: #fff; transition: background-color 0.4s, color 0.4s, box-shadow 0.4s, transform 0.55s cubic-bezier(.7,0,.2,1); }
+  .top.is-hidden { transform: translateY(-100%); }
+  .top.nav-tight { grid-template-columns: 1fr auto; }
+  .top.nav-tight .nav { display: none; }
+  .top.is-solid { background: color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter: blur(10px); color: var(--ink); box-shadow: 0 1px 0 var(--line); }
+  :global(body.menu-open) .top { background: var(--paper); box-shadow: none; }
+  .brand { --w: clamp(140px, 12vw, 190px); }
+  .nav { display: flex; gap: clamp(20px, 2.6vw, 40px); font-size: 0.95rem; font-weight: 400; white-space: nowrap; }
+  .nd-btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 0; background: none; border: 0; color: inherit; font: inherit; cursor: pointer; position: relative; }
+  .nd-btn::after { content: ''; position: absolute; left: 0; right: 19px; bottom: 4px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 0.4s cubic-bezier(.2,.7,.2,1); }
+  .nd-btn:hover::after, .nd-btn[aria-expanded='true']::after { transform: scaleX(1); }
+  .nd-btn :global(.nd-caret) { width: 12px; height: 12px; transition: transform 0.45s cubic-bezier(.2,.7,.2,1); }
+  .nd-btn[aria-expanded='true'] :global(.nd-caret) { transform: rotate(180deg); }
+  .nd-panel { position: absolute; left: 0; right: 0; top: 100%; background: var(--paper); color: var(--ink); box-shadow: 0 1px 0 var(--line), 0 30px 60px -20px rgb(0 0 0 / 0.22); clip-path: inset(0 0 100% 0); visibility: hidden; transition: clip-path 0.55s cubic-bezier(.7,0,.2,1), visibility 0s 0.55s; white-space: normal; }
+  .nd.is-open .nd-panel { clip-path: inset(0 0 -60px 0); visibility: visible; transition: clip-path 0.55s cubic-bezier(.7,0,.2,1), visibility 0s; }
+  .nd-in { width: calc(100% - 2 * var(--gut)); margin-inline: auto; padding: 28px 0 34px; display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: clamp(24px, 4vw, 56px); border-top: 1px solid var(--line); }
+  .nd-list { grid-template-columns: minmax(0, 1fr) 280px; }
+  .nd-tubs { align-self: start; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 10px; }
+  @media (max-width: 1240px) { .nd-tubs { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .nd-tubs li, .nd-links li, .nd-aside { opacity: 0; transform: translateY(14px); transition: opacity 0.45s, transform 0.55s cubic-bezier(.2,.7,.2,1); }
+  .nd.is-open .nd-tubs li, .nd.is-open .nd-links li, .nd.is-open .nd-aside { opacity: 1; transform: none; transition-delay: calc(0.12s + var(--i) * 0.04s); }
+  .nd-tubs a { position: relative; display: flex; flex-direction: column; gap: 2px; padding: 14px 12px 12px; border-radius: 12px; background: var(--stone); height: 100%; transition: background-color 0.3s, transform 0.35s cubic-bezier(.2,.7,.2,1); }
+  .nd-tubs a::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 0; height: 2px; border-radius: 2px; background: var(--c); transform: scaleX(0); transition: transform 0.4s cubic-bezier(.2,.7,.2,1); }
+  .nd-tubs a:hover { background: var(--card); transform: translateY(-3px); }
+  .nd-tubs a:hover::after, .nd-tubs a[aria-current='page']::after { transform: scaleX(1); }
+  .nt-img { display: grid; place-items: center; height: 92px; margin-bottom: 8px; }
+  .nt-img :global(img) { max-width: 100%; max-height: 92px; width: auto; height: auto; filter: drop-shadow(0 8px 12px rgb(0 0 0 / 0.16)); transition: transform 0.5s cubic-bezier(.2,.7,.2,1), filter 0.5s; }
+  .nd-tubs a:hover .nt-img :global(img) { transform: translateY(-4px); filter: drop-shadow(0 14px 16px rgb(0 0 0 / 0.2)); }
+  .nt-name { display: inline-flex; align-items: center; gap: 7px; font-size: 1.05rem; line-height: 1.2; }
+  .nt-ic { display: inline-flex; font-size: 12px; color: var(--c); transition: transform 0.4s cubic-bezier(.2,.7,.2,1); }
+  .nd-tubs a:hover .nt-ic { transform: scale(1.15); }
+  .nt-meta { font-size: 0.78rem; color: var(--soft); }
+  .nt-price { font-size: 0.82rem; }
+  .nd-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+  .nd-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 300px)); gap: 4px 40px; align-content: start; }
+  .nd-links a:not(.btn) { display: flex; align-items: center; gap: 14px; padding: 10px 10px; margin-inline: -10px; border-radius: 10px; font-size: 1.12rem; font-weight: 300; transition: background-color 0.3s; }
+  .nd-links a:not(.btn):hover { background: var(--stone); }
+  .nd-ic { display: grid; place-items: center; width: 38px; height: 38px; flex: none; border-radius: 50%; border: 1px solid var(--line); color: var(--accent); transition: background-color 0.35s, border-color 0.35s, color 0.35s; }
+  .nd-ic :global(svg) { width: 19px; height: 19px; transition: transform 0.4s cubic-bezier(.2,.7,.2,1); }
+  .nd-links a:hover .nd-ic { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+  .nd-links a:hover .nd-ic :global(svg) { transform: translateY(-1px); }
+  .nd-links a:not(.btn) .nd-t { transition: transform 0.4s cubic-bezier(.2,.7,.2,1); }
+  .nd-links a:not(.btn):hover .nd-t { transform: translateX(3px); }
+  .nd-cta { margin-top: 14px; align-self: flex-start; }
+  .nd-cta :global(svg) { transition: transform 0.4s cubic-bezier(.2,.7,.2,1); }
+  .nd-cta:hover :global(svg) { transform: translateX(4px); }
+  .nd-focus { width: min(1180px, 100% - 2 * var(--gut)); grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 300px; gap: clamp(28px, 4vw, 64px); align-items: start; padding-block: 36px 40px; }
+  .nd-intro { display: flex; flex-direction: column; gap: 14px; padding-right: 8px; opacity: 0; transform: translateY(14px); transition: opacity 0.45s, transform 0.55s cubic-bezier(.2,.7,.2,1); }
+  .nd.is-open .nd-intro { opacity: 1; transform: none; transition-delay: 0.1s; }
+  .nd-eyebrow { margin: 0; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+  .nd-lead { margin: 0; font-size: clamp(1.25rem, 1.6vw, 1.55rem); font-weight: 300; line-height: 1.35; letter-spacing: -0.005em; }
+  .nd-more { display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; border-bottom: 1px solid currentColor; align-self: flex-start; padding-bottom: 2px; }
+  .nd-more :global(svg) { width: 16px; height: 16px; transition: transform 0.4s cubic-bezier(.2,.7,.2,1); }
+  .nd-more:hover :global(svg) { transform: translateX(4px); }
+  .nd-focus .nd-links { border-left: 1px solid var(--line); padding-left: clamp(20px, 3vw, 40px); }
+  .nd-aside { display: flex; flex-direction: column; gap: 10px; opacity: 0; transform: translateY(14px); transition: opacity 0.45s, transform 0.55s cubic-bezier(.2,.7,.2,1); }
+  .nd.is-open .nd-aside { opacity: 1; transform: none; transition-delay: 0.3s; }
+  .nd-card { padding: 22px 24px; border-radius: 16px; background: var(--stone); font-size: 0.95rem; }
+  .nd-card a, .nd-note { display: inline-flex; align-items: center; gap: 10px; }
+  .nd-card a:hover { color: var(--soft); }
+  .nd-card :global(svg) { width: 18px; height: 18px; color: var(--accent); flex: none; }
+  .nd-big { font-size: 1.3rem; font-weight: 300; margin-top: 4px; }
+  .nd-note { color: var(--soft); font-size: 0.85rem; line-height: 1.4; margin-top: 6px; }
+  .nd-photo { position: relative; display: block; border-radius: 16px; overflow: hidden; aspect-ratio: 4 / 3.4; color: #fff; }
+  .nd-photo :global(img) { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+  .nd-photo:hover :global(img) { transform: scale(1.04); }
+  .nd-photo-cap { position: absolute; inset: auto 12px 12px 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 12px; font-size: 0.85rem; background: rgb(24 20 16 / 0.3); -webkit-backdrop-filter: blur(14px) saturate(1.2); backdrop-filter: blur(14px) saturate(1.2); border: 1px solid rgb(255 255 255 / 0.2); }
+  .nd-map { display: inline-flex; align-items: center; gap: 6px; }
+  .nd-map :global(svg) { width: 16px; height: 16px; }
+  .top.mega-open { background: var(--paper); color: var(--ink); box-shadow: none; backdrop-filter: none; }
+  .mega-veil { position: fixed; inset: 0; z-index: 55; background: rgb(0 0 0 / 0.28); opacity: 0; pointer-events: none; transition: opacity 0.45s; }
+  :global(body.mega-on) .mega-veil { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) { .nd-panel, .nd-tubs li, .nd-links li, .nd-aside { transition: none !important; } }
+  .tools { justify-self: end; display: flex; align-items: center; gap: clamp(12px, 1.6vw, 22px); }
+  .lang-dd { position: relative; font-size: 0.85rem; font-weight: 400; }
+  .lang-dd summary { list-style: none; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; padding: 8px 4px; min-height: 40px; }
+  .lang-dd summary::-webkit-details-marker { display: none; }
+  .lang-dd summary :global(svg) { width: 17px; height: 17px; }
+  .lang-dd summary :global(.dd-caret) { width: 12px; height: 12px; transition: transform 0.3s; }
+  .lang-dd[open] summary :global(.dd-caret) { transform: rotate(180deg); }
+  .dd-list { position: absolute; right: 0; top: calc(100% + 6px); z-index: 5; list-style: none; margin: 0; padding: 6px; min-width: 210px; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 18px 40px rgb(0 0 0 / 0.14); animation: dd-in 0.25s cubic-bezier(.2,.7,.2,1); }
+  @keyframes dd-in { from { opacity: 0; transform: translateY(-6px); } }
+  .dd-list a { display: flex; justify-content: space-between; gap: 16px; padding: 8px 12px; border-radius: 6px; font-size: 0.95rem; }
+  .dd-list a:hover { background: var(--stone); }
+  .dd-list a[aria-current='true'] { background: var(--stone); font-weight: 500; }
+  .dd-code { color: var(--soft); font-size: 0.8rem; }
+  .cta { min-height: 40px; padding: 0.55em 1.2em; font-size: 0.9rem; }
+  .burger { display: inline-flex; align-items: center; gap: 10px; background: none; border: 0; color: inherit; font: 400 0.95rem var(--sans); cursor: pointer; padding: 8px 0; min-height: 44px; }
+  .burger-lines { position: relative; width: 26px; height: 10px; }
+  .burger-lines span { position: absolute; left: 0; right: 0; height: 1.5px; background: currentColor; transition: transform 0.45s cubic-bezier(.7,0,.2,1), top 0.45s cubic-bezier(.7,0,.2,1); }
+  .burger-lines span:first-child { top: 0; }
+  .burger-lines span:last-child { top: 8.5px; }
+  .burger[aria-expanded='true'] .burger-lines span:first-child { top: 4px; transform: rotate(45deg); }
+  .burger[aria-expanded='true'] .burger-lines span:last-child { top: 4px; transform: rotate(-45deg); }
+
+  .menu { position: fixed; inset: 0; z-index: 50; background: var(--paper); color: var(--ink); overflow-y: auto; clip-path: inset(0 0 100% 0); transition: clip-path 0.7s cubic-bezier(.7,0,.2,1); }
+  .menu.is-open { clip-path: inset(0 0 0 0); }
+  .menu-inner { min-height: 100%; display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); padding: clamp(96px, 13vh, 130px) var(--gut) clamp(28px, 4vh, 48px); }
+  .menu-left { display: flex; flex-direction: column; justify-content: space-between; gap: clamp(28px, 5vh, 56px); min-width: 0; }
+  .menu-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px clamp(20px, 3vw, 48px); }
+  .menu-col ul { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 2px; border-top: 1px solid var(--line); padding-top: 12px; }
+  .menu-col a { display: inline-block; font-size: clamp(1.6rem, 2.9vw, 2.9rem); font-weight: 300; line-height: 1.22; letter-spacing: -0.01em; padding: 3px 0; opacity: 0; transform: translateY(18px); transition: opacity 0.6s, transform 0.6s cubic-bezier(.2,.7,.2,1), color 0.3s; transition-delay: calc(0.25s + var(--i) * 0.04s); }
+  .menu.is-open .menu-col a { opacity: 1; transform: none; }
+  .menu-col a:hover, .menu-col a[aria-current='page'] { color: var(--soft); }
+  .menu-bottom { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); justify-content: space-between; gap: clamp(20px, 3vw, 48px); align-items: end; padding-top: 20px; border-top: 1px solid var(--line); opacity: 0; transition: opacity 0.6s 0.45s; }
+  .menu.is-open .menu-bottom { opacity: 1; }
+  .menu-side { display: flex; flex-direction: column; gap: 14px; opacity: 0; transition: opacity 0.6s 0.45s; }
+  .menu.is-open .menu-side { opacity: 1; }
+  .menu-label { margin: 0; font-size: 0.8rem; color: var(--soft); }
+  .menu-models { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .menu-models a { position: relative; display: grid; grid-template-columns: 64px 1fr; grid-template-rows: auto auto auto; column-gap: 14px; align-items: center; min-height: 76px; padding: 10px 12px 10px 10px; border-radius: 12px; background: var(--stone); transition: background-color 0.3s, transform 0.3s cubic-bezier(.2,.7,.2,1); }
+  .menu-models a::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 0; height: 2px; border-radius: 2px; background: var(--c); opacity: 0; transition: opacity 0.3s; }
+  .menu-models a:hover { background: var(--card); transform: translateY(-2px); }
+  .menu-models a:hover::after { opacity: 1; }
+  .mm-img { grid-row: 1 / 4; display: grid; place-items: center; width: 64px; height: 64px; }
+  .mm-img :global(img) { max-width: 64px; max-height: 64px; width: auto; height: auto; filter: drop-shadow(0 6px 10px rgb(0 0 0 / 0.16)); }
+  .mm-name { display: inline-flex; align-items: center; gap: 8px; font-size: 1.1rem; font-weight: 400; line-height: 1.2; }
+  .mm-ic { font-size: 13px; display: inline-flex; color: var(--c); }
+  .mm-meta { font-size: 0.8rem; color: var(--soft); line-height: 1.3; }
+  .mm-price { font-size: 0.85rem; color: var(--ink); line-height: 1.3; white-space: nowrap; }
+  @media (max-width: 480px) { .menu-models a { grid-template-columns: 48px 1fr; column-gap: 10px; padding: 10px; } .mm-img, .mm-img :global(img) { width: 48px; max-width: 48px; } .mm-name { font-size: 1rem; } }
+  .menu-contact { display: flex; flex-direction: column; gap: 4px; font-size: 0.95rem; }
+  .menu-cta { align-self: flex-start; margin-top: 14px; }
+  .settings { display: flex; flex-direction: column; gap: 10px; }
+  .set-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .set-name { font-size: 0.95rem; }
+  .seg { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: var(--stone); }
+  .seg button { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 14px; border: 0; border-radius: 999px; background: transparent; color: var(--soft); font: 400 0.85rem var(--sans); cursor: pointer; transition: background-color 0.3s, color 0.3s; }
+  .seg button :global(svg) { width: 16px; height: 16px; }
+  .seg button[aria-pressed='true'] { background: var(--paper); color: var(--ink); box-shadow: 0 1px 4px rgb(0 0 0 / 0.08); }
+  .seg-text button { min-width: 42px; justify-content: center; padding: 0 10px; font-weight: 500; }
+  .lang-dd-menu .dd-list { right: 0; bottom: calc(100% + 6px); top: auto; }
+  .lang-dd-menu summary { border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; }
+
+  .foot { background: var(--stone); border-top: 1px solid var(--line); padding: clamp(56px, 8vw, 104px) var(--gut) 24px; font-size: 0.92rem; color: var(--ink); }
+  .foot-top { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 28px 48px; padding-bottom: clamp(40px, 6vw, 72px); border-bottom: 1px solid var(--ink); }
+  .foot-big { margin: 0; max-width: 16em; font-size: clamp(1.8rem, 3.6vw, 3.2rem); font-weight: 300; line-height: 1.12; letter-spacing: -0.015em; }
+  .foot-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .foot-cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; padding-top: 36px; }
+  .f-h { font: 400 0.8rem/1.3 var(--sans); color: var(--soft); margin: 0 0 14px; }
+  .foot-cols ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+  .foot-cols a { display: inline-flex; align-items: center; gap: 10px; transition: color 0.25s; }
+  .foot-cols a:hover { color: var(--soft); }
+  .foot-cols p { margin: 0 0 10px; line-height: 1.6; }
+  .f-ic { display: inline-flex; font-size: 15px; color: var(--soft); }
+  .f-links { margin-top: 14px !important; }
+  .f-links :global(svg) { width: 18px; height: 18px; color: var(--soft); }
+  .foot-mark { --w: clamp(220px, 30vw, 420px); color: var(--ink); margin-top: clamp(48px, 7vw, 88px); }
+  .foot-legal { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.78rem; color: var(--soft); }
+  .f-legal-links { display: flex; gap: 18px; flex-wrap: wrap; }
+  .f-legal-links a:hover, .f-legal-links a[aria-current='true'] { color: var(--ink); }
+
+  @media (max-width: 1000px) {
+    .top { grid-template-columns: 1fr auto; }
+    .nav { display: none; }
+    .foot-cols { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 1100px) {
+    .menu-inner { grid-template-columns: 1fr; }
+    .menu-models { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  }
+  @media (max-width: 600px) { .menu-cols { grid-template-columns: 1fr !important; } .menu-col a { font-size: 1.75rem; } }
+  @media (max-width: 760px) {
+    .menu-inner { padding-top: 88px; gap: 36px; }
+    .menu-cols { grid-template-columns: 1fr 1fr; }
+    .menu-bottom { grid-template-columns: 1fr; }
+    .cta { display: none; }
+    .burger-label { display: none; }
+    .tools > .lang-dd summary span { display: none; }
+  }
+
+</style>

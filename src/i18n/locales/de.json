@@ -1,0 +1,936 @@
+{
+  "meta": {
+    "name": "Deutsch",
+    "htmlLang": "de",
+    "hreflang": "de",
+    "locale": "de-DE",
+    "legacy": "de"
+  },
+  "persons": {
+    "one": "{n} Person",
+    "other": "{n} Personen"
+  },
+  "values": {
+    "approx": "ca.",
+    "hp": "PS",
+    "decimal": ",",
+    "upTo": "bis zu"
+  },
+  "routes": {
+    "models": "whirlpools",
+    "features": "ausstattung",
+    "maintenance": "pflege",
+    "contact": "kontakt",
+    "quote": "angebot",
+    "gallery": "galerie",
+    "reviews": "bewertungen",
+    "faq": "faq",
+    "about": "ueber-uns",
+    "terms": "agb",
+    "support": "kundenservice",
+    "docs": "dokumentation",
+    "why": "warum-favorit-spa",
+    "privacy": "datenschutz",
+    "control": "steuerung",
+    "brochure": "katalog"
+  },
+  "ui": {
+    "nav.models": "Whirlpools",
+    "nav.features": "Ausstattung",
+    "nav.maintenance": "Pflege",
+    "nav.contact": "Kontakt",
+    "nav.quote": "Angebot anfordern",
+    "nav.gallery": "Galerie",
+    "nav.reviews": "Bewertungen",
+    "nav.faq": "FAQ",
+    "nav.about": "Über uns",
+    "nav.brochure": "Katalog",
+    "nav.control": "Steuerung",
+    "nav.terms": "Allgemeine Geschäftsbedingungen",
+    "nav.menu": "Menü",
+    "nav.lang": "Sprache",
+    "cta": "Angebot anfordern",
+    "call": "Anrufen",
+    "from": "ab",
+    "jets": "Düsen",
+    "view": "Modell ansehen",
+    "skip": "Zum Inhalt springen",
+    "home.title": "Favorit SPA – Whirlpools von einem kleinen europäischen Hersteller",
+    "home.desc": "Favorit SPA baut Whirlpools: sieben Modelle für 2 bis 6 Personen, robotergestützte Fertigung und dreißig Jahre Erfahrung.",
+    "home.intro": "Ein kleiner europäischer Hersteller von Whirlpools. Robotergestützte Fertigung, Sorgfalt bis ins letzte Detail und dreißig Jahre Erfahrung.",
+    "home.models": "Modelle",
+    "lineup.h": "Alle sieben Modelle im Maßstab",
+    "lineup.p": "Jeder Whirlpool ist von oben im selben Maßstab dargestellt. Vergleichen Sie, bevor Sie Ihre Terrasse ausmessen.",
+    "offers.h": "Aktionspreise",
+    "offers.p": "Solange der Vorrat reicht, für das jeweils angegebene Ausstattungspaket.",
+    "offers.model": "Modell",
+    "maker.h": "Ein kleiner europäischer Hersteller",
+    "maker.visit": "Ausstellung und Fertigung stehen Besuchern von Montag bis Samstag offen.",
+    "maker.cta": "Besuch vereinbaren",
+    "footer.tag": "Whirlpools. Ein kleiner europäischer Hersteller mit dreißig Jahren Erfahrung.",
+    "footer.note": "Abbildungen dienen der Veranschaulichung; die Ausstattung hängt vom Paket ab.",
+    "footer.catalog": "Katalog (PDF)",
+    "models.title": "Whirlpools und Preise",
+    "models.lead": "Sieben Modelle in drei Linien. Jedes gibt es in zwei oder drei Ausstattungspaketen, die sich in Düsen, Pumpen und Extras unterscheiden.",
+    "models.packages": "Pakete",
+    "model.dims": "Abmessungen",
+    "model.colors": "Acrylfarben",
+    "model.cladding": "Verkleidung",
+    "model.photo": "Foto",
+    "model.saleNote": "Aktionspreis, solange der Vorrat reicht.",
+    "model.included": "Inbegriffen",
+    "model.inquire": "Angebot anfordern für",
+    "model.yes": "inbegriffen",
+    "model.gallery": "Galerie",
+    "model.item": "Position",
+    "quote.title": "Angebot anfordern",
+    "quote.lead": "Wählen Sie Modell und Paket, hinterlassen Sie Ihre Daten, und wir senden Ihnen ein Angebot. Noch unentschlossen? Beschreiben Sie einfach den Platz, wir helfen Ihnen bei der Wahl.",
+    "quote.steps": [
+      "Modell und Paket wählen",
+      "Daten und ein paar Worte zum Platz hinterlassen",
+      "Wir melden uns mit einem Angebot"
+    ],
+    "quote.model": "Modell",
+    "quote.email": "E-Mail",
+    "quote.contactAlt": "Lieber im Gespräch? Rufen Sie uns an oder besuchen Sie unsere Kontaktseite.",
+    "contact.toQuote": "Für ein Angebot zu einem bestimmten Modell senden Sie bitte eine Angebotsanfrage.",
+    "contact.title": "Kontakt",
+    "contact.lead": "Rufen Sie an, schreiben Sie uns oder besuchen Sie Ausstellung und Fertigung, Montag bis Samstag.",
+    "contact.address": "Adresse",
+    "contact.msgPh": "Zum Beispiel, wo der Whirlpool stehen soll und bis wann Sie ihn brauchen",
+    "contact.sendNote": "Ihre Anfrage öffnet sich als E-Mail in Ihrem Mailprogramm, adressiert an",
+    "info.soon": "Diese Seite folgt mit der nächsten Ausbaustufe der neuen Website.",
+    "info.current": "Aktuelle Version öffnen",
+    "nav.support": "Kundenservice",
+    "nav.docs": "Dokumentation",
+    "model.equipment": "Ausstattung und technische Daten",
+    "model.equipLead": "Alles, was der Whirlpool bietet, gruppiert und nach Paketen verglichen.",
+    "model.groups": {
+      "specs": "Technische Daten",
+      "massage": "Massage",
+      "water": "Sauberes Wasser",
+      "control": "Steuerung und Energie",
+      "light": "Licht, Klang und Duft",
+      "comfort": "Abdeckungen, Komfort und Service",
+      "build": "Rahmen und Isolierung",
+      "finish": "Oberfläche"
+    },
+    "model.installs": "Bei unseren Kunden",
+    "model.installsLead": "Fotos von Besitzern, von Terrassen an der Adria bis zu Berghütten.",
+    "model.tech": "Technik in diesem Whirlpool",
+    "model.techMore": "Gesamte Ausstattung",
+    "reach.h": "Von Schweden bis Griechenland",
+    "reach.p": "Gebaut für beide Enden Europas. PU-Isolierung (30 mm für kältere Regionen) und eine maßgefertigte Thermoabdeckung halten die Wärme durch den schwedischen Winter, Ozon, UV-Lampe und Gecko-Steuerung halten das Wasser durch den griechischen Sommer klar. Die Sinter-Wood-Verkleidung verträgt Frost, salzige Meeresluft und Sonne, ganz ohne Pflege.",
+    "reach.stats": [
+      [
+        "30",
+        "Jahre Whirlpoolbau"
+      ],
+      [
+        "7",
+        "Modelle für 2 bis 6 Personen"
+      ],
+      [
+        "11",
+        "Länder, in denen unsere Whirlpools genutzt werden"
+      ]
+    ],
+    "reach.countries": [
+      "Schweden",
+      "Deutschland",
+      "Österreich",
+      "Ungarn",
+      "Slowenien",
+      "Kroatien",
+      "Bosnien und Herzegowina",
+      "Serbien",
+      "Montenegro",
+      "Albanien",
+      "Griechenland"
+    ],
+    "footer.big": "Mit Sorgfalt gebaute Whirlpools, für Momente, die bleiben.",
+    "footer.models": "Whirlpools",
+    "footer.visitNote": "Ausstellung und Fertigung, Montag bis Samstag",
+    "support.title": "Kundenservice",
+    "support.lead": "Wir sind auch nach der Lieferung für Sie da. Pflege, Garantie, Aufstellbedingungen und Serviceanfragen, alles an einem Ort.",
+    "support.cards": [
+      [
+        "wrench",
+        "Pflege",
+        "Wasser, Filter und Winterbetrieb, Schritt für Schritt.",
+        "maintenance"
+      ],
+      [
+        "question",
+        "FAQ",
+        "Die häufigsten Fragen vor und nach dem Kauf.",
+        "faq"
+      ],
+      [
+        "file-pdf",
+        "Dokumentation",
+        "Technische Zeichnungen, Katalog und Aufstelldaten.",
+        "docs"
+      ],
+      [
+        "headset",
+        "Serviceanfrage",
+        "Beschreiben Sie das Problem, wir melden uns umgehend.",
+        "#servis"
+      ]
+    ],
+    "support.warranty": "Garantie",
+    "support.warrantyRows": [
+      [
+        "Private Nutzung",
+        "24 Monate ab Lieferung"
+      ],
+      [
+        "Gewerbliche Nutzung (Hotels, Spas, Vermietung)",
+        "12 Monate ab Lieferung"
+      ]
+    ],
+    "support.warrantyNote": "Die Garantie umfasst alle eingebauten Komponenten. Service und Ersatzteile bleiben auch nach Ablauf der Garantie verfügbar. Filter und Wasserpflegemittel sind ausgenommen.",
+    "support.max": "Service MAX 72h",
+    "support.maxP": "Mit dem Servicepaket MAX ist unser Techniker innerhalb von 72 Stunden nach Ihrem Anruf bei Ihnen, bei Bedarf mit Ersatzteilen.",
+    "support.prep": "Vor der Aufstellung",
+    "support.prepList": [
+      "Ein ebenes, tragfähiges Betonfundament, etwa 40 % größer als der Whirlpool, damit er von allen Seiten zugänglich ist.",
+      "Ein Stromkabel 3×2,5 mm² oder 5×2,5 mm², je nach Modell, etwa 4 m lang ab dem Standort des Whirlpools.",
+      "Ein Fehlerstromschutzschalter (FI) und Sicherungen nach Vorgabe. Der Anschluss muss von einer Elektrofachkraft ausgeführt werden.",
+      "Kein Wasseranschluss nötig: Befüllt wird mit dem Gartenschlauch, entleert über das eingebaute Ventil.",
+      "Den Filter mindestens einmal im Jahr wechseln."
+    ],
+    "support.form": "Serviceanfrage",
+    "support.formLead": "Nennen Sie uns das Modell und was passiert. Fotos können Sie der sich öffnenden E-Mail anhängen.",
+    "support.year": "Kaufjahr",
+    "support.issuePh": "Zum Beispiel die Meldung im Display, seit wann sie erscheint und was Sie bereits versucht haben",
+    "docs.title": "Dokumentation",
+    "docs.lead": "Technische Zeichnungen, Aufstelldaten und Katalog an einem Ort.",
+    "docs.models": "Aufstelldaten",
+    "docs.cols": [
+      "Modell",
+      "Abmessungen",
+      "Volumen",
+      "Leergewicht",
+      "Stromversorgung",
+      "Zeichnung"
+    ],
+    "docs.general": "Allgemeine Unterlagen",
+    "docs.pdf": "PDF",
+    "docs.weightNote": "Gewicht und Stromversorgung hängen vom Paket ab; die Spanne reicht vom Basis- bis zum Top-Paket.",
+    "countries": {
+      "Serbia": "Serbien",
+      "Montenegro": "Montenegro",
+      "Bosnia": "Bosnien und Herzegowina",
+      "Croatia": "Kroatien"
+    },
+    "offers.pkg": "Paket",
+    "offers.was": "Regulärer Preis",
+    "offers.now": "Aktionspreis",
+    "offers.save": "Sie sparen",
+    "model.persons": "Sitzplätze",
+    "model.jets": "Düsen",
+    "model.price": "Preis",
+    "model.packages": "Ausstattungspakete",
+    "model.choose": "Paket wählen",
+    "model.jetsLine": "Hydro- und Luftdüsen",
+    "model.notIncluded": "Nicht inbegriffen",
+    "model.opt": "optional",
+    "model.no": "nicht verfügbar",
+    "model.drawing": "Technische Zeichnung (PDF)",
+    "model.others": "Weitere Modelle",
+    "quote.pkg": "Paket",
+    "quote.any": "Noch unentschlossen",
+    "quote.you": "Ihre Daten",
+    "quote.place": "Standort des Whirlpools",
+    "quote.places": [
+      "Terrasse",
+      "Garten",
+      "Dachterrasse",
+      "Innenraum"
+    ],
+    "contact.phone": "Telefon",
+    "contact.email": "E-Mail",
+    "contact.map": "Karte öffnen",
+    "contact.name": "Vor- und Nachname",
+    "contact.tel": "Telefon",
+    "contact.city": "Ort",
+    "contact.msg": "Nachricht",
+    "contact.send": "Anfrage senden",
+    "footer.explore": "Entdecken",
+    "footer.help": "Hilfe",
+    "footer.visit": "Besuchen Sie uns",
+    "support.issue": "Was ist passiert",
+    "lineup.topView": "Draufsicht",
+    "gallery.photo": "Foto",
+    "gallery.gallery": "Galerie",
+    "gallery.close": "Schließen",
+    "gallery.prev": "Zurück",
+    "gallery.next": "Weiter",
+    "contact.hours": "Ausstellung und Fertigung: Montag bis Samstag",
+    "country": "Serbien",
+    "model.metaDesc": "Whirlpool {name} für {persons}, {dims}, bis zu {jets} Düsen. Ab {price}.",
+    "features.lead": "Was in jedem Favorit Whirlpool steckt: bewährte Komponenten, die meisten von Gecko, und die Details, um die wir uns selbst kümmern.",
+    "features.count": "Merkmale",
+    "features.end": "Welche Ausstattung zu welchem Paket gehört, steht auf jeder Modellseite.",
+    "docs.generalList": [
+      "Favorit SPA Katalog",
+      "Allgemeine Geschäftsbedingungen",
+      "Pflegeanleitung",
+      "Aufstellbedingungen und Garantie"
+    ],
+    "mail.quote": {
+      "subject": "Angebotsanfrage",
+      "labels": [
+        "Name",
+        "E-Mail",
+        "Telefon",
+        "Ort",
+        "Modell",
+        "Paket",
+        "Standort"
+      ]
+    },
+    "mail.service": {
+      "subject": "Serviceanfrage",
+      "labels": [
+        "Name",
+        "Telefon",
+        "Modell",
+        "Kaufjahr",
+        "Ort"
+      ]
+    },
+    "home.prev": "Vorheriges Modell",
+    "home.next": "Nächstes Modell",
+    "home.craftAlt": "Pearl Wanne, Studioaufnahme",
+    "nav.closeShort": "Schließen",
+    "settings.title": "Darstellung",
+    "settings.theme": "Design",
+    "settings.light": "Hell",
+    "settings.dark": "Dunkel",
+    "settings.auto": "Automatisch",
+    "settings.text": "Textgröße",
+    "settings.smaller": "Normaler Text",
+    "settings.larger": "Größerer Text",
+    "settings.largest": "Größter Text",
+    "nav.guide": "Bedienungsanleitung",
+    "support.guideCard": "Schritt für Schritt vom Befüllen bis zum Winter, alles an einem Ort.",
+    "about.ctaQuote": "Angebot anfordern",
+    "nav.why": "Warum Favorit SPA",
+    "nav.privacy": "Datenschutzerklärung",
+    "nav.groupHelp": "Service",
+    "nav.groupStory": "Über uns",
+    "nav.helpIntro": "Wir sind auch nach der Lieferung für Sie da: Anleitungen, Unterlagen und Service an einem Ort.",
+    "nav.storyIntro": "Ein kleiner europäischer Hersteller aus Šabac, Serbien. Seit dreißig Jahren bauen wir Whirlpools, und am Telefon sprechen Sie mit den Menschen, die sie bauen."
+  },
+  "products": {
+    "eden": {
+      "tagline": "Inspiration für sechs",
+      "description": "Ein Kreis: Abfolge und Beständigkeit, wie das Leben selbst. Eden bietet sechs Plätze in einer runden Wanne, sodass sich alle ansehen. Genießen Sie ihn ohne Ende, mit den Menschen, die Ihnen am nächsten sind.",
+      "claim": "Sechs Plätze im Kreis, einander zugewandt. Eden ist gemacht für Familie, Freunde und lange Gespräche unter dem Sternenhimmel."
+    },
+    "fusion": {
+      "tagline": "alles, was Sie brauchen, im Gleichgewicht",
+      "description": "Eine Verbindung aus allem, was Sie brauchen: Raum, Funktion, Schönheit und genau das richtige Maß. Fusion ist ein anderes Wort für Gleichgewicht.",
+      "claim": "Zwei Liegen und zwei Sitze auf kompaktem Quadrat. Alles, was Sie brauchen, nichts darüber hinaus."
+    },
+    "garden": {
+      "tagline": "Spa-Anwendungen unter freiem Himmel",
+      "description": "Mit Garden geben Sie sich ganz dem Moment hin. Die Zeit bleibt stehen und wird zu einem kurzen Urlaub fern vom Lärm der Stadt, mit Spa-Anwendungen für sechs.",
+      "claim": "Das größte Modell der Reihe: sechs Plätze, kräftige Pumpen und eine Ganzkörpermassage. Garden macht aus dem Garten ein privates Spa."
+    },
+    "melody": {
+      "tagline": "so viel in scheinbar wenig",
+      "description": "So viel zu erleben in etwas, das nur klein wirkt. Nichts so Kompaktes bietet so viel Genuss. Eine echte Melody.",
+      "claim": "Für zwei, für kleine Terrassen und große Momente. Melody passt dorthin, wo andere Whirlpools keinen Platz finden."
+    },
+    "pearl": {
+      "tagline": "der Blick zum selben Horizont",
+      "description": "Nähe und Vertrautheit, während Sie beide zum selben Horizont blicken. Kann es schöner sein? Braucht es mehr?",
+      "claim": "Gemacht für zwei, mit Platz für einen Gast. Eine Liege, eine ruhige Massage und derselbe Horizont."
+    },
+    "point": {
+      "tagline": "der Ausgangspunkt",
+      "description": "Ein Ausgangspunkt fürs Zusammensein. Schnell, einfach und Ihr erster Schritt in die Welt des Spa.",
+      "claim": "Der kürzeste Weg zum eigenen Spa. Vier Plätze, einfach zu bedienen, ein leichter erster Schritt."
+    },
+    "zen": {
+      "tagline": "Raum zum Wählen, Raum zum Wünschen",
+      "description": "Raum zum Wählen und Raum zum Wünschen. Lassen Sie sich sinken, hören Sie in sich hinein und überlassen Sie den Rest dem Wasser. Wechseln Sie die Plätze, bis Sie den perfekten finden. Be ZEN.",
+      "claim": "Fünf Plätze, eine Liege und Raum für alle, ihren Platz zu finden. Zen ist der Whirlpool, in dem Abende wie von selbst länger werden."
+    }
+  },
+  "labels": {
+    "Aero mlaznice (komada)": "Luftdüsen (Stk.)",
+    "Aero mlaznice set": "Luftdüsen-Set",
+    "Aero pumpa": "Luftpumpe",
+    "Antibakterijski filter": "Antibakterieller Filter",
+    "Aromaterapija": "Aromatherapie",
+    "Blue energy block": "Blue energy block",
+    "Broj mesta": "Sitzplätze",
+    "Cirada": "Wetterschutzplane",
+    "Cirkulaciona pumpa": "Umwälzpumpe",
+    "Dodatni grejač 3kW": "Zusatzheizung 3 kW",
+    "Drenažni ventil": "Ablassventil",
+    "Elektronska kontrola": "Steuerung",
+    "Fiberglas omotač": "Glasfaserverstärkung",
+    "Grejač": "Heizung",
+    "HDS okvir stiren visoke gustine": "HDS-Rahmen aus hochdichtem Styrol",
+    "Hidro mlaznice (komada)": "Hydrodüsen (Stk.)",
+    "Hidro mlaznice kombo (set)": "Kombi-Hydrodüsen (Set)",
+    "Hidro pumpa 2ks (komada)": "Hydropumpe 2 PS (Stk.)",
+    "Hidro pumpa 3ks (komada)": "Hydropumpe 3 PS (Stk.)",
+    "Hromoterapija": "Farblichttherapie",
+    "Jastuk (set)": "Kopfkissen (Set)",
+    "Kontrolni blok": "Steuereinheit",
+    "Led mini lampe": "LED-Minileuchten",
+    "Low water level": "Wasserstandssensor",
+    "Magma mlaznice (4 komada)": "Magma-Düsen (4 Stk.)",
+    "Materijal lica": "Wannenmaterial",
+    "Metal konstrukcija": "Metallrahmen",
+    "Music system": "Musiksystem",
+    "Ozonoterapija": "Ozonbehandlung",
+    "PEARL-WHITE finish": "PEARL-WHITE Oberfläche",
+    "PURE-WHITE finish": "PURE-WHITE Oberfläche",
+    "Pametno led svetlo": "Smarte LED-Beleuchtung",
+    "Parna membrana": "Dampfsperre",
+    "Polar izolacija 10mm": "Polar-Isolierung 10 mm",
+    "Polar izolacija 30mm": "Polar-Isolierung 30 mm",
+    "Potrebna snaga": "Stromversorgung",
+    "SILVER-PLATINUM finish": "SILVER-PLATINUM Oberfläche",
+    "SMF snažan metalni ram": "SMF robuster Metallrahmen",
+    "SPA kontola GECKO IN.K.1000": "GECKO in.k1000 Steuerung",
+    "Sedeća mesta / Ležeća mesta": "Sitze / Liegen",
+    "Servis 72h": "72h-Service",
+    "Sigurnosno monofazno napajanje": "Sichere Einphasenversorgung",
+    "Smartphone platforma": "Smartphone-Plattform",
+    "Stepenice": "Stufen",
+    "Svetleće hidro mlaznice": "Beleuchtete Hydrodüsen",
+    "Svetleće mini mlaznice": "Beleuchtete Minidüsen",
+    "Temperaturni opseg upotrebe": "Betriebstemperaturbereich",
+    "Termo pokrivač": "Thermoabdeckung",
+    "Termo ventilacija": "Thermobelüftung",
+    "Termo-stone finish": "Termo-stone Oberfläche",
+    "Težina": "Gewicht",
+    "Thermostron omotač": "Thermostron-Isolierung",
+    "UV lampa": "UV-Lampe",
+    "Visoko led svetlo": "High-LED-Licht",
+    "Zapremina": "Volumen",
+    "Zvučni sistem": "Soundsystem",
+    "Čist hemijski sistem": "in.clear Wasserpflegesystem"
+  },
+  "featureGroups": {
+    "control": "Steuerung",
+    "massage": "Massage",
+    "water": "Sauberes Wasser",
+    "warmth": "Wärme und Energie",
+    "build": "Rahmen und Verkleidung",
+    "experience": "Erlebnis",
+    "service": "Service"
+  },
+  "features": {
+    "spa-control": {
+      "t": "Steuerung",
+      "d": "Die Elektronik ist das Gehirn jedes Whirlpools. Wir verwenden Komponenten des kanadischen Herstellers Gecko: einfach zu bedienen, zuverlässig und langlebig. Die Bedienfelder reichen je nach Paket von in.k200 bis in.k1000."
+    },
+    "online": {
+      "t": "Online-Plattform 24/7",
+      "d": "Steuern Sie Ihren Whirlpool auch von unterwegs. Schalten Sie ihn per Smartphone ein, stellen Sie Temperatur, Pumpen und Licht ein, und das Wasser ist bereit, wenn Sie ankommen."
+    },
+    "hydro-pump": {
+      "t": "Hydropumpe",
+      "d": "Ist die Elektronik das Gehirn, sind die Pumpen das Herz. 2 oder 3 PS, geringer Stromverbrauch und leiser Lauf."
+    },
+    "aero-pump": {
+      "t": "Luftpumpe",
+      "d": "Eine kräftige Pumpe mit integrierter Heizung leitet warme Luft zu jeder Luftdüse. Die Massage fühlt sich besser an, und das Wasser kühlt weniger ab. Dabei läuft sie leise."
+    },
+    "jets": {
+      "t": "Hydro- und Luftdüsen",
+      "d": "Düsen und Bedienelemente berühren Sie tatsächlich, also müssen sie gut gemacht sein und gut aussehen. Wir verwenden die Kombi-Serie von Gecko, gebaut für jedes Wetter. So entfalten die Pumpen ihre volle Kraft und laufen dabei fast lautlos."
+    },
+    "circulation": {
+      "t": "Umwälzpumpe",
+      "d": "Läuft ständig und führt das gesamte Wasser durch Filter und Heizung, damit der Whirlpool jederzeit bereit ist."
+    },
+    "inclear": {
+      "t": "in.clear Wasserpflege",
+      "d": "in.clear von Gecko gibt Brom ins Wasser ab und entfernt Bakterien, Algen und organische Stoffe, für angenehmes, entspannendes Wasser bei jedem Bad."
+    },
+    "ozone": {
+      "t": "Ozongenerator",
+      "d": "Wandelt Sauerstoff aus der Luft in Ozon um, das jeden Teil des Systems erreicht und das Wasser kristallklar hält."
+    },
+    "filter": {
+      "t": "Antibakterieller Filter",
+      "d": "Ein Aktivkohlefilter mit sehr feiner Perforation hält Blätter, Gras und kleine Verunreinigungen zurück, die aufs Wasser fallen."
+    },
+    "uv": {
+      "t": "UV-Lampe",
+      "d": "UV-Licht beseitigt ein breites Spektrum an Bakterien, die sich sonst im Wasser festsetzen könnten."
+    },
+    "water": {
+      "t": "Wasserqualität",
+      "d": "Cleanwater Blue hält das Wasser klar und chemisch ausgeglichen, ohne Chemiegeruch und schonend zur Haut."
+    },
+    "heater": {
+      "t": "Heizung",
+      "d": "Eine 3-kW-Heizung, integriert in die Steuereinheit, regelbar in Schritten von 0,5 °C."
+    },
+    "insulation": {
+      "t": "Isolierung",
+      "d": "10 mm PU-Isolierung mit Aluminiumkaschierung hält die Wärme, spart Energie und schützt die Komponenten. Für kältere Regionen gibt es eine 30-mm-Variante."
+    },
+    "cover": {
+      "t": "Thermoabdeckung",
+      "d": "Maßgefertigt aus hochdichtem PU-Schaum, mit Thermofolie und einem Bezug aus Kunstleder, der Feuchtigkeit und UV-Strahlung widersteht. Die Kanten fallen leicht ab, damit Wasser abläuft."
+    },
+    "tarp": {
+      "t": "Wetterschutzplane",
+      "d": "Eine wasserdichte, maßgefertigte Plane, die den Whirlpool zusammen mit der Thermoabdeckung durch den Winter bringt."
+    },
+    "frame": {
+      "t": "Rahmen",
+      "d": "Ein steifer Rahmen, der sich auch beim Transport nicht verzieht und den Klang von Pumpen und Elektronik nicht überträgt. Alternativ ist ein HDS-Rahmen aus hochdichtem Styrol erhältlich."
+    },
+    "cladding": {
+      "t": "Verkleidung",
+      "d": "Die Verkleidung aus Sinter Wood sieht aus wie Holz, braucht aber keine Pflege: Sie ist wetter- und stoßfest und dämpft Geräusche. In Grey Wood und Rose Wood."
+    },
+    "stairs": {
+      "t": "Stufen",
+      "d": "Rutschfeste Stufen für einen bequemen, sicheren Einstieg, in mehreren Farben."
+    },
+    "led": {
+      "t": "Smarte LED-Beleuchtung",
+      "d": "Ein reiches Farbspektrum verwandelt die Luftblasen in ein Spiel aus Licht. Die Ausführung High Light hat einen Chromring."
+    },
+    "aroma": {
+      "t": "Aromatherapie",
+      "d": "Wählen Sie Ihren Lieblingsduft für tiefere Entspannung: Zeder, Zitrus, Eukalyptus, Pfirsich und mehr."
+    },
+    "sound": {
+      "t": "Soundsystem",
+      "d": "Schnelle Bluetooth-Kopplung, guter Klang und einfache Bedienung."
+    },
+    "service": {
+      "t": "Service MAX 72h",
+      "d": "Störungen kündigen sich nie an. Mit diesem Servicepaket ist unser Techniker innerhalb von 72 Stunden nach Ihrem Anruf bei Ihnen, bei Bedarf mit Ersatzteilen."
+    }
+  },
+  "tech": {
+    "spa-control": "Gecko Steuerung",
+    "online": "Steuerung per Smartphone",
+    "hydro-pump": "Hydropumpen 2–3 PS",
+    "aero-pump": "Beheizte Luftpumpe",
+    "ozone": "Ozongenerator",
+    "uv": "UV-Lampe",
+    "inclear": "in.clear",
+    "filter": "Antibakterieller Filter",
+    "insulation": "Wärmedämmung",
+    "led": "Smarte LED-Beleuchtung",
+    "aroma": "Aromatherapie",
+    "sound": "Bluetooth-Sound",
+    "service": "Service MAX 72h"
+  },
+  "about": {
+    "title": "Über Favorit SPA",
+    "metaTitle": "Über Favorit SPA – Whirlpool-Hersteller aus Šabac, Serbien",
+    "metaDesc": "Favorit SPA, ein kleiner Whirlpool-Hersteller aus Šabac, Serbien: 30 Jahre Erfahrung, sieben Modelle für 2 bis 6 Personen, Gecko-Technik, Ersatzteile ab Lager.",
+    "lead": "Ein kleiner europäischer Whirlpool-Hersteller aus Šabac, Serbien. Seit dreißig Jahren entwerfen, bauen, verkaufen und warten wir unsere eigenen Whirlpools, von der ersten Skizze bis zum letzten Ersatzteil.",
+    "facts": [
+      [
+        "30",
+        "Jahre Erfahrung"
+      ],
+      [
+        "7",
+        "Modelle in drei Linien"
+      ],
+      [
+        "2–6",
+        "Personen pro Whirlpool"
+      ],
+      [
+        "24",
+        "Monate Garantie"
+      ],
+      [
+        "11",
+        "Länder mit unseren Whirlpools"
+      ],
+      [
+        "1",
+        "Adresse: Fertigung und Ausstellung in Šabac"
+      ]
+    ],
+    "sections": [
+      {
+        "h": "Wer wir sind",
+        "p": [
+          "Wir sind Favorit: eine Familie aus Ingenieuren, Designern und Handwerkern, die seit drei Jahrzehnten in Šabac Whirlpools baut. Alles geschieht unter einem Dach: Entwicklung, Fertigung, Verkauf und Service.",
+          "Ob Sie ihn Whirlpool, Spa, Jacuzzi oder Hot Tub nennen, für uns zählt immer dasselbe: ein Becken, das gut gebaut ist, bequem zum Sitzen, angenehm in der Haptik und kraftvoll, sobald die Düsen anlaufen."
+        ]
+      },
+      {
+        "h": "Wie wir sie bauen",
+        "p": [
+          "Robotergestützte Maschinen formen und bearbeiten die Acrylschalen jedes Mal mit derselben Präzision. Danach verstärkt, isoliert, verkabelt und montiert unser Team jeden Whirlpool von Hand und prüft ihn bis ins letzte Detail, bevor er die Werkstatt verlässt.",
+          "Wir bleiben bewusst klein. So kennen wir jeden Whirlpool, den wir bauen, und können ein Detail noch am selben Tag verbessern, an dem wir etwas Neues lernen."
+        ]
+      },
+      {
+        "h": "Komponenten, denen wir vertrauen",
+        "p": [
+          "Steuerungen, Pumpen und Düsen stammen von den angesehensten Namen der Branche, darunter Gecko aus Kanada und Waterway. Wir wählen Teile, die einfach zu bedienen, leise und langlebig sind. So läuft der Whirlpool von selbst, und Sie müssen ihn nur genießen."
+        ]
+      },
+      {
+        "h": "Nach dem Kauf",
+        "p": [
+          "Jedes Ersatzteil, das Sie brauchen könnten, liegt bereits in unserem Lager. Bestellen Sie an einem Werktag bis 12 Uhr, ist es am nächsten Tag bei Ihnen.",
+          "Unsere Ingenieure helfen telefonisch und per Videoanruf, die meisten Fragen sind so in wenigen Minuten geklärt. Ihr Favorit SPA soll immer für den nächsten Abend bereit sein."
+        ]
+      },
+      {
+        "h": "Niedrige Betriebskosten",
+        "p": [
+          "Energieeffiziente Pumpen (Klasse A+) und Heizungen (Klasse C), eine gute Isolierung und eine passgenaue Abdeckung halten die Kosten gering. Im Durchschnitt unseres Sortiments kosten Strom und Filter etwa 20 EUR im Monat, ungefähr so viel wie ein Espresso am Tag."
+        ]
+      },
+      {
+        "h": "Wo unsere Whirlpools stehen",
+        "p": [
+          "Favorit Whirlpools wärmen Terrassen an der Adria, Chalets in den Skigebieten der Berge und Gärten in ganz Europa, von Schweden bis Griechenland. Mit dem passenden Paket laufen sie das ganze Jahr, in der Sommerhitze wie im Schnee."
+        ]
+      }
+    ],
+    "visit": {
+      "h": "Besuchen Sie die Fertigung",
+      "p": "Sehen Sie sich die Whirlpools aus der Nähe an, probesitzen Sie und sprechen Sie mit den Menschen, die sie bauen. Ausstellung und Fertigung in Šabac sind von Montag bis Samstag geöffnet.",
+      "cta": "Besuch vereinbaren"
+    },
+    "faqTitle": "Kurz beantwortet",
+    "faq": [
+      [
+        "Wo werden Favorit Whirlpools hergestellt?",
+        "In unserer eigenen Fertigung in Šabac, Serbien, wo sich auch unsere Ausstellung befindet. Favorit DOO baut seit 30 Jahren Whirlpools."
+      ],
+      [
+        "Wie lange hält ein Favorit Whirlpool?",
+        "Bei regelmäßiger Pflege 15 bis 20 Jahre. Reinigen Sie den Filter regelmäßig, tauschen Sie ihn einmal im Jahr und bereiten Sie den Whirlpool richtig vor, wenn er im Winter nicht genutzt wird."
+      ],
+      [
+        "Brauche ich für die Aufstellung einen Wasseranschluss?",
+        "Nein. Sie benötigen einen ebenen Betonuntergrund und ein Stromkabel. Befüllt wird mit dem Gartenschlauch, entleert über das eingebaute Ablassventil."
+      ],
+      [
+        "Was kostet der Betrieb?",
+        "Im Durchschnitt etwa 20 EUR im Monat für Strom und Filter, je nach Modell, Paket und Nutzung."
+      ],
+      [
+        "Welche Garantie gewähren Sie?",
+        "24 Monate bei privater und 12 Monate bei gewerblicher Nutzung, für alle eingebauten Komponenten. Service und Ersatzteile bleiben auch nach Ablauf der Garantie verfügbar."
+      ]
+    ]
+  },
+  "maintenance": {
+    "title": "Pflege",
+    "metaDesc": "So bleibt das Wasser in Ihrem Favorit SPA Whirlpool sauber: eine einfache wöchentliche und monatliche Routine und die Wasserpflegemittel, die wir empfehlen, mit Dosierung.",
+    "lead": "Sauberes Wasser kostet Sie wenige Minuten pro Woche. Ozongenerator, Umwälzpumpe und Filter erledigen den Großteil der Arbeit; Sie messen, dosieren nach und spülen. Hier finden Sie die Routine und die Produkte, die wir selbst verwenden und verkaufen.",
+    "scheduleH": "Die Routine",
+    "schedule": [
+      [
+        "Bei jeder Nutzung",
+        "Duschen Sie, bevor Sie einsteigen. Schließen und sichern Sie die Abdeckung, wenn Sie aussteigen."
+      ],
+      [
+        "Jede Woche",
+        "pH-Wert (7,2–7,4) und Desinfektionsmittel messen. DEWAN-20 P und ALGI-CID zugeben. Den Filter mit dem Gartenschlauch abspülen."
+      ],
+      [
+        "Jeden Monat",
+        "Eine Stoßdesinfektion mit ALGA-SOKK P durchführen. Den Filter über Nacht in DINAX FILTER FIZZY P einweichen. BIOPOOL G zugeben, wenn sich Schaum oder Fettränder zeigen."
+      ],
+      [
+        "Beim Wasserwechsel",
+        "Je nach Nutzung alle paar Wochen. Vor dem Ablassen die Leitungen mit DINASAN P reinigen. Beim Befüllen mit hartem Wasser oder Brunnenwasser DINAX METAL MAGIC F zugeben."
+      ],
+      [
+        "Jedes Jahr",
+        "Einen neuen Filter einsetzen, die Abdeckung prüfen und den Whirlpool winterfest machen oder ihn mit dem passenden Paket weiter betreiben."
+      ]
+    ],
+    "volumeNote": "Die folgenden Dosierungen gelten pro Kubikmeter (m³) Wasser. Favorit Whirlpools fassen etwa 0,4 bis 2,3 m³; das Volumen jedes Modells finden Sie auf der Seite Dokumentation.",
+    "productsH": "Produkte, die wir empfehlen",
+    "productsLead": "Professionelle Wasserpflegemittel, geprüft und zertifiziert, erhältlich bei uns mit Ihrem Whirlpool oder mit Ihrer nächsten Bestellung.",
+    "labels": {
+      "use": "Wirkung",
+      "dose": "Anwendung"
+    },
+    "products": [
+      {
+        "id": "alga-sokk-p",
+        "name": "ALGA-SOKK® P",
+        "kind": "Granulat zur Stoßdesinfektion",
+        "use": "Regelmäßige Stoßbehandlung: bei der ersten Befüllung, einmal im Monat und bevor Sie mit DEWAN-20 P beginnen. Entfernt Biofilm aus Leitungen und Düsen.",
+        "dose": "2–3 Löffel in den vollen Whirlpool geben. Die Pumpen mehrmals jeweils über 10 Minuten laufen lassen. Mindestens 2 Stunden einwirken lassen. Wenn die Düsen keinen Biofilm mehr ausstoßen, ablassen, ausspülen und neu befüllen."
+      },
+      {
+        "id": "dewan-20-p",
+        "name": "DEWAN®-20 P",
+        "kind": "Chlorfreies Desinfektionsgranulat",
+        "use": "Tägliche Desinfektion ohne Chlor. Wirkt 3 Stunden nach der Dosierung und hält das Wasser zwischen den Stoßbehandlungen sauber.",
+        "dose": "3–5 mg/l halten, kontrolliert mit DEWAN-20 Teststreifen. Einmal pro Woche in Wasser aufgelöst zugeben, zusammen mit ALGI-CID. Den pH-Wert zwischen 7,2 und 7,4 halten."
+      },
+      {
+        "id": "algi-cid",
+        "name": "ALGI-CID",
+        "kind": "Algenverhütungsmittel, flüssig",
+        "use": "Verhindert grüne und dunkle Algen, trübes Wasser, unangenehmen Geruch und verstopfte Filter. Wirkt bei jedem pH-Wert, ist biologisch abbaubar und schäumt nicht.",
+        "dose": "Erstdosierung bei frischer Befüllung, danach wöchentlich eine kleine Menge zusammen mit dem Desinfektionsmittel, wie auf dem Etikett angegeben."
+      },
+      {
+        "id": "dinax-minus-p",
+        "name": "DINAX® MINUS P",
+        "kind": "Granulat zur pH-Senkung",
+        "use": "Bringt den pH-Wert zurück auf 7,2–7,4, wo Desinfektionsmittel am besten wirken.",
+        "dose": "Etwa 0,1 kg pro m³ Wasser, aufgelöst. Vor jeder weiteren Zugabe erneut messen. Handschuhe und Schutzbrille tragen."
+      },
+      {
+        "id": "biopool-g",
+        "name": "BIOPOOL G",
+        "kind": "Enzymgel",
+        "use": "Baut Fett, Schleim und Biofilm ab, reduziert Schaum und entlastet den Filter. Ungiftig und biologisch abbaubar; die volle Wirkung entfaltet sich innerhalb eines Monats.",
+        "dose": "Erstanwendung 20 ml pro m³, danach einmal pro Woche 10 ml pro m³, in das Filterfach."
+      },
+      {
+        "id": "dinasan-p",
+        "name": "DINASAN P",
+        "kind": "Leitungsreiniger und Desinfektionsmittel",
+        "use": "Reinigt und desinfiziert die Leitungen und Düsen, die Sie nicht erreichen: Biofilm, Öle, Seife und Fett, die Schaum verursachen.",
+        "dose": "Vor dem Ablassen: 250 g pro m³ in das Filterfach. 5 Minuten umwälzen, ausschalten, 2 Stunden einwirken lassen, erneut umwälzen, ablassen und ausspülen."
+      },
+      {
+        "id": "dinax-metal-magic",
+        "name": "DINAX® METAL MAGIC F",
+        "kind": "Kalk- und Metallstabilisator",
+        "use": "Verhindert Kalkablagerungen und braune Verfärbungen durch Eisen, etwa wenn Sie mit Brunnenwasser befüllen oder hartes Wasser haben.",
+        "dose": "30–50 ml pro m³ beim Befüllen; 50 ml pro m³ bei einer Härte unter 20 °dH. Nicht überdosieren."
+      },
+      {
+        "id": "filter-fizzy",
+        "name": "DINAX® FILTER FIZZY P",
+        "kind": "Pulver zur Filterreinigung",
+        "use": "Reinigt Papierfilter gründlich von Mineralablagerungen.",
+        "dose": "Je einen Beutel A und B in 5–10 l heißem Wasser auflösen. Den Filter 1 Stunde einweichen, bei starker Verschmutzung bis zu 24 Stunden. Aufrecht unter fließendem Wasser abspülen und trocknen lassen."
+      }
+    ],
+    "safety": "Lesen Sie vor der Anwendung jeder Chemikalie das Etikett, lagern Sie die Produkte trocken und kühl und mischen Sie sie niemals miteinander. Bewahren Sie sie außerhalb der Reichweite von Kindern auf.",
+    "guideH": "Schritt für Schritt",
+    "guideP": "Befüllen, erste Inbetriebnahme, Wasserpflege, Filter, Ablassen und Überwinterung sind in der Bedienungsanleitung ausführlich beschrieben.",
+    "askH": "Nicht sicher, was Sie brauchen?",
+    "askP": "Schicken Sie uns ein Foto des Wassers oder des Teststreifens, und wir sagen Ihnen, was Sie zugeben sollten."
+  },
+  "reviews": {
+    "title": "Bewertungen",
+    "metaDesc": "Was Besitzer über die Whirlpools und den Service von Favorit SPA sagen: 4,7 von 5 aus 70 Google-Bewertungen, dazu Fotos echter Installationen.",
+    "lead": "Was unsere Besitzer über die Whirlpools, den Service und den Besuch in Šabac sagen. Ihre Meinung ist uns wichtig.",
+    "ratingOf": "von 5",
+    "ratingCount": "{n} Google-Bewertungen",
+    "seeAll": "Alle Bewertungen auf Google",
+    "write": "Bewertung auf Google schreiben",
+    "ownerH": "Sie besitzen einen Favorit SPA?",
+    "ownerP": "Teilen Sie Ihre Erfahrung. Das hilft anderen bei der Wahl.",
+    "note": "Die Bewertungen werden so angezeigt, wie sie auf Google verfasst wurden.",
+    "installsH": "Echte Installationen",
+    "installsP": "Fotos unserer Besitzer, von Terrassen an der Adria bis zu Berghütten."
+  },
+  "why": {
+    "title": "Warum Favorit SPA",
+    "metaTitle": "Warum Favorit SPA – Whirlpools direkt vom Hersteller in Šabac, Serbien",
+    "metaDesc": "Zehn Gründe, warum sich Menschen von Schweden bis Griechenland für einen Whirlpool von Favorit SPA entscheiden: Fabrikpreise, 30 Jahre Erfahrung, Gecko-Komponenten, rund 20 EUR Betriebskosten im Monat, Ersatzteile am nächsten Tag.",
+    "lead": "Einen Whirlpool nutzen Sie in den nächsten zwanzig Jahren an den meisten Abenden. Das sind die Gründe, warum sich Menschen von Schweden bis Griechenland für unseren entscheiden.",
+    "reasons": [
+      {
+        "icon": "wrench",
+        "h": "Direkt vom Hersteller",
+        "p": "Kein Importeur, kein Zwischenhändler. Sie kaufen zum Fabrikpreis bei den Menschen, die den Whirlpool entwickeln und bauen, und haben auch nach dem Kauf dieselben Ansprechpartner."
+      },
+      {
+        "icon": "clock",
+        "h": "Dreißig Jahre Erfahrung",
+        "p": "Wir bauen seit drei Jahrzehnten Whirlpools in Šabac. Jeder Sitz, jede Stufe und jede Nackenstütze wurde schon von Tausenden Besitzern vor Ihnen erprobt."
+      },
+      {
+        "icon": "cpu",
+        "h": "Komponenten, denen wir vertrauen",
+        "p": "Gecko-Steuerungen aus Kanada, Düsen und Pumpen von Waterway. Leise, zuverlässige Teile, die jeder Spa-Techniker in Europa kennt."
+      },
+      {
+        "icon": "lightning",
+        "h": "Geringe Betriebskosten",
+        "p": "Pumpen der Klasse A+, eine vollständige Isolierung und eine passgenaue Abdeckung. Strom und Filter kosten im Durchschnitt rund 20 EUR im Monat."
+      },
+      {
+        "icon": "truck",
+        "h": "Ersatzteile am nächsten Tag",
+        "p": "Jedes Teil haben wir auf Lager. Bestellen Sie an einem Werktag bis 12 Uhr, ist es am nächsten Tag bei Ihnen."
+      },
+      {
+        "icon": "headset",
+        "h": "Hilfe per Videoanruf",
+        "p": "Unsere Ingenieure sehen, was Sie sehen, und klären die meisten Fragen in wenigen Minuten, ganz gleich, wo der Whirlpool steht."
+      },
+      {
+        "icon": "ruler",
+        "h": "Einfach aufzustellen",
+        "p": "Kein Wasseranschluss nötig. Ein ebenes Betonfundament, ein Stromkabel und ein Gartenschlauch genügen."
+      },
+      {
+        "icon": "snowflake",
+        "h": "Das ganze Jahr, in jedem Klima",
+        "p": "Vom Sommer an der Adria bis zum Schnee im Skigebiet. Mit dem passenden Paket bleibt das Wasser zu jeder Jahreszeit warm."
+      },
+      {
+        "icon": "shield-check",
+        "h": "24 Monate Garantie",
+        "p": "Alle eingebauten Komponenten sind abgedeckt. Service und Ersatzteile bleiben auch lange nach Ablauf der Garantie verfügbar."
+      },
+      {
+        "icon": "sliders-horizontal",
+        "h": "Sie zahlen nur, was Sie nutzen",
+        "p": "Jedes Modell gibt es in bis zu drei Ausstattungspaketen. Sie wählen die Düsen, das Licht und den Komfort, die Sie möchten, und nicht mehr."
+      }
+    ],
+    "quote": "Wir bleiben bewusst klein. So kennen wir jeden Whirlpool, den wir bauen.",
+    "quoteBy": "Das Favorit-Team, Šabac",
+    "ctaH": "Probesitzen, bevor Sie sich entscheiden",
+    "ctaP": "Besuchen Sie unsere Ausstellung in Šabac oder beschreiben Sie uns Ihren Platz, und wir schicken Ihnen ein Angebot."
+  },
+  "control": {
+    "title": "Gecko Steuerungssystem",
+    "metaTitle": "Gecko Steuerung in Favorit SPA Whirlpools – Bedienfelder, App und Zubehör",
+    "metaDesc": "Jeder Favorit SPA Whirlpool arbeitet mit Gecko-Elektronik aus Kanada: in.k Bedienfelder von in.k200 bis zum in.k1000 Touchscreen, die in.touch 2 App, in.clear Wasserpflege und in.stream Audio.",
+    "lead": "Die Elektronik ist das Gehirn eines Whirlpools. Unsere stammt von Gecko Alliance aus Kanada, einem der weltweit verbreitetsten Hersteller von Whirlpool-Steuerungen: einfach zu bedienen, zuverlässig und überall in Europa im Service.",
+    "madeBy": "Elektronik von Gecko Alliance, Kanada",
+    "brainH": "Ein System, drei Teile",
+    "brain": [
+      [
+        "Steuereinheit",
+        "Die Box unter der Verkleidung steuert Heizung, Pumpen, Licht und Umwälzung und schützt sie vor Störungen."
+      ],
+      [
+        "Bedienfeld",
+        "Das Bedienfeld am Rand. Es zeigt die Wassertemperatur, und damit starten Sie Düsen, Licht und Programme."
+      ],
+      [
+        "Ihr Smartphone",
+        "Mit dem optionalen Modul in.touch 2 haben Sie dieselben Funktionen in einer App auf Ihrem Smartphone, wo immer Sie sind."
+      ]
+    ],
+    "keypadsH": "Bedienfelder",
+    "keypadsLead": "Welches Bedienfeld verbaut ist, hängt von Modell und Ausstattungspaket ab. Alle halten die Temperatur, fahren die Filterzyklen automatisch und melden sich, wenn etwas Aufmerksamkeit braucht.",
+    "keypads": {
+      "in.k200": [
+        "Kompakt",
+        "Vier Tasten und eine helle LED-Temperaturanzeige. Alles, was ein kleinerer Whirlpool braucht, nicht mehr."
+      ],
+      "in.k300": [
+        "Basis",
+        "Ein gut lesbares LCD-Display und direkte Tasten für Pumpen, Licht und Temperatur. Einfach und robust."
+      ],
+      "in.k500": [
+        "Farbe",
+        "Ein Farbdisplay mit animierten Symbolen, Wasserpflegemodi, Filterzeitplänen, Tastensperre und Wartungserinnerungen. Arbeitet mit in.touch 2, in.clear und in.stream."
+      ],
+      "in.k800": [
+        "Groß in Farbe",
+        "Ein größeres Farbdisplay und zehn Tasten für Whirlpools mit mehr Ausstattung: mehrere Pumpen, Licht, Audio und Wasserpflege an einem Ort."
+      ],
+      "in.k1000": [
+        "Touchscreen",
+        "Ein 4,3-Zoll-Farbtouchscreen ganz ohne Tasten. Menüs wie auf dem Smartphone und Software, die sich direkt am Bedienfeld aktualisieren lässt."
+      ]
+    },
+    "used": "Verbaut in",
+    "optional": "optional",
+    "appH": "Ihr Whirlpool in der Hosentasche",
+    "appP": "Das Modul in.touch 2 verbindet den Whirlpool über eine Funkverbindung mit großer Reichweite mit Ihrem Heimnetz, sodass es auch am Ende des Gartens funktioniert. Die App in.touch 2 für iOS und Android kann alles, was das Bedienfeld kann, von überall.",
+    "app": [
+      "Wassertemperatur und Heizung",
+      "Pumpen, Licht und weitere Ausstattung",
+      "Wasserpflegemodus und Filterzyklen",
+      "Benachrichtigungen, Erinnerungen und Fehlermeldungen"
+    ],
+    "appNote": "Erhältlich als Option Smartphone-Plattform in den Paketen Advance und Privilege.",
+    "modesH": "Wasserpflegemodi",
+    "modesLead": "Sie wählen, wie der Whirlpool heizt, den Rest erledigt er selbst. Die Sparstufe senkt die Temperatur, wenn Sie den Whirlpool nicht nutzen.",
+    "modes": [
+      [
+        "Abwesend",
+        "Immer im Sparbetrieb, für die Zeit auf Reisen."
+      ],
+      [
+        "Einsteiger",
+        "Nie im Sparbetrieb, das Wasser hat immer Ihre Temperatur."
+      ],
+      [
+        "Energiesparen",
+        "Sparbetrieb zu Spitzenzeiten an Werktagen, voller Komfort am Wochenende."
+      ],
+      [
+        "Maximal sparen",
+        "Sparbetrieb zu Spitzenzeiten an jedem Tag."
+      ],
+      [
+        "Wochenende",
+        "Sparbetrieb unter der Woche, bereit fürs Wochenende."
+      ]
+    ],
+    "extrasH": "Kombinierbar mit",
+    "extras": [
+      [
+        "in.clear",
+        "Automatische Wasserpflege, die ein Bromidsalz (BromiCharge) im Wasser in Brom umwandelt, sodass Sie deutlich weniger Chemie von Hand zugeben."
+      ],
+      [
+        "in.stream 2",
+        "Bluetooth-Audio im Whirlpool: Lautsprecher in der Verkleidung, Musik vom Smartphone."
+      ],
+      [
+        "Smarte LED-Beleuchtung",
+        "Unterwasser- und Randbeleuchtung in wechselnden Farben, geschaltet am Bedienfeld oder in der App."
+      ]
+    ],
+    "matrixH": "Welches Bedienfeld zu welchem Whirlpool gehört",
+    "matrixLead": "Serienmäßiges Bedienfeld je Modell und Paket. Der in.k1000 Touchscreen ist für Privilege als Option erhältlich.",
+    "ctaH": "Fragen zur Elektronik?",
+    "ctaP": "Unsere Techniker kennen jede Gecko-Komponente, die wir verbauen, und helfen per Telefon oder Videoanruf."
+  },
+  "brochure": {
+    "title": "Katalog",
+    "metaTitle": "Favorit SPA Katalog – alle Whirlpool-Modelle, Pakete und Preise",
+    "metaDesc": "Den Favorit SPA Katalog per E-Mail erhalten: alle sieben Whirlpool-Modelle, Ausstattungspakete, Abmessungen und technische Daten in einem PDF.",
+    "lead": "Alle sieben Modelle, die Ausstattungspakete, Abmessungen und technischen Daten in einem PDF. Hinterlassen Sie Ihre E-Mail-Adresse, und wir senden Ihnen den Download-Link sofort zu.",
+    "points": [
+      "Sieben Modelle für 2 bis 6 Personen, im Maßstab",
+      "Die Pakete Base, Advance und Privilege im Vergleich",
+      "Anforderungen an die Aufstellung und technische Daten"
+    ],
+    "formH": "Katalog anfordern",
+    "name": "Name",
+    "email": "E-Mail",
+    "country": "Land",
+    "consent": "Ich bin damit einverstanden, dass Favorit SPA mir den Katalog sowie gelegentlich Neuigkeiten zu Modellen und Angeboten zusendet. Ich kann mich jederzeit abmelden.",
+    "privacy": "Wir verwenden Ihre Adresse nur zu diesem Zweck, wie in unserer Datenschutzerklärung beschrieben.",
+    "submit": "Link zusenden",
+    "sending": "Wird gesendet…",
+    "doneH": "Sehen Sie in Ihr Postfach",
+    "doneP": "Der Download-Link ist unterwegs an {email}. Falls er in einigen Minuten nicht angekommen ist, sehen Sie bitte im Spam-Ordner nach.",
+    "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns an sales@favoritspa.com.",
+    "invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein und setzen Sie das Häkchen bei der Einwilligung."
+  }
+}

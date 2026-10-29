@@ -1,0 +1,88 @@
+---
+import Site from '../../layouts/Site.astro';
+import Icon from '../Icon.astro';
+import { company } from '../../data/site';
+import { available, hasGuide, locale, t, url, type Lang, type RouteKey } from '../../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = t(lang);
+const G = (locale(lang) as any).guide as {
+  title: string; metaDesc: string; lead: string; toc: string; safetyTitle: string; safety: string[];
+  chapters: { id: string; icon: string; h: string; steps: string[]; tip: string }[]; helpTitle: string; helpText: string;
+};
+const alt = Object.fromEntries(available.filter(hasGuide).map((l) => [l, url(l, 'guide' as RouteKey)])) as Record<Lang, string>;
+const pageUrl = new URL(url(lang, 'guide' as RouteKey), Astro.site).toString();
+const ld = {
+  '@context': 'https://schema.org', '@type': 'HowTo', name: `Favorit SPA – ${G.title}`, description: G.metaDesc, inLanguage: lang, url: pageUrl,
+  step: G.chapters.map((c) => ({ '@type': 'HowToSection', name: c.h, itemListElement: c.steps.map((s) => ({ '@type': 'HowToStep', text: s })) })),
+};
+const phone = company.phones[0];
+---
+<Site lang={lang} title={`${G.title} | Favorit SPA`} description={G.metaDesc} alt={alt}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(ld)} />
+  <section class="wrap head">
+    <a class="back link" href={url(lang, 'support')}>{tr('nav.support')}</a>
+    <h1 class="h1">{G.title}</h1>
+    <p class="lede">{G.lead}</p>
+  </section>
+
+  <div class="wrap layout">
+    <nav class="toc" aria-label={G.toc}>
+      <p class="label">{G.toc}</p>
+      <ol>
+        <li><a href="#safety"><Icon name="shield-check" />{G.safetyTitle}</a></li>
+        {G.chapters.map((c) => <li><a href={`#${c.id}`}><Icon name={c.icon} />{c.h.replace(/^\d+\.\s*/, '')}</a></li>)}
+      </ol>
+    </nav>
+    <div class="body">
+      <section class="safety" id="safety" aria-labelledby="safety-h">
+        <h2 id="safety-h" class="h3"><Icon name="shield-check" />{G.safetyTitle}</h2>
+        <ul>{G.safety.map((s) => <li>{s}</li>)}</ul>
+      </section>
+      {G.chapters.map((c) => (
+        <section class="chapter" id={c.id} aria-labelledby={`${c.id}-h`}>
+          <h2 id={`${c.id}-h`} class="h2"><span class="c-ic"><Icon name={c.icon} /></span>{c.h}</h2>
+          <ol class="steps">{c.steps.map((s) => <li>{s}</li>)}</ol>
+          {c.tip && <p class="tip"><Icon name="lightbulb" /><span>{c.tip}</span></p>}
+        </section>
+      ))}
+      <section class="help">
+        <h2 class="h3">{G.helpTitle}</h2>
+        <p>{G.helpText}</p>
+        <div class="ctas">
+          <a class="btn btn-ink" href={`tel:${phone.tel}`}><Icon name="phone" />{phone.display}</a>
+          <a class="btn" href={`${url(lang, 'support')}#servis`}><Icon name="headset" />{tr('support.form')}</a>
+        </div>
+      </section>
+    </div>
+  </div>
+</Site>
+<style>
+  .head { padding-block: clamp(130px, 15vw, 190px) clamp(32px, 5vw, 56px); display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+  .back { font-size: 0.9rem; color: var(--soft); }
+  .layout { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); padding-bottom: clamp(80px, 10vw, 140px); }
+  .toc { position: sticky; top: 100px; align-self: start; }
+  .toc .label { font-size: 0.85rem; color: var(--soft); margin: 0 0 10px; }
+  .toc ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .toc a { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+  .toc a:hover { color: var(--soft); }
+  .toc :global(svg) { width: 18px; height: 18px; color: var(--accent); flex: none; }
+  .body { display: flex; flex-direction: column; gap: clamp(48px, 6vw, 80px); max-width: 760px; }
+  .safety { background: var(--stone); padding: clamp(22px, 3vw, 34px); border-radius: 14px; scroll-margin-top: 100px; }
+  .safety .h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .safety .h3 :global(svg) { width: 26px; height: 26px; color: var(--accent); }
+  .safety ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; line-height: 1.55; }
+  .chapter { scroll-margin-top: 100px; }
+  .chapter .h2 { display: flex; align-items: center; gap: 14px; font-size: clamp(1.6rem, 2.6vw, 2.2rem); padding-bottom: 16px; border-bottom: 1px solid var(--ink); }
+  .c-ic { display: inline-grid; place-items: center; width: 46px; height: 46px; flex: none; border-radius: 50%; border: 1px solid var(--chip-line); }
+  .c-ic :global(svg) { width: 22px; height: 22px; color: var(--accent); }
+  .steps { list-style: none; counter-reset: s; margin: 0; padding: 0; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 40px 1fr; padding: 14px 0; border-bottom: 1px solid var(--line); line-height: 1.6; }
+  .steps li::before { content: counter(s); font-size: 1.1rem; color: var(--accent); font-weight: 400; }
+  .tip { display: flex; gap: 12px; margin: 16px 0 0; padding: 14px 16px; border-left: 2px solid var(--accent); background: color-mix(in srgb, var(--stone) 60%, transparent); color: var(--soft); max-width: none; }
+  .tip :global(svg) { width: 20px; height: 20px; flex: none; color: var(--accent); margin-top: 3px; }
+  .help { border-top: 1px solid var(--ink); padding-top: 24px; }
+  .help p { color: var(--soft); }
+  .ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } .toc { position: static; } .toc ol { display: flex; flex-wrap: wrap; gap: 6px; border: 0; } .toc a { border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; } }
+</style>

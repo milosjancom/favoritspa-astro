@@ -1,0 +1,38 @@
+---
+// Root: send visitors to their language by browser settings. An explicit choice from the language menu (localStorage) wins.
+// Server-side IP detection can replace this later.
+import { available, langNames, meta } from '../i18n';
+const codes = JSON.stringify(available);
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Favorit SPA</title>
+  <link rel="canonical" href="https://www.favoritspa.com/en/" />
+  {available.map((l) => <link rel="alternate" hreflang={meta(l).hreflang} href={`https://www.favoritspa.com/${l}/`} />)}
+  <script is:inline define:vars={{ codes }}>
+    (function () {
+      var ok = JSON.parse(codes), pick = null;
+      try { pick = localStorage.getItem('lang'); } catch (e) {}
+      if (ok.indexOf(pick) < 0) {
+        // Browser language -> site prefix (legacy prefixes ba, me, al).
+        var map = { sr: 'sr', sh: 'sr', hr: 'hr', bs: 'ba', cnr: 'me', 'sr-me': 'me', sl: 'sl', hu: 'hu', de: 'de', sq: 'al', sv: 'sv', el: 'el', en: 'en' };
+        var ls = navigator.languages || [navigator.language || ''];
+        pick = 'en';
+        for (var i = 0; i < ls.length; i++) {
+          var full = String(ls[i]).toLowerCase(), base = full.split('-')[0];
+          var hit = map[full] || map[base];
+          if (full === 'sr-me' || full === 'sr-latn-me') hit = 'me';
+          if (hit && ok.indexOf(hit) >= 0) { pick = hit; break; }
+        }
+      }
+      location.replace(pick + '/');
+    })();
+  </script>
+</head>
+<body style="font-family: system-ui, sans-serif; background: #eee8dd; color: #2e2a25; padding: 48px 24px;">
+  {available.map((l) => <p><a href={`${l}/`}>{langNames[l]}</a></p>)}
+</body>
+</html>

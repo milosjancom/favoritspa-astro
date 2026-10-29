@@ -1,0 +1,1063 @@
+{
+  "meta": {
+    "name": "English",
+    "htmlLang": "en",
+    "hreflang": "en",
+    "locale": "en-GB",
+    "legacy": "en"
+  },
+  "persons": {
+    "one": "{n} person",
+    "other": "{n} people"
+  },
+  "values": {
+    "approx": "approx.",
+    "hp": "hp",
+    "decimal": ".",
+    "upTo": "up to"
+  },
+  "routes": {
+    "models": "hot-tubs",
+    "features": "features",
+    "maintenance": "maintenance",
+    "contact": "contact",
+    "quote": "quote",
+    "gallery": "gallery",
+    "reviews": "reviews",
+    "faq": "faq",
+    "about": "about",
+    "terms": "terms",
+    "support": "support",
+    "docs": "documentation",
+    "guide": "user-guide",
+    "why": "why-favorit-spa",
+    "privacy": "privacy-policy",
+    "control": "control-system",
+    "brochure": "catalogue"
+  },
+  "ui": {
+    "nav.models": "Hot tubs",
+    "nav.features": "Features",
+    "nav.maintenance": "Maintenance",
+    "nav.contact": "Contact",
+    "nav.quote": "Request a quote",
+    "nav.gallery": "Gallery",
+    "nav.reviews": "Reviews",
+    "nav.faq": "FAQ",
+    "nav.about": "About us",
+    "nav.terms": "Terms and conditions",
+    "nav.menu": "Menu",
+    "nav.lang": "Language",
+    "cta": "Request a quote",
+    "call": "Call",
+    "from": "from",
+    "jets": "jets",
+    "view": "View model",
+    "skip": "Skip to content",
+    "home.title": "Favorit SPA – hot tubs from a small European manufacturer",
+    "home.desc": "Favorit SPA makes hot tubs: seven models for 2 to 6 people, robotised production and thirty years of experience.",
+    "home.intro": "A small European maker of hot tubs. Robotised production, attention to the last detail, and thirty years of experience.",
+    "home.models": "Models",
+    "lineup.h": "All seven models, to scale",
+    "lineup.p": "Every tub is shown from above at the same scale. Compare them before you measure your terrace.",
+    "offers.h": "Sale prices",
+    "offers.p": "While stocks last, for the equipment package shown next to each model.",
+    "offers.model": "Model",
+    "maker.h": "A small European manufacturer",
+    "maker.visit": "Our showroom and production are open to visitors Monday to Saturday.",
+    "maker.cta": "Book a visit",
+    "footer.tag": "Hot tubs. A small European manufacturer, thirty years of experience.",
+    "footer.note": "Images are for illustration; equipment varies by package.",
+    "footer.catalog": "Catalogue (PDF)",
+    "models.title": "Hot tubs and prices",
+    "models.lead": "Seven models in three lines. Each comes in two or three equipment packages that differ in jets, pumps and extras.",
+    "models.packages": "Packages",
+    "model.dims": "Dimensions",
+    "model.colors": "Acrylic colours",
+    "model.cladding": "Cabinet cladding",
+    "model.photo": "Photo",
+    "model.saleNote": "Sale price while stocks last.",
+    "model.included": "Included",
+    "model.inquire": "Request a quote for",
+    "model.yes": "included",
+    "model.gallery": "Gallery",
+    "model.item": "Item",
+    "quote.title": "Request a quote",
+    "quote.lead": "Choose a model and package, leave your details and we will send you an offer. Not sure yet? Just describe the space and we will help you choose.",
+    "quote.steps": [
+      "Choose a model and package",
+      "Leave your details and a few words about the space",
+      "We get back to you with an offer"
+    ],
+    "quote.model": "Model",
+    "quote.email": "Email",
+    "quote.contactAlt": "Rather talk? Call us or see our contact page.",
+    "contact.toQuote": "For an offer on a specific model, send a quote request.",
+    "contact.title": "Contact",
+    "contact.lead": "Call us, write to us, or visit the showroom and production, Monday to Saturday.",
+    "contact.address": "Address",
+    "contact.msgPh": "For example, where the tub will stand and when you need it",
+    "contact.sendNote": "Your request opens as an email in your mail app, addressed to",
+    "info.soon": "This page is coming in the next iteration of the new site.",
+    "info.current": "Open the current version",
+    "nav.support": "Support centre",
+    "nav.docs": "Documentation",
+    "model.equipment": "Equipment and specifications",
+    "model.equipLead": "Everything the tub has, grouped and compared by package.",
+    "model.groups": {
+      "specs": "Technical data",
+      "massage": "Massage",
+      "water": "Clean water",
+      "control": "Control and energy",
+      "light": "Light, sound and scent",
+      "comfort": "Covers, comfort and service",
+      "build": "Frame and insulation",
+      "finish": "Finish"
+    },
+    "model.installs": "At our customers’ homes",
+    "model.installsLead": "Photos from owners, from Adriatic terraces to mountain chalets.",
+    "model.tech": "Technology in this tub",
+    "model.techMore": "All features",
+    "reach.h": "From Sweden to Greece",
+    "reach.p": "Built for both ends of Europe. PU insulation (30 mm for colder climates) and a made-to-measure thermal cover hold the heat through a Swedish winter; ozone, a UV lamp and Gecko control keep the water clear through a Greek summer. Sinter Wood cladding takes frost, salt air and sun without any maintenance.",
+    "reach.stats": [
+      [
+        "30",
+        "years of making hot tubs"
+      ],
+      [
+        "7",
+        "models, for 2 to 6 people"
+      ],
+      [
+        "11",
+        "countries where our tubs are enjoyed"
+      ]
+    ],
+    "reach.countries": [
+      "Sweden",
+      "Germany",
+      "Austria",
+      "Hungary",
+      "Slovenia",
+      "Croatia",
+      "Bosnia and Herzegovina",
+      "Serbia",
+      "Montenegro",
+      "Albania",
+      "Greece"
+    ],
+    "footer.big": "Hot tubs made with care, for moments worth remembering.",
+    "footer.models": "Hot tubs",
+    "footer.visitNote": "Showroom and production, Monday to Saturday",
+    "support.title": "Support centre",
+    "support.lead": "We stay with you after delivery. Maintenance, warranty, installation requirements and service requests, all in one place.",
+    "support.cards": [
+      [
+        "wrench",
+        "Maintenance",
+        "Water, filters and winter mode, step by step.",
+        "maintenance"
+      ],
+      [
+        "question",
+        "FAQ",
+        "The most common questions before and after buying.",
+        "faq"
+      ],
+      [
+        "file-pdf",
+        "Documentation",
+        "Technical drawings, catalogue and installation data.",
+        "docs"
+      ],
+      [
+        "headset",
+        "Service request",
+        "Describe the problem and we will get back to you quickly.",
+        "#servis"
+      ]
+    ],
+    "support.warranty": "Warranty",
+    "support.warrantyRows": [
+      [
+        "Private use",
+        "24 months from delivery"
+      ],
+      [
+        "Commercial use (hotels, spas, rentals)",
+        "12 months from delivery"
+      ]
+    ],
+    "support.warrantyNote": "The warranty covers all built-in components. Service and spare parts remain available after the warranty ends. Filters and water care products are not covered.",
+    "support.max": "Service MAX 72h",
+    "support.maxP": "With the MAX service package our technician comes within 72 hours of your call, with spare parts if needed.",
+    "support.prep": "Before installation",
+    "support.prepList": [
+      "A level, load-bearing concrete base about 40% larger than the tub, so it can be reached from every side.",
+      "A 3×2.5 mm² or 5×2.5 mm² power cable, depending on the model, about 4 m long from where the tub stands.",
+      "A residual current device (RCD) and fuses as specified. The connection must be made by a licensed electrician.",
+      "No plumbing needed: fill the tub with a garden hose and drain it through the built-in valve.",
+      "Replace the filter at least once a year."
+    ],
+    "support.form": "Service request",
+    "support.formLead": "Tell us the model and what is happening. You can attach photos to the email that opens.",
+    "support.year": "Year of purchase",
+    "support.issuePh": "For example, the message on the display, since when, and what you have tried",
+    "docs.title": "Documentation",
+    "docs.lead": "Technical drawings, installation data and the catalogue, in one place.",
+    "docs.models": "Installation data",
+    "docs.cols": [
+      "Model",
+      "Dimensions",
+      "Volume",
+      "Weight, empty",
+      "Power supply",
+      "Drawing"
+    ],
+    "docs.general": "General documents",
+    "docs.pdf": "PDF",
+    "docs.weightNote": "Weight and power supply depend on the package; the range runs from the basic to the top package.",
+    "countries": {
+      "Serbia": "Serbia",
+      "Montenegro": "Montenegro",
+      "Bosnia": "Bosnia and Herzegovina",
+      "Croatia": "Croatia"
+    },
+    "offers.pkg": "Package",
+    "offers.was": "Regular price",
+    "offers.now": "Sale price",
+    "offers.save": "save",
+    "model.persons": "Seats",
+    "model.jets": "Jets",
+    "model.price": "Price",
+    "model.packages": "Equipment packages",
+    "model.choose": "Choose a package",
+    "model.jetsLine": "hydro and air jets",
+    "model.notIncluded": "Not included",
+    "model.opt": "optional extra",
+    "model.no": "not available",
+    "model.drawing": "Technical drawing (PDF)",
+    "model.others": "Other models",
+    "quote.pkg": "Package",
+    "quote.any": "Not sure yet",
+    "quote.you": "Your details",
+    "quote.place": "Where the tub will go",
+    "quote.places": [
+      "Terrace",
+      "Garden",
+      "Rooftop",
+      "Indoors"
+    ],
+    "contact.phone": "Phone",
+    "contact.email": "Email",
+    "contact.map": "Open map",
+    "contact.name": "Full name",
+    "contact.tel": "Phone",
+    "contact.city": "Town or city",
+    "contact.msg": "Message",
+    "contact.send": "Send request",
+    "footer.explore": "Explore",
+    "footer.help": "Help",
+    "footer.visit": "Visit us",
+    "support.issue": "What is happening",
+    "lineup.topView": "top view",
+    "gallery.photo": "photo",
+    "gallery.gallery": "gallery",
+    "gallery.close": "Close",
+    "gallery.prev": "Previous",
+    "gallery.next": "Next",
+    "contact.hours": "Showroom and production: Monday to Saturday",
+    "country": "Serbia",
+    "model.metaDesc": "{name} hot tub for {persons}, {dims}, up to {jets} jets. From {price}.",
+    "features.lead": "What goes into every Favorit tub: proven components, most of them from Gecko, and the details we take care of ourselves.",
+    "features.count": "features",
+    "features.end": "Which features come with which package is listed on every model page.",
+    "docs.generalList": [
+      "Favorit SPA catalogue",
+      "Terms and conditions",
+      "Maintenance guide",
+      "Installation requirements and warranty"
+    ],
+    "mail.quote": {
+      "subject": "Quote request",
+      "labels": [
+        "Name",
+        "Email",
+        "Phone",
+        "Town",
+        "Model",
+        "Package",
+        "Location"
+      ]
+    },
+    "mail.service": {
+      "subject": "Service request",
+      "labels": [
+        "Name",
+        "Phone",
+        "Model",
+        "Year of purchase",
+        "Town"
+      ]
+    },
+    "home.prev": "Previous model",
+    "home.next": "Next model",
+    "home.craftAlt": "Pearl shell, studio photograph",
+    "nav.closeShort": "Close",
+    "settings.title": "Display",
+    "settings.theme": "Theme",
+    "settings.light": "Light",
+    "settings.dark": "Dark",
+    "settings.auto": "Auto",
+    "settings.text": "Text size",
+    "settings.smaller": "Normal text",
+    "settings.larger": "Larger text",
+    "settings.largest": "Largest text",
+    "nav.guide": "User guide",
+    "support.guideCard": "Step by step from filling to winter, in one place.",
+    "about.ctaQuote": "Request a quote",
+    "nav.why": "Why Favorit SPA",
+    "nav.privacy": "Privacy policy",
+    "nav.control": "Control system",
+    "nav.brochure": "Catalogue",
+    "nav.groupHelp": "Support",
+    "nav.groupStory": "Our story",
+    "nav.helpIntro": "We stay with you after delivery: guides, documents and service in one place.",
+    "nav.storyIntro": "A small European maker from Šabac, Serbia. Thirty years of hot tubs, built by the people who answer your call."
+  },
+  "products": {
+    "eden": {
+      "tagline": "inspiration for six",
+      "description": "A circle: sequence and continuity, like life itself. Eden seats six in a round shell, so everyone faces everyone. Enjoy it endlessly, with the people closest to you.",
+      "claim": "Six seats in a circle, face to face. Eden is made for family, friends and long conversations under the stars."
+    },
+    "fusion": {
+      "tagline": "everything you need, in balance",
+      "description": "A fusion of everything you need: space, function, beauty and just enough. Fusion is another word for balance.",
+      "claim": "Two loungers and two seats in a compact square. Everything you need, nothing you don’t."
+    },
+    "garden": {
+      "tagline": "spa treatments in the open air",
+      "description": "Garden lets you give in to the moment completely. Time stops and turns into a short holiday far from the noise of the city, with spa treatments for six.",
+      "claim": "The largest in the range: six seats, strong pumps and a full-body massage. Garden turns a backyard into a private spa."
+    },
+    "melody": {
+      "tagline": "so much in what looks small",
+      "description": "So much to experience in what only looks small. Nothing this compact offers as much enjoyment. A true Melody.",
+      "claim": "For two, for small terraces and big moments. Melody fits where other tubs can’t."
+    },
+    "pearl": {
+      "tagline": "looking at the same horizon",
+      "description": "Closeness and intimacy, while you both look toward the same horizon. Could it be better? Do we need more?",
+      "claim": "Made for two, with room for a guest. A lounger, a quiet massage and the same horizon."
+    },
+    "point": {
+      "tagline": "the starting point",
+      "description": "A starting point for getting together. Quick, simple, and your first step into the world of spa.",
+      "claim": "The shortest way to a spa of your own. Four seats, simple to run, and an easy first step."
+    },
+    "zen": {
+      "tagline": "room to choose, room to want",
+      "description": "Room to choose and room to want. Sink in, listen to what you need and let the water do the rest. Change seats until you find the perfect one. Be ZEN.",
+      "claim": "Five seats, a lounger and room for everyone to find their place. Zen is the tub where evenings stretch on by themselves."
+    }
+  },
+  "labels": {
+    "Aero mlaznice (komada)": "Air jets (pcs)",
+    "Aero mlaznice set": "Air jet set",
+    "Aero pumpa": "Air pump",
+    "Antibakterijski filter": "Antibacterial filter",
+    "Aromaterapija": "Aromatherapy",
+    "Blue energy block": "Blue energy block",
+    "Broj mesta": "Seats",
+    "Cirada": "Weather cover",
+    "Cirkulaciona pumpa": "Circulation pump",
+    "Dodatni grejač 3kW": "Additional 3 kW heater",
+    "Drenažni ventil": "Drain valve",
+    "Elektronska kontrola": "Control system",
+    "Fiberglas omotač": "Fibreglass backing",
+    "Grejač": "Heater",
+    "HDS okvir stiren visoke gustine": "HDS high-density styrene frame",
+    "Hidro mlaznice (komada)": "Hydro jets (pcs)",
+    "Hidro mlaznice kombo (set)": "Combo hydro jets (set)",
+    "Hidro pumpa 2ks (komada)": "Hydro pump 2 hp (pcs)",
+    "Hidro pumpa 3ks (komada)": "Hydro pump 3 hp (pcs)",
+    "Hromoterapija": "Chromotherapy",
+    "Jastuk (set)": "Headrests (set)",
+    "Kontrolni blok": "Control pack",
+    "Led mini lampe": "LED mini lights",
+    "Low water level": "Low water level sensor",
+    "Magma mlaznice (4 komada)": "Magma jets (4 pcs)",
+    "Materijal lica": "Shell material",
+    "Metal konstrukcija": "Metal frame",
+    "Music system": "Music system",
+    "Ozonoterapija": "Ozone treatment",
+    "PEARL-WHITE finish": "PEARL-WHITE finish",
+    "PURE-WHITE finish": "PURE-WHITE finish",
+    "Pametno led svetlo": "Smart LED light",
+    "Parna membrana": "Vapour barrier",
+    "Polar izolacija 10mm": "Polar insulation 10 mm",
+    "Polar izolacija 30mm": "Polar insulation 30 mm",
+    "Potrebna snaga": "Power supply",
+    "SILVER-PLATINUM finish": "SILVER-PLATINUM finish",
+    "SMF snažan metalni ram": "SMF heavy-duty metal frame",
+    "SPA kontola GECKO IN.K.1000": "GECKO in.k1000 control",
+    "Sedeća mesta / Ležeća mesta": "Seats / loungers",
+    "Servis 72h": "72 h service",
+    "Sigurnosno monofazno napajanje": "Safe single-phase supply",
+    "Smartphone platforma": "Smartphone platform",
+    "Stepenice": "Steps",
+    "Svetleće hidro mlaznice": "Illuminated hydro jets",
+    "Svetleće mini mlaznice": "Illuminated mini jets",
+    "Temperaturni opseg upotrebe": "Operating temperature range",
+    "Termo pokrivač": "Thermal cover",
+    "Termo ventilacija": "Thermal ventilation",
+    "Termo-stone finish": "Termo-stone finish",
+    "Težina": "Weight",
+    "Thermostron omotač": "Thermostron insulation",
+    "UV lampa": "UV lamp",
+    "Visoko led svetlo": "High LED light",
+    "Zapremina": "Volume",
+    "Zvučni sistem": "Sound system",
+    "Čist hemijski sistem": "in.clear water care system"
+  },
+  "featureGroups": {
+    "control": "Control",
+    "massage": "Massage",
+    "water": "Clean water",
+    "warmth": "Warmth and energy",
+    "build": "Frame and cladding",
+    "experience": "Experience",
+    "service": "Service"
+  },
+  "features": {
+    "spa-control": {
+      "t": "Control system",
+      "d": "Electronics are the brain of every hot tub. We use components from the Canadian maker Gecko: simple to use, reliable and long-lasting. Control panels range from in.k200 to in.k1000, depending on the package."
+    },
+    "online": {
+      "t": "Online platform 24/7",
+      "d": "Control your tub when you are away. Switch it on from your phone, set the temperature, pumps and lights, and the water is ready when you arrive."
+    },
+    "hydro-pump": {
+      "t": "Hydro pump",
+      "d": "If the electronics are the brain, the pumps are the heart. 2 or 3 hp, low power use and quiet running."
+    },
+    "aero-pump": {
+      "t": "Air pump",
+      "d": "A powerful pump with a built-in heater sends warm air to every air jet. The massage feels better and the water cools less. It runs quietly too."
+    },
+    "jets": {
+      "t": "Hydro and air jets",
+      "d": "Jets and controls are what you actually touch, so they have to be well made and good-looking. We use Gecko’s combo series, built for every kind of weather. With them, the pumps show their full power while running almost silently."
+    },
+    "circulation": {
+      "t": "Circulation pump",
+      "d": "Runs continuously, moving all the water through the filter and heater, so the tub is always ready to use."
+    },
+    "inclear": {
+      "t": "in.clear water care",
+      "d": "Gecko’s in.clear releases bromine into the water to remove bacteria, algae and organic matter, for pleasant, relaxing water every time."
+    },
+    "ozone": {
+      "t": "Ozone generator",
+      "d": "Turns oxygen from the air into ozone, which reaches every part of the system and keeps the water crystal clear."
+    },
+    "filter": {
+      "t": "Antibacterial filter",
+      "d": "An activated-carbon filter with very fine perforations stops leaves, grass and small debris that land on the water."
+    },
+    "uv": {
+      "t": "UV lamp",
+      "d": "UV light removes a wide range of bacteria that could otherwise settle in the water."
+    },
+    "water": {
+      "t": "Water quality",
+      "d": "Cleanwater Blue keeps the water clear and chemically balanced, with no chemical smell and gentle on the skin."
+    },
+    "heater": {
+      "t": "Heater",
+      "d": "A 3 kW heater built into the control unit, adjustable in 0.5 °C steps."
+    },
+    "insulation": {
+      "t": "Insulation",
+      "d": "10 mm PU insulation with an aluminium foil layer keeps the heat in, saves energy and protects the components. For colder climates there is a 30 mm option."
+    },
+    "cover": {
+      "t": "Thermal cover",
+      "d": "Made to measure from high-density PU foam, with a thermal film and a synthetic leather cover that resists moisture and UV. The edges slope gently so water runs off."
+    },
+    "tarp": {
+      "t": "Weather cover",
+      "d": "A waterproof, made-to-measure cover that protects the tub through winter, together with the thermal cover."
+    },
+    "frame": {
+      "t": "Frame",
+      "d": "A rigid frame that does not twist even when the tub is moved, and does not carry the sound of pumps and electronics. An HDS high-density styrene frame is also available."
+    },
+    "cladding": {
+      "t": "Cladding",
+      "d": "Sinter Wood cladding looks like timber but needs no maintenance: it stands up to weather and knocks and dampens sound. In Grey Wood and Rose Wood."
+    },
+    "stairs": {
+      "t": "Steps",
+      "d": "Non-slip steps for easy, safe access, in several colours."
+    },
+    "led": {
+      "t": "Smart LED light",
+      "d": "A rich spectrum of colours turns the bubbles into a play of light. The High Light version has a chrome ring."
+    },
+    "aroma": {
+      "t": "Aromatherapy",
+      "d": "Choose a favourite scent for deeper relaxation: cedar, citrus, eucalyptus, peach and more."
+    },
+    "sound": {
+      "t": "Sound system",
+      "d": "Quick Bluetooth pairing, good sound and simple to use."
+    },
+    "service": {
+      "t": "Service MAX 72h",
+      "d": "Faults never come with a warning. With this service package our technician comes within 72 hours of your call, with spare parts if needed."
+    }
+  },
+  "tech": {
+    "spa-control": "Gecko control",
+    "online": "Smartphone control",
+    "hydro-pump": "Hydro pumps 2–3 hp",
+    "aero-pump": "Heated air pump",
+    "ozone": "Ozone generator",
+    "uv": "UV lamp",
+    "inclear": "in.clear",
+    "filter": "Antibacterial filter",
+    "insulation": "Thermal insulation",
+    "led": "Smart LED light",
+    "aroma": "Aromatherapy",
+    "sound": "Bluetooth sound",
+    "service": "Service MAX 72h"
+  },
+  "about": {
+    "title": "About Favorit SPA",
+    "metaTitle": "About Favorit SPA – hot tub manufacturer from Šabac, Serbia",
+    "metaDesc": "Favorit SPA is a small European hot tub manufacturer from Šabac, Serbia. 30 years of making, selling and servicing seven models for 2 to 6 people, with Gecko components and spare parts in stock.",
+    "lead": "A small European hot tub manufacturer from Šabac, Serbia. For thirty years we have designed, built, sold and serviced our own tubs, from the first sketch to the last spare part.",
+    "facts": [
+      [
+        "30",
+        "years of experience"
+      ],
+      [
+        "7",
+        "models in three lines"
+      ],
+      [
+        "2–6",
+        "people per tub"
+      ],
+      [
+        "24",
+        "months warranty"
+      ],
+      [
+        "11",
+        "countries with our tubs"
+      ],
+      [
+        "1",
+        "address: production and showroom in Šabac"
+      ]
+    ],
+    "sections": [
+      {
+        "h": "Who we are",
+        "p": [
+          "We are Favorit, a team of engineers, designers and makers who have been producing hot tubs in Šabac for three decades. Everything happens under one roof: design, production, sales and service.",
+          "Call it a hot tub, a spa, a jacuzzi or a massage pool. For us it is always the same thing: a tub that is well made, comfortable to sit in, pleasant to touch and powerful when the jets come on."
+        ]
+      },
+      {
+        "h": "How we make them",
+        "p": [
+          "Robotised machines form and finish the acrylic shells with the same precision every time. Our team then reinforces, insulates, wires and assembles each tub by hand and checks it down to the last detail before it leaves the workshop.",
+          "We stay small on purpose. It lets us know every tub we build and change a detail the day we learn something new."
+        ]
+      },
+      {
+        "h": "Components we trust",
+        "p": [
+          "The controls, pumps and jets come from the most respected names in the spa industry, including Gecko from Canada and Waterway. We choose parts that are simple to use, quiet and built to last, so the tub runs on its own and you only enjoy it."
+        ]
+      },
+      {
+        "h": "After the sale",
+        "p": [
+          "Every spare part you might need is already on our shelves. Order by noon on a working day and it is at your address the next day.",
+          "Our engineers answer by phone and over video call, so most questions are solved in minutes. Your Favorit SPA should always be ready for the next evening."
+        ]
+      },
+      {
+        "h": "Low running costs",
+        "p": [
+          "Energy-efficient pumps (class A+) and heaters (class C), good insulation and a fitted cover keep the bills small. On average across our range, energy and filters come to about 20 EUR a month, roughly the price of an espresso a day."
+        ]
+      },
+      {
+        "h": "Where you will find our tubs",
+        "p": [
+          "Favorit tubs warm terraces on the Adriatic coast, chalets in mountain ski resorts and gardens across Europe, from Sweden to Greece. With the right package they run all year, in summer heat and in snow."
+        ]
+      }
+    ],
+    "visit": {
+      "h": "Visit the factory",
+      "p": "See the tubs in person, sit in them and talk to the people who make them. Our showroom and production in Šabac are open Monday to Saturday.",
+      "cta": "Book a visit"
+    },
+    "faqTitle": "Quick answers",
+    "faq": [
+      [
+        "Where are Favorit hot tubs made?",
+        "In our own production in Šabac, Serbia, where we also have a showroom. Favorit DOO has been making hot tubs for 30 years."
+      ],
+      [
+        "How long does a Favorit hot tub last?",
+        "With regular care, 15 to 20 years. Clean the filter regularly, replace it once a year and prepare the tub properly if it stands unused in winter."
+      ],
+      [
+        "Do I need plumbing to install one?",
+        "No. You need a level concrete base and a power cable. The tub is filled with a garden hose and drained through the built-in valve."
+      ],
+      [
+        "What does it cost to run?",
+        "On average about 20 EUR a month for energy and filters, depending on the model, the package and how often you use it."
+      ],
+      [
+        "What warranty do you give?",
+        "24 months for private use and 12 months for commercial use, covering all built-in components. Service and spare parts stay available after the warranty ends."
+      ]
+    ]
+  },
+  "guide": {
+    "title": "User guide",
+    "metaDesc": "How to install, fill, start, use, clean and winterise a Favorit SPA hot tub. Step by step, with water care and troubleshooting.",
+    "lead": "Everything you need from delivery to the first evening in the water, and the routine that keeps the tub clean for years. Keep the printed manual and warranty card that came with your tub; this page follows the same order.",
+    "toc": "Contents",
+    "safetyTitle": "Safety first",
+    "safety": [
+      "Electrical connection only by a licensed electrician, with a residual current device (RCD).",
+      "Children in or near the tub only under supervision. Keep the cover closed and locked when the tub is not in use.",
+      "Water temperature up to 40 °C. Shorter sessions at higher temperatures; pregnant women and people with heart conditions should ask their doctor first.",
+      "No alcohol or medication that causes drowsiness before using the tub.",
+      "Always switch off the power before opening the technical compartment or draining the tub."
+    ],
+    "chapters": [
+      {
+        "id": "install",
+        "icon": "ruler",
+        "h": "1. Before installation",
+        "steps": [
+          "Prepare a level, load-bearing concrete base about 40% larger than the tub, so you can walk around it for cleaning and service.",
+          "Bring a power cable (3×2.5 mm² or 5×2.5 mm², depending on the model and package) to the base, about 4 m long, ending inside the tub's footprint.",
+          "Fit a residual current device (RCD) and fuses as specified for your model. The connection is made by a licensed electrician.",
+          "Leave every side of the tub accessible. No water supply or drain is needed."
+        ],
+        "tip": "Decking or larch boards around the tub make getting in and out easier and keep the water cleaner."
+      },
+      {
+        "id": "fill",
+        "icon": "drop",
+        "h": "2. Filling",
+        "steps": [
+          "Check that the drain valve on the lower side of the tub is closed.",
+          "Put the garden hose into the filter compartment and fill the tub with clean tap water.",
+          "Fill up to the marked level, a few centimetres above the highest jets. Never switch the tub on while it is empty or half full.",
+          "For the first filling, add a shock treatment (for example ALGA-SOKK P) as described on the product label."
+        ],
+        "tip": "Filling through the filter compartment pushes air out of the pipes and helps the pumps start smoothly."
+      },
+      {
+        "id": "start",
+        "icon": "lightning",
+        "h": "3. First start and heating",
+        "steps": [
+          "Switch on the power. The Gecko control panel lights up and the tub runs a short start-up check.",
+          "The circulation pump starts and the system removes air from the lines. If a pump sounds noisy, switch it on and off a few times from the panel.",
+          "Set the temperature on the panel. The heater warms the water gradually; the first heating takes several hours, depending on the model, the water temperature and the weather.",
+          "Keep the thermal cover closed while heating. It saves energy and shortens the wait."
+        ],
+        "tip": "Most owners keep the water at 36–38 °C and turn it up a degree or two just before using the tub."
+      },
+      {
+        "id": "use",
+        "icon": "sliders-horizontal",
+        "h": "4. Everyday use",
+        "steps": [
+          "Use the panel buttons to switch the jet pumps, air pump and lights on and off. Each press cycles through the available speeds.",
+          "Turn the jet nozzles to adjust direction and strength; the diverter valves move power between seats.",
+          "Pumps switch off automatically after a set time, so a forgotten tub does not run for hours.",
+          "After use, close the cover. Ozone, circulation and filtering continue on their own."
+        ],
+        "tip": "With the smartphone platform you can switch the tub on and set the temperature before you get home."
+      },
+      {
+        "id": "water",
+        "icon": "flask",
+        "h": "5. Water care",
+        "steps": [
+          "Check the water once a week with test strips. Keep pH between 7.2 and 7.6 and the sanitiser at the level shown on the product you use.",
+          "Add chlorine-free sanitiser (for example DEWAN-20 P) and an algae preventer (ALGI-CID) as the labels describe. The built-in ozone and, if fitted, UV lamp and in.clear do most of the work.",
+          "Against foam and grease lines use an enzyme cleaner (BIOPOOL G).",
+          "Change the water when it needs it, usually every few weeks. Owners report anything from 5 to 25 days, depending on use and care."
+        ],
+        "tip": "Water treated only with ozone, without added chemicals, can go straight onto your lawn when you drain it."
+      },
+      {
+        "id": "filter",
+        "icon": "funnel",
+        "h": "6. Filters",
+        "steps": [
+          "Rinse the filter with a garden hose every week.",
+          "Once a month, soak it overnight in filter cleaner (for example DINAX FILTER FIZZY P) and rinse well.",
+          "Replace the filter at least once a year. Filters are consumables and are not covered by the warranty.",
+          "Always switch the power off before removing the filter."
+        ],
+        "tip": "A spare filter lets you swap them over and dry the clean one properly."
+      },
+      {
+        "id": "drain",
+        "icon": "arrows-clockwise",
+        "h": "7. Draining and cleaning",
+        "steps": [
+          "Switch off the power.",
+          "Attach a hose to the quick drain valve on the lower side of the tub and open it.",
+          "Wipe the acrylic with a soft cloth and a mild, non-abrasive cleaner. Never use solvents or scouring powders.",
+          "Rinse, close the valve and refill as in chapter 2."
+        ],
+        "tip": ""
+      },
+      {
+        "id": "winter",
+        "icon": "snowflake",
+        "h": "8. Winter",
+        "steps": [
+          "Tubs with the right package (insulation and heating for low temperatures) can stay in use all winter. Keep the water above freezing and the cover closed and fastened.",
+          "If the tub will not be used, drain it completely, open all valves, remove the filters and blow remaining water out of the lines.",
+          "Dry the shell, put the thermal cover on and protect it with the weather cover.",
+          "Never leave a tub with water in it switched off in freezing temperatures. Damage from frozen pipes is not covered by the warranty."
+        ],
+        "tip": "Not sure if your package is rated for winter? Check the operating temperature range on your model's page or call us."
+      },
+      {
+        "id": "trouble",
+        "icon": "wrench",
+        "h": "9. If something is not right",
+        "steps": [
+          "Water not heating: check the breaker, the water level and the filter. A clogged filter stops the heater for safety.",
+          "Weak jets: clean the filter, check the water level and that the jet nozzles are open.",
+          "Cloudy or green water: clean the filter, check pH, give a shock treatment and run the pumps.",
+          "A message on the display: note it and call us. Most messages are solved in minutes over the phone or a video call."
+        ],
+        "tip": ""
+      }
+    ],
+    "helpTitle": "Need help?",
+    "helpText": "Our engineers answer by phone and video call. Spare parts ordered by noon on a working day arrive the next day."
+  },
+  "maintenance": {
+    "title": "Maintenance",
+    "metaDesc": "How to keep the water in a Favorit SPA hot tub clean: a simple weekly and monthly routine, and the water care products we recommend, with dosage.",
+    "lead": "Clean water takes a few minutes a week. The ozone generator, circulation pump and filter do most of the work; you test, top up and rinse. Here is the routine and the products we use and sell ourselves.",
+    "scheduleH": "The routine",
+    "schedule": [
+      [
+        "Every time",
+        "Shower before you get in. Close and fasten the cover when you get out."
+      ],
+      [
+        "Every week",
+        "Test pH (7.2–7.4) and sanitiser. Add DEWAN-20 P and ALGI-CID. Rinse the filter with a hose."
+      ],
+      [
+        "Every month",
+        "Shock the water with ALGA-SOKK P. Soak the filter overnight in DINAX FILTER FIZZY P. Add BIOPOOL G if you see foam or grease lines."
+      ],
+      [
+        "When you change the water",
+        "Every few weeks, depending on use. Clean the pipes with DINASAN P before draining. Add DINAX METAL MAGIC F when filling with hard or well water."
+      ],
+      [
+        "Every year",
+        "Fit a new filter, check the cover and prepare the tub for winter, or keep it running with the right package."
+      ]
+    ],
+    "volumeNote": "Doses below are per cubic metre (m³) of water. Favorit tubs hold between about 0.4 and 2.3 m³; the volume of each model is on the Documentation page.",
+    "productsH": "Products we recommend",
+    "productsLead": "Professional water care products, tested and certified, available from us with your tub or with your next order.",
+    "labels": {
+      "use": "What it does",
+      "dose": "How to use it"
+    },
+    "products": [
+      {
+        "id": "alga-sokk-p",
+        "name": "ALGA-SOKK® P",
+        "kind": "Shock disinfection granules",
+        "use": "Periodic shock treatment: at first filling, once a month and before you start with DEWAN-20 P. Removes biofilm from pipes and jets.",
+        "dose": "2–3 spoonfuls into the full tub. Run the pumps for over 10 minutes, a few times. Leave for at least 2 hours. When the jets no longer release biofilm, drain, rinse and refill."
+      },
+      {
+        "id": "dewan-20-p",
+        "name": "DEWAN®-20 P",
+        "kind": "Chlorine-free sanitiser granules",
+        "use": "Everyday disinfection without chlorine. Works 3 hours after dosing and keeps the water clean between shocks.",
+        "dose": "Keep 3–5 mg/l, checked with DEWAN-20 test strips. Add once a week, dissolved in water, together with ALGI-CID. Keep pH between 7.2 and 7.4."
+      },
+      {
+        "id": "algi-cid",
+        "name": "ALGI-CID",
+        "kind": "Algae preventer, liquid",
+        "use": "Stops green and dark algae, cloudy water, bad smell and blocked filters. Works at any pH, biodegradable and does not foam.",
+        "dose": "First dose with a fresh fill, then a small weekly dose together with the sanitiser, as on the label."
+      },
+      {
+        "id": "dinax-minus-p",
+        "name": "DINAX® MINUS P",
+        "kind": "pH reducer granules",
+        "use": "Brings pH back to 7.2–7.4, where sanitisers work best.",
+        "dose": "About 0.1 kg per m³ of water, dissolved. Test again before adding more. Wear gloves and goggles."
+      },
+      {
+        "id": "biopool-g",
+        "name": "BIOPOOL G",
+        "kind": "Enzyme gel",
+        "use": "Breaks down grease, slime and biofilm, reduces foam and helps the filter. Non-toxic and biodegradable; the full effect builds over a month.",
+        "dose": "First use 20 ml per m³, then 10 ml per m³ once a week, into the filter compartment."
+      },
+      {
+        "id": "dinasan-p",
+        "name": "DINASAN P",
+        "kind": "Pipe cleaner and disinfectant",
+        "use": "Cleans and disinfects the pipes and jets you cannot reach: biofilm, oils, soap and grease that cause foam.",
+        "dose": "Before draining: 250 g per m³ into the filter compartment. Circulate 5 minutes, stop, leave 2 hours, circulate again, drain and rinse."
+      },
+      {
+        "id": "dinax-metal-magic",
+        "name": "DINAX® METAL MAGIC F",
+        "kind": "Scale and metal stabiliser",
+        "use": "Prevents scale and brown staining from iron, for example when you fill from a well or have hard water.",
+        "dose": "30–50 ml per m³ while filling; 50 ml per m³ for hardness below 20 °GH. Do not overdose."
+      },
+      {
+        "id": "filter-fizzy",
+        "name": "DINAX® FILTER FIZZY P",
+        "kind": "Filter cleaning powder",
+        "use": "Deep-cleans paper filters from mineral deposits.",
+        "dose": "Dissolve one sachet A and one B in 5–10 l of hot water. Soak the filter 1 hour, or up to 24 hours if very dirty. Rinse upright under running water and let it dry."
+      }
+    ],
+    "safety": "Always read the label before using any chemical, store products dry and cool, and never mix them with each other. Keep them away from children.",
+    "guideH": "Step by step",
+    "guideP": "Filling, first start, water care, filters, draining and winter are covered in detail in the user guide.",
+    "askH": "Not sure what you need?",
+    "askP": "Send us a photo of the water or the test strip and we will tell you what to add."
+  },
+  "reviews": {
+    "title": "Reviews",
+    "metaDesc": "What owners say about Favorit SPA hot tubs and service: 4.7 out of 5 from 70 Google reviews, plus photos of real installations.",
+    "lead": "What our owners say about the tubs, the service and the visit to Šabac. Your opinion matters to us.",
+    "ratingOf": "out of 5",
+    "ratingCount": "{n} Google reviews",
+    "seeAll": "All reviews on Google",
+    "write": "Leave a review on Google",
+    "ownerH": "Own a Favorit SPA?",
+    "ownerP": "Share your experience. It helps others choose.",
+    "note": "Reviews are shown as written on Google.",
+    "installsH": "Real installations",
+    "installsP": "Photos sent by our owners, from Adriatic terraces to mountain chalets."
+  },
+  "why": {
+    "title": "Why Favorit SPA",
+    "metaTitle": "Why Favorit SPA – hot tubs direct from the maker in Šabac, Serbia",
+    "metaDesc": "Ten reasons people from Sweden to Greece choose a Favorit SPA hot tub: factory prices, 30 years of experience, Gecko components, about 20 EUR a month to run, spare parts the next day.",
+    "lead": "A hot tub is something you will use most evenings for the next twenty years. These are the reasons people from Sweden to Greece choose ours.",
+    "reasons": [
+      {
+        "icon": "wrench",
+        "h": "Direct from the maker",
+        "p": "No importer and no middleman. You buy from the people who design and build the tub, at a factory price, and you talk to the same people after the sale."
+      },
+      {
+        "icon": "clock",
+        "h": "Thirty years of making",
+        "p": "We have built hot tubs in Šabac for three decades. Every seat, step and headrest has been tried by thousands of owners before you."
+      },
+      {
+        "icon": "cpu",
+        "h": "Components we trust",
+        "p": "Gecko controls from Canada, Waterway jets and pumps. Quiet, reliable parts that any spa technician in Europe knows."
+      },
+      {
+        "icon": "lightning",
+        "h": "Small running costs",
+        "p": "Class A+ pumps, full insulation and a fitted cover. Energy and filters come to about 20 EUR a month on average."
+      },
+      {
+        "icon": "truck",
+        "h": "Spare parts the next day",
+        "p": "Every part is on our shelves. Order by noon on a working day and it is at your address tomorrow."
+      },
+      {
+        "icon": "headset",
+        "h": "Help by video call",
+        "p": "Our engineers see what you see and solve most questions in minutes, wherever the tub stands."
+      },
+      {
+        "icon": "ruler",
+        "h": "Simple to install",
+        "p": "No plumbing. A level concrete base, a power cable and a garden hose are all it takes."
+      },
+      {
+        "icon": "snowflake",
+        "h": "All year, any climate",
+        "p": "From Adriatic summers to snow in ski resorts. With the right package the water stays warm in every season."
+      },
+      {
+        "icon": "shield-check",
+        "h": "24 months warranty",
+        "p": "All built-in components are covered. Service and spare parts stay available long after the warranty ends."
+      },
+      {
+        "icon": "sliders-horizontal",
+        "h": "Pay for what you use",
+        "p": "Every model comes in up to three equipment packages, so you choose the jets, light and comfort you want and nothing more."
+      }
+    ],
+    "quote": "We stay small on purpose. It lets us know every tub we build.",
+    "quoteBy": "Favorit team, Šabac",
+    "ctaH": "Sit in one before you decide",
+    "ctaP": "Visit our showroom in Šabac, or tell us about your space and we will send a quote."
+  },
+  "control": {
+    "title": "Gecko control system",
+    "metaTitle": "Gecko control system in Favorit SPA hot tubs – keypads, app and accessories",
+    "metaDesc": "Every Favorit SPA hot tub runs on Gecko electronics from Canada: in.k keypads from in.k200 to the in.k1000 touchscreen, the in.touch 2 app, in.clear water care and in.stream audio.",
+    "lead": "The electronics are the brain of a hot tub. Ours come from Gecko Alliance in Canada, one of the most widely used spa control makers in the world: simple to use, reliable, and serviced everywhere in Europe.",
+    "madeBy": "Electronics by Gecko Alliance, Canada",
+    "brainH": "One system, three parts",
+    "brain": [
+      [
+        "Control pack",
+        "The box under the cabinet that runs the heater, pumps, lights and circulation and protects them against faults."
+      ],
+      [
+        "Keypad",
+        "The panel on the rim. It shows the water temperature and lets you start the jets, lights and programmes."
+      ],
+      [
+        "Your phone",
+        "With the optional in.touch 2 module, the same controls are in an app on your phone, wherever you are."
+      ]
+    ],
+    "keypadsH": "Keypads",
+    "keypadsLead": "The keypad depends on the model and the equipment package. All of them keep the temperature, run the filtration cycles automatically and show a message if something needs attention.",
+    "keypads": {
+      "in.k200": [
+        "Compact",
+        "Four buttons and a bright LED temperature display. Everything you need for a smaller tub, nothing more."
+      ],
+      "in.k300": [
+        "Essential",
+        "A clear LCD display and direct buttons for pumps, light and temperature. Simple and robust."
+      ],
+      "in.k500": [
+        "Colour",
+        "A colour display with animated icons, water care modes, filtration schedules, keypad lock and maintenance reminders. Works with in.touch 2, in.clear and in.stream."
+      ],
+      "in.k800": [
+        "Large colour",
+        "A larger colour display and ten buttons for tubs with more equipment: several pumps, lights, audio and water care in one place."
+      ],
+      "in.k1000": [
+        "Touchscreen",
+        "A 4.3-inch colour touchscreen with no buttons at all. Menus as on a phone, and software that can be updated from the keypad."
+      ]
+    },
+    "used": "Fitted to",
+    "optional": "optional",
+    "appH": "Your tub in your pocket",
+    "appP": "The in.touch 2 module connects the tub to your home internet over a long-range radio link, so it works even at the end of the garden. The in.touch 2 app for iOS and Android does what the keypad does, from anywhere.",
+    "app": [
+      "Water temperature and heating",
+      "Pumps, lights and other equipment",
+      "Water care mode and filtration cycles",
+      "Notifications, reminders and error messages"
+    ],
+    "appNote": "Available as the Smartphone platform option on Advance and Privilege packages.",
+    "modesH": "Water care modes",
+    "modesLead": "Choose how the tub heats and it does the rest. The economy setting lowers the temperature when you are not using the tub.",
+    "modes": [
+      [
+        "Away",
+        "Always economy, for when you travel."
+      ],
+      [
+        "Beginner",
+        "Never economy, the water is always at your temperature."
+      ],
+      [
+        "Energy savings",
+        "Economy during peak hours on weekdays, full comfort at weekends."
+      ],
+      [
+        "Super energy",
+        "Economy during peak hours every day."
+      ],
+      [
+        "Weekender",
+        "Economy on weekdays, ready for the weekend."
+      ]
+    ],
+    "extrasH": "Works with",
+    "extras": [
+      [
+        "in.clear",
+        "Automatic water care that turns a bromide salt (BromiCharge) in the water into bromine, so you add far fewer chemicals by hand."
+      ],
+      [
+        "in.stream 2",
+        "Bluetooth audio built into the tub: speakers in the cabinet, music from your phone."
+      ],
+      [
+        "Smart LED light",
+        "Underwater and rim lighting in changing colours, switched from the keypad or the app."
+      ]
+    ],
+    "matrixH": "Which keypad comes with which tub",
+    "matrixLead": "Standard keypad per model and package. The in.k1000 touchscreen can be added to Privilege.",
+    "ctaH": "Questions about the electronics?",
+    "ctaP": "Our engineers know every Gecko component we fit and help by phone or video call."
+  },
+  "brochure": {
+    "title": "Catalogue",
+    "metaTitle": "Favorit SPA catalogue – all hot tub models, packages and prices",
+    "metaDesc": "Get the Favorit SPA catalogue by e-mail: all seven hot tub models, equipment packages, dimensions and technical data in one PDF.",
+    "lead": "All seven models, the equipment packages, dimensions and technical data in one PDF. Leave your e-mail and we will send you the download link straight away.",
+    "points": [
+      "Seven models from 2 to 6 people, to scale",
+      "Base, Advance and Privilege packages compared",
+      "Installation requirements and technical data"
+    ],
+    "formH": "Send me the catalogue",
+    "name": "Name",
+    "email": "E-mail",
+    "country": "Country",
+    "consent": "I agree that Favorit SPA may send me the catalogue and occasional news about models and offers. I can unsubscribe at any time.",
+    "privacy": "We use your address only for this, as described in our privacy policy.",
+    "submit": "Send the link",
+    "sending": "Sending…",
+    "doneH": "Check your inbox",
+    "doneP": "The download link is on its way to {email}. If it is not there in a few minutes, look in the spam folder.",
+    "error": "Something went wrong. Please try again or write to us at sales@favoritspa.com.",
+    "invalid": "Please enter a valid e-mail address and tick the consent box."
+  }
+}

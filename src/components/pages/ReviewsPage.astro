@@ -1,0 +1,92 @@
+---
+import Site from '../../layouts/Site.astro';
+import Icon from '../Icon.astro';
+import Gallery from '../Gallery.astro';
+import { google, reviews } from '../../data/reviews';
+import { allInstalls } from '../../data/installs';
+import { alts, fill, locale, meta, t, type Lang } from '../../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = t(lang);
+const R = ((locale(lang) as any).reviews ?? (locale('en') as any).reviews) as Record<string, string>;
+const num = new Intl.NumberFormat(meta(lang).locale, { minimumFractionDigits: 1 }).format(google.rating);
+const featured = reviews.find((r) => r.featured)!;
+const rest = reviews.filter((r) => !r.featured);
+const site = Astro.site!.toString().replace(/\/$/, '');
+const ld = { '@context': 'https://schema.org', '@id': `${site}/#org`, '@type': ['Organization', 'LocalBusiness'], name: 'Favorit SPA',
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: google.rating, reviewCount: google.count, bestRating: 5 },
+  review: reviews.map((r) => ({ '@type': 'Review', author: { '@type': 'Person', name: r.name }, datePublished: String(r.year), reviewBody: r.text, reviewRating: { '@type': 'Rating', ratingValue: r.stars, bestRating: 5 } })) };
+const photos = allInstalls();
+const alt = alts('reviews');
+const stars = (n: number) => Array.from({ length: 5 }, (_, i) => i < Math.round(n));
+---
+<Site lang={lang} title={`${R.title} | Favorit SPA`} description={R.metaDesc} alt={alt}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(ld)} />
+  <section class="wrap head">
+    <div>
+      <h1 class="h1">{R.title}</h1>
+      <p class="lede">{R.lead}</p>
+    </div>
+    <div class="score" aria-label={`${num} ${R.ratingOf}`}>
+      <span class="big">{num}</span>
+      <span class="stars" aria-hidden="true">{stars(google.rating).map((on) => <span class:list={['st', { on }]}>★</span>)}</span>
+      <span class="muted">{fill(R.ratingCount, { n: google.count })}</span>
+      <a class="link" href={google.all} rel="noopener">{R.seeAll}</a>
+    </div>
+  </section>
+
+  <section class="wrap quotes">
+    <figure class="feat">
+      <blockquote lang="en"><p>{featured.text}</p></blockquote>
+      <figcaption><span class="stars sm" aria-hidden="true">{stars(featured.stars).map((on) => <span class:list={['st', { on }]}>★</span>)}</span>{featured.name} · Google · {featured.year}</figcaption>
+    </figure>
+    <div class="small-q">
+      {rest.map((r) => (
+        <figure class="q">
+          <blockquote><p>{r.text}</p></blockquote>
+          <figcaption><span class="stars sm" aria-hidden="true">{stars(r.stars).map((on) => <span class:list={['st', { on }]}>★</span>)}</span>{r.name} · {r.year}</figcaption>
+        </figure>
+      ))}
+      <div class="owner">
+        <h2 class="h3">{R.ownerH}</h2>
+        <p>{R.ownerP}</p>
+        <a class="btn btn-ink" href={google.write} rel="noopener">{R.write}<Icon name="arrow-up-right" /></a>
+      </div>
+    </div>
+    <p class="small muted">{R.note}</p>
+  </section>
+
+  <section class="installs">
+    <div class="wrap">
+      <div class="i-head"><h2 class="h2">{R.installsH}</h2><p class="muted">{R.installsP}</p></div>
+      <Gallery images={photos} alt={R.installsH} lang={lang} square />
+    </div>
+  </section>
+</Site>
+<style>
+  .head { padding-block: clamp(140px, 16vw, 200px) clamp(40px, 6vw, 64px); display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+  .head .lede { margin-top: 20px; }
+  .score { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 26px 28px; border-radius: 14px; background: var(--stone); }
+  .big { font-size: clamp(3.4rem, 6vw, 5rem); font-weight: 300; line-height: 1; }
+  .stars { display: inline-flex; gap: 3px; font-size: 1.35rem; letter-spacing: 0; }
+  .stars.sm { font-size: 0.95rem; margin-right: 10px; }
+  .st { color: var(--line); }
+  .st.on { color: #c69b4a; }
+  .quotes { display: flex; flex-direction: column; gap: 18px; padding-bottom: clamp(64px, 9vw, 120px); }
+  .feat { margin: 0; padding: clamp(28px, 4vw, 56px); background: var(--ink); color: var(--paper); border-radius: 14px; }
+  .feat blockquote { margin: 0; }
+  .feat p { font-size: clamp(1.15rem, 1.9vw, 1.55rem); font-weight: 300; line-height: 1.5; max-width: 46em; margin: 0 0 20px; }
+  .feat figcaption { display: flex; align-items: center; opacity: 0.85; }
+  .small-q { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .q { margin: 0; padding: 24px; border-radius: 14px; background: var(--stone); display: flex; flex-direction: column; justify-content: space-between; gap: 16px; }
+  .q blockquote { margin: 0; }
+  .q p { margin: 0; font-size: 1.1rem; line-height: 1.5; }
+  .q figcaption { display: flex; align-items: center; font-size: 0.88rem; color: var(--soft); }
+  .owner { padding: 24px; border-radius: 14px; border: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+  .owner p { margin: 0; color: var(--soft); }
+  .installs { background: var(--stone); padding-block: clamp(64px, 9vw, 120px); }
+  .i-head { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 12px 40px; margin-bottom: 28px; }
+  .i-head p { margin: 0; }
+  @media (max-width: 1000px) { .small-q { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) { .head { grid-template-columns: 1fr; } .small-q { grid-template-columns: 1fr; } }
+</style>

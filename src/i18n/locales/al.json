@@ -1,0 +1,936 @@
+{
+  "meta": {
+    "name": "Shqip",
+    "htmlLang": "sq",
+    "hreflang": "sq",
+    "locale": "sq-AL",
+    "legacy": "al"
+  },
+  "persons": {
+    "one": "{n} person",
+    "other": "{n} persona"
+  },
+  "values": {
+    "approx": "rreth",
+    "hp": "kf",
+    "decimal": ",",
+    "upTo": "deri në"
+  },
+  "routes": {
+    "models": "vaska-spa",
+    "features": "vecorite",
+    "maintenance": "mirembajtja",
+    "contact": "kontakt",
+    "quote": "oferte",
+    "gallery": "galeria",
+    "reviews": "pershtypje",
+    "faq": "pyetje",
+    "about": "rreth-nesh",
+    "terms": "kushtet",
+    "support": "mbeshtetje",
+    "docs": "dokumentacioni",
+    "why": "pse-favorit-spa",
+    "privacy": "politika-e-privatesise",
+    "control": "sistemi-kontrollit",
+    "brochure": "katalogu"
+  },
+  "ui": {
+    "nav.models": "Vaska spa",
+    "nav.features": "Veçoritë",
+    "nav.maintenance": "Mirëmbajtja",
+    "nav.contact": "Kontakt",
+    "nav.quote": "Kërkoni ofertë",
+    "nav.gallery": "Galeria",
+    "nav.reviews": "Përshtypje",
+    "nav.faq": "Pyetje të shpeshta",
+    "nav.about": "Rreth nesh",
+    "nav.brochure": "Katalogu",
+    "nav.control": "Sistemi i kontrollit",
+    "nav.terms": "Kushtet e përdorimit",
+    "nav.menu": "Menuja",
+    "nav.lang": "Gjuha",
+    "cta": "Kërkoni ofertë",
+    "call": "Telefononi",
+    "from": "nga",
+    "jets": "dalje masazhi",
+    "view": "Shihni modelin",
+    "skip": "Kalo te përmbajtja",
+    "home.title": "Favorit SPA – vaska spa nga një prodhues i vogël evropian",
+    "home.desc": "Favorit SPA prodhon vaska spa: shtatë modele për 2 deri në 6 persona, prodhim i robotizuar dhe tridhjetë vjet përvojë.",
+    "home.intro": "Një prodhues i vogël evropian vaskash spa. Prodhim i robotizuar, kujdes deri në detajin e fundit dhe tridhjetë vjet përvojë.",
+    "home.models": "Modelet",
+    "lineup.h": "Të shtatë modelet, në të njëjtën shkallë",
+    "lineup.p": "Çdo vaskë shihet nga lart, në të njëjtën shkallë. Krahasojini para se të matni tarracën.",
+    "offers.h": "Çmime në ofertë",
+    "offers.p": "Deri në mbarimin e stokut, për paketën e pajisjeve të treguar pranë çdo modeli.",
+    "offers.model": "Modeli",
+    "maker.h": "Një prodhues i vogël evropian",
+    "maker.visit": "Salloni dhe prodhimi ynë janë të hapur për vizitorë nga e hëna deri të shtunën.",
+    "maker.cta": "Rezervoni një vizitë",
+    "footer.tag": "Vaska spa. Një prodhues i vogël evropian, tridhjetë vjet përvojë.",
+    "footer.note": "Fotot janë ilustruese; pajisjet ndryshojnë sipas paketës.",
+    "footer.catalog": "Katalogu (PDF)",
+    "models.title": "Vaska spa dhe çmimet",
+    "models.lead": "Shtatë modele në tri linja. Secili vjen në dy ose tri paketa pajisjesh, që ndryshojnë në dalje masazhi, pompa dhe shtesa.",
+    "models.packages": "Paketat",
+    "model.dims": "Përmasat",
+    "model.colors": "Ngjyrat e akrilit",
+    "model.cladding": "Veshja",
+    "model.photo": "Foto",
+    "model.saleNote": "Çmim në ofertë deri në mbarimin e stokut.",
+    "model.included": "Të përfshira",
+    "model.inquire": "Kërkoni ofertë për",
+    "model.yes": "e përfshirë",
+    "model.gallery": "Galeria",
+    "model.item": "Elementi",
+    "quote.title": "Kërkoni ofertë",
+    "quote.lead": "Zgjidhni modelin dhe paketën, lini të dhënat tuaja dhe ne do t’ju dërgojmë një ofertë. Ende nuk jeni të sigurt? Përshkruani hapësirën dhe ju ndihmojmë të zgjidhni.",
+    "quote.steps": [
+      "Zgjidhni modelin dhe paketën",
+      "Lini të dhënat tuaja dhe disa fjalë për hapësirën",
+      "Ju kthejmë përgjigje me një ofertë"
+    ],
+    "quote.model": "Modeli",
+    "quote.email": "Email",
+    "quote.contactAlt": "Preferoni të flisni? Na telefononi ose shihni faqen e kontaktit.",
+    "contact.toQuote": "Për ofertë për një model të caktuar, dërgoni një kërkesë për ofertë.",
+    "contact.title": "Kontakt",
+    "contact.lead": "Na telefononi, na shkruani ose vizitoni sallonin dhe prodhimin, nga e hëna deri të shtunën.",
+    "contact.address": "Adresa",
+    "contact.msgPh": "Për shembull, ku do të qëndrojë vaska dhe kur ju nevojitet",
+    "contact.sendNote": "Kërkesa juaj hapet si email në aplikacionin tuaj të postës, drejtuar",
+    "info.soon": "Kjo faqe vjen në versionin e ardhshëm të faqes së re.",
+    "info.current": "Hapni versionin aktual",
+    "nav.support": "Qendra e mbështetjes",
+    "nav.docs": "Dokumentacioni",
+    "model.equipment": "Pajisjet dhe specifikimet",
+    "model.equipLead": "Gjithçka që ka vaska, e grupuar dhe e krahasuar sipas paketës.",
+    "model.groups": {
+      "specs": "Të dhëna teknike",
+      "massage": "Masazhi",
+      "water": "Ujë i pastër",
+      "control": "Kontrolli dhe energjia",
+      "light": "Drita, tingulli dhe aroma",
+      "comfort": "Mbulesat, komoditeti dhe servisi",
+      "build": "Struktura dhe izolimi",
+      "finish": "Përfundimi"
+    },
+    "model.installs": "Në shtëpitë e klientëve tanë",
+    "model.installsLead": "Foto nga pronarët, nga tarracat në Adriatik deri te shtëpitë në mal.",
+    "model.tech": "Teknologjia në këtë vaskë",
+    "model.techMore": "Të gjitha veçoritë",
+    "reach.h": "Nga Suedia deri në Greqi",
+    "reach.p": "Të ndërtuara për të dy skajet e Evropës. Izolimi PU (30 mm për klima më të ftohta) dhe mbulesa termike me porosi e mbajnë nxehtësinë gjatë dimrit suedez, ndërsa ozoni, llamba UV dhe kontrolli Gecko e mbajnë ujin të pastër gjatë verës greke. Veshja Sinter Wood i reziston ngricës, ajrit të kripur të detit dhe diellit, pa asnjë mirëmbajtje.",
+    "reach.stats": [
+      [
+        "30",
+        "vjet prodhim vaskash spa"
+      ],
+      [
+        "7",
+        "modele, për 2 deri në 6 persona"
+      ],
+      [
+        "11",
+        "vende ku shijohen vaskat tona"
+      ]
+    ],
+    "reach.countries": [
+      "Suedia",
+      "Gjermania",
+      "Austria",
+      "Hungaria",
+      "Sllovenia",
+      "Kroacia",
+      "Bosnjë e Hercegovinë",
+      "Serbia",
+      "Mali i Zi",
+      "Shqipëria",
+      "Greqia"
+    ],
+    "footer.big": "Vaska spa të punuara me kujdes, për çaste që mbahen mend.",
+    "footer.models": "Vaska spa",
+    "footer.visitNote": "Salloni dhe prodhimi, nga e hëna deri të shtunën",
+    "support.title": "Qendra e mbështetjes",
+    "support.lead": "Jemi pranë jush edhe pas dorëzimit. Mirëmbajtja, garancia, kushtet e instalimit dhe kërkesat për servis, të gjitha në një vend.",
+    "support.cards": [
+      [
+        "wrench",
+        "Mirëmbajtja",
+        "Uji, filtrat dhe regjimi i dimrit, hap pas hapi.",
+        "maintenance"
+      ],
+      [
+        "question",
+        "Pyetje të shpeshta",
+        "Pyetjet më të zakonshme para dhe pas blerjes.",
+        "faq"
+      ],
+      [
+        "file-pdf",
+        "Dokumentacioni",
+        "Vizatime teknike, katalogu dhe të dhënat e instalimit.",
+        "docs"
+      ],
+      [
+        "headset",
+        "Kërkesë për servis",
+        "Përshkruani problemin dhe ju kthehemi shpejt.",
+        "#servis"
+      ]
+    ],
+    "support.warranty": "Garancia",
+    "support.warrantyRows": [
+      [
+        "Përdorim privat",
+        "24 muaj nga dorëzimi"
+      ],
+      [
+        "Përdorim komercial (hotele, qendra spa, qira)",
+        "12 muaj nga dorëzimi"
+      ]
+    ],
+    "support.warrantyNote": "Garancia mbulon të gjithë përbërësit e integruar. Servisi dhe pjesët e këmbimit mbeten në dispozicion edhe pas përfundimit të garancisë. Filtrat dhe produktet për kujdesin e ujit nuk mbulohen.",
+    "support.max": "Servisi MAX 72h",
+    "support.maxP": "Me paketën e servisit MAX, tekniku ynë vjen brenda 72 orëve nga telefonata juaj, me pjesë këmbimi nëse nevojiten.",
+    "support.prep": "Para instalimit",
+    "support.prepList": [
+      "Një bazë betoni e niveluar dhe mbajtëse, rreth 40% më e madhe se vaska, që të arrihet nga çdo anë.",
+      "Një kabllo elektrik 3×2,5 mm² ose 5×2,5 mm², sipas modelit, rreth 4 m i gjatë nga vendi ku qëndron vaska.",
+      "Një ndërprerës diferencial (RCD) dhe siguresa sipas specifikimeve. Lidhja duhet bërë nga një elektricist i licencuar.",
+      "Nuk nevojitet hidraulikë: vaskën e mbushni me tub kopshti dhe e zbrazni përmes valvulës së integruar.",
+      "Ndërroni filtrin të paktën një herë në vit."
+    ],
+    "support.form": "Kërkesë për servis",
+    "support.formLead": "Na tregoni modelin dhe çfarë po ndodh. Mund të bashkëngjitni foto në emailin që hapet.",
+    "support.year": "Viti i blerjes",
+    "support.issuePh": "Për shembull, mesazhi në ekran, që kur ndodh dhe çfarë keni provuar",
+    "docs.title": "Dokumentacioni",
+    "docs.lead": "Vizatime teknike, të dhënat e instalimit dhe katalogu, në një vend.",
+    "docs.models": "Të dhënat e instalimit",
+    "docs.cols": [
+      "Modeli",
+      "Përmasat",
+      "Vëllimi",
+      "Pesha bosh",
+      "Furnizimi elektrik",
+      "Vizatimi"
+    ],
+    "docs.general": "Dokumente të përgjithshme",
+    "docs.pdf": "PDF",
+    "docs.weightNote": "Pesha dhe furnizimi elektrik varen nga paketa; vlerat shkojnë nga paketa bazë te paketa më e plotë.",
+    "countries": {
+      "Serbia": "Serbia",
+      "Montenegro": "Mali i Zi",
+      "Bosnia": "Bosnjë e Hercegovinë",
+      "Croatia": "Kroacia"
+    },
+    "offers.pkg": "Paketa",
+    "offers.was": "Çmimi i rregullt",
+    "offers.now": "Çmimi në ofertë",
+    "offers.save": "kurseni",
+    "model.persons": "Vende",
+    "model.jets": "Dalje masazhi",
+    "model.price": "Çmimi",
+    "model.packages": "Paketat e pajisjeve",
+    "model.choose": "Zgjidhni paketën",
+    "model.jetsLine": "dalje hidro dhe ajri",
+    "model.notIncluded": "Nuk përfshihen",
+    "model.opt": "shtesë me zgjedhje",
+    "model.no": "nuk ofrohet",
+    "model.drawing": "Vizatimi teknik (PDF)",
+    "model.others": "Modele të tjera",
+    "quote.pkg": "Paketa",
+    "quote.any": "Ende nuk e di",
+    "quote.you": "Të dhënat tuaja",
+    "quote.place": "Ku do të vendoset vaska",
+    "quote.places": [
+      "Tarracë",
+      "Kopsht",
+      "Çati",
+      "Brenda"
+    ],
+    "contact.phone": "Telefoni",
+    "contact.email": "Email",
+    "contact.map": "Hapni hartën",
+    "contact.name": "Emri dhe mbiemri",
+    "contact.tel": "Telefoni",
+    "contact.city": "Qyteti",
+    "contact.msg": "Mesazhi",
+    "contact.send": "Dërgoni kërkesën",
+    "footer.explore": "Eksploroni",
+    "footer.help": "Ndihmë",
+    "footer.visit": "Na vizitoni",
+    "support.issue": "Çfarë po ndodh",
+    "lineup.topView": "pamje nga lart",
+    "gallery.photo": "foto",
+    "gallery.gallery": "galeria",
+    "gallery.close": "Mbyll",
+    "gallery.prev": "E mëparshmja",
+    "gallery.next": "Tjetra",
+    "contact.hours": "Salloni dhe prodhimi: nga e hëna deri të shtunën",
+    "country": "Serbia",
+    "model.metaDesc": "Vaskë spa {name} për {persons}, {dims}, deri në {jets} dalje masazhi. Nga {price}.",
+    "features.lead": "Çfarë hyn në çdo vaskë Favorit: përbërës të provuar, shumica nga Gecko, dhe detajet për të cilat kujdesemi vetë.",
+    "features.count": "veçori",
+    "features.end": "Cilat veçori vijnë me cilën paketë, e gjeni në faqen e çdo modeli.",
+    "docs.generalList": [
+      "Katalogu Favorit SPA",
+      "Kushtet e përdorimit",
+      "Udhëzuesi i mirëmbajtjes",
+      "Kushtet e instalimit dhe garancia"
+    ],
+    "mail.quote": {
+      "subject": "Kërkesë për ofertë",
+      "labels": [
+        "Emri",
+        "Email",
+        "Telefoni",
+        "Qyteti",
+        "Modeli",
+        "Paketa",
+        "Vendndodhja"
+      ]
+    },
+    "mail.service": {
+      "subject": "Kërkesë për servis",
+      "labels": [
+        "Emri",
+        "Telefoni",
+        "Modeli",
+        "Viti i blerjes",
+        "Qyteti"
+      ]
+    },
+    "home.prev": "Modeli i mëparshëm",
+    "home.next": "Modeli tjetër",
+    "home.craftAlt": "Guaska e Pearl, fotografi studioje",
+    "nav.closeShort": "Mbyll",
+    "settings.title": "Shfaqja",
+    "settings.theme": "Tema",
+    "settings.light": "E çelët",
+    "settings.dark": "E errët",
+    "settings.auto": "Automatike",
+    "settings.text": "Madhësia e tekstit",
+    "settings.smaller": "Tekst normal",
+    "settings.larger": "Tekst më i madh",
+    "settings.largest": "Tekst shumë i madh",
+    "nav.guide": "Udhëzuesi i përdorimit",
+    "support.guideCard": "Hap pas hapi, nga mbushja deri te dimri, në një vend.",
+    "about.ctaQuote": "Kërkoni ofertë",
+    "nav.why": "Pse Favorit SPA",
+    "nav.privacy": "Politika e privatësisë",
+    "nav.groupHelp": "Mbështetje",
+    "nav.groupStory": "Historia jonë",
+    "nav.helpIntro": "Jemi pranë jush edhe pas dorëzimit: udhëzime, dokumente dhe servis në një vend.",
+    "nav.storyIntro": "Një prodhues i vogël evropian nga Šabac, Serbi. Prej tridhjetë vitesh ndërtojmë vaska spa, dhe në telefon ju përgjigjen të njëjtët njerëz që i ndërtojnë."
+  },
+  "products": {
+    "eden": {
+      "tagline": "frymëzim për gjashtë",
+      "description": "Një rreth: vazhdimësi dhe rrjedhë, si vetë jeta. Eden ka gjashtë vende në një guaskë të rrumbullakët, ku secili sheh të gjithë të tjerët. Shijojeni pa fund, me njerëzit më të afërt.",
+      "claim": "Gjashtë vende në rreth, sy më sy. Eden është bërë për familjen, miqtë dhe bisedat e gjata nën yje."
+    },
+    "fusion": {
+      "tagline": "gjithçka që ju nevojitet, në ekuilibër",
+      "description": "Një bashkim i gjithçkaje që ju nevojitet: hapësirë, funksion, bukuri dhe aq sa duhet. Fusion është një fjalë tjetër për ekuilibrin.",
+      "claim": "Dy shezlongë dhe dy ndenjëse në një katror kompakt. Gjithçka që ju nevojitet, asgjë më tepër."
+    },
+    "garden": {
+      "tagline": "trajtime spa në ajër të pastër",
+      "description": "Garden ju lejon t’i dorëzoheni plotësisht çastit. Koha ndalet dhe kthehet në një pushim të shkurtër larg zhurmës së qytetit, me trajtime spa për gjashtë.",
+      "claim": "Më e madhja në gamë: gjashtë vende, pompa të fuqishme dhe masazh për gjithë trupin. Garden e kthen oborrin në një spa private."
+    },
+    "melody": {
+      "tagline": "kaq shumë në diçka që duket e vogël",
+      "description": "Kaq shumë për të përjetuar në diçka që vetëm duket e vogël. Asgjë kaq kompakte nuk ofron kaq shumë kënaqësi. Një Melody e vërtetë.",
+      "claim": "Për dy veta, për tarraca të vogla dhe çaste të mëdha. Melody futet atje ku vaskat e tjera nuk futen."
+    },
+    "pearl": {
+      "tagline": "duke parë të njëjtin horizont",
+      "description": "Afërsi dhe intimitet, ndërsa të dy shikoni drejt të njëjtit horizont. A mund të ishte më mirë? A na duhet më shumë?",
+      "claim": "E bërë për dy, me vend edhe për një mysafir. Një shezlong, një masazh i qetë dhe i njëjti horizont."
+    },
+    "point": {
+      "tagline": "pika e nisjes",
+      "description": "Një pikë nisjeje për t’u mbledhur bashkë. E shpejtë, e thjeshtë dhe hapi juaj i parë në botën e spa.",
+      "claim": "Rruga më e shkurtër drejt një spa-je tuajën. Katër vende, përdorim i thjeshtë dhe një hap i parë i lehtë."
+    },
+    "zen": {
+      "tagline": "hapësirë për të zgjedhur, hapësirë për të dëshiruar",
+      "description": "Hapësirë për të zgjedhur dhe hapësirë për të dëshiruar. Zhyteni, dëgjoni çfarë ju nevojitet dhe lëreni ujin të bëjë pjesën tjetër. Ndërroni vendin derisa të gjeni atë të përsosurin. Jini ZEN.",
+      "claim": "Pesë vende, një shezlong dhe hapësirë që secili të gjejë vendin e vet. Zen është vaska ku mbrëmjet zgjaten vetvetiu."
+    }
+  },
+  "labels": {
+    "Aero mlaznice (komada)": "Dalje ajri (copë)",
+    "Aero mlaznice set": "Set daljesh ajri",
+    "Aero pumpa": "Pompë ajri",
+    "Antibakterijski filter": "Filtër antibakterial",
+    "Aromaterapija": "Aromaterapi",
+    "Blue energy block": "Blue energy block",
+    "Broj mesta": "Vende",
+    "Cirada": "Mbulesë mbrojtëse",
+    "Cirkulaciona pumpa": "Pompë qarkullimi",
+    "Dodatni grejač 3kW": "Ngrohës shtesë 3 kW",
+    "Drenažni ventil": "Valvulë shkarkimi",
+    "Elektronska kontrola": "Sistemi i kontrollit",
+    "Fiberglas omotač": "Shtresë me fibër xhami",
+    "Grejač": "Ngrohës",
+    "HDS okvir stiren visoke gustine": "Kornizë HDS prej stireni me dendësi të lartë",
+    "Hidro mlaznice (komada)": "Dalje hidro (copë)",
+    "Hidro mlaznice kombo (set)": "Dalje hidro kombo (set)",
+    "Hidro pumpa 2ks (komada)": "Pompë hidro 2 kf (copë)",
+    "Hidro pumpa 3ks (komada)": "Pompë hidro 3 kf (copë)",
+    "Hromoterapija": "Kromoterapi",
+    "Jastuk (set)": "Mbështetëse koke (set)",
+    "Kontrolni blok": "Njësia e kontrollit",
+    "Led mini lampe": "Drita mini LED",
+    "Low water level": "Sensor i nivelit të ulët të ujit",
+    "Magma mlaznice (4 komada)": "Dalje Magma (4 copë)",
+    "Materijal lica": "Materiali i guaskës",
+    "Metal konstrukcija": "Strukturë metalike",
+    "Music system": "Sistem muzikor",
+    "Ozonoterapija": "Trajtim me ozon",
+    "PEARL-WHITE finish": "Përfundim PEARL-WHITE",
+    "PURE-WHITE finish": "Përfundim PURE-WHITE",
+    "Pametno led svetlo": "Dritë inteligjente LED",
+    "Parna membrana": "Barrierë avulli",
+    "Polar izolacija 10mm": "Izolim Polar 10 mm",
+    "Polar izolacija 30mm": "Izolim Polar 30 mm",
+    "Potrebna snaga": "Furnizimi elektrik",
+    "SILVER-PLATINUM finish": "Përfundim SILVER-PLATINUM",
+    "SMF snažan metalni ram": "Kornizë metalike e fortë SMF",
+    "SPA kontola GECKO IN.K.1000": "Kontroll GECKO in.k1000",
+    "Sedeća mesta / Ležeća mesta": "Ndenjëse / shezlongë",
+    "Servis 72h": "Servis 72 orë",
+    "Sigurnosno monofazno napajanje": "Furnizim monofazor i sigurt",
+    "Smartphone platforma": "Platformë për smartphone",
+    "Stepenice": "Shkallë",
+    "Svetleće hidro mlaznice": "Dalje hidro me ndriçim",
+    "Svetleće mini mlaznice": "Dalje mini me ndriçim",
+    "Temperaturni opseg upotrebe": "Diapazoni i temperaturës së përdorimit",
+    "Termo pokrivač": "Mbulesë termike",
+    "Termo ventilacija": "Ventilim termik",
+    "Termo-stone finish": "Përfundim Termo-stone",
+    "Težina": "Pesha",
+    "Thermostron omotač": "Izolim Thermostron",
+    "UV lampa": "Llambë UV",
+    "Visoko led svetlo": "Dritë LED e lartë",
+    "Zapremina": "Vëllimi",
+    "Zvučni sistem": "Sistem zanor",
+    "Čist hemijski sistem": "Sistemi i kujdesit të ujit in.clear"
+  },
+  "featureGroups": {
+    "control": "Kontrolli",
+    "massage": "Masazhi",
+    "water": "Ujë i pastër",
+    "warmth": "Ngrohtësia dhe energjia",
+    "build": "Struktura dhe veshja",
+    "experience": "Përjetimi",
+    "service": "Servisi"
+  },
+  "features": {
+    "spa-control": {
+      "t": "Sistemi i kontrollit",
+      "d": "Elektronika është truri i çdo vaske spa. Përdorim përbërës nga prodhuesi kanadez Gecko: të thjeshtë në përdorim, të besueshëm dhe jetëgjatë. Panelet e kontrollit shkojnë nga in.k200 deri te in.k1000, sipas paketës."
+    },
+    "online": {
+      "t": "Platformë online 24/7",
+      "d": "Kontrolloni vaskën kur jeni larg. Ndizeni nga telefoni, caktoni temperaturën, pompat dhe dritat, dhe uji është gati kur të mbërrini."
+    },
+    "hydro-pump": {
+      "t": "Pompë hidro",
+      "d": "Nëse elektronika është truri, pompat janë zemra. 2 ose 3 kf, konsum i ulët energjie dhe punë e qetë."
+    },
+    "aero-pump": {
+      "t": "Pompë ajri",
+      "d": "Një pompë e fuqishme me ngrohës të integruar dërgon ajër të ngrohtë në çdo dalje ajri. Masazhi ndihet më mirë dhe uji ftohet më pak. Edhe ajo punon qetë."
+    },
+    "jets": {
+      "t": "Dalje hidro dhe ajri",
+      "d": "Daljet e masazhit dhe komandat janë ato që prekni në të vërtetë, prandaj duhet të jenë të punuara mirë dhe të bukura. Përdorim serinë kombo të Gecko, të ndërtuar për çdo lloj moti. Me to, pompat japin gjithë fuqinë e tyre, pothuajse pa zhurmë."
+    },
+    "circulation": {
+      "t": "Pompë qarkullimi",
+      "d": "Punon pa ndërprerje dhe e kalon gjithë ujin përmes filtrit dhe ngrohësit, që vaska të jetë gjithmonë gati për përdorim."
+    },
+    "inclear": {
+      "t": "Kujdesi i ujit in.clear",
+      "d": "Sistemi in.clear i Gecko çliron brom në ujë për të larguar bakteret, algat dhe lëndët organike, për ujë të këndshëm dhe çlodhës çdo herë."
+    },
+    "ozone": {
+      "t": "Gjenerator ozoni",
+      "d": "Shndërron oksigjenin e ajrit në ozon, i cili arrin në çdo pjesë të sistemit dhe e mban ujin të kristaltë."
+    },
+    "filter": {
+      "t": "Filtër antibakterial",
+      "d": "Një filtër me karbon aktiv dhe vrima shumë të imëta ndal gjethet, barin dhe mbeturinat e vogla që bien në ujë."
+    },
+    "uv": {
+      "t": "Llambë UV",
+      "d": "Drita UV largon një gamë të gjerë bakteresh që përndryshe mund të vendoseshin në ujë."
+    },
+    "water": {
+      "t": "Cilësia e ujit",
+      "d": "Cleanwater Blue e mban ujin të kthjellët dhe në ekuilibër kimik, pa erë kimikatesh dhe të butë për lëkurën."
+    },
+    "heater": {
+      "t": "Ngrohës",
+      "d": "Një ngrohës 3 kW i integruar në njësinë e kontrollit, i rregullueshëm me hapa prej 0,5 °C."
+    },
+    "insulation": {
+      "t": "Izolimi",
+      "d": "Izolimi PU 10 mm me shtresë fletë alumini e mban nxehtësinë brenda, kursen energji dhe mbron përbërësit. Për klima më të ftohta ka edhe opsion 30 mm."
+    },
+    "cover": {
+      "t": "Mbulesë termike",
+      "d": "E punuar me masë nga shkumë PU me dendësi të lartë, me film termik dhe veshje prej lëkure sintetike që i reziston lagështisë dhe rrezeve UV. Skajet janë lehtësisht të pjerrëta që uji të rrjedhë."
+    },
+    "tarp": {
+      "t": "Mbulesë mbrojtëse",
+      "d": "Një mbulesë e papërshkueshme nga uji, e punuar me masë, që e mbron vaskën gjatë dimrit, së bashku me mbulesën termike."
+    },
+    "frame": {
+      "t": "Struktura",
+      "d": "Një strukturë e ngurtë që nuk shtrembërohet edhe kur vaska zhvendoset dhe nuk e përcjell zhurmën e pompave dhe të elektronikës. Ofrohet edhe kornizë HDS prej stireni me dendësi të lartë."
+    },
+    "cladding": {
+      "t": "Veshja",
+      "d": "Veshja Sinter Wood duket si dru, por nuk kërkon mirëmbajtje: i reziston motit dhe goditjeve dhe e zbut zhurmën. Në Grey Wood dhe Rose Wood."
+    },
+    "stairs": {
+      "t": "Shkallë",
+      "d": "Shkallë kundër rrëshqitjes për hyrje të lehtë dhe të sigurt, në disa ngjyra."
+    },
+    "led": {
+      "t": "Dritë inteligjente LED",
+      "d": "Një spektër i pasur ngjyrash i kthen flluskat në një lojë drite. Versioni High Light ka unazë kromi."
+    },
+    "aroma": {
+      "t": "Aromaterapi",
+      "d": "Zgjidhni aromën e preferuar për një çlodhje më të thellë: kedër, agrume, eukalipt, pjeshkë dhe të tjera."
+    },
+    "sound": {
+      "t": "Sistem zanor",
+      "d": "Lidhje e shpejtë me Bluetooth, tingull i mirë dhe përdorim i thjeshtë."
+    },
+    "service": {
+      "t": "Servisi MAX 72h",
+      "d": "Defektet nuk paralajmërojnë kurrë. Me këtë paketë servisi, tekniku ynë vjen brenda 72 orëve nga telefonata juaj, me pjesë këmbimi nëse nevojiten."
+    }
+  },
+  "tech": {
+    "spa-control": "Kontroll Gecko",
+    "online": "Kontroll nga smartphone",
+    "hydro-pump": "Pompa hidro 2–3 kf",
+    "aero-pump": "Pompë ajri me ngrohje",
+    "ozone": "Gjenerator ozoni",
+    "uv": "Llambë UV",
+    "inclear": "in.clear",
+    "filter": "Filtër antibakterial",
+    "insulation": "Izolim termik",
+    "led": "Dritë inteligjente LED",
+    "aroma": "Aromaterapi",
+    "sound": "Tingull me Bluetooth",
+    "service": "Servisi MAX 72h"
+  },
+  "about": {
+    "title": "Rreth Favorit SPA",
+    "metaTitle": "Rreth Favorit SPA – prodhues vaskash spa nga Šabac, Serbia",
+    "metaDesc": "Favorit SPA, prodhues i vogël evropian vaskash spa nga Šabac, Serbia. 30 vjet përvojë, shtatë modele për 2 deri në 6 persona, pjesë Gecko, rezerva në stok.",
+    "lead": "Një prodhues i vogël evropian vaskash spa nga Šabac, Serbia. Prej tridhjetë vjetësh i projektojmë, i ndërtojmë, i shesim dhe u bëjmë servis vaskave tona, nga skica e parë deri te pjesa e fundit rezervë.",
+    "facts": [
+      [
+        "30",
+        "vjet përvojë"
+      ],
+      [
+        "7",
+        "modele në tri linja"
+      ],
+      [
+        "2–6",
+        "persona për vaskë"
+      ],
+      [
+        "24",
+        "muaj garanci"
+      ],
+      [
+        "11",
+        "vende me vaskat tona"
+      ],
+      [
+        "1",
+        "adresë: prodhimi dhe salloni në Šabac"
+      ]
+    ],
+    "sections": [
+      {
+        "h": "Kush jemi",
+        "p": [
+          "Jemi Favorit, një familje inxhinierësh, një dizajner dhe mjeshtrash që prodhojnë vaska spa në Šabac prej tri dekadash. Gjithçka ndodh nën një çati: projektimi, prodhimi, shitja dhe servisi.",
+          "Quajeni vaskë spa, xhakuzi ose vaskë masazhi. Për ne është gjithmonë e njëjta gjë: një vaskë e punuar mirë, e rehatshme për t’u ulur, e këndshme në prekje dhe e fuqishme kur ndizen daljet e masazhit."
+        ]
+      },
+      {
+        "h": "Si i prodhojmë",
+        "p": [
+          "Makineri të robotizuara formojnë dhe përfundojnë guaskat prej akrili me të njëjtën saktësi çdo herë. Më pas ekipi ynë e përforcon, e izolon, e lidh me energji dhe e monton çdo vaskë me dorë, dhe e kontrollon deri në detajin e fundit para se të dalë nga punishtja.",
+          "Qëndrojmë të vegjël me qëllim. Kështu e njohim çdo vaskë që ndërtojmë dhe mund të ndryshojmë një detaj që ditën kur mësojmë diçka të re."
+        ]
+      },
+      {
+        "h": "Pjesë tek të cilat kemi besim",
+        "p": [
+          "Komandat, pompat dhe daljet e masazhit vijnë nga emrat më të respektuar në industrinë e vaskave spa, mes tyre Gecko nga Kanadaja dhe Waterway. Zgjedhim pjesë të thjeshta në përdorim, të qeta dhe të bëra për të zgjatur, që vaska të punojë vetë dhe ju vetëm ta shijoni."
+        ]
+      },
+      {
+        "h": "Pas blerjes",
+        "p": [
+          "Çdo pjesë rezervë që mund t’ju nevojitet është tashmë në raftet tona. Porositni deri në mesditë të një dite pune dhe të nesërmen e keni në adresën tuaj.",
+          "Inxhinierët tanë përgjigjen në telefon dhe me video-thirrje, ndaj shumica e pyetjeve zgjidhen brenda pak minutash. Favorit SPA juaj duhet të jetë gjithmonë gati për mbrëmjen e ardhshme."
+        ]
+      },
+      {
+        "h": "Kosto të ulëta përdorimi",
+        "p": [
+          "Pompat me efikasitet energjetik (klasa A+) dhe ngrohësit (klasa C), izolimi i mirë dhe mbulesa e përshtatur i mbajnë faturat të ulëta. Mesatarisht për të gjitha modelet tona, energjia dhe filtrat kushtojnë rreth 20 EUR në muaj, afërsisht sa një espreso në ditë."
+        ]
+      },
+      {
+        "h": "Ku i gjeni vaskat tona",
+        "p": [
+          "Vaskat Favorit ngrohin tarraca në bregdetin e Adriatikut, shtëpi në qendrat malore të skive dhe kopshte në mbarë Evropën, nga Suedia deri në Greqi. Me paketën e duhur punojnë gjithë vitin, në vapën e verës dhe në borë."
+        ]
+      }
+    ],
+    "visit": {
+      "h": "Vizitoni fabrikën",
+      "p": "Shihini vaskat nga afër, uluni në to dhe flisni me njerëzit që i prodhojnë. Salloni dhe prodhimi ynë në Šabac janë të hapur nga e hëna deri të shtunën.",
+      "cta": "Rezervoni një vizitë"
+    },
+    "faqTitle": "Përgjigje të shpejta",
+    "faq": [
+      [
+        "Ku prodhohen vaskat spa Favorit?",
+        "Në prodhimin tonë në Šabac, Serbi, ku kemi edhe sallonin. Favorit DOO prodhon vaska spa prej 30 vjetësh."
+      ],
+      [
+        "Sa zgjat një vaskë spa Favorit?",
+        "Me kujdes të rregullt, 15 deri në 20 vjet. Pastroni filtrin rregullisht, ndërrojeni një herë në vit dhe përgatiteni vaskën siç duhet nëse dimrin e kalon pa u përdorur."
+      ],
+      [
+        "A më duhen tubacione uji për ta instaluar?",
+        "Jo. Ju nevojitet një bazë betoni e niveluar dhe një kabllo elektrike. Vaska mbushet me një zorrë kopshti dhe zbrazet nga valvula e integruar."
+      ],
+      [
+        "Sa kushton përdorimi i saj?",
+        "Mesatarisht rreth 20 EUR në muaj për energjinë dhe filtrat, në varësi të modelit, paketës dhe sa shpesh e përdorni."
+      ],
+      [
+        "Çfarë garancie jepni?",
+        "24 muaj për përdorim privat dhe 12 muaj për përdorim komercial, për të gjitha pjesët e integruara. Servisi dhe pjesët rezervë mbeten në dispozicion edhe pas mbarimit të garancisë."
+      ]
+    ]
+  },
+  "maintenance": {
+    "title": "Mirëmbajtja",
+    "metaDesc": "Si ta mbani të pastër ujin në një vaskë spa Favorit SPA: një rutinë e thjeshtë javore dhe mujore, dhe produktet për kujdesin e ujit që rekomandojmë, me dozimin.",
+    "lead": "Uji i pastër kërkon vetëm pak minuta në javë. Gjeneratori i ozonit, pompa e qarkullimit dhe filtri bëjnë pjesën më të madhe të punës; ju testoni, shtoni produktet dhe shpëlani. Ja rutina dhe produktet që përdorim dhe shesim vetë.",
+    "scheduleH": "Rutina",
+    "schedule": [
+      [
+        "Çdo herë",
+        "Bëni dush para se të hyni. Kur dilni, mbylleni kapakun dhe fiksojeni."
+      ],
+      [
+        "Çdo javë",
+        "Testoni pH-në (7,2–7,4) dhe dezinfektuesin. Shtoni DEWAN-20 P dhe ALGI-CID. Shpëlajeni filtrin me zorrë uji."
+      ],
+      [
+        "Çdo muaj",
+        "Bëni trajtim shok të ujit me ALGA-SOKK P. Lëreni filtrin gjatë natës në tretësirë me DINAX FILTER FIZZY P. Shtoni BIOPOOL G nëse shihni shkumë ose vija yndyre."
+      ],
+      [
+        "Kur ndërroni ujin",
+        "Çdo disa javë, në varësi të përdorimit. Pastroni tubacionet me DINASAN P para zbrazjes. Shtoni DINAX METAL MAGIC F kur mbushni me ujë të fortë ose ujë pusi."
+      ],
+      [
+        "Çdo vit",
+        "Vendosni një filtër të ri, kontrolloni kapakun dhe përgatiteni vaskën për dimër, ose mbajeni në punë me paketën e duhur."
+      ]
+    ],
+    "volumeNote": "Dozat më poshtë janë për metër kub (m³) ujë. Vaskat Favorit mbajnë afërsisht nga 0,4 deri në 2,3 m³; vëllimi i secilit model gjendet në faqen Dokumentacioni.",
+    "productsH": "Produktet që rekomandojmë",
+    "productsLead": "Produkte profesionale për kujdesin e ujit, të testuara dhe të certifikuara, që mund t’i merrni nga ne bashkë me vaskën ose me porosinë tuaj të radhës.",
+    "labels": {
+      "use": "Çfarë bën",
+      "dose": "Si përdoret"
+    },
+    "products": [
+      {
+        "id": "alga-sokk-p",
+        "name": "ALGA-SOKK® P",
+        "kind": "Granula për dezinfektim shok",
+        "use": "Trajtim shok periodik: në mbushjen e parë, një herë në muaj dhe para se të filloni me DEWAN-20 P. Heq biofilmin nga tubacionet dhe daljet e masazhit.",
+        "dose": "2–3 lugë në vaskën e mbushur. Ndizni pompat për më shumë se 10 minuta, disa herë. Lëreni të veprojë të paktën 2 orë. Kur daljet e masazhit nuk lëshojnë më biofilm, zbrazni vaskën, shpëlajeni dhe mbusheni përsëri."
+      },
+      {
+        "id": "dewan-20-p",
+        "name": "DEWAN®-20 P",
+        "kind": "Granula dezinfektuese pa klor",
+        "use": "Dezinfektim i përditshëm pa klor. Vepron 3 orë pas dozimit dhe e mban ujin të pastër ndërmjet trajtimeve shok.",
+        "dose": "Mbani 3–5 mg/l, të kontrolluar me shiritat testues DEWAN-20. Shtojeni një herë në javë, të tretur në ujë, së bashku me ALGI-CID. Mbani pH-në ndërmjet 7,2 dhe 7,4."
+      },
+      {
+        "id": "algi-cid",
+        "name": "ALGI-CID",
+        "kind": "Parandalues algash, i lëngshëm",
+        "use": "Ndalon algat e gjelbra dhe të errëta, ujin e turbullt, erën e keqe dhe bllokimin e filtrave. Vepron në çdo pH, është i biodegradueshëm dhe nuk bën shkumë.",
+        "dose": "Doza e parë me ujë të sapombushur, pastaj një dozë e vogël çdo javë së bashku me dezinfektuesin, sipas etiketës."
+      },
+      {
+        "id": "dinax-minus-p",
+        "name": "DINAX® MINUS P",
+        "kind": "Granula për uljen e pH-së",
+        "use": "E kthen pH-në në 7,2–7,4, ku dezinfektuesit veprojnë më mirë.",
+        "dose": "Rreth 0,1 kg për m³ ujë, të tretur. Testoni përsëri para se të shtoni më shumë. Përdorni doreza dhe syze mbrojtëse."
+      },
+      {
+        "id": "biopool-g",
+        "name": "BIOPOOL G",
+        "kind": "Xhel enzimatik",
+        "use": "Shpërbën yndyrën, llumin dhe biofilmin, ul shkumën dhe ndihmon filtrin. Jotoksik dhe i biodegradueshëm; efekti i plotë arrihet brenda një muaji.",
+        "dose": "Përdorimi i parë 20 ml për m³, pastaj 10 ml për m³ një herë në javë, në ndarjen e filtrit."
+      },
+      {
+        "id": "dinasan-p",
+        "name": "DINASAN P",
+        "kind": "Pastrues dhe dezinfektues tubacionesh",
+        "use": "Pastron dhe dezinfekton tubacionet dhe daljet e masazhit ku nuk arrini dot: biofilm, vajra, sapun dhe yndyrë që shkaktojnë shkumë.",
+        "dose": "Para zbrazjes: 250 g për m³ në ndarjen e filtrit. Qarkullojeni 5 minuta, ndaleni, lëreni 2 orë, qarkullojeni përsëri, zbrazeni dhe shpëlajeni."
+      },
+      {
+        "id": "dinax-metal-magic",
+        "name": "DINAX® METAL MAGIC F",
+        "kind": "Stabilizues gëlqereje dhe metalesh",
+        "use": "Parandalon gëlqerezimin dhe njollat kafe nga hekuri, për shembull kur mbushni nga pusi ose keni ujë të fortë.",
+        "dose": "30–50 ml për m³ gjatë mbushjes; 50 ml për m³ për fortësi nën 20 °GH. Mos e tejkaloni dozën."
+      },
+      {
+        "id": "filter-fizzy",
+        "name": "DINAX® FILTER FIZZY P",
+        "kind": "Pluhur për pastrimin e filtrit",
+        "use": "Pastron në thellësi filtrat prej letre nga depozitat minerale.",
+        "dose": "Tretni një qeskë A dhe një B në 5–10 l ujë të nxehtë. Lëreni filtrin në tretësirë 1 orë, ose deri në 24 orë nëse është shumë i ndotur. Shpëlajeni në pozicion vertikal nën ujë të rrjedhshëm dhe lëreni të thahet."
+      }
+    ],
+    "safety": "Lexoni gjithmonë etiketën para se të përdorni çdo kimikat, ruajini produktet në vend të thatë dhe të freskët dhe mos i përzieni kurrë me njëri-tjetrin. Mbajini larg fëmijëve.",
+    "guideH": "Hap pas hapi",
+    "guideP": "Mbushja, ndezja e parë, kujdesi për ujin, filtrat, zbrazja dhe dimri shpjegohen në detaje në udhëzuesin e përdorimit.",
+    "askH": "Nuk jeni të sigurt çfarë ju duhet?",
+    "askP": "Na dërgoni një foto të ujit ose të shiritit testues dhe ne do t’ju themi çfarë të shtoni."
+  },
+  "reviews": {
+    "title": "Përshtypje",
+    "metaDesc": "Çfarë thonë pronarët për vaskat spa dhe shërbimin e Favorit SPA: 4,7 nga 5 në 70 vlerësime në Google, si dhe foto të instalimeve të vërteta.",
+    "lead": "Çfarë thonë pronarët tanë për vaskat, shërbimin dhe vizitën në Šabac. Mendimi juaj ka rëndësi për ne.",
+    "ratingOf": "nga 5",
+    "ratingCount": "{n} vlerësime në Google",
+    "seeAll": "Të gjitha vlerësimet në Google",
+    "write": "Lini një vlerësim në Google",
+    "ownerH": "Keni një Favorit SPA?",
+    "ownerP": "Ndani përvojën tuaj. U ndihmon të tjerëve të zgjedhin.",
+    "note": "Vlerësimet shfaqen ashtu siç janë shkruar në Google.",
+    "installsH": "Instalime të vërteta",
+    "installsP": "Foto të dërguara nga pronarët tanë, nga tarracat në bregdetin e Adriatikut deri te shtëpitë malore."
+  },
+  "why": {
+    "title": "Pse Favorit SPA",
+    "metaTitle": "Pse Favorit SPA – vaska spa direkt nga prodhuesi në Šabac, Serbi",
+    "metaDesc": "Dhjetë arsye pse njerëzit nga Suedia deri në Greqi zgjedhin një vaskë spa Favorit SPA: çmime fabrike, 30 vjet përvojë, pjesë Gecko, rreth 20 EUR në muaj për funksionim dhe pjesë rezervë të nesërmen.",
+    "lead": "Një vaskë spa do ta përdorni pothuajse çdo mbrëmje për njëzet vitet e ardhshme. Këto janë arsyet pse njerëzit nga Suedia deri në Greqi zgjedhin tonën.",
+    "reasons": [
+      {
+        "icon": "wrench",
+        "h": "Direkt nga prodhuesi",
+        "p": "Pa importues dhe pa ndërmjetës. Blini nga njerëzit që e projektojnë dhe e ndërtojnë vaskën, me çmim fabrike, dhe pas shitjes flisni me të njëjtët njerëz."
+      },
+      {
+        "icon": "clock",
+        "h": "Tridhjetë vjet prodhim",
+        "p": "Ndërtojmë vaska spa në Šabac prej tri dekadash. Çdo ndenjëse, shkallë dhe mbështetëse koke është provuar nga mijëra pronarë para jush."
+      },
+      {
+        "icon": "cpu",
+        "h": "Pjesë që u besojmë",
+        "p": "Sisteme kontrolli Gecko nga Kanadaja, dalje masazhi dhe pompa Waterway. Pjesë të qeta dhe të besueshme që i njeh çdo teknik spa në Evropë."
+      },
+      {
+        "icon": "lightning",
+        "h": "Kosto të ulëta funksionimi",
+        "p": "Pompa të klasës A+, izolim i plotë dhe kapak i përshtatur. Energjia dhe filtrat kushtojnë mesatarisht rreth 20 EUR në muaj."
+      },
+      {
+        "icon": "truck",
+        "h": "Pjesë rezervë të nesërmen",
+        "p": "Çdo pjesë e kemi në raftet tona. Porositni deri në mesditë në një ditë pune dhe të nesërmen është në adresën tuaj."
+      },
+      {
+        "icon": "headset",
+        "h": "Ndihmë me videotelefonatë",
+        "p": "Inxhinierët tanë shohin atë që shihni ju dhe i zgjidhin shumicën e pyetjeve brenda pak minutash, kudo që të ndodhet vaska."
+      },
+      {
+        "icon": "ruler",
+        "h": "E thjeshtë për t’u instaluar",
+        "p": "Pa punime hidraulike. Mjaftojnë një bazë betoni e niveluar, një kabllo elektrik dhe një zorrë uji kopshti."
+      },
+      {
+        "icon": "snowflake",
+        "h": "Gjithë vitin, në çdo klimë",
+        "p": "Nga verat në Adriatik deri te bora në qendrat e skive. Me paketën e duhur uji mbetet i ngrohtë në çdo stinë."
+      },
+      {
+        "icon": "shield-check",
+        "h": "24 muaj garanci",
+        "p": "Mbulohen të gjitha pjesët e integruara. Servisi dhe pjesët rezervë mbeten në dispozicion shumë kohë pasi mbaron garancia."
+      },
+      {
+        "icon": "sliders-horizontal",
+        "h": "Paguani për atë që përdorni",
+        "p": "Çdo model vjen me deri në tri paketa pajisjesh, kështu që zgjidhni daljet e masazhit, ndriçimin dhe komoditetin që dëshironi, asgjë më shumë."
+      }
+    ],
+    "quote": "Qëndrojmë të vegjël me qëllim. Kështu e njohim çdo vaskë që ndërtojmë.",
+    "quoteBy": "Ekipi Favorit, Šabac",
+    "ctaH": "Uluni në një para se të vendosni",
+    "ctaP": "Vizitoni sallonin tonë në Šabac, ose na tregoni për hapësirën tuaj dhe do t’ju dërgojmë një ofertë."
+  },
+  "control": {
+    "title": "Sistemi i kontrollit Gecko",
+    "metaTitle": "Sistemi i kontrollit Gecko në vaskat Favorit SPA – panele, aplikacion dhe aksesorë",
+    "metaDesc": "Çdo vaskë spa Favorit SPA punon me elektronikë Gecko nga Kanadaja: panelet in.k nga in.k200 deri te ekrani me prekje in.k1000, aplikacioni in.touch 2, kujdesi për ujin in.clear dhe audio in.stream.",
+    "lead": "Elektronika është truri i vaskës spa. E jona vjen nga Gecko Alliance në Kanada, një nga prodhuesit më të përhapur të sistemeve të kontrollit për vaska spa në botë: e thjeshtë në përdorim, e besueshme dhe me servis kudo në Evropë.",
+    "madeBy": "Elektronika nga Gecko Alliance, Kanada",
+    "brainH": "Një sistem, tri pjesë",
+    "brain": [
+      [
+        "Njësia e kontrollit",
+        "Kutia nën veshje që drejton ngrohësin, pompat, dritat dhe qarkullimin dhe i mbron nga defektet."
+      ],
+      [
+        "Paneli",
+        "Paneli në buzë të vaskës. Tregon temperaturën e ujit dhe ju lejon të ndizni daljet e masazhit, dritat dhe programet."
+      ],
+      [
+        "Telefoni juaj",
+        "Me modulin opsional in.touch 2, të njëjtat komanda i keni në një aplikacion në telefon, kudo që të jeni."
+      ]
+    ],
+    "keypadsH": "Panelet e kontrollit",
+    "keypadsLead": "Paneli varet nga modeli dhe paketa e pajisjeve. Të gjithë mbajnë temperaturën, kryejnë automatikisht ciklet e filtrimit dhe shfaqin një mesazh kur diçka kërkon vëmendje.",
+    "keypads": {
+      "in.k200": [
+        "Kompakt",
+        "Katër butona dhe ekran LED i ndritshëm për temperaturën. Gjithçka që i nevojitet një vaske më të vogël, asgjë më shumë."
+      ],
+      "in.k300": [
+        "Bazë",
+        "Ekran LCD i qartë dhe butona të drejtpërdrejtë për pompat, dritën dhe temperaturën. I thjeshtë dhe i qëndrueshëm."
+      ],
+      "in.k500": [
+        "Me ngjyra",
+        "Ekran me ngjyra me ikona të animuara, mënyra të kujdesit për ujin, orare filtrimi, kyçje të panelit dhe kujtesa për mirëmbajtjen. Punon me in.touch 2, in.clear dhe in.stream."
+      ],
+      "in.k800": [
+        "Me ngjyra, i madh",
+        "Ekran më i madh me ngjyra dhe dhjetë butona për vaska me më shumë pajisje: disa pompa, drita, audio dhe kujdes për ujin në një vend."
+      ],
+      "in.k1000": [
+        "Ekran me prekje",
+        "Ekran me prekje me ngjyra 4,3 inç, pa asnjë buton. Menu si në telefon dhe softuer që përditësohet nga vetë paneli."
+      ]
+    },
+    "used": "Në modelet",
+    "optional": "opsional",
+    "appH": "Vaska juaj në xhep",
+    "appP": "Moduli in.touch 2 e lidh vaskën me internetin e shtëpisë përmes një lidhjeje radio me rreze të gjatë, ndaj punon edhe në fund të oborrit. Aplikacioni in.touch 2 për iOS dhe Android bën atë që bën paneli, nga kudo.",
+    "app": [
+      "Temperatura e ujit dhe ngrohja",
+      "Pompat, dritat dhe pajisjet e tjera",
+      "Mënyra e kujdesit për ujin dhe ciklet e filtrimit",
+      "Njoftime, kujtesa dhe mesazhe gabimi"
+    ],
+    "appNote": "E disponueshme si opsioni Platformë për smartphone në paketat Advance dhe Privilege.",
+    "modesH": "Mënyrat e kujdesit për ujin",
+    "modesLead": "Zgjidhni si ngrohet vaska dhe ajo kujdeset për të tjerat. Regjimi ekonomik e ul temperaturën kur nuk e përdorni vaskën.",
+    "modes": [
+      [
+        "Larg",
+        "Gjithmonë ekonomik, kur udhëtoni."
+      ],
+      [
+        "Fillestar",
+        "Asnjëherë ekonomik, uji është gjithmonë në temperaturën tuaj."
+      ],
+      [
+        "Kursim energjie",
+        "Ekonomik në orët e pikut gjatë ditëve të punës, rehati e plotë në fundjavë."
+      ],
+      [
+        "Super kursim",
+        "Ekonomik në orët e pikut çdo ditë."
+      ],
+      [
+        "Fundjavë",
+        "Ekonomik gjatë javës, gati për fundjavën."
+      ]
+    ],
+    "extrasH": "Punon me",
+    "extras": [
+      [
+        "in.clear",
+        "Kujdes automatik për ujin që e shndërron kripën e bromurit (BromiCharge) në ujë në brom, kështu që me dorë shtoni shumë më pak kimikate."
+      ],
+      [
+        "in.stream 2",
+        "Audio Bluetooth e integruar në vaskë: altoparlantë në veshje, muzikë nga telefoni juaj."
+      ],
+      [
+        "Dritë LED inteligjente",
+        "Ndriçim nënujor dhe në buzë me ngjyra që ndryshojnë, i komanduar nga paneli ose aplikacioni."
+      ]
+    ],
+    "matrixH": "Cili panel vjen me cilën vaskë",
+    "matrixLead": "Paneli standard sipas modelit dhe paketës. Ekrani me prekje in.k1000 mund të shtohet te Privilege.",
+    "ctaH": "Pyetje për elektronikën?",
+    "ctaP": "Inxhinierët tanë e njohin çdo komponent Gecko që montojmë dhe ndihmojnë me telefon ose video-thirrje."
+  },
+  "brochure": {
+    "title": "Katalogu",
+    "metaTitle": "Katalogu Favorit SPA – të gjitha modelet e vaskave spa, paketat dhe çmimet",
+    "metaDesc": "Merrni katalogun Favorit SPA me email: të shtatë modelet e vaskave spa, paketat e pajisjeve, përmasat dhe të dhënat teknike në një PDF.",
+    "lead": "Të shtatë modelet, paketat e pajisjeve, përmasat dhe të dhënat teknike në një PDF. Lini emailin tuaj dhe do t’ju dërgojmë menjëherë linkun e shkarkimit.",
+    "points": [
+      "Shtatë modele për 2 deri në 6 persona, në shkallë",
+      "Krahasimi i paketave Base, Advance dhe Privilege",
+      "Kërkesat për instalim dhe të dhënat teknike"
+    ],
+    "formH": "Më dërgoni katalogun",
+    "name": "Emri",
+    "email": "Email",
+    "country": "Shteti",
+    "consent": "Pranoj që Favorit SPA të më dërgojë katalogun dhe, herë pas here, lajme për modelet dhe ofertat. Mund të çregjistrohem në çdo kohë.",
+    "privacy": "Adresën tuaj e përdorim vetëm për këtë qëllim, siç përshkruhet në politikën tonë të privatësisë.",
+    "submit": "Dërgoni linkun",
+    "sending": "Po dërgohet…",
+    "doneH": "Kontrolloni kutinë postare",
+    "doneP": "Linku i shkarkimit po vjen në {email}. Nëse nuk ka mbërritur pas disa minutash, shikoni te dosja e spam-it.",
+    "error": "Diçka shkoi keq. Ju lutemi provoni përsëri ose na shkruani në sales@favoritspa.com.",
+    "invalid": "Ju lutemi shkruani një adresë email të vlefshme dhe shënoni kutizën e pëlqimit."
+  }
+}

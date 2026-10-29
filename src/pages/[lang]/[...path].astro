@@ -1,0 +1,66 @@
+---
+// Every page except home, in both languages, with localized URLs.
+import { getCollection } from 'astro:content';
+import { available, hasGuide, route, type Lang, type RouteKey } from '../../i18n';
+import CatalogPage from '../../components/pages/CatalogPage.astro';
+import ModelPage from '../../components/pages/ModelPage.astro';
+import ContactPage from '../../components/pages/ContactPage.astro';
+import InfoPage from '../../components/pages/InfoPage.astro';
+import FeaturesPage from '../../components/pages/FeaturesPage.astro';
+import QuotePage from '../../components/pages/QuotePage.astro';
+import SupportPage from '../../components/pages/SupportPage.astro';
+import DocsPage from '../../components/pages/DocsPage.astro';
+import AboutPage from '../../components/pages/AboutPage.astro';
+import MaintenancePage from '../../components/pages/MaintenancePage.astro';
+import ReviewsPage from '../../components/pages/ReviewsPage.astro';
+import GuidePage from '../../components/pages/GuidePage.astro';
+import WhyPage from '../../components/pages/WhyPage.astro';
+import LegalPage from '../../components/pages/LegalPage.astro';
+import ControlPage from '../../components/pages/ControlPage.astro';
+import BrochurePage from '../../components/pages/BrochurePage.astro';
+
+export async function getStaticPaths() {
+  const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order);
+  const info: RouteKey[] = ['gallery', 'faq'];
+  return available.flatMap((lang) => [
+    { params: { lang, path: route(lang, 'models') }, props: { kind: 'catalog' } },
+    { params: { lang, path: route(lang, 'contact') }, props: { kind: 'contact' } },
+    { params: { lang, path: route(lang, 'features') }, props: { kind: 'features' } },
+    { params: { lang, path: route(lang, 'quote') }, props: { kind: 'quote' } },
+    { params: { lang, path: route(lang, 'support') }, props: { kind: 'support' } },
+    { params: { lang, path: route(lang, 'docs') }, props: { kind: 'docs' } },
+    { params: { lang, path: route(lang, 'about') }, props: { kind: 'about' } },
+    { params: { lang, path: route(lang, 'control' as RouteKey) }, props: { kind: 'control' } },
+    { params: { lang, path: route(lang, 'brochure' as RouteKey) }, props: { kind: 'brochure' } },
+    { params: { lang, path: route(lang, 'terms') }, props: { kind: 'legal', doc: 'terms' } },
+    { params: { lang, path: route(lang, 'privacy' as RouteKey) }, props: { kind: 'legal', doc: 'privacy' } },
+    { params: { lang, path: route(lang, 'why' as RouteKey) }, props: { kind: 'why' } },
+    { params: { lang, path: route(lang, 'maintenance') }, props: { kind: 'maintenance' } },
+    { params: { lang, path: route(lang, 'reviews') }, props: { kind: 'reviews' } },
+    ...(hasGuide(lang) ? [{ params: { lang, path: route(lang, 'guide' as RouteKey) }, props: { kind: 'guide' } }] : []),
+    ...info.map((key) => ({ params: { lang, path: route(lang, key) }, props: { kind: 'info', key } })),
+    ...products.map((p, i) => ({
+      params: { lang, path: `${route(lang, 'models')}/${p.data.slug}` },
+      props: { kind: 'model', p, prev: products[(i - 1 + products.length) % products.length], next: products[(i + 1) % products.length] },
+    })),
+  ]);
+}
+const lang = Astro.params.lang as Lang;
+const props = Astro.props as any;
+---
+{props.kind === 'catalog' && <CatalogPage lang={lang} />}
+{props.kind === 'contact' && <ContactPage lang={lang} />}
+{props.kind === 'features' && <FeaturesPage lang={lang} />}
+{props.kind === 'quote' && <QuotePage lang={lang} />}
+{props.kind === 'support' && <SupportPage lang={lang} />}
+{props.kind === 'docs' && <DocsPage lang={lang} />}
+{props.kind === 'about' && <AboutPage lang={lang} />}
+{props.kind === 'why' && <WhyPage lang={lang} />}
+{props.kind === 'legal' && <LegalPage lang={lang} doc={props.doc} />}
+{props.kind === 'control' && <ControlPage lang={lang} />}
+{props.kind === 'brochure' && <BrochurePage lang={lang} />}
+{props.kind === 'maintenance' && <MaintenancePage lang={lang} />}
+{props.kind === 'reviews' && <ReviewsPage lang={lang} />}
+{props.kind === 'guide' && <GuidePage lang={lang} />}
+{props.kind === 'info' && <InfoPage lang={lang} key={props.key} />}
+{props.kind === 'model' && <ModelPage lang={lang} p={props.p} prev={props.prev} next={props.next} />}

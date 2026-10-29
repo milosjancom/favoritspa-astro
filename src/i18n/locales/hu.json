@@ -1,0 +1,936 @@
+{
+  "meta": {
+    "name": "Magyar",
+    "htmlLang": "hu",
+    "hreflang": "hu",
+    "locale": "hu-HU",
+    "legacy": "hu"
+  },
+  "persons": {
+    "one": "{n} fő",
+    "other": "{n} fő"
+  },
+  "values": {
+    "approx": "kb.",
+    "hp": "LE",
+    "decimal": ",",
+    "upTo": "akár"
+  },
+  "routes": {
+    "models": "jakuzzik",
+    "features": "jellemzok",
+    "maintenance": "karbantartas",
+    "contact": "kapcsolat",
+    "quote": "arajanlat",
+    "gallery": "galeria",
+    "reviews": "velemenyek",
+    "faq": "gyik",
+    "about": "rolunk",
+    "terms": "aszf",
+    "support": "ugyfelszolgalat",
+    "docs": "dokumentacio",
+    "why": "miert-favorit-spa",
+    "privacy": "adatvedelem",
+    "control": "vezerlorendszer",
+    "brochure": "katalogus"
+  },
+  "ui": {
+    "nav.models": "Jakuzzik",
+    "nav.features": "Jellemzők",
+    "nav.maintenance": "Karbantartás",
+    "nav.contact": "Kapcsolat",
+    "nav.quote": "Árajánlatkérés",
+    "nav.gallery": "Galéria",
+    "nav.reviews": "Vélemények",
+    "nav.faq": "GYIK",
+    "nav.about": "Rólunk",
+    "nav.brochure": "Katalógus",
+    "nav.control": "Vezérlőrendszer",
+    "nav.terms": "Általános szerződési feltételek",
+    "nav.menu": "Menü",
+    "nav.lang": "Nyelv",
+    "cta": "Árajánlatot kérek",
+    "call": "Hívás",
+    "from": "induló ár",
+    "jets": "fúvóka",
+    "view": "A modell megtekintése",
+    "skip": "Ugrás a tartalomhoz",
+    "home.title": "Favorit SPA – jakuzzik egy kis európai gyártótól",
+    "home.desc": "A Favorit SPA jakuzzikat gyárt: hét modell 2–6 fő részére, robotizált gyártás és harminc év tapasztalat.",
+    "home.intro": "Kis európai jakuzzigyártó. Robotizált gyártás, figyelem az utolsó részletig és harminc év tapasztalat.",
+    "home.models": "Modellek",
+    "lineup.h": "Mind a hét modell, méretarányosan",
+    "lineup.p": "Minden jakuzzit felülről, azonos léptékben mutatunk. Hasonlítsa össze őket, mielőtt lemérné a teraszát.",
+    "offers.h": "Akciós árak",
+    "offers.p": "A készlet erejéig, a modellek mellett feltüntetett felszereltségi csomagra.",
+    "offers.model": "Modell",
+    "maker.h": "Kis európai gyártó",
+    "maker.visit": "Bemutatótermünk és üzemünk hétfőtől szombatig látogatható.",
+    "maker.cta": "Látogatás egyeztetése",
+    "footer.tag": "Jakuzzik. Kis európai gyártó, harminc év tapasztalat.",
+    "footer.note": "A képek illusztrációk; a felszereltség csomagonként eltér.",
+    "footer.catalog": "Katalógus (PDF)",
+    "models.title": "Jakuzzik és árak",
+    "models.lead": "Hét modell három termékvonalban. Mindegyik két vagy három felszereltségi csomagban érhető el, amelyek a fúvókákban, a szivattyúkban és az extrákban különböznek.",
+    "models.packages": "Csomagok",
+    "model.dims": "Méretek",
+    "model.colors": "Akrilszínek",
+    "model.cladding": "Burkolat",
+    "model.photo": "Fotó",
+    "model.saleNote": "Akciós ár a készlet erejéig.",
+    "model.included": "Tartalmazza",
+    "model.inquire": "Árajánlatkérés:",
+    "model.yes": "alapfelszereltség",
+    "model.gallery": "Galéria",
+    "model.item": "Tétel",
+    "quote.title": "Árajánlatkérés",
+    "quote.lead": "Válasszon modellt és csomagot, adja meg az elérhetőségeit, és elküldjük ajánlatunkat. Még nem döntött? Írja le a helyszínt, és segítünk választani.",
+    "quote.steps": [
+      "Válasszon modellt és csomagot",
+      "Adja meg elérhetőségeit, és írjon pár szót a helyszínről",
+      "Ajánlattal jelentkezünk"
+    ],
+    "quote.model": "Modell",
+    "quote.email": "E-mail",
+    "quote.contactAlt": "Inkább beszélne velünk? Hívjon minket, vagy nézze meg kapcsolati oldalunkat.",
+    "contact.toQuote": "Egy adott modellre vonatkozó ajánlatért küldjön árajánlatkérést.",
+    "contact.title": "Kapcsolat",
+    "contact.lead": "Hívjon, írjon nekünk, vagy látogasson el bemutatótermünkbe és üzemünkbe hétfőtől szombatig.",
+    "contact.address": "Cím",
+    "contact.msgPh": "Például hová kerül a jakuzzi, és mikorra van rá szüksége",
+    "contact.sendNote": "Kérése e-mailként nyílik meg a levelezőprogramjában, címzett:",
+    "info.soon": "Ez az oldal az új weboldal következő változatában készül el.",
+    "info.current": "A jelenlegi változat megnyitása",
+    "nav.support": "Ügyfélszolgálat",
+    "nav.docs": "Dokumentáció",
+    "model.equipment": "Felszereltség és műszaki adatok",
+    "model.equipLead": "A jakuzzi teljes felszereltsége csoportosítva, csomagonként összevetve.",
+    "model.groups": {
+      "specs": "Műszaki adatok",
+      "massage": "Masszázs",
+      "water": "Tiszta víz",
+      "control": "Vezérlés és energia",
+      "light": "Fény, hang és illat",
+      "comfort": "Fedések, kényelem és szerviz",
+      "build": "Váz és szigetelés",
+      "finish": "Felületek"
+    },
+    "model.installs": "Vásárlóinknál",
+    "model.installsLead": "Tulajdonosok fotói, adriai teraszoktól hegyi faházakig.",
+    "model.tech": "Technológia ebben a jakuzziban",
+    "model.techMore": "Minden jellemző",
+    "reach.h": "Svédországtól Görögországig",
+    "reach.p": "Európa mindkét végére készülnek. A PU szigetelés (hidegebb vidékekre 30 mm-es) és a méretre készült hőtakaró megtartja a meleget a svéd télben, az ózon, az UV-lámpa és a Gecko vezérlés pedig tisztán tartja a vizet a görög nyárban. A Sinter Wood burkolat bírja a fagyot, a sós tengeri levegőt és a napot, karbantartás nélkül.",
+    "reach.stats": [
+      [
+        "30",
+        "év jakuzzigyártás"
+      ],
+      [
+        "7",
+        "modell 2–6 fő részére"
+      ],
+      [
+        "11",
+        "ország, ahol jakuzzijainkat élvezik"
+      ]
+    ],
+    "reach.countries": [
+      "Svédország",
+      "Németország",
+      "Ausztria",
+      "Magyarország",
+      "Szlovénia",
+      "Horvátország",
+      "Bosznia-Hercegovina",
+      "Szerbia",
+      "Montenegró",
+      "Albánia",
+      "Görögország"
+    ],
+    "footer.big": "Gondosan készült jakuzzik az emlékezetes pillanatokhoz.",
+    "footer.models": "Jakuzzik",
+    "footer.visitNote": "Bemutatóterem és üzem, hétfőtől szombatig",
+    "support.title": "Ügyfélszolgálat",
+    "support.lead": "A szállítás után is Ön mellett maradunk. Karbantartás, garancia, telepítési feltételek és szervizkérés, egy helyen.",
+    "support.cards": [
+      [
+        "wrench",
+        "Karbantartás",
+        "Víz, szűrők és téli üzemmód, lépésről lépésre.",
+        "maintenance"
+      ],
+      [
+        "question",
+        "GYIK",
+        "A leggyakoribb kérdések vásárlás előtt és után.",
+        "faq"
+      ],
+      [
+        "file-pdf",
+        "Dokumentáció",
+        "Műszaki rajzok, katalógus és telepítési adatok.",
+        "docs"
+      ],
+      [
+        "headset",
+        "Szervizkérés",
+        "Írja le a problémát, és hamarosan jelentkezünk.",
+        "#servis"
+      ]
+    ],
+    "support.warranty": "Garancia",
+    "support.warrantyRows": [
+      [
+        "Magánhasználat",
+        "24 hónap a szállítástól"
+      ],
+      [
+        "Kereskedelmi használat (szállodák, wellnessközpontok, bérlés)",
+        "12 hónap a szállítástól"
+      ]
+    ],
+    "support.warrantyNote": "A garancia minden beépített alkatrészre kiterjed. A garanciaidő lejárta után is biztosítjuk a szervizt és az alkatrészeket. A szűrőkre és a vízápoló szerekre a garancia nem vonatkozik.",
+    "support.max": "Service MAX 72h",
+    "support.maxP": "A MAX szervizcsomaggal technikusunk hívását követő 72 órán belül kiérkezik, szükség esetén alkatrészekkel.",
+    "support.prep": "Telepítés előtt",
+    "support.prepList": [
+      "Vízszintes, teherbíró betonalap, amely kb. 40%-kal nagyobb a jakuzzinál, hogy minden oldalról hozzáférhető legyen.",
+      "3×2,5 mm² vagy 5×2,5 mm² tápkábel a modelltől függően, kb. 4 m hosszan a jakuzzi helyétől.",
+      "Előírás szerinti áram-védőkapcsoló (FI-relé) és biztosítékok. A bekötést csak jogosultsággal rendelkező villanyszerelő végezheti.",
+      "Vízbekötés nem szükséges: a jakuzzi kerti slaggal tölthető fel, és a beépített szelepen át üríthető.",
+      "A szűrőt legalább évente egyszer cserélje."
+    ],
+    "support.form": "Szervizkérés",
+    "support.formLead": "Adja meg a modellt, és írja le, mi történik. A megnyíló e-mailhez fotókat is csatolhat.",
+    "support.year": "Vásárlás éve",
+    "support.issuePh": "Például a kijelzőn megjelenő üzenet, mióta fordul elő, és mit próbált már",
+    "docs.title": "Dokumentáció",
+    "docs.lead": "Műszaki rajzok, telepítési adatok és a katalógus, egy helyen.",
+    "docs.models": "Telepítési adatok",
+    "docs.cols": [
+      "Modell",
+      "Méretek",
+      "Térfogat",
+      "Önsúly",
+      "Tápellátás",
+      "Rajz"
+    ],
+    "docs.general": "Általános dokumentumok",
+    "docs.pdf": "PDF",
+    "docs.weightNote": "A tömeg és a tápellátás a csomagtól függ; a tartomány az alapcsomagtól a legfelső csomagig terjed.",
+    "countries": {
+      "Serbia": "Szerbia",
+      "Montenegro": "Montenegró",
+      "Bosnia": "Bosznia-Hercegovina",
+      "Croatia": "Horvátország"
+    },
+    "offers.pkg": "Csomag",
+    "offers.was": "Normál ár",
+    "offers.now": "Akciós ár",
+    "offers.save": "megtakarítás",
+    "model.persons": "Ülőhelyek",
+    "model.jets": "Fúvókák",
+    "model.price": "Ár",
+    "model.packages": "Felszereltségi csomagok",
+    "model.choose": "Válasszon csomagot",
+    "model.jetsLine": "hidro- és légfúvóka",
+    "model.notIncluded": "Nem tartalmazza",
+    "model.opt": "választható extra",
+    "model.no": "nem elérhető",
+    "model.drawing": "Műszaki rajz (PDF)",
+    "model.others": "További modellek",
+    "quote.pkg": "Csomag",
+    "quote.any": "Még nem döntöttem",
+    "quote.you": "Az Ön adatai",
+    "quote.place": "Hová kerül a jakuzzi",
+    "quote.places": [
+      "Terasz",
+      "Kert",
+      "Tetőterasz",
+      "Beltér"
+    ],
+    "contact.phone": "Telefon",
+    "contact.email": "E-mail",
+    "contact.map": "Térkép megnyitása",
+    "contact.name": "Teljes név",
+    "contact.tel": "Telefon",
+    "contact.city": "Település",
+    "contact.msg": "Üzenet",
+    "contact.send": "Kérés elküldése",
+    "footer.explore": "Felfedezés",
+    "footer.help": "Segítség",
+    "footer.visit": "Látogasson el hozzánk",
+    "support.issue": "Mi történik",
+    "lineup.topView": "felülnézet",
+    "gallery.photo": "fotó",
+    "gallery.gallery": "galéria",
+    "gallery.close": "Bezárás",
+    "gallery.prev": "Előző",
+    "gallery.next": "Következő",
+    "contact.hours": "Bemutatóterem és üzem: hétfőtől szombatig",
+    "country": "Szerbia",
+    "model.metaDesc": "{name} jakuzzi {persons} részére, {dims}, akár {jets} fúvókával. Induló ár: {price}.",
+    "features.lead": "Ami minden Favorit jakuzziba bekerül: bevált alkatrészek, többségük a Geckótól, és a részletek, amelyekről magunk gondoskodunk.",
+    "features.count": "jellemző",
+    "features.end": "Hogy melyik jellemző melyik csomagban szerepel, azt minden modell oldalán megtalálja.",
+    "docs.generalList": [
+      "Favorit SPA katalógus",
+      "Általános szerződési feltételek",
+      "Karbantartási útmutató",
+      "Telepítési feltételek és garancia"
+    ],
+    "mail.quote": {
+      "subject": "Árajánlatkérés",
+      "labels": [
+        "Név",
+        "E-mail",
+        "Telefon",
+        "Település",
+        "Modell",
+        "Csomag",
+        "Helyszín"
+      ]
+    },
+    "mail.service": {
+      "subject": "Szervizkérés",
+      "labels": [
+        "Név",
+        "Telefon",
+        "Modell",
+        "Vásárlás éve",
+        "Település"
+      ]
+    },
+    "home.prev": "Előző modell",
+    "home.next": "Következő modell",
+    "home.craftAlt": "Pearl medencetest, stúdiófotó",
+    "nav.closeShort": "Bezárás",
+    "settings.title": "Megjelenítés",
+    "settings.theme": "Téma",
+    "settings.light": "Világos",
+    "settings.dark": "Sötét",
+    "settings.auto": "Automatikus",
+    "settings.text": "Betűméret",
+    "settings.smaller": "Normál szöveg",
+    "settings.larger": "Nagyobb szöveg",
+    "settings.largest": "Legnagyobb szöveg",
+    "nav.guide": "Használati útmutató",
+    "support.guideCard": "Lépésről lépésre a feltöltéstől a téliesítésig, egy helyen.",
+    "about.ctaQuote": "Árajánlatot kérek",
+    "nav.why": "Miért a Favorit SPA",
+    "nav.privacy": "Adatvédelmi tájékoztató",
+    "nav.groupHelp": "Támogatás",
+    "nav.groupStory": "Rólunk",
+    "nav.helpIntro": "A szállítás után is Önnel vagyunk: útmutatók, dokumentumok és szerviz egy helyen.",
+    "nav.storyIntro": "Kis európai gyártó Šabacból, Szerbiából. Harminc éve készítünk jakuzzikat, és a telefonnál ugyanazok az emberek válaszolnak, akik építik őket."
+  },
+  "products": {
+    "eden": {
+      "tagline": "ihlet hat főre",
+      "description": "A kör: folytonosság és állandóság, akárcsak maga az élet. Az Eden kerek medencéjében hatan ülnek, így mindenki egymással szemben. Élvezze végtelenül, azokkal, akik a legközelebb állnak Önhöz.",
+      "claim": "Hat ülőhely körben, szemtől szemben. Az Eden a családnak, a barátoknak és a csillagok alatti hosszú beszélgetéseknek készült."
+    },
+    "fusion": {
+      "tagline": "minden, ami kell, egyensúlyban",
+      "description": "Mindannak egysége, amire szüksége van: tér, funkció, szépség és épp elég. A Fusion az egyensúly másik neve.",
+      "claim": "Két fekvőhely és két ülés egy kompakt négyzetben. Minden, ami kell, semmi fölösleges."
+    },
+    "garden": {
+      "tagline": "wellness a szabad ég alatt",
+      "description": "A Garden mellett teljesen átadhatja magát a pillanatnak. Az idő megáll, és rövid szabadsággá válik, messze a város zajától, wellnessélménnyel hat fő részére.",
+      "claim": "A kínálat legnagyobb darabja: hat ülőhely, erős szivattyúk és teljes testmasszázs. A Garden a hátsó kertet privát wellnessé varázsolja."
+    },
+    "melody": {
+      "tagline": "sok minden abban, ami kicsinek tűnik",
+      "description": "Annyi élmény abban, ami csak kicsinek tűnik. Semmi ilyen kompakt nem nyújt ennyi élvezetet. Igazi Melody.",
+      "claim": "Kettesben, kis teraszokra és nagy pillanatokra. A Melody ott is elfér, ahol más jakuzzi nem."
+    },
+    "pearl": {
+      "tagline": "ugyanazt a horizontot nézve",
+      "description": "Közelség és meghittség, miközben mindketten ugyanazt a horizontot nézik. Lehetne jobb? Kell ennél több?",
+      "claim": "Két főre készült, egy vendégnek is jut hely. Egy fekvőhely, csendes masszázs és ugyanaz a horizont."
+    },
+    "point": {
+      "tagline": "a kiindulópont",
+      "description": "Kiindulópont a közös pillanatokhoz. Gyors, egyszerű, és az első lépés a wellness világába.",
+      "claim": "A legrövidebb út a saját wellnesshez. Négy ülőhely, egyszerű használat, könnyű első lépés."
+    },
+    "zen": {
+      "tagline": "tér a választásra, tér a vágyakra",
+      "description": "Tér a választásra és tér a vágyakra. Merüljön el, figyeljen arra, amire szüksége van, és a többit bízza a vízre. Váltson helyet, amíg meg nem találja a tökéleteset. Legyen ZEN.",
+      "claim": "Öt ülőhely, egy fekvőhely, és mindenki megtalálja a maga helyét. A Zen az a jakuzzi, ahol az esték maguktól nyúlnak hosszúra."
+    }
+  },
+  "labels": {
+    "Aero mlaznice (komada)": "Légfúvókák (db)",
+    "Aero mlaznice set": "Légfúvóka-készlet",
+    "Aero pumpa": "Légszivattyú",
+    "Antibakterijski filter": "Antibakteriális szűrő",
+    "Aromaterapija": "Aromaterápia",
+    "Blue energy block": "Blue energy block",
+    "Broj mesta": "Ülőhelyek",
+    "Cirada": "Időjárásálló ponyva",
+    "Cirkulaciona pumpa": "Keringető szivattyú",
+    "Dodatni grejač 3kW": "Kiegészítő fűtőtest, 3 kW",
+    "Drenažni ventil": "Ürítőszelep",
+    "Elektronska kontrola": "Vezérlőrendszer",
+    "Fiberglas omotač": "Üvegszálas hátoldal",
+    "Grejač": "Fűtőtest",
+    "HDS okvir stiren visoke gustine": "HDS nagy sűrűségű sztirol váz",
+    "Hidro mlaznice (komada)": "Hidrofúvókák (db)",
+    "Hidro mlaznice kombo (set)": "Kombinált hidrofúvókák (készlet)",
+    "Hidro pumpa 2ks (komada)": "Hidroszivattyú, 2 LE (db)",
+    "Hidro pumpa 3ks (komada)": "Hidroszivattyú, 3 LE (db)",
+    "Hromoterapija": "Kromoterápia",
+    "Jastuk (set)": "Fejtámlák (készlet)",
+    "Kontrolni blok": "Vezérlőegység",
+    "Led mini lampe": "LED minilámpák",
+    "Low water level": "Alacsony vízszint érzékelő",
+    "Magma mlaznice (4 komada)": "Magma fúvókák (4 db)",
+    "Materijal lica": "Medencetest anyaga",
+    "Metal konstrukcija": "Fém váz",
+    "Music system": "Zenei rendszer",
+    "Ozonoterapija": "Ózonos kezelés",
+    "PEARL-WHITE finish": "PEARL-WHITE felület",
+    "PURE-WHITE finish": "PURE-WHITE felület",
+    "Pametno led svetlo": "Okos LED-világítás",
+    "Parna membrana": "Párazáró réteg",
+    "Polar izolacija 10mm": "Polar szigetelés, 10 mm",
+    "Polar izolacija 30mm": "Polar szigetelés, 30 mm",
+    "Potrebna snaga": "Tápellátás",
+    "SILVER-PLATINUM finish": "SILVER-PLATINUM felület",
+    "SMF snažan metalni ram": "SMF nagy teherbírású fémkeret",
+    "SPA kontola GECKO IN.K.1000": "GECKO in.k1000 vezérlés",
+    "Sedeća mesta / Ležeća mesta": "Ülőhelyek / fekvőhelyek",
+    "Servis 72h": "72 órás szerviz",
+    "Sigurnosno monofazno napajanje": "Biztonságos egyfázisú tápellátás",
+    "Smartphone platforma": "Okostelefonos platform",
+    "Stepenice": "Lépcső",
+    "Svetleće hidro mlaznice": "Világító hidrofúvókák",
+    "Svetleće mini mlaznice": "Világító minifúvókák",
+    "Temperaturni opseg upotrebe": "Üzemi hőmérséklet-tartomány",
+    "Termo pokrivač": "Hőszigetelő fedél",
+    "Termo ventilacija": "Termoszellőzés",
+    "Termo-stone finish": "Termo-stone felület",
+    "Težina": "Tömeg",
+    "Thermostron omotač": "Thermostron szigetelés",
+    "UV lampa": "UV-lámpa",
+    "Visoko led svetlo": "Magas LED-lámpa",
+    "Zapremina": "Térfogat",
+    "Zvučni sistem": "Hangrendszer",
+    "Čist hemijski sistem": "in.clear vízápoló rendszer"
+  },
+  "featureGroups": {
+    "control": "Vezérlés",
+    "massage": "Masszázs",
+    "water": "Tiszta víz",
+    "warmth": "Hő és energia",
+    "build": "Váz és burkolat",
+    "experience": "Élmény",
+    "service": "Szerviz"
+  },
+  "features": {
+    "spa-control": {
+      "t": "Vezérlőrendszer",
+      "d": "Az elektronika minden jakuzzi agya. A kanadai Gecko alkatrészeit használjuk: egyszerű kezelés, megbízhatóság, hosszú élettartam. A vezérlőpanelek a csomagtól függően az in.k200-tól az in.k1000-ig terjednek."
+    },
+    "online": {
+      "t": "Online platform 0–24",
+      "d": "Irányítsa jakuzziját akkor is, amikor nincs otthon. Kapcsolja be telefonjáról, állítsa be a hőmérsékletet, a szivattyúkat és a világítást, és mire megérkezik, a víz készen várja."
+    },
+    "hydro-pump": {
+      "t": "Hidroszivattyú",
+      "d": "Ha az elektronika az agy, a szivattyúk a szív. 2 vagy 3 LE, alacsony fogyasztás és csendes működés."
+    },
+    "aero-pump": {
+      "t": "Légszivattyú",
+      "d": "A beépített fűtésű, erős szivattyú meleg levegőt juttat minden légfúvókába. A masszázs kellemesebb, a víz kevésbé hűl. Ráadásul csendesen működik."
+    },
+    "jets": {
+      "t": "Hidro- és légfúvókák",
+      "d": "A fúvókákhoz és a kezelőelemekhez ér hozzá ténylegesen, ezért jól kell elkészülniük, és szépnek is kell lenniük. A Gecko bármilyen időjárásra tervezett kombinált sorozatát használjuk. Ezekkel a szivattyúk teljes erejükkel, szinte hangtalanul dolgoznak."
+    },
+    "circulation": {
+      "t": "Keringető szivattyú",
+      "d": "Folyamatosan működik, és a teljes vízmennyiséget átvezeti a szűrőn és a fűtőtesten, így a jakuzzi mindig használatra kész."
+    },
+    "inclear": {
+      "t": "in.clear vízápolás",
+      "d": "A Gecko in.clear rendszere brómot juttat a vízbe, amely eltávolítja a baktériumokat, az algákat és a szerves anyagokat, így a víz mindig kellemes és pihentető."
+    },
+    "ozone": {
+      "t": "Ózongenerátor",
+      "d": "A levegő oxigénjéből ózont állít elő, amely a rendszer minden részébe eljut, és kristálytisztán tartja a vizet."
+    },
+    "filter": {
+      "t": "Antibakteriális szűrő",
+      "d": "Aktívszenes szűrő nagyon finom perforációval, amely felfogja a vízre hulló leveleket, fűszálakat és apró szennyeződéseket."
+    },
+    "uv": {
+      "t": "UV-lámpa",
+      "d": "Az UV-fény a baktériumok széles körét eltávolítja, amelyek egyébként megtelepedhetnének a vízben."
+    },
+    "water": {
+      "t": "Vízminőség",
+      "d": "A Cleanwater Blue tisztán és kémiailag kiegyensúlyozottan tartja a vizet, vegyszerszag nélkül, a bőrt kímélve."
+    },
+    "heater": {
+      "t": "Fűtőtest",
+      "d": "A vezérlőegységbe épített 3 kW-os fűtőtest, 0,5 °C-os lépésekben állítható."
+    },
+    "insulation": {
+      "t": "Szigetelés",
+      "d": "A 10 mm-es, alumíniumfólia réteggel ellátott PU szigetelés bent tartja a hőt, energiát takarít meg és védi az alkatrészeket. Hidegebb éghajlatra 30 mm-es változat is választható."
+    },
+    "cover": {
+      "t": "Hőszigetelő fedél",
+      "d": "Méretre készül nagy sűrűségű PU habból, hőfóliával és nedvesség- és UV-álló műbőr borítással. Szélei enyhén lejtenek, így a víz lefolyik róla."
+    },
+    "tarp": {
+      "t": "Időjárásálló ponyva",
+      "d": "Vízálló, méretre készült ponyva, amely a hőszigetelő fedéllel együtt télen is védi a jakuzzit."
+    },
+    "frame": {
+      "t": "Váz",
+      "d": "Merev váz, amely akkor sem csavarodik el, ha a jakuzzit mozgatják, és nem vezeti a szivattyúk és az elektronika hangját. HDS nagy sűrűségű sztirol váz is választható."
+    },
+    "cladding": {
+      "t": "Burkolat",
+      "d": "A Sinter Wood burkolat fának látszik, de nem igényel karbantartást: ellenáll az időjárásnak és az ütéseknek, és tompítja a hangot. Grey Wood és Rose Wood színben."
+    },
+    "stairs": {
+      "t": "Lépcső",
+      "d": "Csúszásmentes lépcső a könnyű és biztonságos beszálláshoz, több színben."
+    },
+    "led": {
+      "t": "Okos LED-világítás",
+      "d": "A gazdag színskála fényjátékká változtatja a buborékokat. A High Light változat krómgyűrűvel készül."
+    },
+    "aroma": {
+      "t": "Aromaterápia",
+      "d": "Válassza ki kedvenc illatát a mélyebb ellazuláshoz: cédrus, citrus, eukaliptusz, őszibarack és még sok más."
+    },
+    "sound": {
+      "t": "Hangrendszer",
+      "d": "Gyors Bluetooth-párosítás, jó hangzás és egyszerű használat."
+    },
+    "service": {
+      "t": "Service MAX 72h",
+      "d": "A meghibásodás sosem jelez előre. Ezzel a szervizcsomaggal technikusunk hívását követő 72 órán belül kiérkezik, szükség esetén alkatrészekkel."
+    }
+  },
+  "tech": {
+    "spa-control": "Gecko vezérlés",
+    "online": "Okostelefonos vezérlés",
+    "hydro-pump": "Hidroszivattyúk, 2–3 LE",
+    "aero-pump": "Fűtött légszivattyú",
+    "ozone": "Ózongenerátor",
+    "uv": "UV-lámpa",
+    "inclear": "in.clear",
+    "filter": "Antibakteriális szűrő",
+    "insulation": "Hőszigetelés",
+    "led": "Okos LED-világítás",
+    "aroma": "Aromaterápia",
+    "sound": "Bluetooth hangrendszer",
+    "service": "Service MAX 72h"
+  },
+  "about": {
+    "title": "A Favorit SPA-ról",
+    "metaTitle": "Rólunk – Favorit SPA, jakuzzigyártó Šabacból, Szerbia",
+    "metaDesc": "A Favorit SPA kis európai jakuzzigyártó Šabacból, Szerbiából. 30 év tapasztalat, hét modell 2–6 fő részére, Gecko alkatrészek, pótalkatrészek raktáron.",
+    "lead": "Kis európai jakuzzigyártó Šabacból, Szerbiából. Harminc éve magunk tervezzük, gyártjuk, értékesítjük és szervizeljük jakuzzijainkat, az első vázlattól az utolsó pótalkatrészig.",
+    "facts": [
+      [
+        "30",
+        "év tapasztalat"
+      ],
+      [
+        "7",
+        "modell három termékvonalban"
+      ],
+      [
+        "2–6",
+        "fő jakuzzinként"
+      ],
+      [
+        "24",
+        "hónap garancia"
+      ],
+      [
+        "11",
+        "ország, ahol jakuzzijaink állnak"
+      ],
+      [
+        "1",
+        "cím: gyártás és bemutatóterem Šabacban"
+      ]
+    ],
+    "sections": [
+      {
+        "h": "Kik vagyunk",
+        "p": [
+          "Mi vagyunk a Favorit: mérnökökből, egy formatervezőből és szakemberekből álló családi csapat, amely három évtizede gyárt jakuzzikat Šabacban. Minden egy fedél alatt történik: tervezés, gyártás, értékesítés és szerviz.",
+          "Nevezze jakuzzinak, spának, pezsgőfürdőnek vagy masszázsmedencének. Nekünk mindig ugyanazt jelenti: gondosan elkészített medencét, amelyben kényelmes ülni, kellemes megérinteni, és amely a fúvókák bekapcsolásakor erőteljes."
+        ]
+      },
+      {
+        "h": "Hogyan készülnek",
+        "p": [
+          "Robotizált gépek formázzák és munkálják meg az akrilhéjakat, mindig ugyanazzal a pontossággal. Ezután csapatunk kézzel erősíti meg, szigeteli, huzalozza és szereli össze az egyes jakuzzikat, és az utolsó részletig ellenőrzi őket, mielőtt elhagyják a műhelyt.",
+          "Szándékosan maradunk kicsik. Így minden általunk készített jakuzzit ismerünk, és ha valami újat tanulunk, még aznap változtathatunk egy részleten."
+        ]
+      },
+      {
+        "h": "Alkatrészek, amelyekben megbízunk",
+        "p": [
+          "A vezérlés, a szivattyúk és a fúvókák a spaipar legelismertebb gyártóitól származnak, köztük a kanadai Gecko és a Waterway termékei. Olyan alkatrészeket választunk, amelyek egyszerűen kezelhetők, csendesek és tartósak, így a jakuzzi magától működik, Önnek pedig csak élveznie kell."
+        ]
+      },
+      {
+        "h": "Az eladás után",
+        "p": [
+          "Minden pótalkatrész, amelyre szüksége lehet, már a polcainkon van. Ha munkanapon délig megrendeli, másnap már az Ön címén van.",
+          "Mérnökeink telefonon és videohívásban is válaszolnak, így a legtöbb kérdés percek alatt megoldódik. Favorit SPA jakuzzija mindig készen áll a következő estére."
+        ]
+      },
+      {
+        "h": "Alacsony fenntartási költség",
+        "p": [
+          "Az energiatakarékos szivattyúk (A+ osztály) és fűtőegységek (C osztály), a jó szigetelés és a pontosan illeszkedő takaró alacsonyan tartja a számlákat. Kínálatunk átlagában az energia és a szűrők havonta körülbelül 20 EUR-ba kerülnek, nagyjából napi egy eszpresszó árába."
+        ]
+      },
+      {
+        "h": "Hol találkozhat jakuzzijainkkal",
+        "p": [
+          "A Favorit jakuzzik adriai teraszokat, síterepek hegyi faházait és kerteket melegítenek szerte Európában, Svédországtól Görögországig. A megfelelő csomaggal egész évben működnek, nyári hőségben és hóban is."
+        ]
+      }
+    ],
+    "visit": {
+      "h": "Látogasson el az üzembe",
+      "p": "Nézze meg a jakuzzikat személyesen, üljön bele, és beszéljen azokkal, akik készítik őket. Šabaci bemutatótermünk és üzemünk hétfőtől szombatig látogatható.",
+      "cta": "Látogatás egyeztetése"
+    },
+    "faqTitle": "Gyors válaszok",
+    "faq": [
+      [
+        "Hol készülnek a Favorit jakuzzik?",
+        "Saját üzemünkben, a szerbiai Šabacban, ahol bemutatótermünk is van. A Favorit DOO 30 éve gyárt jakuzzikat."
+      ],
+      [
+        "Meddig tart egy Favorit jakuzzi?",
+        "Rendszeres ápolással 15–20 évig. Tisztítsa rendszeresen a szűrőt, évente cserélje, és készítse elő megfelelően a jakuzzit, ha télen használaton kívül áll."
+      ],
+      [
+        "Kell vízvezeték a telepítéshez?",
+        "Nem. Egy vízszintes betonalapra és egy tápkábelre van szükség. A jakuzzit kerti tömlővel tölti fel, és a beépített szelepen keresztül üríti le."
+      ],
+      [
+        "Mennyibe kerül a fenntartása?",
+        "Átlagosan havonta körülbelül 20 EUR energiára és szűrőkre, a modelltől, a csomagtól és a használat gyakoriságától függően."
+      ],
+      [
+        "Milyen garanciát adnak?",
+        "Magáncélú használatra 24 hónapot, üzleti használatra 12 hónapot, minden beépített alkatrészre. A szervizelés és a pótalkatrészek a garancia lejárta után is elérhetők."
+      ]
+    ]
+  },
+  "maintenance": {
+    "title": "Karbantartás",
+    "metaDesc": "Így tartja tisztán a Favorit SPA jakuzzi vizét: egyszerű heti és havi teendők, valamint az általunk ajánlott vízápoló szerek adagolással.",
+    "lead": "A tiszta víz hetente néhány percet vesz igénybe. A munka nagy részét az ózongenerátor, a keringető szivattyú és a szűrő végzi; Önnek csak mérnie, pótolnia és öblítenie kell. Íme a teendők, valamint a szerek, amelyeket mi magunk is használunk és forgalmazunk.",
+    "scheduleH": "A teendők",
+    "schedule": [
+      [
+        "Minden használatkor",
+        "Beszállás előtt zuhanyozzon le. Kiszálláskor zárja le és rögzítse a takarót."
+      ],
+      [
+        "Hetente",
+        "Mérje meg a pH-értéket (7,2–7,4) és a fertőtlenítőszer szintjét. Adagolja a DEWAN-20 P és az ALGI-CID szert. Locsolócsővel öblítse át a szűrőt."
+      ],
+      [
+        "Havonta",
+        "Végezzen sokkolást az ALGA-SOKK P szerrel. A szűrőt egy éjszakára áztassa DINAX FILTER FIZZY P oldatba. Ha habot vagy zsíros csíkokat lát, adjon a vízhez BIOPOOL G szert."
+      ],
+      [
+        "Vízcserekor",
+        "Használattól függően néhány hetente. Leeresztés előtt tisztítsa meg a csöveket DINASAN P szerrel. Kemény víz vagy kútvíz esetén töltéskor adjon a vízhez DINAX METAL MAGIC F szert."
+      ],
+      [
+        "Évente",
+        "Cserélje ki a szűrőt, ellenőrizze a takarót, és készítse fel a jakuzzit a télre, vagy a megfelelő csomaggal tartsa tovább üzemben."
+      ]
+    ],
+    "volumeNote": "Az alábbi adagok köbméter (m³) vízre vonatkoznak. A Favorit jakuzzik kb. 0,4 és 2,3 m³ közötti vizet tartalmaznak; az egyes modellek térfogatát a Dokumentáció oldalon találja.",
+    "productsH": "Ajánlott szerek",
+    "productsLead": "Bevizsgált és tanúsított professzionális vízápoló szerek, amelyeket a jakuzzival együtt vagy következő rendelésével beszerezhet tőlünk.",
+    "labels": {
+      "use": "Mire való",
+      "dose": "Használat"
+    },
+    "products": [
+      {
+        "id": "alga-sokk-p",
+        "name": "ALGA-SOKK® P",
+        "kind": "Sokkfertőtlenítő granulátum",
+        "use": "Időszakos sokkolás: első töltéskor, havonta egyszer, valamint a DEWAN-20 P használatának megkezdése előtt. Eltávolítja a biofilmet a csövekből és a fúvókákból.",
+        "dose": "2–3 kanálnyit szórjon a teli jakuzziba. Többször járassa a szivattyúkat 10 percnél hosszabb ideig. Hagyja hatni legalább 2 órán át. Ha a fúvókákból már nem jön biofilm, engedje le a vizet, öblítse ki a medencét, és töltse újra."
+      },
+      {
+        "id": "dewan-20-p",
+        "name": "DEWAN®-20 P",
+        "kind": "Klórmentes fertőtlenítő granulátum",
+        "use": "Klór nélküli napi fertőtlenítés. Az adagolás után 3 órával fejti ki hatását, és a sokkolások között tisztán tartja a vizet.",
+        "dose": "Tartsa a szintet 3–5 mg/l között, DEWAN-20 tesztcsíkkal ellenőrizve. Hetente egyszer adagolja vízben feloldva, az ALGI-CID szerrel együtt. A pH-értéket tartsa 7,2 és 7,4 között."
+      },
+      {
+        "id": "algi-cid",
+        "name": "ALGI-CID",
+        "kind": "Algásodásgátló, folyékony",
+        "use": "Megakadályozza a zöld és sötét algák megjelenését, a víz zavarosodását, a kellemetlen szagot és a szűrő eltömődését. Bármilyen pH-értéknél hatásos, biológiailag lebomló és nem habzik.",
+        "dose": "Az első adagot friss töltéskor adja a vízhez, utána hetente egy kisebb adagot a fertőtlenítőszerrel együtt, a címkén leírtak szerint."
+      },
+      {
+        "id": "dinax-minus-p",
+        "name": "DINAX® MINUS P",
+        "kind": "pH-csökkentő granulátum",
+        "use": "Visszaállítja a pH-értéket 7,2–7,4 közé, ahol a fertőtlenítőszerek a leghatékonyabbak.",
+        "dose": "Kb. 0,1 kg köbméterenként, feloldva. Újabb adagolás előtt mérjen újra. Viseljen kesztyűt és védőszemüveget."
+      },
+      {
+        "id": "biopool-g",
+        "name": "BIOPOOL G",
+        "kind": "Enzimes gél",
+        "use": "Lebontja a zsírt, a nyálkát és a biofilmet, csökkenti a habzást és segíti a szűrő működését. Nem mérgező és biológiailag lebomló; teljes hatását egy hónap alatt éri el.",
+        "dose": "Első alkalommal 20 ml köbméterenként, utána hetente egyszer 10 ml köbméterenként, a szűrőtérbe."
+      },
+      {
+        "id": "dinasan-p",
+        "name": "DINASAN P",
+        "kind": "Csőtisztító és fertőtlenítő szer",
+        "use": "Megtisztítja és fertőtleníti a hozzá nem férhető csöveket és fúvókákat: eltávolítja a biofilmet, valamint a habzást okozó olajokat, szappan- és zsírmaradványokat.",
+        "dose": "Leeresztés előtt: 250 g köbméterenként a szűrőtérbe. Járassa a keringetést 5 percig, állítsa le, hagyja állni 2 órát, majd járassa újra, eressze le a vizet és öblítse ki."
+      },
+      {
+        "id": "dinax-metal-magic",
+        "name": "DINAX® METAL MAGIC F",
+        "kind": "Vízkő- és fémstabilizátor",
+        "use": "Megelőzi a vízkőlerakódást és a vas okozta barna elszíneződést, például kútvízzel való töltés vagy kemény víz esetén.",
+        "dose": "Töltés közben 30–50 ml köbméterenként; 20 °GH alatti keménységnél 50 ml köbméterenként. Ne adagolja túl."
+      },
+      {
+        "id": "filter-fizzy",
+        "name": "DINAX® FILTER FIZZY P",
+        "kind": "Szűrőtisztító por",
+        "use": "Alaposan megtisztítja a papírszűrőket az ásványi lerakódásoktól.",
+        "dose": "Oldjon fel egy A és egy B tasakot 5–10 l forró vízben. Áztassa benne a szűrőt 1 órán át, erős szennyeződés esetén akár 24 órán át. Folyó víz alatt, függőlegesen tartva öblítse le, és hagyja megszáradni."
+      }
+    ],
+    "safety": "Bármely vegyszer használata előtt mindig olvassa el a címkét, a szereket száraz, hűvös helyen tárolja, és soha ne keverje őket egymással. Gyermekektől elzárva tartandó.",
+    "guideH": "Lépésről lépésre",
+    "guideP": "A töltést, az első indítást, a vízápolást, a szűrőket, a leeresztést és a téliesítést részletesen ismerteti a használati útmutató.",
+    "askH": "Nem biztos benne, mire van szüksége?",
+    "askP": "Küldjön nekünk egy fotót a vízről vagy a tesztcsíkról, és megmondjuk, mit adjon hozzá."
+  },
+  "reviews": {
+    "title": "Vélemények",
+    "metaDesc": "Mit mondanak a tulajdonosok a Favorit SPA jakuzzikról és a szervizről: 4,7 az 5-ből 70 Google-értékelés alapján, valamint fotók valódi telepítésekről.",
+    "lead": "Mit mondanak tulajdonosaink a jakuzzikról, a szervizről és a šabaci látogatásról. Fontos számunkra az Ön véleménye.",
+    "ratingOf": "az 5-ből",
+    "ratingCount": "{n} Google-értékelés",
+    "seeAll": "Az összes értékelés a Google-on",
+    "write": "Értékelés írása a Google-on",
+    "ownerH": "Önnek is Favorit SPA jakuzzija van?",
+    "ownerP": "Ossza meg tapasztalatait. Másoknak segít a választásban.",
+    "note": "Az értékeléseket úgy közöljük, ahogyan a Google-on megjelentek.",
+    "installsH": "Valódi telepítések",
+    "installsP": "Tulajdonosaink által küldött fotók, adriai teraszoktól hegyi faházakig."
+  },
+  "why": {
+    "title": "Miért a Favorit SPA",
+    "metaTitle": "Miért a Favorit SPA – jakuzzik közvetlenül a gyártótól, Šabac, Szerbia",
+    "metaDesc": "Tíz ok, amiért Svédországtól Görögországig a Favorit SPA jakuzzijait választják: gyári ár, 30 év tapasztalat, Gecko alkatrészek, havonta körülbelül 20 EUR üzemeltetési költség, pótalkatrész már másnap.",
+    "lead": "Egy jakuzzit a következő húsz évben szinte minden este használni fog. Ezek az okok, amiért Svédországtól Görögországig a miénket választják.",
+    "reasons": [
+      {
+        "icon": "wrench",
+        "h": "Közvetlenül a gyártótól",
+        "p": "Nincs importőr, nincs közvetítő. Gyári áron vásárol azoktól, akik a jakuzzit tervezik és gyártják, és a vásárlás után is ugyanazokkal az emberekkel beszél."
+      },
+      {
+        "icon": "clock",
+        "h": "Harminc év tapasztalat",
+        "p": "Három évtizede gyártunk jakuzzikat Šabacban. Minden ülést, lépcsőt és fejtámlát már több ezer tulajdonos kipróbált Ön előtt."
+      },
+      {
+        "icon": "cpu",
+        "h": "Alkatrészek, amelyekben megbízunk",
+        "p": "Gecko vezérlés Kanadából, Waterway fúvókák és szivattyúk. Csendes, megbízható alkatrészek, amelyeket Európában minden jakuzziszerelő ismer."
+      },
+      {
+        "icon": "lightning",
+        "h": "Alacsony üzemeltetési költség",
+        "p": "A+ osztályú szivattyúk, teljes szigetelés és pontosan illeszkedő takaró. Az energia és a szűrők átlagosan havonta körülbelül 20 EUR-ba kerülnek."
+      },
+      {
+        "icon": "truck",
+        "h": "Pótalkatrész már másnap",
+        "p": "Minden alkatrész raktáron van. Ha munkanapon délig megrendeli, másnap már az Ön címén lesz."
+      },
+      {
+        "icon": "headset",
+        "h": "Segítség videohívásban",
+        "p": "Mérnökeink látják, amit Ön lát, és a legtöbb kérdést percek alatt megoldják, bárhol is áll a jakuzzi."
+      },
+      {
+        "icon": "ruler",
+        "h": "Egyszerű telepítés",
+        "p": "Nem kell hozzá vízvezeték. Egy vízszintes betonalap, egy tápkábel és egy kerti locsolótömlő elég."
+      },
+      {
+        "icon": "snowflake",
+        "h": "Egész évben, bármilyen éghajlaton",
+        "p": "Az adriai nyaraktól a síterepek havas teléig. A megfelelő csomaggal a víz minden évszakban meleg marad."
+      },
+      {
+        "icon": "shield-check",
+        "h": "24 hónap garancia",
+        "p": "A garancia minden beépített alkatrészre kiterjed. A szerviz és a pótalkatrészek a garancia lejárta után is még sokáig elérhetők."
+      },
+      {
+        "icon": "sliders-horizontal",
+        "h": "Csak azért fizet, amit használ",
+        "p": "Minden modell legfeljebb három felszereltségi csomagban kapható, így Ön választja ki a fúvókákat, a világítást és a kényelmet, semmi többet."
+      }
+    ],
+    "quote": "Szándékosan maradunk kicsik. Így minden jakuzzit ismerünk, amelyet gyártunk.",
+    "quoteBy": "A Favorit csapata, Šabac",
+    "ctaH": "Üljön bele, mielőtt döntene",
+    "ctaP": "Látogasson el bemutatótermünkbe Šabacban, vagy írja meg, hová szánja a jakuzzit, és küldünk árajánlatot."
+  },
+  "control": {
+    "title": "Gecko vezérlőrendszer",
+    "metaTitle": "Gecko vezérlőrendszer a Favorit SPA jakuzzikban – kezelőpanelek, alkalmazás és kiegészítők",
+    "metaDesc": "Minden Favorit SPA jakuzzi kanadai Gecko elektronikával működik: in.k kezelőpanelek az in.k200-tól az in.k1000 érintőképernyőig, in.touch 2 alkalmazás, in.clear vízápolás és in.stream hangrendszer.",
+    "lead": "Az elektronika a jakuzzi agya. A miénk a kanadai Gecko Alliance-tól származik, amely a világ egyik legelterjedtebb jakuzzivezérlő-gyártója: egyszerűen kezelhető, megbízható, és Európa-szerte szervizelhető.",
+    "madeBy": "Elektronika: Gecko Alliance, Kanada",
+    "brainH": "Egy rendszer, három rész",
+    "brain": [
+      [
+        "Vezérlőegység",
+        "A burkolat alatti doboz, amely a fűtést, a szivattyúkat, a világítást és a keringetést működteti, és védi őket a meghibásodásoktól."
+      ],
+      [
+        "Kezelőpanel",
+        "A panel a peremen. Mutatja a víz hőmérsékletét, és ezzel indíthatja a fúvókákat, a világítást és a programokat."
+      ],
+      [
+        "Az Ön telefonja",
+        "Az opcionális in.touch 2 modullal ugyanezek a funkciók egy alkalmazásban is elérhetők a telefonján, bárhol is van."
+      ]
+    ],
+    "keypadsH": "Kezelőpanelek",
+    "keypadsLead": "A kezelőpanel a modelltől és a felszereltségi csomagtól függ. Mindegyik tartja a hőmérsékletet, automatikusan futtatja a szűrési ciklusokat, és üzenetet jelenít meg, ha valami figyelmet igényel.",
+    "keypads": {
+      "in.k200": [
+        "Kompakt",
+        "Négy gomb és jól látható LED-es hőmérséklet-kijelző. Minden, ami egy kisebb jakuzzihoz kell, semmi több."
+      ],
+      "in.k300": [
+        "Alap",
+        "Jól olvasható LCD-kijelző és közvetlen gombok a szivattyúkhoz, a világításhoz és a hőmérséklethez. Egyszerű és strapabíró."
+      ],
+      "in.k500": [
+        "Színes",
+        "Színes kijelző animált ikonokkal, vízápolási módok, szűrési időbeosztás, panelzár és karbantartási emlékeztetők. Együttműködik az in.touch 2, az in.clear és az in.stream rendszerrel."
+      ],
+      "in.k800": [
+        "Nagy színes",
+        "Nagyobb színes kijelző és tíz gomb a gazdagabban felszerelt jakuzzikhoz: több szivattyú, világítás, hangrendszer és vízápolás egy helyen."
+      ],
+      "in.k1000": [
+        "Érintőképernyő",
+        "4,3 hüvelykes színes érintőképernyő, gombok nélkül. Menük, mint egy telefonon, és szoftver, amely közvetlenül a panelről frissíthető."
+      ]
+    },
+    "used": "Ezekben:",
+    "optional": "opcionális",
+    "appH": "A jakuzzi a zsebében",
+    "appP": "Az in.touch 2 modul nagy hatótávolságú rádiókapcsolaton keresztül köti a jakuzzit az otthoni internethez, így a kert végében is működik. Az iOS-re és Androidra elérhető in.touch 2 alkalmazással bárhonnan elvégezheti mindazt, amit a kezelőpanelen.",
+    "app": [
+      "Vízhőmérséklet és fűtés",
+      "Szivattyúk, világítás és egyéb felszerelés",
+      "Vízápolási mód és szűrési ciklusok",
+      "Értesítések, emlékeztetők és hibaüzenetek"
+    ],
+    "appNote": "Az Advance és Privilege csomagokhoz Okostelefonos platform opcióként rendelhető.",
+    "modesH": "Vízápolási módok",
+    "modesLead": "Válassza ki, hogyan fűtsön a jakuzzi, a többit elvégzi magától. A takarékos beállítás csökkenti a hőmérsékletet, amikor nem használja a jakuzzit.",
+    "modes": [
+      [
+        "Távollét",
+        "Mindig takarékos, utazások idejére."
+      ],
+      [
+        "Kezdő",
+        "Soha nem takarékos, a víz mindig az Ön által beállított hőmérsékletű."
+      ],
+      [
+        "Energiatakarékos",
+        "Hétköznap csúcsidőben takarékos, hétvégén teljes kényelem."
+      ],
+      [
+        "Szuper takarékos",
+        "Minden nap csúcsidőben takarékos."
+      ],
+      [
+        "Hétvégi",
+        "Hétköznap takarékos, hétvégére készen áll."
+      ]
+    ],
+    "extrasH": "Kiegészítők",
+    "extras": [
+      [
+        "in.clear",
+        "Automatikus vízápolás, amely a vízben lévő bromidsót (BromiCharge) brómmá alakítja, így jóval kevesebb vegyszert kell kézzel adagolnia."
+      ],
+      [
+        "in.stream 2",
+        "A jakuzziba épített Bluetooth-hangrendszer: hangszórók a burkolatban, zene a telefonjáról."
+      ],
+      [
+        "Okos LED-világítás",
+        "Víz alatti és peremvilágítás változó színekben, a kezelőpanelről vagy az alkalmazásból kapcsolható."
+      ]
+    ],
+    "matrixH": "Melyik jakuzzihoz melyik kezelőpanel jár",
+    "matrixLead": "Alapfelszereltségű kezelőpanel modellenként és csomagonként. Az in.k1000 érintőképernyő a Privilege csomaghoz rendelhető.",
+    "ctaH": "Kérdése van az elektronikával kapcsolatban?",
+    "ctaP": "Mérnökeink ismerik az általunk beépített összes Gecko alkatrészt, és telefonon vagy videohívásban segítenek."
+  },
+  "brochure": {
+    "title": "Katalógus",
+    "metaTitle": "Favorit SPA katalógus – az összes jakuzzimodell, csomag és ár",
+    "metaDesc": "Kérje e-mailben a Favorit SPA katalógusát: mind a hét jakuzzimodell, a felszereltségi csomagok, a méretek és a műszaki adatok egyetlen PDF-ben.",
+    "lead": "Mind a hét modell, a felszereltségi csomagok, a méretek és a műszaki adatok egyetlen PDF-ben. Adja meg e-mail-címét, és azonnal elküldjük a letöltési linket.",
+    "points": [
+      "Hét modell 2–6 fő részére, méretarányosan",
+      "A Base, Advance és Privilege csomagok összehasonlítása",
+      "Telepítési követelmények és műszaki adatok"
+    ],
+    "formH": "Kérem a katalógust",
+    "name": "Név",
+    "email": "E-mail",
+    "country": "Ország",
+    "consent": "Hozzájárulok, hogy a Favorit SPA elküldje nekem a katalógust, és időnként tájékoztasson a modellekkel és ajánlatokkal kapcsolatos hírekről. Feliratkozásomat bármikor visszavonhatom.",
+    "privacy": "E-mail-címét kizárólag erre használjuk, az adatvédelmi tájékoztatónkban leírtak szerint.",
+    "submit": "Kérem a linket",
+    "sending": "Küldés…",
+    "doneH": "Nézze meg a postafiókját",
+    "doneP": "A letöltési linket elküldtük a(z) {email} címre. Ha néhány percen belül nem érkezik meg, nézze meg a spam mappát is.",
+    "error": "Hiba történt. Kérjük, próbálja újra, vagy írjon nekünk a sales@favoritspa.com címre.",
+    "invalid": "Kérjük, adjon meg érvényes e-mail-címet, és jelölje be a hozzájárulást."
+  }
+}

@@ -1,0 +1,81 @@
+---
+import { getCollection } from 'astro:content';
+import Site from '../../layouts/Site.astro';
+import Icon from '../Icon.astro';
+import ModelIcon from '../ModelIcon.astro';
+import { company } from '../../data/site';
+import { value } from '../../i18n/products';
+import { alts, fill, persons as personsOf, t, type Lang, url } from '../../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = t(lang);
+const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order);
+const cols = tr('docs.cols') as unknown as string[];
+const row = (p: (typeof products)[number], l: string) => p.data.standard.rows.find((r) => r.label === l)?.values ?? [];
+const span = (vals: string[]) => { const u = [...new Set(vals)].map((v) => value(lang, v)); return u.length > 1 ? `${u[0]} – ${u[u.length - 1].replace(/^\S+\.? (?=\d)/, '')}` : u[0] ?? '–'; };
+const power = (vals: string[]) => [...new Set(vals)].map((v) => v.replace(/\s*\/\s*50Hz/, '').replace(/\/400V/, ' / 400 V').replace(/230V/, '230 V'));
+const alt = alts('docs');
+const gl = tr('docs.generalList') as string[];
+const general = [['file-pdf', gl[0], url(lang, 'brochure' as any)], ['file-text', gl[1], url(lang, 'terms')], ['wrench', gl[2], url(lang, 'maintenance')], ['lifebuoy', gl[3], url(lang, 'support')]];
+---
+<Site lang={lang} title={`${tr('docs.title')} | Favorit SPA`} description={tr('docs.lead')} alt={alt}>
+  <section class="wrap page-head">
+    <h1 class="h1">{tr('docs.title')}</h1>
+    <p class="lede">{tr('docs.lead')}</p>
+  </section>
+
+  <section class="wrap" aria-labelledby="dm-h">
+    <h2 id="dm-h" class="h3">{tr('docs.models')}</h2>
+    <div class="table-scroll" tabindex="0" role="region" aria-labelledby="dm-h">
+      <table>
+        <thead><tr>{cols.map((c) => <th scope="col">{c}</th>)}</tr></thead>
+        <tbody>
+          {products.map((p) => (
+            <tr>
+              <th scope="row"><a href={url(lang, 'models', p.data.slug)}><span class="m-ic"><ModelIcon slug={p.data.slug} /></span>{p.data.name}</a></th>
+              <td>{p.data.dimensions}</td>
+              <td>{span(row(p, 'Zapremina'))}</td>
+              <td>{span(row(p, 'Težina'))}</td>
+              <td>{power(row(p, 'Potrebna snaga')).map((v) => <span class="pw">{v}</span>)}</td>
+              <td>{p.data.drawing ? <a class="dl" href={p.data.drawing} download><Icon name="download-simple" />{tr('docs.pdf')}</a> : '–'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted note">{tr('docs.weightNote')}</p>
+  </section>
+
+  <section class="wrap gen" aria-labelledby="dg-h">
+    <h2 id="dg-h" class="h3">{tr('docs.general')}</h2>
+    <ul>
+      {general.map(([icon, label, href]) => (
+        <li><a href={href}><Icon name={icon} class="g-ic" /><span>{label}</span><Icon name="arrow-up-right" class="g-go" /></a></li>
+      ))}
+    </ul>
+  </section>
+</Site>
+<style>
+  .page-head { padding-block: clamp(140px, 16vw, 200px) clamp(40px, 6vw, 64px); display: flex; flex-direction: column; gap: 20px; }
+  .h3 { margin: 0 0 18px; }
+  .table-scroll { overflow-x: auto; }
+  table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 0.95rem; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 16px 14px 16px 0; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  thead th { font-weight: 400; font-size: 0.8rem; color: var(--soft); border-bottom: 1px solid var(--ink); padding-block: 8px; }
+  tbody th { font-weight: 400; font-size: 1.2rem; }
+  tbody th a { display: inline-flex; align-items: center; gap: 10px; }
+  tbody th a:hover { color: var(--soft); }
+  .m-ic { display: inline-flex; font-size: 15px; color: var(--soft); }
+  .pw { display: block; white-space: nowrap; }
+  .dl { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border: 1px solid var(--chip-line); border-radius: 999px; }
+  .dl:hover { border-color: var(--ink); }
+  .dl :global(svg) { width: 16px; height: 16px; }
+  .note { margin: 12px 0 0; }
+  .gen { padding-block: clamp(72px, 10vw, 128px); }
+  .gen ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 clamp(24px, 4vw, 56px); border-top: 1px solid var(--ink); }
+  .gen a { display: grid; grid-template-columns: 28px 1fr 22px; align-items: center; gap: 14px; padding: 20px 0; border-bottom: 1px solid var(--line); font-size: 1.1rem; }
+  .gen a:hover { color: var(--soft); }
+  .gen :global(.g-ic) { width: 26px; height: 26px; color: var(--accent); }
+  .gen :global(.g-go) { width: 20px; height: 20px; }
+  @media (max-width: 760px) { .gen ul { grid-template-columns: 1fr; } }
+</style>

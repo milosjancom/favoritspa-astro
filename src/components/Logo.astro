@@ -1,0 +1,12 @@
+---
+import raw from '../assets/logo.svg?raw';
+const svg = raw
+  .replace(/#231f20/gi, 'currentColor')
+  .replace(/mix-blend-mode:multiply;/g, '')
+  .replace('<svg ', '<svg aria-hidden="true" focusable="false" ');
+---
+<span class="logo" set:html={svg} />
+<style>
+  .logo { display: block; width: var(--w, 168px); color: inherit; }
+  .logo :global(svg) { display: block; width: 100%; height: auto; }
+</style>
